@@ -25,6 +25,7 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 | Documento | Descrizione |
 |---|---|
+| 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Guida Operativa Completa**: manuale passo-passo che guida il team dalla comprensione del dominio fino alla consegna finale (scelte operative, teoria necessaria, benchmark e criteri di autovalutazione). |
 | 💡 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Visione, Dominio e Idea Progettuale**: analisi del problema (*problem statement*), attori coinvolti, servizi erogati, regole di business e opportunità di applicazione dei Design Pattern. |
 | 📌 **[`infoprof.md`](./infoprof.md)** | **Istruzioni Ufficiali & Guida Esame**: requisiti formali del docente (IEEE 830-1998, OOA, Visual Paradigm, appendice Design Pattern) e scadenze di consegna. |
 | 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository**: indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
@@ -47,6 +48,7 @@ Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipende
 ```text
 PROGETTOISW/
 ├── 📄 README.md                                              # Presentazione generale del repository
+├── 📘 guida-progetto.md                                       # Guida operativa passo-passo per MyAma
 ├── 📄 ideaprogetto.md                                         # Documento di visione e dominio MyAma
 ├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
 ├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file

@@ -8,10 +8,11 @@ Questa mappa descrive la struttura dell'intero workspace, dettagliando ogni cart
 
 ```text
 PROGETTOISW/
-├── 📄 README.md
-├── 📄 ideaprogetto.md
-├── 📄 infoprof.md
-├── 📄 tree.md
+├── 📄 README.md                                              # Presentazione generale del repository e guida rapida
+├── 📄 guida-progetto.md                                       # Guida operativa passo-passo per realizzare il progetto MyAma
+├── 📄 ideaprogetto.md                                         # Documento di visione e dominio MyAma
+├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
+├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
 │
 ├── 📂 MYAMABASIDATI/
 │   ├── 📄 BASI PROGETTO.pdf                                  # PDF originale del progetto Basi di Dati (30 pag.)
@@ -60,6 +61,7 @@ PROGETTOISW/
 
 ### 0. File Principali di Root
 - **[`README.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/README.md)**: Presentazione generale del repository con badge, navigazione rapida, visione del progetto MyAma e riepilogo dei requisiti d'esame.
+- **[`guida-progetto.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/guida-progetto.md)**: Guida operativa esaustiva (passo per passo) che spiega come condurre concretamente il progetto, quali decisioni prendere, gli schemi metodologici e i criteri di validazione per ogni fase.
 - **[`ideaprogetto.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/ideaprogetto.md)**: Documento di visione e analisi di dominio per "MyAma", che illustra obiettivi, attori, servizi, regole di business e opportunità di modellazione OOA/Design Pattern.
 - **[`infoprof.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/infoprof.md)**: Istruzioni ufficiali del docente per il task progettuale e scadenze di consegna.
 - **[`tree.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/tree.md)**: Mappa strutturale completa dell'intera repository con descrizione oneline di ogni elemento.
