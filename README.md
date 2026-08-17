@@ -26,8 +26,19 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 | Documento | Descrizione |
 |---|---|
 | 💡 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Visione, Dominio e Idea Progettuale**: analisi del problema (*problem statement*), attori coinvolti, servizi erogati, regole di business e opportunità di applicazione dei Design Pattern. |
-| 📌 **[`infoprof.md`](./infoprof.md)** | **Istruzioni Ufficiali & Guida Esame**: requisiti formali del docente (IEEE 830-1998, OOA, Visual Paradigm, appendice Design Pattern), modalità di consegna e analisi sistematica delle 21 slide di lezione. |
-| 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository**: indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e contenuto degli archivi compressi. |
+| 📌 **[`infoprof.md`](./infoprof.md)** | **Istruzioni Ufficiali & Guida Esame**: requisiti formali del docente (IEEE 830-1998, OOA, Visual Paradigm, appendice Design Pattern) e scadenze di consegna. |
+| 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository**: indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
+
+---
+
+## 📚 Trascrizioni Integrali dei Progetti di Riferimento (Consultabili in Markdown)
+
+Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni sono disponibili in formato `.md`:
+
+- 🐟 **[`ALTRI/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
+- 🏨 **[`ALTRI/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
+- 🍽️ **[`ALTRI/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
 
 ---
 
@@ -37,21 +48,25 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 PROGETTOISW/
 ├── 📄 README.md                                              # Presentazione generale del repository
 ├── 📄 ideaprogetto.md                                         # Documento di visione e dominio MyAma
-├── 📄 infoprof.md                                            # Linee guida esame, scadenze e analisi slide
+├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
 ├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
 │
 ├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
-│   └── 📄 BASI PROGETTO.pdf                                  # Relazione MyAma (specifiche di business e tabelle)
+│   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
+│   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
 │
 ├── 📂 ALTRI/                                                 # Benchmark e progetti d'esame completi di riferimento
-│   ├── 📦 FileProgetto.zip                                   # Sorgenti Visual Paradigm (.vpp) progetto "Hotel TorVergata"
-│   ├── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip           # Relazione PDF + sorgenti .vpp progetto "RistorApp"
-│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # Relazione completa "Campionato Pesca" (76 pag.)
-│   └── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # Relazione completa "Hotel TorVergata" (59 pag.)
+│   ├── 📝 Progetto_Cipolletta_Pesca.md                       # Trascrizione Markdown completa (76 pag.)
+│   ├── 📝 Progetto_Mongelli_Hotel.md                         # Trascrizione Markdown completa (59 pag.)
+│   ├── 📝 Progetto_Bianchini_RistorApp.md                    # Trascrizione Markdown completa (80 pag.)
+│   ├── 📂 FileProgetto/                                      # Modelli Visual Paradigm (.vpp) estratti "Hotel"
+│   ├── 📂 Progetto_Bianchini_Corsetti_Mazzenga/              # Relazione PDF + sorgenti .vpp estratti "RistorApp"
+│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # PDF originale "Pesca"
+│   └── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # PDF originale "Hotel"
 │
 └── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
-    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (con 178 figure)
-    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso di Andrea (con 50 figure)
+    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
+    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso di Andrea (50 figure)
 ```
 
 ---
