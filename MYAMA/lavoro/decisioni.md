@@ -1,6 +1,6 @@
 # 📋 Registro delle Decisioni e Convenzioni — *MyAma*
 
-Questo documento raccoglie le decisioni concordate dal gruppo (Fase 0 di [`divisione-compiti.md`](../../divisione-compiti.md) e [`guida-operativa.md`](../../guida-operativa.md)) per garantire coerenza terminologica e formale in tutta la specifica.
+Questo documento raccoglie le decisioni concordate dal gruppo (Fase 0 di [`divisione-compiti.md`](../../guide/divisione-compiti.md) e [`guida-operativa.md`](../../guide/guida-operativa.md)) per garantire coerenza terminologica e formale in tutta la specifica.
 
 ---
 

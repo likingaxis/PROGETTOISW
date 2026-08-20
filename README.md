@@ -28,21 +28,21 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 | 📂 **[`MYAMA/`](./MYAMA)** | **Cartella Progetto** | **Spazio di lavoro del progetto**: specifica formale IEEE 830, file operativi (`decisioni.md`, `tracciabilita.md`) e modelli Visual Paradigm. |
 | 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
 | 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
-| 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
-| 🚀 **[`guida-operativa.md`](./guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
-| 👥 **[`divisione-compiti.md`](./divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
-| 🛠️ **[`guida-git.md`](./guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
+| 📘 **[`guide/guida-progetto.md`](./guide/guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
+| 🚀 **[`guide/guida-operativa.md`](./guide/guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
+| 👥 **[`guide/divisione-compiti.md`](./guide/divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
+| 🛠️ **[`guide/guida-git.md`](./guide/guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
+| 📌 **[`guide/infoprof.md`](./guide/infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
 | 📚 **[`progettialtrui/`](./progettialtrui)** | **Benchmark Progetti** | Relazioni d'esame complete e modelli UML di riferimento (Pesca, Hotel TorVergata, RistorApp, Buongiorno). |
 | ♻️ **[`MYAMABASIDATI/`](./MYAMABASIDATI)** | **Dominio Pregresso** | Documentazione e trascrizione integrale del progetto originale MyAma per il corso di Basi di Dati. |
 | 📖 **[`TEORIA/`](./TEORIA)** | **Dispense Teoriche** | Compendi completi del corso di Ingegneria del Software (Vault Obsidian con schemi e figure). |
-| 📌 **[`infoprof.md`](./infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
 | 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository** | Indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
 
 ---
 
 ## 🔄 Il Flusso di Lavoro Metodologico (dall'Idea alla Specifica)
 
-Come illustrato in [`guida-progetto.md`](./guida-progetto.md) e dettagliato in [`guida-operativa.md`](./guida-operativa.md), la redazione della specifica segue una sequenza rigorosa e incrementale:
+Come illustrato in [`guide/guida-progetto.md`](./guide/guida-progetto.md) e dettagliato in [`guide/guida-operativa.md`](./guide/guida-operativa.md), la redazione della specifica segue una sequenza rigorosa e incrementale:
 
 ```mermaid
 flowchart TD
@@ -109,12 +109,14 @@ PROGETTOISW/
 ├── 📄 README.md                                              # Presentazione generale del repository
 ├── 💡 idea.md                                                 # Idea sintetica del progetto per allineare il gruppo
 ├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business
-├── 📘 guida-progetto.md                                       # Teoria orientata al progetto e modello mentale
-├── 🚀 guida-operativa.md                                      # Guida operativa passo-passo per redigere la specifica
-├── 👥 divisione-compiti.md                                    # Piano di divisione compiti per 5 persone
-├── 🛠️ guida-git.md                                            # Guida pratica Git/GitHub per i collaboratori
-├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
 ├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
+│
+├── 📂 guide/                                                 # Guide metodologiche, operative e organizzative
+│   ├── 📘 guida-progetto.md                                   # Teoria orientata al progetto e modello mentale
+│   ├── 🚀 guida-operativa.md                                  # Guida operativa passo-passo per redigere la specifica
+│   ├── 👥 divisione-compiti.md                                # Piano di divisione compiti per 5 persone
+│   ├── 🛠️ guida-git.md                                        # Guida pratica Git/GitHub per i collaboratori
+│   └── 📌 infoprof.md                                        # Linee guida esame e scadenze del docente
 │
 ├── 📂 MYAMA/                                                 # Cartella di sviluppo del progetto d'esame
 │   ├── 📂 specifica/
