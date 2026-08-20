@@ -86,7 +86,24 @@ Prima di lavorare in parallelo bisogna inoltre decidere alcune convenzioni minim
 - come numeriamo i requisiti?
 - come numeriamo i Use Case?
 - come chiamiamo i diagrammi?
-- dove salviamo la versione corrente di Visual Paradigm?
+- come organizziamo i sorgenti Visual Paradigm?
+
+Dai materiali di un progetto precedente sappiamo che non è necessario lavorare per forza con un solo `.vpp`. È possibile organizzare i sorgenti in più file separati, ad esempio per attore/area o per tipo di modello.
+
+Una struttura possibile, puramente indicativa, potrebbe essere:
+
+```text
+CLIENTE.vpp
+AUTISTA.vpp
+OPERATORE-SEDE.vpp
+GESTIONE.vpp
+
+CLASSE-UNREFINED.vpp
+CLASSE-REFINED.vpp
+DESIGN-PATTERNS.vpp
+```
+
+La struttura definitiva va scelta in base agli attori e ai diagrammi che emergeranno davvero in MyAma.
 
 Una convenzione semplice potrebbe essere:
 
@@ -1066,7 +1083,7 @@ Questo passaggio non deve essere saltato.
 
 Il Sequence Diagram non è un'immagine da fare e poi dimenticare.
 
-Ogni Sequence deve essere confrontato con il Class Diagram.
+Anche se i Sequence sono conservati in `.vpp` separati, ogni diagramma deve essere confrontato con il Class Diagram comune.
 
 Se emerge:
 
@@ -1108,6 +1125,14 @@ Nei benchmark compare sistematicamente un **Class Diagram Unrefined**.
 
 Per noi può rappresentare la prima versione ufficiale e consolidata del modello ottenuto dall'analisi.
 
+È del tutto sensato conservarlo in un file dedicato, ad esempio:
+
+```text
+CLASSE-UNREFINED.vpp
+```
+
+separato dai `.vpp` organizzati per attore o area.
+
 A questo punto dobbiamo controllare:
 
 - classi;
@@ -1133,6 +1158,14 @@ Se la risposta è no, il diagramma non è ancora sufficientemente consolidato.
 # 14. Passare dal modello Unrefined al Refined
 
 I progetti dei compagni mostrano sistematicamente entrambe le versioni.
+
+Anche il modello Refined può essere conservato in un sorgente dedicato, ad esempio:
+
+```text
+CLASSE-REFINED.vpp
+```
+
+Questo rende più chiara anche la distinzione tra i due livelli del modello.
 
 Non conviene però trattare il Refined come:
 
@@ -1222,6 +1255,14 @@ Per ogni pattern la relazione dovrebbe spiegare almeno:
 3. quali classi MyAma assumono i ruoli del pattern;
 4. come cambia il Class Diagram;
 5. quali altri diagrammi devono essere ricontrollati.
+
+Anche i modelli relativi ai pattern possono essere raccolti in un file dedicato, ad esempio:
+
+```text
+DESIGN-PATTERNS.vpp
+```
+
+come già avviene in un progetto precedente di riferimento.
 
 ---
 
@@ -1431,9 +1472,51 @@ Una distinzione pratica utile:
 | spiegazione Design Pattern | documento |
 | diagrammi Pattern | Visual Paradigm |
 
-Ogni diagramma inserito nel documento deve corrispondere a una versione aggiornata nel file `.vpp`.
+Ogni diagramma inserito nel documento deve corrispondere a una versione aggiornata in uno dei sorgenti `.vpp` consegnati.
+
+Non è quindi necessario che tutti i diagrammi siano contenuti nello stesso file.
 
 ---
+
+# 22.1 Come organizzare concretamente i file `.vpp`
+
+Alla luce dei progetti di riferimento, conviene distinguere tra:
+
+```text
+file per attore / area
+→ contengono diagrammi relativi a quel blocco
+
+file trasversali
+→ contengono modelli comuni all'intero sistema
+```
+
+Un'organizzazione possibile per MyAma potrebbe essere:
+
+```text
+CLIENTE.vpp
+AUTISTA.vpp
+OPERATORE-SEDE.vpp
+GESTIONE.vpp
+
+CLASSE-UNREFINED.vpp
+CLASSE-REFINED.vpp
+DESIGN-PATTERNS.vpp
+```
+
+Non è una struttura obbligatoria.
+
+Serve soltanto a mostrare un principio pratico:
+
+> se due gruppi possono lavorare su diagrammi indipendenti, non c'è motivo di costringerli a modificare contemporaneamente lo stesso file Visual Paradigm.
+
+Il vero punto di convergenza non è necessariamente un singolo `.vpp`, ma la **coerenza del modello complessivo**.
+
+Quindi il "merge" va inteso soprattutto come:
+
+- review comune;
+- allineamento delle decisioni;
+- aggiornamento dei modelli trasversali;
+- controllo che tutti i sorgenti descrivano lo stesso MyAma.
 
 # 23. Quando possiamo lavorare in parallelo
 
@@ -1464,6 +1547,8 @@ Possiamo dividere:
 - Sequence Diagram relativi a scenari diversi.
 
 Ma dopo ogni blocco serve una review comune.
+
+Quando il lavoro è diviso per attore o area, può essere utile che ogni coppia lavori sul proprio `.vpp`, mantenendo però convenzioni comuni.
 
 ---
 
@@ -1560,10 +1645,10 @@ STEP 23
 Revisione completa di tracciabilità e coerenza.
 
 STEP 24
-Impaginare la specifica e controllare Visual Paradigm.
+Impaginare la specifica e controllare tutti i sorgenti Visual Paradigm.
 
 STEP 25
-Preparare documento finale + sorgenti `.vpp`.
+Preparare documento finale + archivio ordinato dei sorgenti `.vpp`.
 ```
 
 Questa lista non sostituisce le spiegazioni precedenti: serve come riferimento rapido quando inizieremo effettivamente a lavorare.

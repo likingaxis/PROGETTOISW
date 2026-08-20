@@ -29,8 +29,8 @@ In generale useremo soprattutto:
 - lavoro tutti insieme per le decisioni che condizionano l'intero progetto;
 - coppie quando un'attività può essere divisa per attore, scenario o blocco;
 - gruppi da tre quando serve più confronto;
-- review comune quando bisogna riunire i risultati;
-- una sola versione condivisa del progetto, soprattutto per Visual Paradigm.
+- review comune quando bisogna riallineare i risultati;
+- più sorgenti Visual Paradigm quando questo facilita il lavoro parallelo, mantenendo però convenzioni e modelli coerenti.
 
 ---
 
@@ -106,7 +106,7 @@ Assicurarsi che tutti e cinque abbiano la stessa idea di MyAma e conoscano il pe
 - struttura dei file;
 - convenzione per ID dei Use Case;
 - convenzione per ID dei requisiti;
-- nome del file Visual Paradigm.
+- organizzazione dei file Visual Paradigm.
 
 ## Output
 
@@ -531,14 +531,33 @@ Activity rimanenti oppure supporto alla coppia più carica.
 
 ## Visual Paradigm
 
-Tutti lavorano sullo stesso progetto.
+In questa fase i gruppi possono lavorare anche su `.vpp` diversi.
 
-Se lavorare contemporaneamente sullo stesso `.vpp` crea problemi:
+Una possibile organizzazione è:
 
-- ogni gruppo può lavorare temporaneamente su una copia;
-- i diagrammi vengono poi reintegrati nel progetto principale.
+```text
+CLIENTE.vpp
+→ Activity del Cliente
 
-Bisogna però evitare di mantenere più versioni concorrenti troppo a lungo.
+OPERATORI.vpp
+→ Activity di Autista / Operatore di sede
+```
+
+oppure, se conviene separarli ulteriormente:
+
+```text
+AUTISTA.vpp
+OPERATORE-SEDE.vpp
+```
+
+Non serve quindi fondere necessariamente tutti i diagrammi in un unico file.
+
+La cosa importante è che:
+
+- vengano usate le stesse convenzioni;
+- i diagrammi facciano riferimento agli stessi Use Case;
+- i nomi degli attori siano coerenti;
+- durante la review comune vengano risolte eventuali differenze.
 
 ---
 
@@ -637,9 +656,11 @@ La divisione concreta va fatta quando conosceremo il numero effettivo dei Sequen
 
 ---
 
-# Fase 11 — Merge Sequence → Class Diagram
+# Fase 11 — Integrazione Sequence → Class Diagram
 
 Questa fase deve essere fatta insieme.
+
+I Sequence possono anche trovarsi in `.vpp` diversi. Non è necessario fonderli fisicamente in un unico file.
 
 Ogni gruppo presenta i Sequence realizzati e, per ciascuno, segnala:
 
@@ -667,16 +688,24 @@ aggiornamento del modello comune
 Non:
 
 ```text
-ogni gruppo modifica il Class Diagram per conto proprio
+ogni gruppo modifica il Class Diagram comune per conto proprio
 ```
 
 senza coordinamento.
+
+Il punto di convergenza è quindi il **Class Diagram condiviso**, non necessariamente un unico `.vpp` contenente tutti i Sequence.
 
 ---
 
 # Fase 12 — Class Diagram Unrefined
 
 Ora il modello può essere consolidato.
+
+È sensato conservare questo modello in un sorgente dedicato, ad esempio:
+
+```text
+CLASSE-UNREFINED.vpp
+```
 
 ## Divisione consigliata
 
@@ -714,6 +743,12 @@ Approvano il Class Diagram Unrefined.
 # Fase 13 — Class Diagram Refined
 
 Anche questa parte è troppo centrale per essere completamente divisa.
+
+Anche il Refined può essere conservato in un file dedicato, ad esempio:
+
+```text
+CLASSE-REFINED.vpp
+```
 
 ## Divisione consigliata
 
@@ -776,6 +811,12 @@ Esempi di domande:
 Qui è molto naturale lavorare in coppie.
 
 Il professore richiede almeno due pattern.
+
+I modelli relativi ai pattern possono essere raccolti in un sorgente dedicato, ad esempio:
+
+```text
+DESIGN-PATTERNS.vpp
+```
 
 ## Prima decisione
 
@@ -845,15 +886,15 @@ Dopo l'approvazione bisogna applicare le modifiche.
 
 ### Coppia — A, C
 
-Aggiorna il Class Diagram.
+Aggiorna il Class Diagram di riferimento.
 
 ### Coppia — B, D
 
-Aggiorna i Sequence interessati.
+Aggiorna i Sequence interessati nei rispettivi `.vpp`.
 
 ### E
 
-Controlla che la spiegazione testuale dei pattern corrisponda ai diagrammi.
+Controlla che la spiegazione testuale dei pattern corrisponda ai diagrammi e che i diversi sorgenti restino coerenti.
 
 ## Review
 
@@ -963,9 +1004,10 @@ Controllano:
 
 Controllano:
 
-- file Visual Paradigm;
+- tutti i file Visual Paradigm;
 - diagrammi;
 - nomi;
+- coerenza tra i diversi `.vpp`;
 - completezza dei sorgenti.
 
 ### E
@@ -999,7 +1041,7 @@ Approvano la versione che verrà consegnata.
 | Verificabilità | 2 + 2 + 1 → review |
 | Activity | 2 + 2 + 1 → review |
 | Classi candidate | 3 + 2 → review |
-| Sequence | 2 + 2 + 1 → merge comune |
+| Sequence | 2 + 2 + 1 → review e integrazione comune |
 | Unrefined | 2 + 2 + 1 → review |
 | Refined | 3 + 2 → review |
 | Problemi di design | tutti |
@@ -1036,34 +1078,111 @@ Quando avremo capito chi è più bravo o più veloce in alcune attività, potrem
 
 ---
 
-# Come lavorare con Visual Paradigm
+# Come organizzare il lavoro con Visual Paradigm
 
-Poiché il modello è condiviso, conviene avere **un file principale**:
+Non è necessario imporre un unico file `.vpp` per tutto il progetto.
 
-```text
-MyAma.vpp
-```
-
-Il file principale deve sempre rappresentare la versione consolidata.
-
-Quando due gruppi devono lavorare contemporaneamente si possono usare copie temporanee:
+Dai materiali di un progetto precedente sappiamo che è possibile organizzare i sorgenti in più file distinti, per esempio:
 
 ```text
-MyAma_activity_AB.vpp
-MyAma_activity_CD.vpp
+CLIENTE.vpp
+UTENTE.vpp
+SERVIZIO.vpp
+AMMINISTRAZIONE.vpp
+
+CLASSE UNREFINED.vpp
+CLASSE REFINED.vpp
+DESIGNPATTERNS.vpp
 ```
 
-oppure diagrammi separati da reintegrare.
+Per MyAma potremmo adottare una logica simile, adattandola ai nostri attori e alle nostre aree.
 
-La regola importante è:
+Per esempio:
 
-> le copie temporanee servono per lavorare, ma dopo il merge deve tornare a esistere una sola versione ufficiale.
+```text
+CLIENTE.vpp
+AUTISTA.vpp
+OPERATORE-SEDE.vpp
+GESTIONE.vpp
 
-Conviene quindi stabilire, per ogni fase, chi è responsabile del merge del `.vpp`.
+CLASSE-UNREFINED.vpp
+CLASSE-REFINED.vpp
+DESIGN-PATTERNS.vpp
+```
 
-Questa responsabilità può cambiare di fase in fase.
+Questa struttura non è obbligatoria.
 
----
+Il principio è:
+
+> se due gruppi possono lavorare su diagrammi indipendenti, è meglio permettere loro di lavorare su sorgenti separati invece di costringerli a modificare continuamente lo stesso `.vpp`.
+
+I file per attore/area possono contenere, quando ha senso:
+
+- Use Case Diagram;
+- Activity Diagram;
+- Sequence Diagram.
+
+I file trasversali possono invece raccogliere:
+
+- Class Diagram Unrefined;
+- Class Diagram Refined;
+- modelli relativi ai Design Pattern.
+
+## Cosa significa fare "merge"
+
+Nel nostro workflow il merge non significa necessariamente:
+
+```text
+più .vpp
+↓
+un solo .vpp
+```
+
+Può significare soprattutto:
+
+```text
+più lavori paralleli
+↓
+review comune
+↓
+allineamento delle decisioni
+↓
+aggiornamento dei modelli trasversali
+```
+
+Quindi, per esempio:
+
+```text
+CLIENTE.vpp
+        \
+AUTISTA.vpp
+         \
+          → REVIEW COMUNE
+         /
+OPERATORE-SEDE.vpp
+        /
+↓
+informazioni emerse
+↓
+CLASSE-UNREFINED.vpp
+```
+
+I file separati possono continuare a esistere.
+
+La cosa importante è che descrivano tutti lo stesso sistema.
+
+## Regole minime
+
+Qualunque organizzazione scegliamo:
+
+- stessi nomi degli attori;
+- stessi ID dei Use Case;
+- stessa terminologia;
+- stessi nomi delle classi quando compaiono in più diagrammi;
+- nessun diagramma basato su una versione vecchia del modello;
+- review comune dopo ogni blocco importante.
+
+Alla consegna dobbiamo semplicemente avere un **archivio ordinato e coerente dei sorgenti Visual Paradigm**.
 
 # Regola semplice per decidere se dividere un lavoro
 
@@ -1124,7 +1243,7 @@ produzione parallela
 ↓
 review incrociata
 ↓
-merge
+integrazione / riallineamento
 ↓
 nuova decisione comune
 ↓
