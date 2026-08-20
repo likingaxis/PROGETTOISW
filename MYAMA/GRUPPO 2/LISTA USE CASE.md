@@ -32,3 +32,13 @@
 - Verificare prenotazione del cittadino
 - Registrare esito del conferimento
 
+# Amministratore sede AMA
+- Gestisce la registrazione del personale AMA
+- Gestisce disponibilità dei lavoratori
+- Gestisce disponibilità dei veicoli
+- gestisce disponibilità di sedi e fasce orarie
+- gestisce associazione tra sedi e zone/CAP
+
+# Amministratore supremo AMA
+- aggiunge amministratori
+- rimuove amministratori
