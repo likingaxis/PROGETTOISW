@@ -9,8 +9,11 @@ Questa mappa descrive la struttura dell'intero workspace, dettagliando ogni cart
 ```text
 PROGETTOISW/
 ├── 📄 README.md                                              # Presentazione generale del repository e guida rapida
-├── 📄 guida-progetto.md                                       # Guida operativa passo-passo per realizzare il progetto MyAma
-├── 📄 ideaprogetto.md                                         # Documento di visione e dominio MyAma
+├── 📘 guida-progetto.md                                       # Teoria orientata al progetto e modello mentale (da Problem Statement a Design Pattern)
+├── 🚀 guida-operativa.md                                      # Guida operativa passo-passo (flusso sequenziale e step concreti per la specifica)
+├── 🛠️ guida-git.md                                            # Guida pratica a Git/GitHub per collaboratori del gruppo
+├── 💡 idea.md                                                 # Idea sintetica del progetto per allineare rapidamente il gruppo
+├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business MyAma
 ├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
 ├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
 │
@@ -60,11 +63,14 @@ PROGETTOISW/
 ## 📋 Descrizione Dettagliata delle Cartelle e dei File
 
 ### 0. File Principali di Root
-- **[`README.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/README.md)**: Presentazione generale del repository con badge, navigazione rapida, visione del progetto MyAma e riepilogo dei requisiti d'esame.
-- **[`guida-progetto.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/guida-progetto.md)**: Guida operativa esaustiva (passo per passo) che spiega come condurre concretamente il progetto, quali decisioni prendere, gli schemi metodologici e i criteri di validazione per ogni fase.
-- **[`ideaprogetto.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/ideaprogetto.md)**: Documento di visione e analisi di dominio per "MyAma", che illustra obiettivi, attori, servizi, regole di business e opportunità di modellazione OOA/Design Pattern.
-- **[`infoprof.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/infoprof.md)**: Istruzioni ufficiali del docente per il task progettuale e scadenze di consegna.
-- **[`tree.md`](file:///c:/Users/Luca/Desktop/PROGETTOISW/tree.md)**: Mappa strutturale completa dell'intera repository con descrizione oneline di ogni elemento.
+- **[`README.md`](./README.md)**: Presentazione generale del repository con badge, indice di navigazione rapida, visione del progetto MyAma e sintesi dei requisiti d'esame.
+- **[`guida-progetto.md`](./guida-progetto.md)**: **Teoria orientata al progetto & Modello Mentale**: guida che costruisce il filo conduttore logico del progetto (perché si parte dal Problem Statement, come si passa agli attori e ai Use Case, come dai Use Case si ricavano i requisiti, perché servono i diagrammi Activity/Sequence/Class e perché i Design Pattern arrivano solo su un modello sufficientemente maturo).
+- **[`guida-operativa.md`](./guida-operativa.md)**: **Guida Operativa Passo-Passo**: manuale pratico che scandisce il workflow concreto di redazione della specifica (Problem Statement $\to$ Glossario $\to$ Attori $\to$ Use Case $\to$ Requisiti $\to$ Verificabilità $\to$ Activity $\to$ Classi candidate $\to$ Bozza Class Diagram $\to$ BCE $\to$ Sequence $\to$ Class Unrefined $\to$ Class Refined $\to$ Problemi di design & Design Pattern $\to$ Revisione), con analisi delle fasi parallelizzabili per il team.
+- **[`guida-git.md`](./guida-git.md)**: **Guida Git & GitHub per Collaboratori**: istruzioni operative per il team (accettazione inviti, setup iniziale, comandi quotidiani `pull`/`add`/`commit`/`push`, branch di lavoro e risoluzione assistita dei conflitti).
+- **[`idea.md`](./idea.md)**: **Visione Sintetica del Progetto**: documento agile e intuitivo per allineare l'intero gruppo sul funzionamento di massima di MyAma (cittadino, sedi, ritiro a domicilio, conferimento e ruoli dei lavoratori AMA).
+- **[`ideaprogetto.md`](./ideaprogetto.md)**: **Dominio & Analisi Approfondita**: documento formale con analisi del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA.
+- **[`infoprof.md`](./infoprof.md)**: Istruzioni ufficiali del docente (Prof. Andrea D'Ambrogio) relative a standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame.
+- **[`tree.md`](./tree.md)**: Mappa strutturale completa dell'intera repository con descrizione *oneline* e dettagliata di ogni singolo elemento.
 
 ---
 

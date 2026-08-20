@@ -23,52 +23,33 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 ## 🧭 Navigazione Rapida nei Documenti di Progetto
 
-| Documento | Descrizione |
-|---|---|
-| 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Guida Operativa Completa**: manuale passo-passo che guida il team dalla comprensione del dominio fino alla consegna finale (scelte operative, teoria necessaria, benchmark e criteri di autovalutazione). |
-| 💡 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Visione, Dominio e Idea Progettuale**: analisi del problema (*problem statement*), attori coinvolti, servizi erogati, regole di business e opportunità di applicazione dei Design Pattern. |
-| 📌 **[`infoprof.md`](./infoprof.md)** | **Istruzioni Ufficiali & Guida Esame**: requisiti formali del docente (IEEE 830-1998, OOA, Visual Paradigm, appendice Design Pattern) e scadenze di consegna. |
-| 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository**: indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
+| Documento | Natura | Descrizione |
+|---|---|---|
+| 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
+| 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
+| 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
+| 🚀 **[`guida-operativa.md`](./guida-operativa.md)** | **Guida Operativa Passo-Passo** | Manuale pratico che scandisce il workflow concreto di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
+| 🛠️ **[`guida-git.md`](./guida-git.md)** | **Guida Collaboratori Git** | Guida pratica per i membri del team (accettazione inviti, setup, ciclo `pull`/`add`/`commit`/`push`, gestione branch e risoluzione conflitti). |
+| 📌 **[`infoprof.md`](./infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
+| 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository** | Indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
 
 ---
 
-## 📚 Trascrizioni Integrali dei Progetti di Riferimento (Consultabili in Markdown)
+## 🔄 Il Flusso di Lavoro Metodologico (dall'Idea alla Specifica)
 
-Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni sono disponibili in formato `.md`:
+Come illustrato in [`guida-progetto.md`](./guida-progetto.md) e dettagliato in [`guida-operativa.md`](./guida-operativa.md), la redazione della specifica segue una sequenza rigorosa e incrementale:
 
-- 🐟 **[`ALTRI/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
-- 🏨 **[`ALTRI/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
-- 🍽️ **[`ALTRI/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
-- ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
-
----
-
-## 📁 Struttura della Repository
-
-```text
-PROGETTOISW/
-├── 📄 README.md                                              # Presentazione generale del repository
-├── 📘 guida-progetto.md                                       # Guida operativa passo-passo per MyAma
-├── 📄 ideaprogetto.md                                         # Documento di visione e dominio MyAma
-├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
-├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
-│
-├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
-│   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
-│   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
-│
-├── 📂 ALTRI/                                                 # Benchmark e progetti d'esame completi di riferimento
-│   ├── 📝 Progetto_Cipolletta_Pesca.md                       # Trascrizione Markdown completa (76 pag.)
-│   ├── 📝 Progetto_Mongelli_Hotel.md                         # Trascrizione Markdown completa (59 pag.)
-│   ├── 📝 Progetto_Bianchini_RistorApp.md                    # Trascrizione Markdown completa (80 pag.)
-│   ├── 📂 FileProgetto/                                      # Modelli Visual Paradigm (.vpp) estratti "Hotel"
-│   ├── 📂 Progetto_Bianchini_Corsetti_Mazzenga/              # Relazione PDF + sorgenti .vpp estratti "RistorApp"
-│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # PDF originale "Pesca"
-│   └── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # PDF originale "Hotel"
-│
-└── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
-    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
-    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso di Andrea (50 figure)
+```mermaid
+flowchart TD
+    A[1. Problem Statement & Glossario] --> B[2. Attori & Use Case Diagram]
+    B --> C[3. Documentazione Use Case & System Requirements]
+    C --> D[4. Criteri di Verificabilità dei Requisiti]
+    D --> E[5. Activity Diagram Scenari Complessi]
+    E --> F[6. Identificazione Classi Candidate & Bozza Class Diagram]
+    F --> G[7. BCE Pattern & Sequence Diagram di Realizzazione]
+    G --> H[8. Unrefined Class Diagram Consolidato]
+    H --> I[9. Analisi Criticità di Design & Applicazione Design Pattern GoF]
+    I --> L[10. Refined Class Diagram & Revisione Finale Documento]
 ```
 
 ---
@@ -97,10 +78,54 @@ graph TD
 ```
 
 ### Ruoli & Attori Principali:
-- **Cittadino (Cliente)**: Autenticazione (credenziali / SPID), invio richiesta con geolocalizzazione e upload foto rifiuto, preventivo, tracking stato, recensione post-servizio.
-- **Autista AMA (Lavoratore)**: Consultazione itinerario, gestione capienza veicolo ($\sum \text{Pesi} \le \text{CaricoMax}$), registrazione esito ritiro.
-- **Operatore di Sede (Lavoratore)**: Gestione varchi centri di raccolta, verifica conformità rifiuto e convalida scarico.
-- **Amministratore / Logistica**: Gestione sedi, associazione zone/CAP, anagrafica mezzi, turnazione e tariffari.
+- **Cittadino (Cliente)**: Autenticazione (credenziali / SPID), richiesta di ritiro a domicilio o conferimento in sede, geolocalizzazione, upload foto/dati rifiuto, preventivo e tracking stato.
+- **Autista AMA (Lavoratore)**: Consultazione itinerario, gestione capienza veicolo ($\sum \text{Pesi} \le \text{CaricoMax}$), registrazione esito ritiro a domicilio.
+- **Operatore di Sede (Lavoratore)**: Gestione varchi dei centri di raccolta, verifica conformità rifiuto e convalida scarico.
+- **Amministratore / Logistica**: Gestione sedi, associazione zone/CAP, anagrafica mezzi, turnazione lavoratori e tariffari.
+
+---
+
+## 📚 Trascrizioni Integrali dei Progetti di Riferimento
+
+Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono disponibili in formato Markdown `.md`:
+
+- 🐟 **[`ALTRI/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
+- 🏨 **[`ALTRI/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
+- 🍽️ **[`ALTRI/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
+
+---
+
+## 📁 Struttura della Repository
+
+```text
+PROGETTOISW/
+├── 📄 README.md                                              # Presentazione generale del repository
+├── 💡 idea.md                                                 # Idea sintetica del progetto per allineare il gruppo
+├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business
+├── 📘 guida-progetto.md                                       # Teoria orientata al progetto e modello mentale
+├── 🚀 guida-operativa.md                                      # Guida operativa passo-passo per redigere la specifica
+├── 🛠️ guida-git.md                                            # Guida pratica Git/GitHub per i collaboratori
+├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
+├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
+│
+├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
+│   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
+│   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
+│
+├── 📂 ALTRI/                                                 # Benchmark e progetti d'esame completi di riferimento
+│   ├── 📝 Progetto_Cipolletta_Pesca.md                       # Trascrizione Markdown completa (76 pag.)
+│   ├── 📝 Progetto_Mongelli_Hotel.md                         # Trascrizione Markdown completa (59 pag.)
+│   ├── 📝 Progetto_Bianchini_RistorApp.md                    # Trascrizione Markdown completa (80 pag.)
+│   ├── 📂 FileProgetto/                                      # Modelli Visual Paradigm (.vpp) estratti "Hotel"
+│   ├── 📂 Progetto_Bianchini_Corsetti_Mazzenga/              # Relazione PDF + sorgenti .vpp estratti "RistorApp"
+│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # PDF originale "Pesca"
+│   └── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # PDF originale "Hotel"
+│
+└── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
+    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
+    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso di Andrea (50 figure)
+```
 
 ---
 
