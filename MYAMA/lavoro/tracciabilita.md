@@ -6,7 +6,7 @@ L'obiettivo generale è fornire un unico sistema attraverso il quale i cittadini
 
 Il sistema dovrà quindi mettere in comunicazione le esigenze del cittadino con le attività operative svolte da AMA, permettendo ai diversi utenti di accedere solamente alle informazioni e alle operazioni previste dal proprio ruolo.
 
-L'utilizzo di MyAma potrà avvenire sia attraverso i disWpositivi personali dei cittadini sia attraverso le postazioni utilizzate dal personale AMA. L'accesso alle diverse parti del sistema sarà quindi differenziato in base alla tipologia di utenza.
+L'utilizzo di MyAma potrà avvenire sia attraverso i device personali dei cittadini sia attraverso le postazioni utilizzate dal personale AMA. L'accesso alle diverse parti del sistema sarà quindi differenziato in base alla tipologia di utenza.
 
 ## Attori
 
