@@ -3,7 +3,7 @@
 | Termine | Descrizione |
 |---|---|
 | MyAma | Piattaforma digitale dedicata alla gestione delle prenotazioni per lo smaltimento di rifiuti ingombranti, sia tramite ritiro a domicilio sia tramite conferimento presso una sede AMA. |
-| Cliente | Cittadino che utilizza MyAma per prenotare un servizio di smaltimento di rifiuti ingombranti. È l'utente esterno principale del sistema. |
+| Cittadino | Cliente che utilizza MyAma per prenotare un servizio di smaltimento di rifiuti ingombranti. È l'utente esterno principale del sistema. |
 | Autista AMA | Lavoratore AMA che si occupa dei ritiri a domicilio. Visualizza le attività assegnate, raggiunge l'indirizzo indicato dal Cliente, effettua il ritiro e ne registra l'esito. |
 | Operatore di sede | Lavoratore AMA che opera presso una sede. Gestisce l'arrivo del Cliente, verifica la prenotazione e registra l'esito del conferimento. |
 | Gestore / Responsabile operativo AMA | Eventuale figura interna ad AMA che gestisce gli aspetti organizzativi del servizio: sedi, zone servite, lavoratori, disponibilità, veicoli e assegnazioni. La sua inclusione dipende dallo scope definitivo del progetto. |
