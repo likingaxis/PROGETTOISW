@@ -32,11 +32,11 @@
 4. Registrare esito del conferimento
 
 # Amministratore sede AMA
-- Gestisce la registrazione del personale AMA
-- Gestisce disponibilità dei lavoratori
-- Gestisce disponibilità dei veicoli
-- gestisce disponibilità di sedi e fasce orarie
-- gestisce associazione tra sedi e zone/CAP
+1.  Gestisce la registrazione del personale AMA
+2.  Gestisce disponibilità dei lavoratori
+3.  Gestisce disponibilità dei veicoli
+4.  gestisce disponibilità di sedi e fasce orarie (**include**[5])
+5.  gestisce associazione tra sedi e zone/CAP
 
 # Amministratore supremo AMA
 - aggiunge amministratori
