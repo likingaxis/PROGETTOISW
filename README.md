@@ -25,11 +25,13 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 | Documento | Natura | Descrizione |
 |---|---|---|
+| 📂 **[`MYAMA/`](./MYAMA)** | **Cartella Progetto** | **Spazio di lavoro del progetto**: contiene la specifica formale IEEE 830, i file di lavoro (`decisioni.md`, `tracciabilita.md`) e i modelli Visual Paradigm. |
 | 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
 | 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
 | 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
-| 🚀 **[`guida-operativa.md`](./guida-operativa.md)** | **Guida Operativa Passo-Passo** | Manuale pratico che scandisce il workflow concreto di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
-| 🛠️ **[`guida-git.md`](./guida-git.md)** | **Guida Collaboratori Git** | Guida pratica per i membri del team (accettazione inviti, setup, ciclo `pull`/`add`/`commit`/`push`, gestione branch e risoluzione conflitti). |
+| 🚀 **[`guida-operativa.md`](./guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
+| 👥 **[`divisione-compiti.md`](./divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
+| 🛠️ **[`guida-git.md`](./guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
 | 📌 **[`infoprof.md`](./infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
 | 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository** | Indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
 
@@ -105,9 +107,20 @@ PROGETTOISW/
 ├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business
 ├── 📘 guida-progetto.md                                       # Teoria orientata al progetto e modello mentale
 ├── 🚀 guida-operativa.md                                      # Guida operativa passo-passo per redigere la specifica
+├── 👥 divisione-compiti.md                                    # Piano di divisione compiti per 5 persone
 ├── 🛠️ guida-git.md                                            # Guida pratica Git/GitHub per i collaboratori
 ├── 📄 infoprof.md                                            # Linee guida esame e scadenze del docente
 ├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
+│
+├── 📂 MYAMA/                                                 # Cartella di sviluppo del progetto d'esame
+│   ├── 📂 specifica/
+│   │   └── 📄 specifica.md                                   # Documento SRS standard IEEE 830-1998 di MyAma
+│   ├── 📂 lavoro/
+│   │   ├── 📄 decisioni.md                                   # Registro convenzioni terminologiche e prefissi ID
+│   │   └── 📄 tracciabilita.md                               # Matrice di tracciabilità Requisiti-Use Case-Classi
+│   └── 📂 visual-paradigm/
+│       ├── 📄 README.md                                      # Linee guida per la gestione del file .vpp e export
+│       └── 📂 diagrammi/                                     # Immagini ad alta risoluzione dei diagrammi UML
 │
 ├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
 │   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
@@ -134,7 +147,7 @@ PROGETTOISW/
 In conformità con quanto richiesto dal **Prof. Andrea D'Ambrogio**:
 
 1. **Documento di Specifica Software (SRS)**:
-   - Redatto secondo il template standard **IEEE 830-1998**.
+   - Redatto secondo il template standard **IEEE 830-1998** (disponibile in [`MYAMA/specifica/specifica.md`](./MYAMA/specifica/specifica.md)).
    - Capitolo 1: *Introduzione & Problem Statement*.
    - Capitolo 2: *Glossario dei termini*.
    - Capitolo 3: *User Requirements Definition* (Funzionali, Non Funzionali e di Dominio).
