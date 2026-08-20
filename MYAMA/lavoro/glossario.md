@@ -6,7 +6,6 @@
 | Cittadino | Utente che utilizza MyAma per prenotare un servizio di smaltimento di rifiuti ingombranti. È l'utente esterno principale del sistema. |
 | Autista AMA | Lavoratore AMA che si occupa dei ritiri a domicilio. Visualizza le attività assegnate, raggiunge l'indirizzo indicato dal Cliente, effettua il ritiro e ne registra l'esito. |
 | Operatore di sede | Lavoratore AMA che opera presso una sede. Gestisce l'arrivo del Cliente, verifica la prenotazione e registra l'esito del conferimento. |
-| Gestore / Responsabile operativo AMA | Eventuale figura interna ad AMA che gestisce gli aspetti organizzativi del servizio: sedi, zone servite, lavoratori, disponibilità, veicoli e assegnazioni. La sua inclusione dipende dallo scope definitivo del progetto. |
 | Lavoratore AMA | Figura generica che comprende Autisti e Operatori di sede. Ogni lavoratore ha un ruolo, una disponibilità e può essere assegnato ad attività compatibili con le proprie competenze. |
 | Ritiro a domicilio | Servizio in cui AMA preleva il rifiuto ingombrante presso l'indirizzo indicato dal Cliente. Richiede l'assegnazione di un Autista, di un Veicolo e la verifica che la zona sia servita. |
 | Conferimento | Consegna del rifiuto da parte del Cliente presso una sede AMA. Il Cliente si presenta personalmente e un Operatore di sede gestisce l'accettazione e la registrazione dell'esito. |
