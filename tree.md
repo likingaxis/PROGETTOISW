@@ -32,29 +32,26 @@ PROGETTOISW/
 │   ├── 📄 BASI PROGETTO.pdf                                  # PDF originale del progetto Basi di Dati (30 pag.)
 │   └── 📝 BASI_PROGETTO.md                                   # Trascrizione testuale integrale pagina per pagina
 │
-├── 📂 ALTRI/
-│   ├── 📝 Progetto_Cipolletta_Pesca.md                       # Trascrizione testuale integrale progetto "Pesca" (76 pag.)
-│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # PDF originale "Campionato Pesca Sportiva"
+├── 📂 ALTRI/                                                 # Benchmark e relazioni d'esame suddivise per progetto
+│   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
+│   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
+│   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale
 │   │
-│   ├── 📝 Progetto_Mongelli_Hotel.md                         # Trascrizione testuale integrale progetto "Hotel" (59 pag.)
-│   ├── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # PDF originale "Hotel TorVergata"
+│   ├── 📂 Progetto_Hotel_Mongelli/                           # Progetto "Hotel TorVergata"
+│   │   ├── 📝 Progetto_Mongelli_Hotel.md                     # Trascrizione Markdown completa (59 pag.)
+│   │   ├── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf         # PDF originale
+│   │   ├── 📂 FileProgetto/                                  # Modelli Visual Paradigm (.vpp) estratti
+│   │   └── 📦 FileProgetto.zip
 │   │
-│   ├── 📝 Progetto_Bianchini_RistorApp.md                    # Trascrizione testuale integrale progetto "RistorApp" (80 pag.)
-│   ├── 📂 Progetto_Bianchini_Corsetti_Mazzenga/              # Cartella estratta con PDF e sorgenti .vpp
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.pdf
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.vpp
-│   │   └── 📄 Solo per i Class Diagrams (Unrefined, Refined).vpp
-│   ├── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip
+│   ├── 📂 Progetto_RistorApp_Bianchini/                      # Progetto "RistorApp"
+│   │   ├── 📝 Progetto_Bianchini_RistorApp.md                # Trascrizione Markdown completa (80 pag.)
+│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.pdf       # PDF originale
+│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.vpp       # Modello sorgente Visual Paradigm
+│   │   ├── 📄 Solo per i Class Diagrams (Unrefined, Refined).vpp
+│   │   └── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip
 │   │
-│   ├── 📂 FileProgetto/                                      # Cartella estratta dei modelli Visual Paradigm "Hotel"
-│   │   ├── 📄 DESIGNPATTERNS.vpp
-│   │   ├── 📄 CLASSE UNREFINED.vpp
-│   │   ├── 📄 CLASSE REFINED.vpp
-│   │   ├── 📄 UTENTE.vpp
-│   │   ├── 📄 CLIENTE.vpp
-│   │   ├── 📄 SERVIZIO.vpp
-│   │   └── 📄 AMMINISTRAZIONE.vpp
-│   └── 📦 FileProgetto.zip
+│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno"
+│       └── 📄 Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf # PDF originale
 │
 └── 📂 TEORIA/
     ├── 📂 ISW_obsidian_full/
@@ -108,16 +105,25 @@ PROGETTOISW/
 ---
 
 ### 3. `ALTRI/`
-*Cartella contenente i tre progetti d'esame completi di riferimento (relazioni in PDF e in Markdown `.md`, oltre ai sorgenti UML `.vpp` estratti e compressi).*
+*Cartella contenente i progetti d'esame di riferimento, ciascuno organizzato in una propria sottocartella dedicata contenente PDF, trascrizioni Markdown `.md` e modelli UML `.vpp`.*
 
-- **[`ALTRI/`](./ALTRI)**: Raccolta di progetti benchmark.
-- **[`Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Cipolletta_Pesca.md)**: Trascrizione testuale completa (76 pagine) del progetto "Campionato di Pesca Sportiva".
-- **[`Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf`](./ALTRI/Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf)**: File PDF originale del progetto Pesca.
-- **[`Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Mongelli_Hotel.md)**: Trascrizione testuale completa (59 pagine) del progetto "Hotel TorVergata".
-- **[`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./ALTRI/Progetto_Mongelli_Pace_Rossi_Sandu.pdf)**: File PDF originale del progetto Hotel.
-- **[`Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_Bianchini_RistorApp.md)**: Trascrizione testuale completa (80 pagine) del progetto "RistorApp".
-- **[`Progetto_Bianchini_Corsetti_Mazzenga/`](./ALTRI/Progetto_Bianchini_Corsetti_Mazzenga)**: Cartella con PDF e sorgenti Visual Paradigm estratti per RistorApp.
-- **[`FileProgetto/`](./ALTRI/FileProgetto)**: Cartella con i modelli sorgente Visual Paradigm (`.vpp`) per il progetto Hotel TorVergata.
+- **[`ALTRI/`](./ALTRI)**: Raccolta dei progetti benchmark.
+- **[`Progetto_Pesca_Cipolletta/`](./ALTRI/Progetto_Pesca_Cipolletta)**:
+  - [`Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md): Trascrizione testuale integrale (76 pagine).
+  - [`Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf): Documento PDF originale.
+- **[`Progetto_Hotel_Mongelli/`](./ALTRI/Progetto_Hotel_Mongelli)**:
+  - [`Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md): Trascrizione testuale integrale (59 pagine).
+  - [`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf): Documento PDF originale.
+  - [`FileProgetto/`](./ALTRI/Progetto_Hotel_Mongelli/FileProgetto): Modelli sorgente Visual Paradigm estratti (`.vpp`).
+  - [`FileProgetto.zip`](./ALTRI/Progetto_Hotel_Mongelli/FileProgetto.zip): Archivio compresso dei modelli.
+- **[`Progetto_RistorApp_Bianchini/`](./ALTRI/Progetto_RistorApp_Bianchini)**:
+  - [`Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md): Trascrizione testuale integrale (80 pagine).
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.pdf`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf): Documento PDF originale.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.vpp`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.vpp): File di progetto Visual Paradigm.
+  - [`Solo per i Class Diagrams (Unrefined, Refined).vpp`](./ALTRI/Progetto_RistorApp_Bianchini/Solo%20per%20i%20Class%20Diagrams%20(Unrefined,%20Refined).vpp): File di modelli per i Class Diagram.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.zip`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.zip): Archivio compresso del progetto.
+- **[`Progetto_Buongiorno_Machowski/`](./ALTRI/Progetto_Buongiorno_Machowski)**:
+  - [`Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf): Documento PDF originale.
 
 ---
 

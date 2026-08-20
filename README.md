@@ -89,11 +89,12 @@ graph TD
 
 ## 📚 Trascrizioni Integrali dei Progetti di Riferimento
 
-Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono disponibili in formato Markdown `.md`:
+Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono organizzate in sottocartelle dedicate:
 
-- 🐟 **[`ALTRI/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
-- 🏨 **[`ALTRI/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
-- 🍽️ **[`ALTRI/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- 🐟 **[`ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
+- 🏨 **[`ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
+- 🍽️ **[`ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- 🏋️ **[`ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno*.
 - ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
 
 ---
@@ -127,13 +128,22 @@ PROGETTOISW/
 │   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
 │
 ├── 📂 ALTRI/                                                 # Benchmark e progetti d'esame completi di riferimento
-│   ├── 📝 Progetto_Cipolletta_Pesca.md                       # Trascrizione Markdown completa (76 pag.)
-│   ├── 📝 Progetto_Mongelli_Hotel.md                         # Trascrizione Markdown completa (59 pag.)
-│   ├── 📝 Progetto_Bianchini_RistorApp.md                    # Trascrizione Markdown completa (80 pag.)
-│   ├── 📂 FileProgetto/                                      # Modelli Visual Paradigm (.vpp) estratti "Hotel"
-│   ├── 📂 Progetto_Bianchini_Corsetti_Mazzenga/              # Relazione PDF + sorgenti .vpp estratti "RistorApp"
-│   ├── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf        # PDF originale "Pesca"
-│   └── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf             # PDF originale "Hotel"
+│   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
+│   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
+│   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale
+│   ├── 📂 Progetto_Hotel_Mongelli/                           # Progetto "Hotel TorVergata"
+│   │   ├── 📝 Progetto_Mongelli_Hotel.md                     # Trascrizione Markdown completa (59 pag.)
+│   │   ├── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf         # PDF originale
+│   │   ├── 📂 FileProgetto/                                  # Modelli Visual Paradigm (.vpp) estratti
+│   │   └── 📦 FileProgetto.zip
+│   ├── 📂 Progetto_RistorApp_Bianchini/                      # Progetto "RistorApp"
+│   │   ├── 📝 Progetto_Bianchini_RistorApp.md                # Trascrizione Markdown completa (80 pag.)
+│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.pdf       # PDF originale
+│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.vpp       # Modello sorgente Visual Paradigm
+│   │   ├── 📄 Solo per i Class Diagrams...vpp
+│   │   └── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip
+│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno"
+│       └── 📄 Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf
 │
 └── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
     ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
