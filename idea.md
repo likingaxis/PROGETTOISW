@@ -122,7 +122,6 @@ Qui diventano particolarmente importanti:
 # Chi utilizza MyAma
 
 ## Cittadino / Cliente
-
 È la persona che utilizza il servizio per smaltire un rifiuto ingombrante.
 
 Le attività centrali che immaginiamo per il cittadino sono:
@@ -138,7 +137,6 @@ Le attività centrali che immaginiamo per il cittadino sono:
 Il cittadino non deve occuparsi dell'organizzazione interna di AMA: non decide quale lavoratore o quale veicolo verrà assegnato.
 
 ## Autista AMA
-
 È il lavoratore che si occupa dei ritiri a domicilio.
 
 Dovrebbe poter vedere le attività che gli vengono assegnate e le informazioni necessarie per svolgerle, ad esempio:
@@ -151,7 +149,6 @@ Dovrebbe poter vedere le attività che gli vengono assegnate e le informazioni n
 Dopo il servizio registra l'esito del ritiro.
 
 ## Operatore di sede
-
 Lavora presso il centro in cui il cittadino porta personalmente il rifiuto.
 
 Dovrebbe poter:
@@ -162,7 +159,6 @@ Dovrebbe poter:
 - registrare l'esito del conferimento.
 
 ## Gestione operativa AMA
-
 È probabile che serva anche una figura che gestisca gli aspetti organizzativi del servizio, ad esempio:
 
 - sedi;
