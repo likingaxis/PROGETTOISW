@@ -25,6 +25,8 @@ PROGETTOISW/
 │   │   └── 📄 specifica.md                                   # Documento di Specifica Software (SRS) standard IEEE 830-1998
 │   ├── 📂 lavoro/
 │   │   ├── 📄 decisioni.md                                   # Registro decisioni terminologiche e prefissi identificativi (ID)
+│   │   ├── 📄 glossario.md                                   # Glossario dei termini di dominio
+│   │   ├── 📄 requisiti.md                                   # Bozza requisiti funzionali, non funzionali e di dominio
 │   │   └── 📄 tracciabilita.md                               # Matrice di tracciabilità Requisiti ↔ Use Case ↔ Diagrammi
 │   └── 📂 visual-paradigm/
 │       ├── 📄 README.md                                      # Guida all'uso dei file .vpp e regole di export
@@ -97,6 +99,8 @@ PROGETTOISW/
 - **[`MYAMA/`](./MYAMA)**: Cartella di sviluppo del progetto MyAma.
 - **[`MYAMA/specifica/specifica.md`](./MYAMA/specifica/specifica.md)**: Documento principale della Specifica dei Requisiti Software (SRS) conforme allo standard IEEE 830-1998 (Capitoli 1-5 ed Appendice Design Pattern).
 - **[`MYAMA/lavoro/decisioni.md`](./MYAMA/lavoro/decisioni.md)**: Registro delle decisioni terminologiche, naming conventions e prefissi identificativi (UC, RF, RNF, RD).
+- **[`MYAMA/lavoro/glossario.md`](./MYAMA/lavoro/glossario.md)**: Glossario dei termini di dominio del sistema MyAma.
+- **[`MYAMA/lavoro/requisiti.md`](./MYAMA/lavoro/requisiti.md)**: Bozza di lavoro dei requisiti funzionali, non funzionali e di dominio.
 - **[`MYAMA/lavoro/tracciabilita.md`](./MYAMA/lavoro/tracciabilita.md)**: Matrice di tracciabilità bidirezionale tra requisiti utente, casi d'uso, diagrammi dinamici e classi di dominio.
 - **[`MYAMA/visual-paradigm/README.md`](./MYAMA/visual-paradigm/README.md)**: Guida pratica per la gestione dei file sorgente `.vpp` e l'esportazione dei diagrammi in alta risoluzione.
 - **[`MYAMA/visual-paradigm/diagrammi/`](./MYAMA/visual-paradigm/diagrammi)**: Directory destinata ad ospitare le immagini PNG/SVG esportate da Visual Paradigm.

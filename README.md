@@ -123,9 +123,11 @@ PROGETTOISW/
 │   │   └── 📄 specifica.md                                   # Documento SRS standard IEEE 830-1998 di MyAma
 │   ├── 📂 lavoro/
 │   │   ├── 📄 decisioni.md                                   # Registro convenzioni terminologiche e prefissi ID
+│   │   ├── 📄 glossario.md                                   # Glossario dei termini di dominio
+│   │   ├── 📄 requisiti.md                                   # Bozza requisiti funzionali, non funzionali e di dominio
 │   │   └── 📄 tracciabilita.md                               # Matrice di tracciabilità Requisiti-Use Case-Classi
 │   └── 📂 visual-paradigm/
-│       ├── 📄 README.md                                      # Linee guida per la gestione del file .vpp e export
+│       ├── 📄 README.md                                      # Linee guida per la gestione dei file .vpp e export
 │       └── 📂 diagrammi/                                     # Immagini ad alta risoluzione dei diagrammi UML
 │
 ├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
