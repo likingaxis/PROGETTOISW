@@ -39,6 +39,6 @@
 - gestisce disponibilità di sedi e fasce orarie
 - gestisce associazione tra sedi e zone/CAP
 
-# Amministratore supremo AMA
+# Capo Aziendale AMA
 - aggiunge amministratori
 - rimuove amministratori
