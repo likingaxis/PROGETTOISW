@@ -32,7 +32,7 @@ PROGETTOISW/
 │   ├── 📄 BASI PROGETTO.pdf                                  # PDF originale del progetto Basi di Dati (30 pag.)
 │   └── 📝 BASI_PROGETTO.md                                   # Trascrizione testuale integrale pagina per pagina
 │
-├── 📂 ALTRI/                                                 # Benchmark e relazioni d'esame suddivise per progetto
+├── 📂 progettialtrui/                                        # Benchmark e relazioni d'esame suddivise per progetto
 │   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
 │   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
 │   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale
@@ -104,26 +104,26 @@ PROGETTOISW/
 
 ---
 
-### 3. `ALTRI/`
+### 3. `progettialtrui/`
 *Cartella contenente i progetti d'esame di riferimento, ciascuno organizzato in una propria sottocartella dedicata contenente PDF, trascrizioni Markdown `.md` e modelli UML `.vpp`.*
 
-- **[`ALTRI/`](./ALTRI)**: Raccolta dei progetti benchmark.
-- **[`Progetto_Pesca_Cipolletta/`](./ALTRI/Progetto_Pesca_Cipolletta)**:
-  - [`Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md): Trascrizione testuale integrale (76 pagine).
-  - [`Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf): Documento PDF originale.
-- **[`Progetto_Hotel_Mongelli/`](./ALTRI/Progetto_Hotel_Mongelli)**:
-  - [`Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md): Trascrizione testuale integrale (59 pagine).
-  - [`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf): Documento PDF originale.
-  - [`FileProgetto/`](./ALTRI/Progetto_Hotel_Mongelli/FileProgetto): Modelli sorgente Visual Paradigm estratti (`.vpp`).
-  - [`FileProgetto.zip`](./ALTRI/Progetto_Hotel_Mongelli/FileProgetto.zip): Archivio compresso dei modelli.
-- **[`Progetto_RistorApp_Bianchini/`](./ALTRI/Progetto_RistorApp_Bianchini)**:
-  - [`Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md): Trascrizione testuale integrale (80 pagine).
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.pdf`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf): Documento PDF originale.
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.vpp`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.vpp): File di progetto Visual Paradigm.
-  - [`Solo per i Class Diagrams (Unrefined, Refined).vpp`](./ALTRI/Progetto_RistorApp_Bianchini/Solo%20per%20i%20Class%20Diagrams%20(Unrefined,%20Refined).vpp): File di modelli per i Class Diagram.
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.zip`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.zip): Archivio compresso del progetto.
-- **[`Progetto_Buongiorno_Machowski/`](./ALTRI/Progetto_Buongiorno_Machowski)**:
-  - [`Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf): Documento PDF originale.
+- **[`progettialtrui/`](./progettialtrui)**: Raccolta dei progetti benchmark di altri studenti.
+- **[`Progetto_Pesca_Cipolletta/`](./progettialtrui/Progetto_Pesca_Cipolletta)**:
+  - [`Progetto_Cipolletta_Pesca.md`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md): Trascrizione testuale integrale (76 pagine).
+  - [`Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf): Documento PDF originale.
+- **[`Progetto_Hotel_Mongelli/`](./progettialtrui/Progetto_Hotel_Mongelli)**:
+  - [`Progetto_Mongelli_Hotel.md`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md): Trascrizione testuale integrale (59 pagine).
+  - [`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf): Documento PDF originale.
+  - [`FileProgetto/`](./progettialtrui/Progetto_Hotel_Mongelli/FileProgetto): Modelli sorgente Visual Paradigm estratti (`.vpp`).
+  - [`FileProgetto.zip`](./progettialtrui/Progetto_Hotel_Mongelli/FileProgetto.zip): Archivio compresso dei modelli.
+- **[`Progetto_RistorApp_Bianchini/`](./progettialtrui/Progetto_RistorApp_Bianchini)**:
+  - [`Progetto_Bianchini_RistorApp.md`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md): Trascrizione testuale integrale (80 pagine).
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.pdf`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf): Documento PDF originale.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.vpp`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.vpp): File di progetto Visual Paradigm.
+  - [`Solo per i Class Diagrams (Unrefined, Refined).vpp`](./progettialtrui/Progetto_RistorApp_Bianchini/Solo%20per%20i%20Class%20Diagrams%20(Unrefined,%20Refined).vpp): File di modelli per i Class Diagram.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.zip`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.zip): Archivio compresso del progetto.
+- **[`Progetto_Buongiorno_Machowski/`](./progettialtrui/Progetto_Buongiorno_Machowski)**:
+  - [`Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf): Documento PDF originale.
 
 ---
 

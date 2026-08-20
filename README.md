@@ -23,15 +23,18 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 ## 🧭 Navigazione Rapida nei Documenti di Progetto
 
-| Documento | Natura | Descrizione |
+| Risorsa | Natura | Descrizione |
 |---|---|---|
-| 📂 **[`MYAMA/`](./MYAMA)** | **Cartella Progetto** | **Spazio di lavoro del progetto**: contiene la specifica formale IEEE 830, i file di lavoro (`decisioni.md`, `tracciabilita.md`) e i modelli Visual Paradigm. |
+| 📂 **[`MYAMA/`](./MYAMA)** | **Cartella Progetto** | **Spazio di lavoro del progetto**: specifica formale IEEE 830, file operativi (`decisioni.md`, `tracciabilita.md`) e modelli Visual Paradigm. |
 | 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
 | 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
 | 📘 **[`guida-progetto.md`](./guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
 | 🚀 **[`guida-operativa.md`](./guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
 | 👥 **[`divisione-compiti.md`](./divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
 | 🛠️ **[`guida-git.md`](./guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
+| 📚 **[`progettialtrui/`](./progettialtrui)** | **Benchmark Progetti** | Relazioni d'esame complete e modelli UML di riferimento (Pesca, Hotel TorVergata, RistorApp, Buongiorno). |
+| ♻️ **[`MYAMABASIDATI/`](./MYAMABASIDATI)** | **Dominio Pregresso** | Documentazione e trascrizione integrale del progetto originale MyAma per il corso di Basi di Dati. |
+| 📖 **[`TEORIA/`](./TEORIA)** | **Dispense Teoriche** | Compendi completi del corso di Ingegneria del Software (Vault Obsidian con schemi e figure). |
 | 📌 **[`infoprof.md`](./infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
 | 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository** | Indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
 
@@ -87,14 +90,14 @@ graph TD
 
 ---
 
-## 📚 Trascrizioni Integrali dei Progetti di Riferimento
+## 📚 Trascrizioni Integrali dei Progetti di Riferimento (`progettialtrui/`)
 
-Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono organizzate in sottocartelle dedicate:
+Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono organizzate in sottocartelle dedicate dentro [`progettialtrui/`](./progettialtrui):
 
-- 🐟 **[`ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./ALTRI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
-- 🏨 **[`ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./ALTRI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
-- 🍽️ **[`ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./ALTRI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
-- 🏋️ **[`ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./ALTRI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno*.
+- 🐟 **[`progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
+- 🏨 **[`progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
+- 🍽️ **[`progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- 🏋️ **[`progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno*.
 - ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
 
 ---
@@ -127,7 +130,7 @@ PROGETTOISW/
 │   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
 │   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
 │
-├── 📂 ALTRI/                                                 # Benchmark e progetti d'esame completi di riferimento
+├── 📂 progettialtrui/                                        # Benchmark e progetti d'esame completi di riferimento
 │   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
 │   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
 │   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale

@@ -347,7 +347,23 @@ Class Diagram Unrefined
 Class Diagram Refined
 ```
 
-Il valore di questa sequenza si capisce meglio se guardiamo che cosa aggiunge ogni passaggio.
+Questa sequenza descrive **come matura il modello**, non obbliga però a conservare tutti i diagrammi nello stesso progetto Visual Paradigm.
+
+Un progetto precedente di riferimento, per esempio, organizza i sorgenti in più file `.vpp` separati, tra cui file dedicati ad attori o aree (`CLIENTE.vpp`, `UTENTE.vpp`, `SERVIZIO.vpp`, `AMMINISTRAZIONE.vpp`) e file dedicati ai modelli trasversali (`CLASSE UNREFINED.vpp`, `CLASSE REFINED.vpp`, `DESIGNPATTERNS.vpp`).
+
+Quindi dobbiamo distinguere due aspetti:
+
+```text
+ordine logico del progetto
+→ come un modello nasce e viene raffinato
+
+organizzazione dei file .vpp
+→ come il gruppo decide di distribuire materialmente i diagrammi
+```
+
+La prima cosa è importante per capire il progetto; la seconda è una scelta operativa, che verrà trattata nella `guida-operativa.md` e nella `divisione-compiti.md`.
+
+Il valore della sequenza si capisce meglio se guardiamo che cosa aggiunge ogni passaggio.
 
 ---
 
@@ -682,6 +698,7 @@ La successiva `guida-operativa.md` entrerà proprio qui nel dettaglio e spiegher
 - che cosa fare concretamente;
 - quale strumento utilizzare;
 - come costruire i diagrammi;
+- come organizzare i sorgenti Visual Paradigm, anche in più `.vpp` quando questo facilita il lavoro parallelo;
 - che cosa controllare;
 - quando una fase può essere considerata sufficientemente stabile.
 
