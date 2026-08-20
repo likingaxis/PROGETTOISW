@@ -138,7 +138,6 @@ Prima bozza di:
 - problema;
 - obiettivi del sistema;
 - utenti;
-- servizi principali.
 
 ### Coppia — D, E
 
