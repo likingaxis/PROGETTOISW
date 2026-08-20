@@ -119,16 +119,11 @@ PROGETTOISW/
 │   └── 📌 infoprof.md                                        # Linee guida esame e scadenze del docente
 │
 ├── 📂 MYAMA/                                                 # Cartella di sviluppo del progetto d'esame
-│   ├── 📂 specifica/
-│   │   └── 📄 specifica.md                                   # Documento SRS standard IEEE 830-1998 di MyAma
-│   ├── 📂 lavoro/
-│   │   ├── 📄 decisioni.md                                   # Registro convenzioni terminologiche e prefissi ID
-│   │   ├── 📄 glossario.md                                   # Glossario dei termini di dominio
-│   │   ├── 📄 requisiti.md                                   # Bozza requisiti funzionali, non funzionali e di dominio
-│   │   └── 📄 tracciabilita.md                               # Matrice di tracciabilità Requisiti-Use Case-Classi
-│   └── 📂 visual-paradigm/
-│       ├── 📄 README.md                                      # Linee guida per la gestione dei file .vpp e export
-│       └── 📂 diagrammi/                                     # Immagini ad alta risoluzione dei diagrammi UML
+│   ├── 📂 GRUPPO 1/
+│   │   └── 📄 output.md                                      # Bozza introduzione, contesto e attori (Gruppo 1)
+│   ├── 📂 GRUPPO 2/
+│   │   └── 📄 FASE_1 - D, E.md                               # Analisi perimetro, scope e checklist (Gruppo 2)
+│   └── 📄 glossario.md                                       # Glossario dei termini di dominio MyAma
 │
 ├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
 │   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
