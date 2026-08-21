@@ -2,23 +2,27 @@
 
 | Termine | Descrizione |
 |---|---|
-| MyAma | Piattaforma digitale dedicata alla gestione delle prenotazioni per lo smaltimento di rifiuti ingombranti, sia tramite ritiro a domicilio sia tramite conferimento presso una sede AMA. |
-| Cittadino | Utente che utilizza MyAma per prenotare un servizio di smaltimento di rifiuti ingombranti. È l'utente esterno principale del sistema. |
-| Autista AMA | Lavoratore AMA che si occupa dei ritiri a domicilio. Visualizza le attività assegnate, raggiunge l'indirizzo indicato dal Cliente, effettua il ritiro e ne registra l'esito. |
-| Operatore di sede | Lavoratore AMA che opera presso una sede. Gestisce l'arrivo del Cliente, verifica la prenotazione e registra l'esito del conferimento. |
-| Lavoratore AMA | Figura generica che comprende Autisti e Operatori di sede. Ogni lavoratore ha un ruolo, una disponibilità e può essere assegnato ad attività compatibili con le proprie competenze. |
-| Amministratore di sede AMA | Figura responsabile della gestione operativa di una sede AMA. Gestisce la registrazione del personale AMA, le disponibilità dei lavoratori e dei veicoli, le disponibilità della sede e delle fasce orarie e l’associazione tra sedi e CAP o zone servite. |
-| Capo Aziendale AMA | Figura con responsabilità amministrativa a livello aziendale. Gestisce gli Amministratori di sede AMA, potendo aggiungerli o rimuoverli dal sistema. |
-| Ritiro a domicilio | Servizio in cui AMA preleva il rifiuto ingombrante presso l'indirizzo indicato dal Cliente. Richiede l'assegnazione di un Autista, di un Veicolo e la verifica che la zona sia servita. |
-| Conferimento | Consegna del rifiuto da parte del Cliente presso una sede AMA. Il Cliente si presenta personalmente e un Operatore di sede gestisce l'accettazione e la registrazione dell'esito. |
-| Prenotazione | Richiesta registrata nel sistema relativa a un ritiro a domicilio o a un conferimento in sede. Contiene le informazioni sul rifiuto, sulla data e sull'orario scelti e sul Cliente richiedente. Può cambiare stato durante la sua gestione. |
-| Stato della prenotazione | Condizione in cui si trova una prenotazione nel suo ciclo di vita, ad esempio: in attesa, confermata, completata o annullata. |
-| Rifiuto ingombrante | Oggetto di cui il Cliente intende disfarsi attraverso il servizio MyAma. Ogni rifiuto è caratterizzato da una tipologia e da informazioni descrittive. |
-| Tipologia di rifiuto | Classificazione del rifiuto ingombrante (ad esempio mobili, elettrodomestici). Serve a determinare le risorse e le modalità necessarie per il servizio. |
-| Sede AMA | Struttura fisica (centro di raccolta) presso cui il Cliente può conferire personalmente un rifiuto. Ogni sede serve determinati CAP o zone. |
-| CAP / Zona servita | Codice di Avviamento Postale o area geografica associata a una sede AMA. Determina se un indirizzo rientra nel servizio e quali sedi e disponibilità sono accessibili al Cliente. |
-| Veicolo | Mezzo di trasporto AMA utilizzato per effettuare i ritiri a domicilio. Ha una capacità massima che vincola i ritiri assegnabili. |
-| Disponibilità | Fascia temporale (data e orario) in cui un servizio può essere erogato, tenendo conto delle risorse operative quali lavoratori, veicoli e sedi. |
-| Assegnazione | Associazione tra una prenotazione di ritiro e le risorse necessarie alla sua esecuzione: Autista, Veicolo, data e orario. |
-| Esito | Risultato registrato a conclusione di un servizio. Serve a distinguere i servizi completati da quelli annullati o non eseguiti. |
-| Sistema | L'applicazione software MyAma nel suo complesso, comprensiva di tutte le funzionalità offerte ai diversi attori. |
+| **MyAma** | Piattaforma digitale integrata dedicata alla gestione, pianificazione e prenotazione dei servizi di smaltimento dei rifiuti ingombranti e speciali per la città di Roma. |
+| **Cittadino (Non Registrato / Visitatore)** | Utente esterno non autenticato che accede al sistema per consultare informazioni pubbliche sui servizi, tariffe, regolamenti e sedi AMA attive, e che può effettuare la registrazione. |
+| **Cittadino (Registrato)** | Utente esterno autenticato che usufruisce dei servizi di MyAma per richiedere ritiri a domicilio o prenotare conferimenti in sede, monitorare lo stato delle proprie richieste e ricevere notifiche. |
+| **Autista AMA** | Dipendente operativo AMA incaricato dello svolgimento dei ritiri a domicilio. Consulta i ritiri assegnati, raggiunge l'indirizzo indicato dal Cittadino, effettua il carico e registra l'esito del servizio. |
+| **Operatore di sede AMA** | Dipendente operativo AMA che presidia un centro di raccolta (sede/isola ecologica). Gestisce l'accoglienza del Cittadino, verifica la prenotazione e la conformità del rifiuto e registra l'esito del conferimento. |
+| **Lavoratore AMA** | Categoria generale del personale operativo che comprende Autisti e Operatori di sede. Ogni lavoratore è caratterizzato da mansioni, turni di servizio e disponibilità oraria. |
+| **Amministratore di sede AMA** | Figura responsabile della gestione logistica e operativa di una specifica sede AMA. Gestisce l'anagrafica del personale della sede, le disponibilità di lavoratori e mezzi, le fasce orarie e l'associazione tra sede e CAP/zone servite. |
+| **Amministratore Generale AMA** | Figura direttiva a livello aziendale. Gestisce gli account degli Amministratori di sede (creazione, abilitazione e revoca) e accede a report e statistiche aggregate sui servizi erogati. |
+| **Ritiro a domicilio** | Servizio logistico in cui AMA preleva il rifiuto ingombrante direttamente presso l'indirizzo indicato dal Cittadino. Richiede la verifica di copertura del CAP, l'assegnazione di un Autista e di un Veicolo compatibile con il carico. |
+| **Conferimento in sede** | Servizio in cui il Cittadino si reca personalmente presso una sede AMA (centro di raccolta) per consegnare il rifiuto ingombrante, previa prenotazione di una fascia oraria. |
+| **Prenotazione** | Entità informativa che formalizza la richiesta di smaltimento (a domicilio o in sede). Include dettagli sul rifiuto, indirizzo/sede, data e fascia oraria, dati del Cittadino e stato di avanzamento. |
+| **Stato della prenotazione** | Condizione in cui si trova una prenotazione nel suo ciclo di vita: *In attesa, Confermata, In corso, Completata, Annullata, Non eseguita*. |
+| **Codice Prenotazione / Pass di Conferimento** | Identificativo univoco (codice alfanumerico o QR code) generato dal sistema alla conferma della prenotazione, utilizzato per il riconoscimento e la validazione del servizio al varco o al domicilio. |
+| **Rifiuto ingombrante** | Bene durevole, oggetto voluminoso o materiale speciale (es. mobili, grandi elettrodomestici, RAEE) che non può essere conferito nei normali cassonetti stradali. |
+| **Tipologia di rifiuto** | Classificazione merceologica e normativa del rifiuto (es. legno, metallo, RAEE, ingombranti misti), necessaria per verificare la conformità di scarico e il mezzo idoneo. |
+| **Sede AMA / Centro di Raccolta** | Struttura fisica territoriale (isola ecologica) abilitata alla ricezione e allo stoccaggio temporaneo di determinate tipologie di rifiuti conferiti dai cittadini. |
+| **CAP / Zona servita** | Suddivisione territoriale che delimita la competenza operativa di una sede AMA e determina se un indirizzo è coperto dal servizio di ritiro a domicilio. |
+| **Veicolo / Mezzo AMA** | Automezzo aziendale impiegato per i ritiri a domicilio, caratterizzato da limiti di portata utile (peso massimo) e volume di carico. |
+| **Disponibilità / Slot Orario** | Fascia temporale definita (data e intervallo orario) in cui un servizio può essere prenotato ed erogato, calcolata in base alla capienza residua dei mezzi e ai turni del personale. |
+| **Assegnazione** | Associazione formale e logistica tra una prenotazione di ritiro a domicilio e le risorse operative aziendali (Autista, Veicolo, data e percorso). |
+| **Esito del servizio** | Registrazione conclusiva dell'intervento da parte del personale AMA (*Completato con successo, Cittadino assente, Rifiuto non conforme/respinto*). |
+| **Notifica** | Comunicazione automatica generata dal sistema (email, SMS o notifica in-app) per aggiornare il Cittadino o il personale su conferme, promemoria o variazioni di stato delle prenotazioni. |
+| **Report / Statistiche** | Informazioni aggregate e indicatori di performance (volumi gestiti, ritiri completati, trend per zona) consultabili dalla direzione aziendale per finalità analitiche e decisionali. |
+| **Sistema** | L'applicazione software integrata MyAma nel suo complesso, comprensiva di tutti i moduli web e mobili per i diversi profili utente. |
