@@ -1,4 +1,4 @@
-# 📦 Cartella Consegna — Progetto MyAma (Ingegneria del Software)
+# 📦 Cartella Latex PDF — Progetto MyAma (Ingegneria del Software)
 
 Questa cartella contiene il **template modificabile ufficiale** per la redazione della relazione finale di specifica software secondo lo standard **IEEE 830-1998** richiesto dal Prof. Andrea D'Ambrogio.
 
@@ -22,14 +22,15 @@ Questa cartella contiene il **template modificabile ufficiale** per la redazione
 
 ---
 
-## 📁 Struttura della Cartella `consegna/`
+## 📁 Struttura della Cartella `Latex PDF/`
 
 ```text
-consegna/
+Latex PDF/
 │
 ├── main.tex                       # File principale LaTeX (impostazioni, frontespizio, indici, include)
+├── main.pdf                       # PDF compilato finale
+├── compile_pdf.py                 # Script di compilazione automatica con pdflatex
 ├── README.md                      # Questa guida operativa
-├── specifica_MyAma.md             # Versione modificabile completa in formato Markdown
 │
 ├── sezioni/                       # File .tex modulari (uno per capitolo, facili da modificare in parallelo)
 │   ├── 01_introduzione.tex        # Problem Statement, Scopo, Scope IN/OUT, Attori
@@ -39,8 +40,8 @@ consegna/
 │   ├── 05_modelli_ooa.tex         # Activity Diagram, Sequence Diagram (BCE), Class Diagrams
 │   └── 06_design_patterns.tex     # Design Pattern applicati al Class Diagram (Observer, Strategy)
 │
-├── figure/                        # Cartella in cui salvare le immagini esportate da Visual Paradigm (.png / .pdf)
-└── sorgenti_vpp/                  # Cartella per i file sorgente di Visual Paradigm (.vpp) da zippare per la consegna
+├── figure/                        # Cartella con copertina e immagini diagrammi UML (.png / .pdf)
+└── sorgenti_vpp/                  # Cartella per i file sorgente di Visual Paradigm (.vpp)
 ```
 
 ---
