@@ -1,5 +1,5 @@
 # CITTATINO SBERS non registrato 
-- Si registra (da mettere)
+- Si registra (da mettere) (extend(accetta dati sulla privacy))
 	- accetta dati sulla privacy
 - Visualizza tariffe e informazioni
 
