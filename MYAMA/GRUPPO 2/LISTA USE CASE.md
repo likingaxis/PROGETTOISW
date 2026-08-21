@@ -16,14 +16,13 @@
 10. Ricevere notifiche / Chiamate
 11. Caricare foto del rifiuto
 12. Visualizzare eventuale costo del servizio
-13. Consultare storico prenotazioni
-14. Valutare il servizio
+13. Valutare il servizio
 
 # Autista AMA
 1. Visualizzare ritiri assegnati (**include**[2])
 2. Consultare dettagli del ritiro
 3. Registrare esito del ritiro
-4. Chiamare / Notificare Cittadino
+4. Chiamare Cittadino
 
 # Operatore di sede AMA
 1. Visualizzare prenotazioni della sede (**include**[2,3])
