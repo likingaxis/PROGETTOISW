@@ -1,6 +1,6 @@
 # Use case cittadino non registrato + utente di sistema
 ### Diagramma CITTADINO NON REGISTRATO + utente di sistema
-inserire diagramma del cittadino non registrato + utente di sistema
+![[Use Case Diagram1.jpg]]
 
 ### Documentazione
 | **Use Case** | **Si registra** |
@@ -11,6 +11,15 @@ inserire diagramma del cittadino non registrato + utente di sistema
 | **Scenario principale** | Il cittadino inserisce correttamente i dati richiesti, accetta l’informativa sulla privacy e completa la registrazione. |
 | **Scenari alternativi** | I dati inseriti sono incompleti o non validi: il sistema impedisce la registrazione e segnala gli errori da correggere.<br><br>Il cittadino non accetta l’informativa sulla privacy: il sistema non permette di completare la registrazione. |
 | **Post-condizioni** | Il cittadino risulta registrato nel sistema e dispone di un account utilizzabile per accedere alle funzionalità riservate. |
+
+| **Use Case**            | **Accetta dati sulla privacy**                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Descrizione**         | **Passo azione**<br><br>**1.** L’utente di sistema avvia la procedura di registrazione.<br><br>**2.** Il sistema mostra l’informativa relativa al trattamento dei dati personali.<br><br>**3.** L’utente prende visione dell’informativa sulla privacy.<br><br>**4.** L’utente esprime il proprio consenso al trattamento dei dati richiesto per completare la registrazione.<br><br>**5.** Il sistema registra l’accettazione e consente di proseguire con la procedura di registrazione. |
+| **Attori**              | Utente di sistema                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Precondizioni**       | L’utente ha avviato la procedura di registrazione e non ha ancora completato la creazione dell’account.                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Scenario principale** | L’utente consulta l’informativa sulla privacy e accetta il trattamento dei dati richiesto. Il sistema registra il consenso e permette di proseguire con la registrazione.                                                                                                                                                                                                                                                                                                                  |
+| **Scenari alternativi** | L’utente non accetta l’informativa sulla privacy: il sistema non consente di completare la registrazione.                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Post-condizioni**     | L’accettazione dell’informativa sulla privacy risulta registrata e l’utente può proseguire con la procedura di registrazione.                                                                                                                                                                                                                                                                                                                                                              |
 
 | **Use Case**            | **Effettua accesso**                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -28,7 +37,7 @@ inserire diagramma del cittadino non registrato + utente di sistema
 # Use case cittadino registrato
 
 ### Diagramma CITTADINO registrato
-inserire diagramma del cittadino registrato
+![[Use Case Diagram2.jpg]]
 
 ### Documentazione
 
@@ -147,7 +156,7 @@ inserire diagramma del cittadino registrato
 # Use case Autista AMA
 
 ### Diagramma autista AMA
-inserire diagramma del autista AMA
+![[AutistaAMA.jpg]]
 
 ### Documentazione
 | **Use Case**            | **Visualizzare ritiri assegnati**                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -191,7 +200,7 @@ inserire diagramma del autista AMA
 # Use case Operatore di sede AMA
 
 ### Diagramma operatore di sede AMA
-inserire diagramma del operatore di sede AMA
+![[OperatoreSedeAMA (2).jpg]]
 
 ### Documentazione
 | **Use Case**            | **Visualizzare prenotazioni della sede**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -229,3 +238,21 @@ inserire diagramma del operatore di sede AMA
 | **Scenario principale** | L’operatore seleziona la prenotazione, registra correttamente l’esito del conferimento e conferma l’operazione. Il sistema aggiorna lo stato della prenotazione.                                                                                                                                                                                                                                                                                                                                                            |
 | **Scenari alternativi** | L’esito inserito è incompleto o non valido: il sistema segnala l’errore e richiede all’operatore di correggere le informazioni.<br><br>Non è possibile aggiornare lo stato della prenotazione: il sistema segnala il problema e l’esito non viene registrato.                                                                                                                                                                                                                                                               |
 | **Post-condizioni**     | L’esito del conferimento risulta registrato nel sistema e lo stato della prenotazione viene aggiornato di conseguenza.                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+
+# Use case Amministratore di sede AMA
+
+### Diagramma Amministratore di sede AMA
+![[AmministratoriAMA.jpg]]
+
+
+### Documentazione
+Inserire documentazione
+
+
+---
+
+# Use case Amministratore generale AMA
+
+### Diagramma Amministratore generale AMA
+![[Amministratore generale AMA.jpg]]
