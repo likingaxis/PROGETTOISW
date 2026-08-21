@@ -4,7 +4,7 @@
 |---|---|
 | **MyAma** | Piattaforma digitale integrata dedicata alla gestione, pianificazione e prenotazione dei servizi di smaltimento dei rifiuti ingombranti e speciali per la città di Roma. |
 | **Cittadino (Non Registrato / Visitatore)** | Utente esterno non autenticato che accede al sistema per consultare informazioni pubbliche sui servizi, tariffe, regolamenti e sedi AMA attive, e che può effettuare la registrazione. |
-| **Cittadino (Registrato)** | Utente esterno autenticato che usufruisce dei servizi di MyAma per richiedere ritiri a domicilio o prenotare conferimenti in sede, monitorare lo stato delle proprie richieste e ricevere notifiche. |
+| **Cittadino (Registrato)** | Utente esterno autenticato che usufruisce dei servizi di MyAma per richiedere ritiri a domicilio o prenotare conferimenti in sede, monitorare lo stato delle proprie richieste, rilasciare valutazioni e ricevere notifiche. |
 | **Autista AMA** | Dipendente operativo AMA incaricato dello svolgimento dei ritiri a domicilio. Consulta i ritiri assegnati, raggiunge l'indirizzo indicato dal Cittadino, effettua il carico e registra l'esito del servizio. |
 | **Operatore di sede AMA** | Dipendente operativo AMA che presidia un centro di raccolta (sede/isola ecologica). Gestisce l'accoglienza del Cittadino, verifica la prenotazione e la conformità del rifiuto e registra l'esito del conferimento. |
 | **Lavoratore AMA** | Categoria generale del personale operativo che comprende Autisti e Operatori di sede. Ogni lavoratore è caratterizzato da mansioni, turni di servizio e disponibilità oraria. |
@@ -15,6 +15,9 @@
 | **Prenotazione** | Entità informativa che formalizza la richiesta di smaltimento (a domicilio o in sede). Include dettagli sul rifiuto, indirizzo/sede, data e fascia oraria, dati del Cittadino e stato di avanzamento. |
 | **Stato della prenotazione** | Condizione in cui si trova una prenotazione nel suo ciclo di vita: *In attesa, Confermata, In corso, Completata, Annullata, Non eseguita*. |
 | **Codice Prenotazione / Pass di Conferimento** | Identificativo univoco (codice alfanumerico o QR code) generato dal sistema alla conferma della prenotazione, utilizzato per il riconoscimento e la validazione del servizio al varco o al domicilio. |
+| **Tariffa / Preventivo** | Quota economica calcolata dal sistema per l'erogazione del servizio di smaltimento, determinata in base alla tipologia, al volume del rifiuto o alla presenza di servizi speciali oltre la franchigia comunale gratuita. |
+| **Itinerario di Ritiro** | Sequenza ordinata degli appuntamenti di ritiro a domicilio assegnati a uno specifico Autista e Mezzo per un dato turno lavorativo all'interno della zona di competenza. |
+| **Valutazione / Feedback** | Giudizio qualitativo (espresso tramite scala di punteggio ed eventuali note descrittive) che il Cittadino può rilasciare al termine di un servizio completato per misurare gradimento e puntualità. |
 | **Rifiuto ingombrante** | Bene durevole, oggetto voluminoso o materiale speciale (es. mobili, grandi elettrodomestici, RAEE) che non può essere conferito nei normali cassonetti stradali. |
 | **Tipologia di rifiuto** | Classificazione merceologica e normativa del rifiuto (es. legno, metallo, RAEE, ingombranti misti), necessaria per verificare la conformità di scarico e il mezzo idoneo. |
 | **Sede AMA / Centro di Raccolta** | Struttura fisica territoriale (isola ecologica) abilitata alla ricezione e allo stoccaggio temporaneo di determinate tipologie di rifiuti conferiti dai cittadini. |
