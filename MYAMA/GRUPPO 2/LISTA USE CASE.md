@@ -10,13 +10,13 @@
 4.  Indicare indirizzo / zona / CAP
 5. Visualizzare sedi compatibili
 6. Visualizzare date e fasce orarie disponibili
-7. Creare prenotazione
+7. Creare prenotazione //schioppo pure questo per mettere prenota conferimento e prenota ritiro a domicilio
 8. Annullare prenotazione
-9. Visualizzare prenotazioni attive(**extedns**[8,13])
+9. Visualizzare prenotazioni attive(**extedns**[8])
 10. Ricevere notifiche / Chiamate
 11. Caricare foto del rifiuto
-12. Visualizzare eventuale costo del servizio
-13. Consultare storico prenotazioni
+12. Visualizzare eventuale costo del servizio // chiedere agli altri se eliminarlo per generalizzare con CNR
+13. Consultare storico prenotazioni //lo faccio schioppa perchè non entra
 14. Valutare il servizio
 
 # Autista AMA
