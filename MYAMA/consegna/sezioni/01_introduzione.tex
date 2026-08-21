@@ -1,0 +1,47 @@
+\section{Introduzione}
+
+\subsection{Finalità del Documento}
+Il presente documento costituisce la Specifica dei Requisiti Software (\textit{Software Requirements Specification} --- SRS) per la piattaforma digitale integrata \textbf{MyAma}. La stesura del documento aderisce alle linee guida dello standard internazionale \textbf{IEEE 830-1998}, integrandovi la metodologia di analisi orientata agli oggetti (\textit{Object Oriented Analysis} --- OOA) e la progettazione architetturale basata su Design Pattern.
+
+Il documento è indirizzato sia agli \textbf{stakeholder e committenti} (per validare la corretta comprensione del dominio applicativo e degli obiettivi aziendali), sia al \textbf{team di progettazione, sviluppo e collaudo} (come riferimento contrattuale e guida implementativa per l'intero ciclo di vita del software).
+
+\subsection{Problem Statement}
+La gestione dello smaltimento dei rifiuti ingombranti e speciali nei grandi contesti urbani, come la città di Roma, presenta rilevanti criticità logistiche ed organizzative:
+\begin{itemize}
+    \item I cittadini necessitano di un canale rapido, chiaro e tracciabile per prenotare il ritiro a domicilio o il conferimento diretto presso i centri di raccolta (isole ecologiche), senza dover gestire direttamente la complessità logistica aziendale.
+    \item L'azienda municipalizzata (AMA) necessita di uno strumento centralizzato per coordinare in maniera efficiente e scalabile le proprie risorse operative (autisti, operatori di sede, veicoli con specifici vincoli di capienza e zone territoriali coperte).
+\end{itemize}
+
+\textbf{MyAma} si propone come la piattaforma applicativa che colma questa esigenza, automatizzando l'intermediazione tra cittadini e servizi ambientali, verificando in tempo reale la compatibilità territoriale (CAP/zona) e coordinando le risorse operative e le disponibilità temporali.
+
+\subsection{Scopo e Perimetro del Sistema (Scope)}
+Il sistema \textbf{MyAma} circoscrive il proprio perimetro operativo alla gestione dell'intero ciclo di vita della richiesta di smaltimento:
+\begin{center}
+\textbf{Richiesta Cittadino} $\longrightarrow$ \textbf{Verifica Vincoli/CAP} $\longrightarrow$ \textbf{Prenotazione} $\longrightarrow$ \textbf{Assegnazione Risorse AMA} $\longrightarrow$ \textbf{Esecuzione} $\longrightarrow$ \textbf{Esito Finale}
+\end{center}
+
+\subsubsection{Funzionalità all'interno dello Scope (IN)}
+\begin{itemize}
+    \item Prenotazione del servizio di \textbf{ritiro a domicilio} di rifiuti ingombranti con verifica del CAP servito e assegnazione del carico a veicoli/autisti.
+    \item Prenotazione del \textbf{conferimento in sede} presso centri di raccolta compatibili per territorio e tipologia di rifiuto.
+    \item Gestione e tracking dello \textbf{stato della prenotazione} (\textit{In attesa, Confermata, In corso, Completata, Annullata, Non eseguita}).
+    \item Gestione delle risorse operative AMA: assegnazione autisti e mezzi per i ritiri; registrazione accettazione da parte degli operatori di sede per i conferimenti.
+    \item Notifiche operative agli attori coinvolti sullo stato dei servizi.
+\end{itemize}
+
+\subsubsection{Elementi all'esterno dello Scope (OUT)}
+\begin{itemize}
+    \item Gestione amministrativa interna dei dipendenti (stipendi, contratti, buste paga).
+    \item Manutenzione ordinaria/straordinaria dei mezzi aziendali e telemetria satellitare in tempo reale (GPS avanzato).
+    \item Gestione degli impianti di smaltimento/trattamento industriale e discariche oltre il centro di raccolta.
+    \item Raccolta ordinaria porta a porta dei rifiuti urbani indifferenziati.
+\end{itemize}
+
+\subsection{Classi di Utenza e Attori del Sistema}
+Il sistema interagisce con diverse categorie di utenti, a ciascuna delle quali è riservato uno specifico profilo operativo:
+\begin{enumerate}
+    \item \textbf{Cittadino / Cliente}: Utente che necessita di smaltire rifiuti ingombranti. Può richiedere il ritiro a domicilio o il conferimento in sede, visualizzare le disponibilità temporali e monitorare le proprie prenotazioni.
+    \item \textbf{Autista AMA}: Personale operativo addetto all'esecuzione dei ritiri a domicilio. Consulta l'itinerario e i ritiri assegnati, verifica il carico del veicolo e registra l'esito finale del ritiro.
+    \item \textbf{Operatore di Sede AMA}: Personale addetto all'accoglienza presso le isole ecologiche. Verifica la conformità delle prenotazioni di conferimento, convalida il rifiuto e registra l'esito del servizio.
+    \item \textbf{Amministratore AMA / Logistica}: Responsabile della configurazione del sistema, gestione sedi territoriali, associazione CAP/zone servite, anagrafica mezzi e tariffari.
+\end{enumerate}

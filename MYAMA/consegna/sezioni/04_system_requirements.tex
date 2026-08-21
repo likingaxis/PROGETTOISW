@@ -1,0 +1,119 @@
+\section{System Requirements (Requisiti di Sistema)}
+
+I requisiti di sistema definiscono formalmente i servizi, le capacità e i vincoli che la piattaforma software \textbf{MyAma} deve garantire. In conformità con lo standard IEEE 830-1998, i requisiti sono classificati in Requisiti Funzionali, Requisiti Non Funzionali e Requisiti di Dominio, ciascuno corredato dai relativi criteri di verificabilità.
+
+% -----------------------------------------------------------
+\subsection{Requisiti Funzionali}
+I requisiti funzionali descrivono le azioni che il sistema deve essere in grado di compiere in risposta a specifici input.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|p{2cm}|p{8cm}|p{5cm}|}
+\hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Descrizione del Requisito} & \textbf{Use Case / Attori} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Descrizione del Requisito} & \textbf{Use Case / Attori} \\ \hline
+\endhead
+
+\textbf{RF-01} & Il sistema deve consentire al Cittadino di richiedere un ritiro a domicilio indicando tipologia, descrizione e quantità dei rifiuti. & UC-C01 / Cittadino \\ \hline
+
+\textbf{RF-02} & Il sistema deve validare la copertura territoriale verificando che il CAP indicato sia servito da AMA. & UC-C01 / Sistema \\ \hline
+
+\textbf{RF-03} & Il sistema deve calcolare gli slot temporali disponibili tenendo conto dei turni autisti e del carico massimo residuo dei veicoli. & UC-C01 / Sistema \\ \hline
+
+\textbf{RF-04} & Il sistema deve registrare la prenotazione confermata con identificativo univoco e stato \textit{Confermata}. & UC-C01 / Cittadino \\ \hline
+
+\textbf{RF-05} & Il sistema deve inviare una notifica di conferma al Cittadino contenente il riepilogo del ritiro. & UC-C01 / Sistema \\ \hline
+
+\textbf{RF-06} & Il sistema deve consentire al Cittadino di prenotare il conferimento diretto presso una sede / isola ecologica. & UC-C02 / Cittadino \\ \hline
+
+\textbf{RF-07} & Il sistema deve mostrare le sole sedi AMA autorizzate e abilitate alla ricezione della specifica tipologia di rifiuto. & UC-C02 / Sistema \\ \hline
+
+\textbf{RF-08} & Il sistema deve generare un pass di conferimento con codice a barre o QR per l'accettazione al varco. & UC-C02 / Cittadino \\ \hline
+
+\textbf{RF-09} & Il sistema deve consentire al Cittadino di visualizzare lo storico e lo stato di tutte le proprie prenotazioni. & UC-C03 / Cittadino \\ \hline
+
+\textbf{RF-10} & Il sistema deve permettere l'annullamento della prenotazione se richiesto con almeno 24 ore di anticipo rispetto all'orario previsto. & UC-C03 / Cittadino \\ \hline
+
+\textbf{RF-11} & Il sistema deve fornire all'Autista AMA l'elenco ordinato delle prenotazioni e degli indirizzi assegnati per il proprio turno. & UC-A01 / Autista \\ \hline
+
+\textbf{RF-12} & Il sistema deve mostrare all'Autista il dettaglio dei rifiuti e la capienza progressiva occupata sul mezzo aziendale. & UC-A01 / Autista \\ \hline
+
+\textbf{RF-13} & Il sistema deve consentire all'Autista di registrare l'esito del ritiro (\textit{Completato, Assente, Non Conforme}) con note operative. & UC-A02 / Autista \\ \hline
+
+\textbf{RF-14} & Il sistema deve aggiornare in tempo reale lo stato della prenotazione dopo la registrazione dell'esito da parte dell'autista. & UC-A02 / Sistema \\ \hline
+
+\textbf{RF-15} & Il sistema deve consentire all'Operatore di Sede di verificare la validità del codice prenotazione di conferimento. & UC-O01 / Operatore \\ \hline
+
+\textbf{RF-16} & Il sistema deve consentire all'Operatore di registrare la conformità del rifiuto e l'avvenuto scarico presso l'isola ecologica. & UC-O01 / Operatore \\ \hline
+\end{longtable}
+\end{center}
+
+% -----------------------------------------------------------
+\subsection{Requisiti Non Funzionali}
+I requisiti non funzionali specificano vincoli di qualità, prestazioni, affidabilità e sicurezza del software.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|p{2.2cm}|p{3cm}|p{10cm}|}
+\hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Categoria} & \textbf{Descrizione del Requisito e Metrica} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Categoria} & \textbf{Descrizione del Requisito e Metrica} \\ \hline
+\endhead
+
+\textbf{RNF-01} & Prestazioni & Il tempo di risposta per la ricerca di disponibilità e verifica CAP non deve superare i 2.0 secondi al 95° percentile sotto carico ordinario. \\ \hline
+
+\textbf{RNF-02} & Disponibilità & Il sistema deve garantire un'operatività del 99.5\% su base mensile nelle fasce di servizio al pubblico (07:00 -- 22:00). \\ \hline
+
+\textbf{RNF-03} & Usabilità & L'interfaccia utente per il cittadino deve consentire il completamento di una prenotazione in non più di 4 passaggi sequenziali guidati. \\ \hline
+
+\textbf{RNF-04} & Sicurezza & Le comunicazioni client-server devono avvenire esclusivamente tramite protocollo crittografato TLS 1.3; le password devono essere memorizzate con hashing robusto (bcrypt/argon2). \\ \hline
+
+\textbf{RNF-05} & Integrità Dati & Il database deve garantire transazionalità ACID per evitare doppie prenotazioni sullo stesso slot orario o sovrassegnazioni di capienza mezzo. \\ \hline
+
+\textbf{RNF-06} & Portabilità & La web application deve essere fruibile da tutti i principali browser moderni (Chrome, Firefox, Safari, Edge) sia su dispositivi desktop che mobile (\textit{responsive design}). \\ \hline
+\end{longtable}
+\end{center}
+
+% -----------------------------------------------------------
+\subsection{Requisiti di Dominio}
+I requisiti di dominio discendono dalle regole del settore operativo, dai vincoli normativi ambientali e dalle policy aziendali AMA.
+
+\begin{itemize}
+    \item \textbf{RD-01 (Limite di Carico per Veicolo):} Per ciascun veicolo assegnato ai ritiri a domicilio, la somma stimata dei pesi dei rifiuti associati non può superare la portata massima omologata del mezzo ($\sum P_i \le \text{PortataMax}$).
+    \item \textbf{RD-02 (Competenza Territoriale):} Un autista e un veicolo possono essere assegnati esclusivamente a ritiri ricadenti nel bacino di CAP assegnato al distretto operativo di appartenenza.
+    \item \textbf{RD-03 (Trattamento RAEE e Rifiuti Pericolosi):} I rifiuti elettronici (RAEE) e i rifiuti speciali possono essere conferiti solo presso sedi AMA dotate di idonee certificazioni e aree di stoccaggio dedicate.
+    \item \textbf{RD-04 (Finestra di Annullamento):} L'annullamento autonomo del ritiro da parte del cittadino è consentito unicamente fino a 24 ore prima dell'inizio dello slot prenotato.
+\end{itemize}
+
+% -----------------------------------------------------------
+\subsection{Verificabilità dei Requisiti}
+Come richiesto dai criteri di qualità dell'Ingegneria del Software, ogni requisito deve essere formulato in termini non ambigui e quantificabili affinché sia possibile stabilirne l'avvenuto soddisfacimento mediante test formali.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|p{2cm}|p{6cm}|p{7.2cm}|}
+\hline
+\rowcolor{tableheader} \textbf{ID Req.} & \textbf{Metodo di Verifica} & \textbf{Criterio di Accettazione e Test} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor{tableheader} \textbf{ID Req.} & \textbf{Metodo di Verifica} & \textbf{Criterio di Accettazione e Test} \\ \hline
+\endhead
+
+\textbf{RF-02} & Test Funzionale & Inserimento di CAP validi/non validi. Il sistema accetta solo CAP presenti nella tabella di copertura e blocca i CAP esterni con messaggio appropriato. \\ \hline
+
+\textbf{RF-03} & Test di Integrazione & Simulazione di prenotazioni consecutive fino a saturazione portata veicolo. Il sistema non offre più slot quando il carico residuo è insufficiente per il rifiuto inserito. \\ \hline
+
+\textbf{RF-10} & Test di Limite Temporale & Tentativo di cancellazione a $T - 25\text{h}$ (consentita) e a $T - 23\text{h}$ (bloccata dal sistema). \\ \hline
+
+\textbf{RNF-01} & Stress / Load Test & Generazione di 500 richieste contemporanee di ricerca slot con Apache JMeter. Tempo di risposta medio registrato $\le 2.0\text{s}$. \\ \hline
+
+\textbf{RNF-04} & Security Audit & Scansione automatizzata delle vulnerabilità (OWASP ZAP) e verifica conformità crittografia TLS. \\ \hline
+\end{longtable}
+\end{center}

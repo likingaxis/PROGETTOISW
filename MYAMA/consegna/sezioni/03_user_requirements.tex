@@ -1,0 +1,197 @@
+\section{User Requirements Definition (Requisiti Utente \& Use Case)}
+
+La presente sezione descrive le interazioni e le funzionalità offerte dal sistema \textbf{MyAma} dal punto di vista degli utenti. Gli Use Case sono organizzati per attore e corredati da opportuni Use Case Diagram e schede tabellari descrittive strutturate con precondizioni, scenario primario, scenari alternativi ed eccezioni, postcondizioni e requisiti associati.
+
+% -----------------------------------------------------------
+\subsection{Use Case Cittadino / Cliente}
+
+\subsubsection{Diagramma dei Casi d'Uso: Cittadino}
+\begin{figure}[H]
+    \centering
+    % Sostituire con l'immagine esportata da Visual Paradigm
+    % \includegraphics[width=0.85\textwidth]{figure/uc_cittadino.png}
+    \fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering \textsf{[ Inserire qui il Diagramma Use Case Cittadino esportato da Visual Paradigm ]}}}
+    \caption{Use Case Diagram --- Cittadino / Cliente}
+    \label{fig:uc_cittadino}
+\end{figure}
+
+\subsubsection{Documentazione dei Casi d'Uso: Cittadino}
+
+\usecasetable{UC-C01: Prenota Ritiro a Domicilio}{
+    Cittadino / Cliente (autenticato).
+}{
+    Il cittadino richiede il prelievo a domicilio di uno o più rifiuti ingombranti specificando indirizzo, tipologia del rifiuto e selezionando uno slot disponibile.
+}{
+    L'utente ha effettuato l'accesso al sistema.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item Il cittadino seleziona la funzionalità di prenotazione ritiro a domicilio.
+        \item Inserisce i dati del rifiuto (tipologia, descrizione, quantità, stima ingombro/peso).
+        \item Inserisce l'indirizzo di ritiro e il CAP di riferimento.
+        \item Il sistema valida la copertura territoriale del CAP indicato.
+        \item Il sistema calcola le date e fasce orarie disponibili verificando capienza mezzi e turni autisti.
+        \item Il cittadino seleziona lo slot orario desiderato.
+        \item Il sistema riepiloga i dati e richiede conferma.
+        \item Il cittadino conferma la prenotazione.
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{4a. CAP non coperto dal servizio:} Il sistema segnala l'impossibilità di procedere con il ritiro a domicilio e suggerisce il conferimento presso un'isola ecologica.
+        \item \textbf{5a. Nessuno slot orario disponibile:} Il sistema invita il cittadino a selezionare un periodo alternativo.
+        \item \textbf{8a. Annullamento operazione:} L'utente annulla la procedura prima della conferma; nessun dato viene salvato.
+    \end{itemize}
+}{
+    La prenotazione viene registrata con stato \textit{Confermata} e viene generato un codice identificativo univoco inviato all'utente.
+}{
+    RF-01, RF-02, RF-03, RF-04, RF-05.
+}
+
+\usecasetable{UC-C02: Prenota Conferimento in Sede}{
+    Cittadino / Cliente (autenticato).
+}{
+    Il cittadino prenota un appuntamento per conferire personalmente i rifiuti ingombranti presso un centro di raccolta AMA abilitato.
+}{
+    L'utente ha effettuato l'accesso al sistema.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item Il cittadino seleziona la funzionalità di conferimento in sede.
+        \item Inserisce i dati del rifiuto e indica la zona / CAP di provenienza.
+        \item Il sistema mostra l'elenco delle sedi/isole ecologiche compatibili con la tipologia di rifiuto.
+        \item Il cittadino seleziona la sede desiderata e visualizza gli slot temporali disponibili.
+        \item Seleziona data e fascia oraria di conferimento.
+        \item Conferma la richiesta di prenotazione.
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{3a. Nessuna sede compatibile trovata:} Il sistema notifica che per la tipologia di rifiuto indicata non vi sono centri abilitati nella zona.
+        \item \textbf{5a. Slot esauriti per la sede scelta:} Il cittadino sceglie una data differente o un'altra sede.
+    \end{itemize}
+}{
+    La prenotazione di conferimento viene registrata con stato \textit{Confermata} e viene rilasciato un pass di accesso con codice di prenotazione.
+}{
+    RF-06, RF-07, RF-08.
+}
+
+\usecasetable{UC-C03: Gestione e Annullamento Prenotazione}{
+    Cittadino / Cliente.
+}{
+    Il cittadino consulta lo storico delle proprie prenotazioni attive e, se consentito dai vincoli temporali, procede alla cancellazione.
+}{
+    L'utente è autenticato e possiede almeno una prenotazione attiva.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item Il cittadino accede alla sezione "Le mie prenotazioni".
+        \item Seleziona una prenotazione in stato \textit{Confermata}.
+        \item Richiede l'annullamento della prenotazione.
+        \item Il sistema verifica che l'annullamento avvenga con almeno 24h di anticipo.
+        \item Il sistema richiede conferma dell'operazione.
+        \item L'utente conferma l'annullamento.
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{4a. Termine per l'annullamento scaduto ($<$ 24h):} Il sistema notifica che non è più possibile annullare autonomamente il servizio.
+    \end{itemize}
+}{
+    Lo stato della prenotazione passa ad \textit{Annullata} e le risorse (slot/veicolo) vengono liberate.
+}{
+    RF-09, RF-10.
+}
+
+% -----------------------------------------------------------
+\newpage
+\subsection{Use Case Autista AMA}
+
+\subsubsection{Diagramma dei Casi d'Uso: Autista AMA}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\textwidth]{figure/uc_autista.png}
+    \fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering \textsf{[ Inserire qui il Diagramma Use Case Autista esportato da Visual Paradigm ]}}}
+    \caption{Use Case Diagram --- Autista AMA}
+    \label{fig:uc_autista}
+\end{figure}
+
+\subsubsection{Documentazione dei Casi d'Uso: Autista AMA}
+
+\usecasetable{UC-A01: Consultazione Itinerario e Ritiri Assegnati}{
+    Autista AMA.
+}{
+    L'autista visualizza la lista dei ritiri a domicilio programmati per il proprio turno lavorativo con dettagli su indirizzi, orari e tipologia di carico.
+}{
+    L'autista ha eseguito l'accesso al profilo aziendale AMA.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item L'autista seleziona il proprio turno / data odierna.
+        \item Il sistema recupera l'elenco ordinato delle prenotazioni di ritiro assegnate al suo veicolo.
+        \item L'autista visualizza la scheda di dettaglio di ciascun ritiro (indirizzo, contatto, descrizione rifiuto, ingombro stimato).
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{2a. Nessun ritiro assegnato per la giornata:} Il sistema visualizza un messaggio informativo.
+    \end{itemize}
+}{
+    L'autista ottiene il piano di viaggio e i dettagli operativi per lo svolgimento del servizio.
+}{
+    RF-11, RF-12.
+}
+
+\usecasetable{UC-A02: Registrazione Esito Ritiro}{
+    Autista AMA.
+}{
+    Al termine dell'intervento presso il domicilio del cittadino, l'autista registra l'esito formale dell'operazione.
+}{
+    L'autista ha visualizzato la prenotazione assegnata ed è giunto all'indirizzo.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item L'autista seleziona la prenotazione corrispondente.
+        \item Seleziona lo stato di esito: \textit{Completato con successo}.
+        \item Inserisce eventuali note operative sul carico.
+        \item Invia la conferma di avvenuto ritiro.
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{2a. Cittadino assente o rifiuto non conforme:} L'autista registra l'esito \textit{Non Eseguito} / \textit{Respinto} specificando la motivazione formale.
+    \end{itemize}
+}{
+    Lo stato della prenotazione viene aggiornato ad \textit{Completata} o \textit{Non Eseguita}; il cittadino riceve notifica di chiusura.
+}{
+    RF-13, RF-14.
+}
+
+% -----------------------------------------------------------
+\newpage
+\subsection{Use Case Operatore di Sede AMA}
+
+\subsubsection{Diagramma dei Casi d'Uso: Operatore di Sede}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\textwidth]{figure/uc_operatore.png}
+    \fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering \textsf{[ Inserire qui il Diagramma Use Case Operatore di Sede esportato da Visual Paradigm ]}}}
+    \caption{Use Case Diagram --- Operatore di Sede AMA}
+    \label{fig:uc_operatore}
+\end{figure}
+
+\subsubsection{Documentazione dei Casi d'Uso: Operatore di Sede}
+
+\usecasetable{UC-O01: Accoglienza e Verifica Conferimento in Sede}{
+    Operatore di Sede AMA.
+}{
+    L'operatore di sede verifica l'accesso del cittadino presso l'isola ecologica tramite codice prenotazione o documento e convalida il rifiuto.
+}{
+    Il cittadino si presenta presso il centro di raccolta con prenotazione attiva.
+}{
+    \begin{enumerate}[leftmargin=*]
+        \item L'operatore ricerca la prenotazione tramite codice univoco o dati del cittadino.
+        \item Il sistema mostra i dettagli del conferimento atteso (tipologia e quantità).
+        \item L'operatore esamina fisicamente la conformità del rifiuto.
+        \item Convalida la conformità e registra l'esito \textit{Completato}.
+    \end{enumerate}
+}{
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{1a. Prenotazione non trovata o scaduta:} L'operatore verifica se procedere con registrazione estemporanea o rifiutare l'accesso.
+        \item \textbf{3a. Rifiuto non conforme o vietato (es. tossico/amianto):} L'operatore registra la non conformità e respinge il carico.
+    \end{itemize}
+}{
+    La prenotazione di conferimento viene chiusa con esito \textit{Completata} o \textit{Rifiutata}.
+}{
+    RF-15, RF-16.
+}

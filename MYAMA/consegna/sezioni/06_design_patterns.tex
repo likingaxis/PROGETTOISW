@@ -1,0 +1,49 @@
+\section{Design Patterns}
+
+Come richiesto dalle specifiche progettuali d'esame, la presente sezione descrive l'applicazione di due \textit{Design Pattern} (GoF --- Gang of Four) al fine di risolvere criticità architetturali del modello a oggetti, garantendo manutenibilità, basso accoppiamento ed elevata coesione.
+
+% -----------------------------------------------------------
+\subsection{Design Pattern 1: Observer Pattern}
+
+\subsubsection{Motivazione e Criticità di Design}
+Nel sistema \textbf{MyAma}, quando una prenotazione subisce una transizione di stato (ad esempio da \textit{In attesa} a \textit{Confermata}, oppure viene \textit{Annullata} o \textit{Completata} dall'autista), molteplici sottosistemi indipendenti devono reagire tempestivamente:
+\begin{itemize}
+    \item Il modulo di notifica al cittadino (email / SMS / push).
+    \item La dashboard dell'autista (per aggiornare l'itinerario e il carico residuo).
+    \item Il registro operativo della sede.
+\end{itemize}
+L'accoppiamento diretto della classe \texttt{Prenotazione} con tutte le classi concrete di notifica e aggiornamento violerebbe il principio \textit{Open/Closed} e aumenterebbe l'accoppiamento.
+
+\subsubsection{Soluzione Progettuale}
+L'applicazione del pattern \textbf{Observer} permette di definire una dipendenza uno-a-molti: la classe \texttt{Prenotazione} funge da \textit{Subject} (o \textit{Observable}), notificando tutti gli \textit{Observer} registrati (\texttt{EmailNotifier}, \texttt{DashboardNotifier}, \texttt{LogNotifier}) ogni qualvolta il proprio stato muta, mantenendo totale disaccoppiamento.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\textwidth]{figure/pattern_observer.png}
+    \fbox{\parbox[c][6.5cm][c]{0.8\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dell'Observer Pattern applicato a MyAma esportato da Visual Paradigm ]}}}
+    \caption{Struttura UML del Design Pattern Observer applicato a MyAma}
+    \label{fig:pattern_observer}
+\end{figure}
+
+% -----------------------------------------------------------
+\subsection{Design Pattern 2: Strategy Pattern}
+
+\subsubsection{Motivazione e Criticità di Design}
+L'assegnazione ottimale dei veicoli e la pianificazione degli slot di ritiro per i rifiuti ingombranti possono seguire diversi algoritmi operativi a seconda delle condizioni aziendali:
+\begin{itemize}
+    \item \textbf{Strategia per Minimizzazione del Volume/Peso:} Ottimizza il riempimento del mezzo per massimizzare i ritiri per singolo viaggio.
+    \item \textbf{Strategia per Prossimità Territoriale / Distanza:} Minimizza i chilometri percorsi dall'autista all'interno del medesimo CAP.
+    \item \textbf{Strategia Bilanciata per Carico di Lavoro:} Distribuisce equamente le prenotazioni tra tutti gli autisti in turno.
+\end{itemize}
+Codificare questi algoritmi direttamente all'interno della classe di controllo (\texttt{GestoreAssegnazione}) comporterebbe complessi blocchi condizionali (\texttt{if-else}/\texttt{switch}) difficilmente manutenibili ed estendibili.
+
+\subsubsection{Soluzione Progettuale}
+L'applicazione dello \textbf{Strategy Pattern} incapsula ciascun algoritmo di allocazione in classi separate conformi all'interfaccia comune \texttt{AssegnazioneStrategy}. In questo modo il contesto può variare dinamicamente la strategia di scheduling a tempo di esecuzione senza modificare il codice client.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\textwidth]{figure/pattern_strategy.png}
+    \fbox{\parbox[c][6.5cm][c]{0.8\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dello Strategy Pattern applicato a MyAma esportato da Visual Paradigm ]}}}
+    \caption{Struttura UML del Design Pattern Strategy per l'assegnazione risorse}
+    \label{fig:pattern_strategy}
+\end{figure}

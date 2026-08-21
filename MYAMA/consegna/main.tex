@@ -1,0 +1,159 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- PACCHETTI FONDAMENTALI ---
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm,
+    headheight=15pt
+}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% --- COLORI E CONFIGURAZIONE LINK ---
+\definecolor{primaryblue}{RGB}{24, 76, 120}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{tableheader}{RGB}{235, 240, 245}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    filecolor=primaryblue,
+    urlcolor=primaryblue,
+    citecolor=primaryblue,
+    pdftitle={Specifica Software MyAma - IEEE 830-1998},
+    pdfauthor={Gruppo MyAma},
+    pdfsubject={Ingegneria del Software - Università di Roma Tor Vergata}
+}
+
+% --- STILE INTESTAZIONI E PIÈ DI PAGINA ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \textsf{Progetto MyAma --- Specifica Software (IEEE 830)}}
+\fancyhead[R]{\small \textsf{A.A. 2025/2026}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- COMANDI UTILI PER USE CASE E TABELLE ---
+\newcommand{\usecasetable}[8]{
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor{tableheader} \textbf{ID e Nome Use Case} & \textbf{#1} \\ \hline
+\textbf{Attori Coinvolti} & #2 \\ \hline
+\textbf{Descrizione} & #3 \\ \hline
+\textbf{Precondizioni} & #4 \\ \hline
+\textbf{Flusso Principale} & #5 \\ \hline
+\textbf{Flussi Alternativi} & #6 \\ \hline
+\textbf{Postcondizioni} & #7 \\ \hline
+\textbf{Requisiti Correlati} & #8 \\ \hline
+\end{tabularx}
+\caption{Scheda Use Case: #1}
+\label{uc:#1}
+\end{table}
+}
+
+% --- INIZIO DOCUMENTO ---
+\begin{document}
+
+% ==========================================
+% FRONTESPIZIO
+% ==========================================
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    {\Large \textbf{UNIVERSITÀ DEGLI STUDI DI ROMA ``TOR VERGATA''}}\\[0.3cm]
+    {\large Macroarea di Scienze MM.FF.NN. --- Dipartimento di Informatica}\\[0.2cm]
+    {\large Corso di Laurea in Informatica}\\[1.5cm]
+    
+    {\large \textbf{Corso di Ingegneria del Software}}\\[0.2cm]
+    {\normalsize Docente: Prof. Andrea D'Ambrogio}\\[1.5cm]
+    
+    \rule{\linewidth}{0.8mm}\\[0.5cm]
+    {\Huge \textbf{MyAma}}\\[0.3cm]
+    {\Large \textbf{Documento di Specifica dei Requisiti Software}}\\[0.2cm]
+    {\normalsize Standard di riferimento: IEEE 830-1998 / OOA}\\[0.5cm]
+    \rule{\linewidth}{0.8mm}\\[2cm]
+    
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushleft} \large
+            \textbf{Componenti del Gruppo:}\\
+            Nome Cognome --- Matricola\\
+            Nome Cognome --- Matricola\\
+            Nome Cognome --- Matricola\\
+            Nome Cognome --- Matricola\\
+            Nome Cognome --- Matricola
+        \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright} \large
+            \textbf{Anno Accademico:}\\
+            2025 / 2026\\[1cm]
+            \textbf{Data di Consegna:}\\
+            \today
+        \end{flushright}
+    \end{minipage}
+    
+    \vfill
+\end{titlepage}
+
+% ==========================================
+% INDICI
+% ==========================================
+\newpage
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+\pagenumbering{arabic}
+
+% ==========================================
+% SEZIONI DEL DOCUMENTO (MODULARI)
+% ==========================================
+
+% 1. INTRODUZIONE
+\input{sezioni/01_introduzione.tex}
+
+% 2. GLOSSARIO
+\input{sezioni/02_glossario.tex}
+
+% 3. USER REQUIREMENTS DEFINITION & USE CASES
+\input{sezioni/03_user_requirements.tex}
+
+% 4. SYSTEM REQUIREMENTS
+\input{sezioni/04_system_requirements.tex}
+
+% 5. SYSTEM ARCHITECTURAL MODELS (OOA)
+\input{sezioni/05_modelli_ooa.tex}
+
+% 6. DESIGN PATTERNS
+\input{sezioni/06_design_patterns.tex}
+
+\end{document}
