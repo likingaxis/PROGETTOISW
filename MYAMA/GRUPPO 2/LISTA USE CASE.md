@@ -1,6 +1,8 @@
-# CITTATINO SBERS non registrato 
-- Si registra (da mettere) (extend(accetta dati sulla privacy))
+# UTENTE SBERS non registrato 
+- Si registra come cittadino (extend(accetta dati sulla privacy))
 	- accetta dati sulla privacy
+- Si registra come amministratore di sede (mediante codice invito)
+- Si registra come operatore di sede (mediante codice invito)
 - Visualizza tariffe e informazioni
 
 # Cittadino
@@ -12,7 +14,7 @@
 6. Visualizzare date e fasce orarie disponibili
 7. Creare prenotazione //schioppo pure questo per mettere prenota conferimento e prenota ritiro a domicilio
 8. Annullare prenotazione
-9. Visualizzare prenotazioni attive(**extedns**[8])
+9. Visualizzare prenotazioni attive(**extends**[8])
 10. Ricevere notifiche / Chiamate
 11. Caricare foto del rifiuto
 12. Visualizzare eventuale costo del servizio
@@ -37,7 +39,9 @@
 3.  Gestisce disponibilità dei veicoli
 4.  gestisce disponibilità di sedi e fasce orarie (**include**[5])
 5.  gestisce associazione tra sedi e zone/CAP
+6. genera codice invito
+7. rimuove operatori di sede AMA
 
-# Amministratore supremo AMA
-- aggiunge amministratori
+# Amministratore generale AMA
+- genera codice invito
 - rimuove amministratori
