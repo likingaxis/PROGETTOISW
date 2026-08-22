@@ -16,8 +16,11 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 | Autista AMA | RF-08 | Visualizzazione ritiri assegnati | Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto. |
 | Autista AMA | RF-09 | Registrazione esito ritiro | Il sistema deve permettere all'autista di registrare l'esito (positivo o negativo) del ritiro a domicilio effettuato. |
 | Operatore di Sede | RF-10 | Verifica e registrazione conferimento | Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito al momento dello scarico del rifiuto. |
-| Amministratore Sede | RF-11 | Gestione risorse e disponibilità | Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. |
-| Amministratore Sede | RF-12 | Generazione codici invito | Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovi operatori di sede. |
+| Amministratore Sede | RF-11 | Gestione risorse e disponibilità | Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e personale. |
+| Amministratore Sede | RF-12 | Generazione codici invito | Il sistema deve consentire a un'amministratore di generare codici di invito per registrare e abilitare nuovi operatori di sede e autisti. |
+| Amministratore di sede | RF-13 | Rimuovere personale Ama | Il sistema deve permettere a un amministratore di rimuovere il profilo di operatori e autisti Ama. |
+| Amministratore generale Sede | RF-14 | Generazione codici invito | Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovi amministratori di sede. |
+| Amministratore Generale | RF-15 | Rimuovere amministratori di Sede | Il sistema deve permettere all'amministratore generale di rimuovere il profilo di un amministratore di sede. |
 
 ---
 
