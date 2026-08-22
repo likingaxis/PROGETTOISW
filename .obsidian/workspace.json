@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "guide/guida-operativa.md",
+                "file": "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "guida-operativa"
+              "title": "LISTA ACTIVITY DIAGRAM"
             }
           }
         ]
@@ -190,6 +190,8 @@
   },
   "active": "ff8a1177feec5472",
   "lastOpenFiles": [
+    "guide/guida-operativa.md",
+    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001f",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000d",
     "guide/guida-git.md",
@@ -221,7 +223,6 @@
     "MYAMA/glossario.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_005d",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_004d",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_003d",
     "MYAMA/GRUPPO 2/FASE_1 - D, E.md"
   ]
 }
