@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ff8a1177feec5472",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MYAMA/GRUPPO 2/User requirements definition.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "User requirements definition"
-            }
-          },
-          {
             "id": "32d455458ecf8333",
             "type": "leaf",
             "state": {
@@ -35,8 +21,27 @@
               "title": "LISTA ACTIVITY DIAGRAM"
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "b8b87295d0a7380e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4776544381e89a3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MYAMA/GRUPPO 2/User requirements definition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "User requirements definition"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,11 +210,16 @@
   },
   "active": "32d455458ecf8333",
   "lastOpenFiles": [
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_003d",
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_002d",
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_001d",
+    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_000f",
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp",
     "MYAMA/GRUPPO 2/Esempio activity diagram.jpg",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001d",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000f",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
-    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "guide/guida-operativa.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001f",
@@ -228,16 +238,11 @@
     "MYAMA/Latex PDF/figure/uc_amministratore_generale.png",
     "MYAMA/Latex PDF/figure/uc_amministratore_sede.png",
     "MYAMA/Latex PDF/figure/uc_operatore_sede.png",
-    "MYAMA/Latex PDF/figure/uc_autista.png",
     "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore generale AMA.md",
     "MYAMA/GRUPPO 2/CHECKLIST.md",
     "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore di sede AMA.md",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_008d",
     "MYAMA/GRUPPO 1/output2.md",
     "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_006d",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_005d",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_004d",
     "MYAMA/glossario.md",
     "MYAMA/GRUPPO 2/FASE_1 - D, E.md"
   ]
