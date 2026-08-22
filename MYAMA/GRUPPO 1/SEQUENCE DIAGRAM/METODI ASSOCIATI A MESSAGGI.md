@@ -4,13 +4,13 @@ Quando il messaggio è solo di interfaccia, tipo `mostraForm()`, non lo consider
 
 ## 1. Registrarsi come cittadino
 
-|Messaggio|Metodo associato|Classe|
-|---|---|---|
-|`richiediRegistrazione()`|—|Interfaccia|
-|`inserisciDatiPersonali(dati)`|`registrati(datiPersonali)`|`Cittadino`|
-|`verificaEmail(email)`|`verificaEmail(email)`|`UtenteSistema`|
-|`creaAccount(dati)`|`registrati(datiPersonali)`|`Cittadino`|
-|`confermaRegistrazione()`|—|Interfaccia|
+| Messaggio                      | Metodo associato            | Classe          |
+| ------------------------------ | --------------------------- | --------------- |
+| `richiediRegistrazione()`      | —                           | Interfaccia     |
+| `inserisciDatiPersonali(dati)` | `registrati(datiPersonali)` | `Cittadino`     |
+| `verificaEmail(email)`         | `verificaEmail(email)`      | `UtenteSistema` |
+| `creaAccount(dati)`            | `registrati(datiPersonali)` | `Cittadino`     |
+| `confermaRegistrazione()`      | —                           | Interfaccia     |
 
 Metodi coinvolti:
 
