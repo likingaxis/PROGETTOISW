@@ -57,23 +57,22 @@
 \renewcommand{\footrulewidth}{0.4pt}
 
 % --- COMANDI UTILI PER SCHEDE USE CASE ---
-\newcommand{\usecasetable}[8]{
+\newcommand{\usecasetable}[7]{
 \begin{table}[H]
 \centering
 \small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|l|X|}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.2cm}|X|}
 \hline
-\rowcolor{tableheader} \textbf{ID e Nome Use Case} & \textbf{#1} \\ \hline
-\textbf{Attori Coinvolti} & #2 \\ \hline
-\textbf{Descrizione} & #3 \\ \hline
-\textbf{Precondizioni} & #4 \\ \hline
-\textbf{Flusso Principale} & #5 \\ \hline
-\textbf{Flussi Alternativi} & #6 \\ \hline
-\textbf{Postcondizioni} & #7 \\ \hline
-\textbf{Requisiti Correlati} & #8 \\ \hline
+\rowcolor{tableheader} Use Case & \textbf{#1} \\ \hline
+Descrizione & #2 \\ \hline
+Attori & #3 \\ \hline
+Precondizioni & #4 \\ \hline
+Scenario principale & #5 \\ \hline
+Scenari alternativi & #6 \\ \hline
+Post-condizioni & #7 \\ \hline
 \end{tabularx}
-\caption{Scheda Use Case: #1}
+\caption{Scheda Use Case --- #1}
 \label{uc:#1}
 \end{table}
 }

@@ -6,104 +6,71 @@ I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vinc
 % 4.1 REQUISITI FUNZIONALI
 % =========================================================================
 \subsection{Requisiti Funzionali}
-I requisiti funzionali descrivono i servizi e le azioni che il sistema deve eseguire in risposta a specifici stimoli o interazioni.
+Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in base agli attori che interagiscono con la piattaforma \textbf{MyAma}, derivate dall'analisi dei casi d'uso.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{2cm}|p{8.2cm}|p{4.8cm}|}
+\begin{longtable}{|p{3.5cm}|p{1.5cm}|p{4.2cm}|p{6cm}|}
 \hline
-\rowcolor{tableheader} \textbf{ID} & \textbf{Descrizione del Requisito} & \textbf{Use Case di Riferimento} \\ \hline
+\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione / Criterio di Verifica} \\ \hline
 \endfirsthead
 
 \hline
-\rowcolor{tableheader} \textbf{ID} & \textbf{Descrizione del Requisito} & \textbf{Use Case di Riferimento} \\ \hline
+\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione / Criterio di Verifica} \\ \hline
 \endhead
 
-\textbf{RF-01} & Il sistema deve consentire la libera consultazione delle categorie di rifiuti ingombranti e delle relative tariffe di smaltimento. & UC-U01 / Visitatore \\ \hline
+Utente non registrato & \textbf{RF-01} & Registrazione cittadino & Il sistema deve consentire a un utente di registrarsi come cittadino fornendo i propri dati e accettando l'informativa privacy. \\ \hline
 
-\textbf{RF-02} & Il sistema deve permettere la ricerca delle sedi AMA e isole ecologiche attive tramite inserimento del CAP. & UC-U01 / Visitatore \\ \hline
+Utente non registrato & \textbf{RF-02} & Registrazione tramite invito & Il sistema deve permettere la registrazione del personale (Amministratore o Operatore) tramite l'inserimento di un codice di invito valido. \\ \hline
 
-\textbf{RF-03} & Il sistema deve consentire la registrazione di un nuovo profilo Cittadino previa validazione dei dati anagrafici e recapiti. & UC-U02 / Visitatore \\ \hline
+Utente di sistema & \textbf{RF-03} & Autenticazione & Il sistema deve permettere agli utenti registrati di effettuare l'accesso inserendo credenziali valide, reindirizzandoli alle funzionalità del proprio ruolo. \\ \hline
 
-\textbf{RF-04} & Il sistema deve consentire al Cittadino di richiedere un ritiro a domicilio indicando tipologia, descrizione e quantità dei beni. & UC-C01 / Cittadino \\ \hline
+Cittadino & \textbf{RF-04} & Richiesta ritiro a domicilio & Il sistema deve permettere al cittadino di prenotare un ritiro a domicilio fornendo indirizzo, CAP e i dettagli del rifiuto ingombrante. \\ \hline
 
-\textbf{RF-05} & Il sistema deve validare la copertura territoriale verificando che il CAP indicato appartenga alle zone servite da AMA. & UC-C01 / Sistema \\ \hline
+Cittadino & \textbf{RF-05} & Verifica zona coperta & Il sistema deve verificare che il CAP o la zona indicata dal cittadino per il ritiro a domicilio sia effettivamente coperta dal servizio. \\ \hline
 
-\textbf{RF-06} & Il sistema deve calcolare gli slot temporali disponibili tenendo conto della portata residua dei veicoli e dei turni autisti. & UC-C01 / Sistema \\ \hline
+Cittadino & \textbf{RF-06} & Prenotazione conferimento & Il sistema deve permettere al cittadino di prenotare il conferimento del rifiuto presso una sede AMA compatibile con la propria zona. \\ \hline
 
-\textbf{RF-07} & Il sistema deve consentire il caricamento opzionale di fotografie del rifiuto per agevolare la stima volumetrica. & UC-C01 / Cittadino \\ \hline
+Cittadino & \textbf{RF-07} & Annullamento prenotazione & Il sistema deve consentire al cittadino di annullare una propria prenotazione precedentemente creata. \\ \hline
 
-\textbf{RF-08} & Il sistema deve permettere la prenotazione di un conferimento diretto presso un centro di raccolta autorizzato. & UC-C02 / Cittadino \\ \hline
+Autista AMA & \textbf{RF-08} & Visualizzazione ritiri assegnati & Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto. \\ \hline
 
-\textbf{RF-09} & Il sistema deve filtrare e mostrare le sole sedi abilitate alla ricezione della specifica tipologia di rifiuto indicata. & UC-C02 / Sistema \\ \hline
+Autista AMA & \textbf{RF-09} & Registrazione esito ritiro & Il sistema deve permettere all'autista di registrare l'esito (es. positivo o negativo) del ritiro a domicilio effettuato. \\ \hline
 
-\textbf{RF-10} & Il sistema deve generare un Pass di Conferimento con codice identificativo univoco e QR code all'atto della conferma. & UC-C02 / Cittadino \\ \hline
+Operatore di Sede & \textbf{RF-10} & Verifica e registrazione conferimento & Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito al momento dello scarico del rifiuto. \\ \hline
 
-\textbf{RF-11} & Il sistema deve consentire al Cittadino di visualizzare lo stato di avanzamento e lo storico di tutte le proprie prenotazioni. & UC-C03 / Cittadino \\ \hline
+Amministratore Sede & \textbf{RF-11} & Gestione risorse e disponibilità & Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. \\ \hline
 
-\textbf{RF-12} & Il sistema deve consentire la cancellazione autonoma della prenotazione se richiesta con almeno 24 ore di anticipo. & UC-C03 / Cittadino \\ \hline
+Amministratore Sede & \textbf{RF-12} & Generazione codici invito & Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale. \\ \hline
 
-\textbf{RF-13} & Il sistema deve consentire al Cittadino di rilasciare una valutazione con punteggio e commento sui servizi completati. & UC-C04 / Cittadino \\ \hline
-
-\textbf{RF-14} & Il sistema deve fornire all'Autista l'elenco ordinato e l'itinerario dei ritiri a domicilio assegnati per il proprio turno. & UC-A01 / Autista \\ \hline
-
-\textbf{RF-15} & Il sistema deve mostrare all'Autista i dettagli del carico e la percentuale di capienza progressivamente occupata sul mezzo. & UC-A01 / Autista \\ \hline
-
-\textbf{RF-16} & Il sistema deve consentire all'Autista di registrare l'esito del ritiro (\textit{Completato, Assente, Non conforme}) con note operative. & UC-A02 / Autista \\ \hline
-
-\textbf{RF-17} & Il sistema deve aggiornare in tempo reale lo stato della prenotazione dopo la registrazione dell'esito da parte dell'autista. & UC-A02 / Sistema \\ \hline
-
-\textbf{RF-18} & Il sistema deve consentire all'Autista di avviare il contatto o inviare notifiche di arrivo al cittadino. & UC-A03 / Autista \\ \hline
-
-\textbf{RF-19} & Il sistema deve mostrare all'Operatore di Sede la pianificazione giornaliera degli accessi al centro di raccolta. & UC-O01 / Operatore \\ \hline
-
-\textbf{RF-20} & Il sistema deve consentire all'Operatore di validare il Pass di Conferimento tramite scansione ottica o codice manuale. & UC-O02 / Operatore \\ \hline
-
-\textbf{RF-21} & Il sistema deve consentire all'Operatore di registrare l'avvenuto scarico del rifiuto conforme o la non conformità riscontrata. & UC-O02 / Operatore \\ \hline
-
-\textbf{RF-22} & Il sistema deve consentire all'Amministratore di Sede di gestire l'anagrafica del personale assegnato alla sede. & UC-S01 / Amm. Sede \\ \hline
-
-\textbf{RF-23} & Il sistema deve permettere la pianificazione dei turni settimanali per autisti e operatori di sede. & UC-S01 / Amm. Sede \\ \hline
-
-\textbf{RF-24} & Il sistema deve consentire la gestione della flotta veicoli della sede con impostazione di portata e stato di disponibilità. & UC-S02 / Amm. Sede \\ \hline
-
-\textbf{RF-25} & Il sistema deve consentire la configurazione degli orari del centro di raccolta e l'associazione dei CAP serviti. & UC-S03 / Amm. Sede \\ \hline
-
-\textbf{RF-26} & Il sistema deve consentire all'Amministratore Generale di creare, abilitare e revocare gli account degli amministratori di sede. & UC-G01 / Amm. Generale \\ \hline
-
-\textbf{RF-27} & Il sistema deve generare report e cruscotti statistici aggregate sui volumi di rifiuti gestiti e tassi di successo dei servizi. & UC-G02 / Amm. Generale \\ \hline
+Amministratore Sede & \textbf{RF-13} & Rimozione personale & Il sistema deve permettere all'amministratore di rimuovere account del personale dal sistema. \\ \hline
 \end{longtable}
 \end{center}
 
 % =========================================================================
 % 4.2 REQUISITI NON FUNZIONALI
 % =========================================================================
-\newpage
 \subsection{Requisiti Non Funzionali}
-I requisiti non funzionali definiscono i vincoli qualitativi di prestazione, affidabilità, usabilità, sicurezza e compatibilità del software.
+Questa sezione descrive i vincoli di qualità e le caratteristiche misurabili che il sistema deve rispettare.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{2.2cm}|p{3cm}|p{10cm}|}
+\begin{longtable}{|p{1.8cm}|p{3.8cm}|p{9.6cm}|}
 \hline
-\rowcolor{tableheader} \textbf{ID} & \textbf{Categoria} & \textbf{Descrizione del Requisito e Metrica di Misura} \\ \hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Requisito} & \textbf{Descrizione e Metriche (Criterio di Verifica)} \\ \hline
 \endfirsthead
 
 \hline
-\rowcolor{tableheader} \textbf{ID} & \textbf{Categoria} & \textbf{Descrizione del Requisito e Metrica di Misura} \\ \hline
+\rowcolor{tableheader} \textbf{ID} & \textbf{Requisito} & \textbf{Descrizione e Metriche (Criterio di Verifica)} \\ \hline
 \endhead
 
-\textbf{RNF-01} & Prestazioni & Il tempo di risposta per il calcolo delle disponibilità e verifica CAP non deve superare i 2.0 secondi al 95° percentile sotto carico di 200 richieste concorrenti. \\ \hline
+\textbf{RNF-01} & Sicurezza (Autenticazione e Privacy) & Il sistema deve garantire che le password siano salvate tramite algoritmi di hashing sicuri. L'accesso a dati personali e funzioni sensibili è consentito solo previa autenticazione e in base ai permessi del ruolo (RBAC). \\ \hline
 
-\textbf{RNF-02} & Disponibilità & Il sistema deve garantire una disponibilità del servizio del 99.5\% su base mensile nell'intervallo orario 07:00 -- 22:00. \\ \hline
+\textbf{RNF-02} & Performance (Tempi di risposta) & Il sistema deve restituire l'elenco delle sedi compatibili o delle fasce orarie disponibili in un tempo massimo di 2 secondi nel 95\% delle richieste, per garantire una user-experience fluida. \\ \hline
 
-\textbf{RNF-03} & Usabilità & L'interfaccia di prenotazione per il cittadino deve essere completabile in non più di 4 passaggi sequenziali intuitivi, con supporto completo per dispositivi mobili (\textit{responsive}). \\ \hline
+\textbf{RNF-03} & Usabilità & L'interfaccia utente deve essere intuitiva. La prenotazione di un ritiro o di un conferimento da parte di un cittadino deve potersi concludere in non più di 5 passaggi (click o schermate). \\ \hline
 
-\textbf{RNF-04} & Sicurezza & I dati in transito devono essere protetti mediante crittografia TLS 1.3; le password devono essere archiviate con algoritmo di hashing sicuro (bcrypt con work factor $\ge 12$). \\ \hline
-
-\textbf{RNF-05} & Integrità Dati & Le operazioni di prenotazione e allocazione slot devono essere eseguite sotto transazioni ACID per prevenire sovrapposizioni e overbooking sui mezzi. \\ \hline
-
-\textbf{RNF-06} & Portabilità & L'applicazione web deve risultare pienamente compatibile con i principali browser moderni (Google Chrome $\ge 110$, Mozilla Firefox $\ge 110$, Safari $\ge 16$, Microsoft Edge $\ge 110$). \\ \hline
+\textbf{RNF-04} & Disponibilità (Availability) & Il sistema lato cittadino deve garantire un uptime del 99.5\% su base mensile, permettendo la prenotazione dei servizi 24 ore su 24, 7 giorni su 7. \\ \hline
 \end{longtable}
 \end{center}
 
@@ -111,45 +78,11 @@ I requisiti non funzionali definiscono i vincoli qualitativi di prestazione, aff
 % 4.3 REQUISITI DI DOMINIO
 % =========================================================================
 \subsection{Requisiti di Dominio}
-I requisiti di dominio formalizzano le regole operative e normative dell'azienda municipalizzata AMA:
+Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto ``AMA'' (smaltimento rifiuti) che vincolano il funzionamento del software:
 
-\begin{itemize}[leftmargin=*]
-    \item \textbf{RD-01 (Vincolo di Portata Massima Veicolo):} Per ciascun veicolo impiegato nei ritiri a domicilio, la sommatoria dei pesi stimati dei rifiuti prenotati non può in nessun caso superare la portata massima omologata del mezzo ($\sum_{i} P_i \le \text{PortataMax}$).
-    
-    \item \textbf{RD-02 (Competenza Territoriale del Bacino CAP):} Un autista e un veicolo possono essere assegnati esclusivamente a ritiri ricadenti all'interno dei CAP formalmente associati al distretto operativo di appartenenza.
-    
-    \item \textbf{RD-03 (Normativa Smaltimento RAEE e Rifiuti Speciali):} Il conferimento di apparecchiature elettriche ed elettroniche (RAEE) e rifiuti speciali è consentito unicamente presso le sedi AMA provviste di specifiche autorizzazioni ambientali e contenitori dedicati.
-    
-    \item \textbf{RD-04 (Finestra Temporale di Cancellazione):} Il cittadino può procedere alla cancellazione autonoma della prenotazione con liberazione delle risorse fino a un massimo di 24 ore prima dell'inizio dello slot orario prenotato.
-\end{itemize}
-
-% =========================================================================
-% 4.4 VERIFICABILITÀ DEI REQUISITI
-% =========================================================================
-\subsection{Verificabilità dei Requisiti}
-In accordo con i criteri di ingegneria del software, ogni requisito deve essere controllabile e dimostrabile tramite specifiche procedure di collaudo.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{2cm}|p{5.5cm}|p{7.8cm}|}
-\hline
-\rowcolor{tableheader} \textbf{ID Req.} & \textbf{Metodo di Verifica} & \textbf{Criterio di Accettazione e Procedura di Test} \\ \hline
-\endfirsthead
-
-\hline
-\rowcolor{tableheader} \textbf{ID Req.} & \textbf{Metodo di Verifica} & \textbf{Criterio di Accettazione e Procedura di Test} \\ \hline
-\endhead
-
-\textbf{RF-05} & Test Funzionale & Inserimento di CAP appartenenti ed esterni alla copertura AMA; il sistema blocca i CAP non coperti e fornisce opportuno messaggio di redirect al conferimento in sede. \\ \hline
-
-\textbf{RF-06} & Test di Integrazione & Simulazione di prenotazioni consecutive fino a saturazione portata veicolo; il sistema inibisce la selezione dello slot quando il carico residuo è inferiore al peso del rifiuto inserito. \\ \hline
-
-\textbf{RF-12} & Test di Limite Temporale & Tentativo di cancellazione a $T - 25\text{h}$ (operazione consentita con successo) e a $T - 23\text{h}$ (operazione bloccata con notifica di vincolo temporale). \\ \hline
-
-\textbf{RNF-01} & Stress / Load Test & Generazione di 200 richieste concorrenti di ricerca disponibilità tramite Apache JMeter; tempo medio di risposta registrato $\le 2.0\text{s}$. \\ \hline
-
-\textbf{RNF-04} & Security Audit & Scansione automatizzata delle vulnerabilità web (OWASP ZAP) e verifica conformità protocollo TLS 1.3 e hashing password. \\ \hline
-
-\textbf{RD-01} & Test sui Vincoli Logici & Inserimento di rifiuti con peso complessivo superiore alla portata del mezzo assegnato; verifica del blocco transazione da parte del controllore logico. \\ \hline
-\end{longtable}
-\end{center}
+\begin{enumerate}[leftmargin=*, label=\textbf{RD-\arabic*.}]
+    \item \textbf{Competenza Territoriale:} Una richiesta di ritiro a domicilio o la scelta di una sede per il conferimento sono vincolate dalla competenza territoriale. Il sistema può accettare richieste solo se il CAP o la zona indicata dall'utente sono coperti e assegnati a una Sede AMA attiva.
+    \item \textbf{Vincolo di Capacità dei Veicoli:} Durante la pianificazione dei ritiri a domicilio, il sistema non può assegnare a un singolo veicolo un numero di prenotazioni il cui peso o volume stimato superi il carico massimo consentito (capacità) del veicolo stesso per quel turno.
+    \item \textbf{Ciclo di Vita della Prenotazione:} Ogni prenotazione deve rispettare rigorosamente una macchina a stati definita (es. \textit{Creata}, \textit{Assegnata}, \textit{Completata}, \textit{Annullata}). Il sistema deve impedire transizioni illecite, come l'annullamento di una prenotazione che risulta già in stato \textit{Completata}.
+    \item \textbf{Validità del Codice di Invito:} Un codice di invito generato da un amministratore deve essere univoco, associato a un ruolo specifico (es. Operatore o Amministratore) e può essere monouso, per evitare la creazione fraudolenta di profili con privilegi elevati.
+\end{enumerate}
