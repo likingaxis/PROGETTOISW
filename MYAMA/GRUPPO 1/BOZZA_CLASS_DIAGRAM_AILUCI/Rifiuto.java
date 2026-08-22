@@ -5,7 +5,4 @@ public class Rifiuto {
 	private double volumeStimato;
 	private String foto;
 
-	// Rifiuto * --- 1 TipologiaRifiuto
-	private TipologiaRifiuto tipologia;
-
 }
