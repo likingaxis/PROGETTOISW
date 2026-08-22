@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b8b87295d0a7380e",
+        "id": "88649892ad8b5f7e",
         "type": "tabs",
         "children": [
           {
-            "id": "4776544381e89a3f",
+            "id": "3b6b76aeeef70aa5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MYAMA/GRUPPO 1/System Requirements.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "System Requirements"
+              "title": "New tab"
             }
           }
         ]
@@ -188,34 +184,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "4776544381e89a3f",
+  "active": "3b6b76aeeef70aa5",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Rimuovere lavoratori.png",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Gestire disponibiltà della sede e fasce orarie.png",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Gestire associazioni tra sede e zone cap.png",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Gestire disponibilità dei lavoratori.png",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Gestire disponibilità dei veicoli.png",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO/Genera codice di invito2.png",
+    "MYAMA/Latex PDF/figure/act_rimuovere_admin.jpg",
+    "MYAMA/Latex PDF/figure/act_generare_codice_admin.jpg",
+    "MYAMA/Latex PDF/figure/act_admin_sede_rimuovere_lavoratori.png",
+    "MYAMA/Latex PDF/figure/act_admin_sede_gestire_fasce.png",
+    "MYAMA/Latex PDF/figure/act_admin_sede_gestire_veicoli.png",
+    "MYAMA/Latex PDF/figure/act_admin_sede_gestire_lavoratori.png",
+    "MYAMA/Latex PDF/figure/act_admin_sede_genera_codice.png",
+    "MYAMA/Latex PDF/figure/act_operatore_esito_conferimento.jpg",
+    "MYAMA/Latex PDF/figure/act_operatore_verificare.jpg",
+    "MYAMA/Latex PDF/figure/act_autista_registrare_esito.jpg",
+    "MYAMA/Latex PDF/figure/act_valutare_servizio.jpg",
+    "MYAMA/GRUPPO 1/System Requirements.md",
+    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM VALERIO",
+    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM SAMUELE",
+    "MYAMA/GRUPPO 1/Use Case/ValerioUseCase.vpp.bak_001d",
+    "MYAMA/GRUPPO 1/New Folder",
+    "MYAMA/GRUPPO 1/Use Case/ValerioUseCase.vpp.bak_000f",
+    "MYAMA/GRUPPO 1/Use Case/davidelUseCase.vpp.bak_001d",
+    "MYAMA/GRUPPO 1/Use Case/davidelUseCase.vpp.bak_000f",
+    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM DAVIDE",
     "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM ALFREDO",
     "MYAMA/GRUPPO 1/output2.md",
-    "MYAMA/GRUPPO 1/System Requirements.md",
     "MYAMA/GRUPPO 1/Use Case/ValerioUseCase.vpp",
-    "MYAMA/GRUPPO 1/Use Case/davidelUseCase.vpp",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/ActivityLuca.vpp",
     "MYAMA/GRUPPO 2/User requirements definition.md",
     "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
-    "MYAMA/Latex PDF/figure/uc_amministratore_generale.jpg",
-    "MYAMA/Latex PDF/figure/uc_amministratore_sede.jpg",
-    "MYAMA/Latex PDF/figure/uc_operatore_sede.jpg",
-    "MYAMA/Latex PDF/figure/uc_autista.jpg",
-    "MYAMA/Latex PDF/figure/uc_cittadino.jpg",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_003d",
-    "MYAMA/GRUPPO 1/Use Case",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_003d",
-    "MYAMA/GRUPPO 1/New Folder",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_002d",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_004d",
     "guide/guida-operativa.md",
     "guide/guida-git.md",
     "guide/divisione-compiti.md",

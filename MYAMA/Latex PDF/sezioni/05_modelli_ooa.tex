@@ -6,39 +6,112 @@ La presente sezione descrive l'architettura dinamica e strutturale del sistema \
 % 5.1 ACTIVITY DIAGRAMS
 % =========================================================================
 \subsection{Activity Diagrams}
-Gli Activity Diagram descrivono i flussi operativi, le diramazioni decisionali e i punti di sincronizzazione nei processi cardine della piattaforma.
+Gli Activity Diagram descrivono i flussi operativi, le diramazioni decisionali e i punti di sincronizzazione nei processi cardine della piattaforma. Di seguito vengono presentati i diagrammi fondamentali, raggruppati per attore, al fine di modellare compiutamente la dinamica dell'intero sistema MyAma.
 
-\subsubsection{Activity Diagram: Prenotazione Ritiro a Domicilio (Cittadino)}
-Il diagramma modella il processo di inserimento dati rifiuto, validazione della copertura CAP, calcolo e selezione dello slot orario disponibile e conferma della prenotazione.
+\clearpage
+\subsubsection{Utente non registrato e Utente di sistema}
+Questi diagrammi modellano i flussi di base per l'ingresso nel sistema, dalla registrazione fino all'autenticazione.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.85\textwidth]{figure/act_ritiro_domicilio.png}
-    \fbox{\parbox[c][6.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui l'Activity Diagram per la Prenotazione Ritiro a Domicilio esportato da Visual Paradigm ]}}}
-    \caption{Activity Diagram --- Processo di Prenotazione Ritiro a Domicilio}
-    \label{fig:act_ritiro}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_registrarsi_cittadino.jpg}
+    \caption{Activity Diagram --- Registrarsi come cittadino}
 \end{figure}
 
-\subsubsection{Activity Diagram: Esecuzione Ritiro e Registrazione Esito (Autista)}
-Il diagramma modella il ciclo operativo dell'autista, dalla presa in carico dell'itinerario giornaliero, al raggiungimento dell'indirizzo e registrazione conclusiva dell'esito.
-
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.85\textwidth]{figure/act_autista.png}
-    \fbox{\parbox[c][6.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui l'Activity Diagram per l'Esecuzione Ritiro Autista esportato da Visual Paradigm ]}}}
-    \caption{Activity Diagram --- Flusso Esecuzione Ritiro e Chiusura Intervento}
-    \label{fig:act_autista}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_registrarsi_invito.jpg}
+    \caption{Activity Diagram --- Registrarsi tramite codice di invito}
 \end{figure}
 
-\subsubsection{Activity Diagram: Accettazione e Conferimento al Varco (Operatore di Sede)}
-Il diagramma descrive il flusso di verifica del pass di prenotazione, ispezione visiva dei rifiuti e convalida dello scarico presso l'isola ecologica.
-
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.85\textwidth]{figure/act_conferimento_sede.png}
-    \fbox{\parbox[c][6.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui l'Activity Diagram per il Conferimento in Sede esportato da Visual Paradigm ]}}}
-    \caption{Activity Diagram --- Flusso Accettazione e Verifica al Varco}
-    \label{fig:act_sede}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_effettuare_accesso.jpg}
+    \caption{Activity Diagram --- Effettuare accesso}
+\end{figure}
+
+\clearpage
+\subsubsection{Cittadino}
+I seguenti diagrammi illustrano le interazioni del cittadino per usufruire dei servizi AMA, dalla prenotazione fino alla valutazione finale.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_richiesta_ritiro.jpg}
+    \caption{Activity Diagram --- Richiesta ritiro a domicilio}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_prenota_conferimento.jpg}
+    \caption{Activity Diagram --- Prenotare conferimento in sede}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_visualizzare_prenotazioni.jpg}
+    \caption{Activity Diagram --- Visualizzare prenotazioni attive}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_annullare_prenotazione.jpg}
+    \caption{Activity Diagram --- Annullare prenotazione}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_valutare_servizio.jpg}
+    \caption{Activity Diagram --- Valutare il servizio}
+\end{figure}
+
+\clearpage
+\subsubsection{Autista e Operatore di Sede AMA}
+Questi diagrammi modellano il flusso di lavoro logistico del personale sul campo: lo svolgimento del servizio, i controlli di conformità e la registrazione dell'esito.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_autista_registrare_esito.jpg}
+    \caption{Activity Diagram --- Registrare esito del ritiro (Autista)}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_operatore_verificare.jpg}
+    \caption{Activity Diagram --- Verificare prenotazione del cittadino (Operatore di Sede)}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_operatore_esito_conferimento.jpg}
+    \caption{Activity Diagram --- Registrare esito del conferimento (Operatore di Sede)}
+\end{figure}
+
+\clearpage
+\subsubsection{Amministratori (di Sede e Generale)}
+I processi amministrativi consentono di gestire le risorse umane, i mezzi logistici e la configurazione strutturale delle sedi.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_admin_sede_genera_codice.png}
+    \caption{Activity Diagram --- Generare codice di invito (Amministratore Sede)}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_admin_sede_gestire_fasce.png}
+    \caption{Activity Diagram --- Gestire disponibilità della sede e fasce orarie}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_admin_sede_gestire_lavoratori.png}
+    \caption{Activity Diagram --- Gestire disponibilità dei lavoratori}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/act_generare_codice_admin.jpg}
+    \caption{Activity Diagram --- Generare codice amministratore di sede (Amministratore Generale)}
 \end{figure}
 
 % =========================================================================
@@ -48,34 +121,37 @@ Il diagramma descrive il flusso di verifica del pass di prenotazione, ispezione 
 \subsection{Sequence Diagrams}
 I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistema durante l'esecuzione dei casi d'uso, applicando il pattern architetturale \textbf{BCE} (\textit{Boundary}, \textit{Control}, \textit{Entity}).
 
+\clearpage
 \subsubsection{Sequence Diagram: UC-C01 Prenotazione Ritiro a Domicilio}
 Descrive la collaborazione tra l'interfaccia utente (\textit{Boundary} \texttt{PrenotazioneRitiroUI}), il coordinatore logico (\textit{Control} \texttt{GestorePrenotazioneRitiro}) e le entità di dominio (\textit{Entity} \texttt{Cittadino}, \texttt{ZonaCAP}, \texttt{Veicolo}, \texttt{Prenotazione}).
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.9\textwidth]{figure/seq_prenota_ritiro.png}
+    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_prenota_ritiro.png}
     \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Prenotazione Ritiro esportato da Visual Paradigm ]}}}
     \caption{Sequence Diagram (BCE) --- Realizzazione UC-C01 (Prenotazione Ritiro a Domicilio)}
     \label{fig:seq_ritiro}
 \end{figure}
 
+\clearpage
 \subsubsection{Sequence Diagram: UC-A02 Registrazione Esito Ritiro}
 Descrive la collaborazione tra l'applicazione mobile dell'autista (\textit{Boundary} \texttt{PannelloAutistaUI}), il controllore degli esiti (\textit{Control} \texttt{GestoreEsitoRitiro}) e le entità (\textit{Entity} \texttt{Prenotazione}, \texttt{Itinerario}, \texttt{Notifica}).
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.9\textwidth]{figure/seq_esito_ritiro.png}
+    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_esito_ritiro.png}
     \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Registrazione Esito Ritiro esportato da Visual Paradigm ]}}}
     \caption{Sequence Diagram (BCE) --- Realizzazione UC-A02 (Registrazione Esito Ritiro)}
     \label{fig:seq_esito}
 \end{figure}
 
+\clearpage
 \subsubsection{Sequence Diagram: UC-O02 Convalida e Scarico al Varco}
 Descrive la scansione del pass di conferimento presso il varco (\textit{Boundary} \texttt{PannelloVarcoUI}), l'elaborazione del controllore (\textit{Control} \texttt{GestoreAccettazioneSede}) e l'aggiornamento dell'entità (\textit{Entity} \texttt{Prenotazione}, \texttt{SedeAMA}).
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.9\textwidth]{figure/seq_conferimento_sede.png}
+    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_conferimento_sede.png}
     \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Convalida Conferimento esportato da Visual Paradigm ]}}}
     \caption{Sequence Diagram (BCE) --- Realizzazione UC-O02 (Convalida Conferimento al Varco)}
     \label{fig:seq_conferimento}
@@ -88,23 +164,25 @@ Descrive la scansione del pass di conferimento presso il varco (\textit{Boundary
 \subsection{Class Diagrams}
 I Class Diagram rappresentano la struttura statica delle entità, le classi di controllo e interfaccia, gli attributi, i metodi e le relazioni (associazioni, aggregazioni, composizioni ed ereditarietà).
 
+\clearpage
 \subsubsection{Class Diagram Unrefined (Modello Concettuale di Dominio)}
 Il modello \textit{Unrefined} illustra le entità concettuali e le loro relazioni primarie derivanti direttamente dall'analisi del dominio applicativo e dal glossario.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.95\textwidth]{figure/class_unrefined.png}
+    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/class_unrefined.png}
     \fbox{\parbox[c][8.5cm][c]{0.9\textwidth}{\centering \textsf{[ Inserire qui il Class Diagram Unrefined esportato da Visual Paradigm ]}}}
     \caption{Class Diagram --- Versione Unrefined (Modello di Dominio)}
     \label{fig:class_unrefined}
 \end{figure}
 
+\clearpage
 \subsubsection{Class Diagram Refined (Modello di Specifica Consolidato)}
 Il modello \textit{Refined} integra le classi Boundary e Control emerse dai Sequence Diagram, esplicita le visibilità (\textit{public}, \textit{protected}, \textit{private}), le tipizzazioni dei parametri e dei valori di ritorno, le molteplicità delle associazioni e la navigabilità.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.95\textwidth]{figure/class_refined.png}
+    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/class_refined.png}
     \fbox{\parbox[c][8.5cm][c]{0.9\textwidth}{\centering \textsf{[ Inserire qui il Class Diagram Refined esportato da Visual Paradigm ]}}}
     \caption{Class Diagram --- Versione Refined (Specifica OOA Consolidata)}
     \label{fig:class_refined}
