@@ -35,7 +35,8 @@
               "title": "LISTA ACTIVITY DIAGRAM"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -202,10 +203,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "ff8a1177feec5472",
+  "active": "32d455458ecf8333",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001d",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000f",
     "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "guide/guida-operativa.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001f",
@@ -236,7 +239,6 @@
     "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_004d",
     "MYAMA/glossario.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_005d",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_004d",
     "MYAMA/GRUPPO 2/FASE_1 - D, E.md"
   ]
 }
