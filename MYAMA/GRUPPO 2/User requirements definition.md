@@ -1,6 +1,6 @@
 # Use case Utente non registrato + Utente di sistema
 ### Diagramma UTENTE NON REGISTRATO + UTENTE DI SISTEMA
-![[Pasted image 20260822095418.png]]
+![[Use Case Diagram1.jpg]]
 ### Documentazione
 
 | **Use Case**            | **Registrarsi come cittadino**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -46,7 +46,7 @@
 # Use case Cittadino registrato
 
 ### Diagramma Cittadino registrato
-![[Pasted image 20260822104235.png]]
+![[Use Case Diagram2.jpg]]
 ### Documentazione
 
 | **Use Case**            | **Richiedere ritiro a domicilio**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -135,16 +135,16 @@
 # Use case Autista AMA
 
 ### Diagramma Autista AMA
-![[Pasted image 20260822110439.png]]
+![[AutistaAMA.jpg]]
 ### Documentazione
-| **Use Case**            | **Visualizzare ritiri assegnati**                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Use Case**            | **Visualizzare ritiri assegnati**                                                                                                                                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descrizione**         | **Passo azione**<br><br>**1.** L’autista AMA accede alla sezione dedicata ai ritiri assegnati.<br><br>**2.** Il sistema recupera i ritiri associati all’autista.<br><br>**3.** Il sistema mostra l’elenco dei ritiri assegnati, indicando le informazioni principali come data, fascia oraria e indirizzo. |
-| **Attori**              | Autista AMA                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Precondizioni**       | L’autista AMA ha effettuato l’accesso al sistema ed è associato ad almeno un ritiro.                                                                                                                                                                                                                                                                                                                                                                         |
-| **Scenario principale** | L’autista accede alla propria area e visualizza correttamente l’elenco dei ritiri che gli sono stati assegnati.                                                                                                                                                                                                                                                                                           |
-| **Scenari alternativi** | Non risultano ritiri assegnati all’autista: il sistema informa che non sono presenti attività da visualizzare.                                                                                                                                                                                                                                                                                                                                               |
-| **Post-condizioni**     | L’autista ha visualizzato l'elenco dei ritiri assegnati (nessuna modifica allo stato del sistema).                                                                                                                                                                                                                                                                                                                                             |
+| **Attori**              | Autista AMA                                                                                                                                                                                                                                                                                                |
+| **Precondizioni**       | L’autista AMA ha effettuato l’accesso al sistema ed è associato ad almeno un ritiro.                                                                                                                                                                                                                       |
+| **Scenario principale** | L’autista accede alla propria area e visualizza correttamente l’elenco dei ritiri che gli sono stati assegnati.                                                                                                                                                                                            |
+| **Scenari alternativi** | Non risultano ritiri assegnati all’autista: il sistema informa che non sono presenti attività da visualizzare.                                                                                                                                                                                             |
+| **Post-condizioni**     | L’autista ha visualizzato l'elenco dei ritiri assegnati (nessuna modifica allo stato del sistema).                                                                                                                                                                                                         |
 
 | **Use Case**            | **Consultare dettagli del ritiro**                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -178,7 +178,7 @@
 # Use case Operatore di sede AMA
 
 ### Diagramma Operatore di sede AMA
-![[Pasted image 20260822111525.png]]
+![[OperatoreSedeAMA.jpg]]
 ### Documentazione
 | **Use Case**            | **Visualizzare prenotazioni della sede**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -220,7 +220,7 @@
 # Use case Amministratore di sede AMA
 
 ### Diagramma Amministratore di sede AMA
-![[Pasted image 20260822114207.png|535]]
+![[AmministratoriAMA.jpg]]
 
 ### Documentazione
 
@@ -254,7 +254,7 @@
 | **Use Case**            | **Gestire disponibilità dei veicoli**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Descrizione**         | **Passo azione**<br><br>**1.** L’amministratore di sede AMA accede alla sezione dedicata ai veicoli.<br><br>**2.** Il sistema mostra i veicoli associati alla sede e le relative informazioni di disponibilità.<br><br>**3.** L’amministratore seleziona un veicolo.<br><br>**4.** Il sistema mostra la disponibilità attualmente registrata.<br><br>**5.** L’amministratore modifica le informazioni di disponibilità del veicolo.<br><br>**6.** Il sistema verifica la validità dei dati inseriti.<br><br>**7.** L’amministratore conferma le modifiche.<br><br>**8.** Il sistema aggiorna la disponibilità del veicolo. |
-| **Attori**              | Amministratore di sede AMA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Attori**              | Amministratore di sede AMA                                                                                                                                                                                                                                                                                                                                                                                                                                                     ![[Rimuovere amministratore di sede AMA.jpg]]                  |
 | **Precondizioni**       | L’amministratore ha effettuato l’accesso al sistema e il veicolo selezionato risulta associato alla sede.                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | **Scenario principale** | L’amministratore seleziona un veicolo, modifica correttamente la sua disponibilità e conferma l’operazione.                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Scenari alternativi** | I dati inseriti non sono validi: il sistema segnala l’errore e richiede una correzione.<br><br>Il veicolo non risulta disponibile o associato alla sede: il sistema impedisce l’aggiornamento delle relative informazioni.                                                                                                                                                                                                                                                                                                         |
@@ -284,7 +284,7 @@
 # Use case Amministratore generale AMA
 
 ### Diagramma Amministratore generale AMA
-![[Pasted image 20260822113932.png]]
+![[Amministratore generale AMA.jpg]]
 
 ### Documentazione
 

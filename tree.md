@@ -51,13 +51,13 @@ PROGETTOISW/
 │   │   │   ├── 📄 04_system_requirements.tex                 # Cap. 4: Requisiti di sistema (RF, RNF, RD e verificabilità)
 │   │   │   ├── 📄 05_modelli_ooa.tex                         # Cap. 5: Activity, Sequence e Class Diagrams
 │   │   │   └── 📄 06_design_patterns.tex                     # Cap. 6: Design Patterns GoF applicati
-│   │   ├── 📂 figure/                                        # Diagrammi UML esportati (.png) e loghi del documento
-│   │   │   ├── 🖼️ uc_utente_non_registrato.png               # Diagramma Use Case Utente non registrato + Sistema
-│   │   │   ├── 🖼️ uc_cittadino.png                           # Diagramma Use Case Cittadino registrato
-│   │   │   ├── 🖼️ uc_autista.png                             # Diagramma Use Case Autista AMA
-│   │   │   ├── 🖼️ uc_operatore_sede.png                      # Diagramma Use Case Operatore di sede AMA
-│   │   │   ├── 🖼️ uc_amministratore_sede.png                 # Diagramma Use Case Amministratore di sede AMA
-│   │   │   ├── 🖼️ uc_amministratore_generale.png             # Diagramma Use Case Amministratore generale AMA
+│   │   ├── 📂 figure/                                        # Diagrammi UML esportati (.jpg) e loghi del documento
+│   │   │   ├── 🖼️ uc_utente_non_registrato.jpg               # Diagramma Use Case Utente non registrato + Sistema
+│   │   │   ├── 🖼️ uc_cittadino.jpg                           # Diagramma Use Case Cittadino registrato
+│   │   │   ├── 🖼️ uc_autista.jpg                             # Diagramma Use Case Autista AMA
+│   │   │   ├── 🖼️ uc_operatore_sede.jpg                      # Diagramma Use Case Operatore di sede AMA
+│   │   │   ├── 🖼️ uc_amministratore_sede.jpg                 # Diagramma Use Case Amministratore di sede AMA
+│   │   │   ├── 🖼️ uc_amministratore_generale.jpg             # Diagramma Use Case Amministratore generale AMA
 │   │   │   ├── 🖼️ tor_vergata_logo.png                       # Logo ufficiale Ateneo per il frontespizio
 │   │   │   ├── 🖼️ cover.jpg / cover.pdf                      # Elementi grafici di copertina
 │   │   │   └── 📄 .gitkeep
