@@ -1,4 +1,4 @@
-Sì. Ho rifatto il **punto 9 della guida operativa** usando la versione aggiornata di `User requirements definition.md`, `System Requirements.md`, glossario e la base del progetto. La guida chiede proprio una **prima bozza delle classi candidate, attributi principali, relazioni evidenti e molteplicità preliminari**, senza ancora riempirla di operazioni.
+UteSì. Ho rifatto il **punto 9 della guida operativa** usando la versione aggiornata di `User requirements definition.md`, `System Requirements.md`, glossario e la base del progetto. La guida chiede proprio una **prima bozza delle classi candidate, attributi principali, relazioni evidenti e molteplicità preliminari**, senza ancora riempirla di operazioni.
 
 La struttura che userei per il **primo Class Diagram / Unrefined** è questa.
 
