@@ -40,7 +40,7 @@
 4.  gestisce disponibilità di sedi e fasce orarie (**include**[5])
 5.  gestisce associazione tra sedi e zone/CAP
 6. genera codice invito
-7. rimuove operatori di sede AMA
+7. rimuove personale
 
 # Amministratore generale AMA
 - genera codice invito

@@ -25,12 +25,15 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 | Risorsa | Natura | Descrizione |
 |---|---|---|
-| 📂 **[`MYAMA/`](./MYAMA)** | **Cartella Progetto** | **Spazio di lavoro del progetto**: specifica formale IEEE 830, file operativi (`decisioni.md`, `tracciabilita.md`) e modelli Visual Paradigm. |
+| 📂 **[`MYAMA/Latex PDF/`](./MYAMA/Latex%20PDF)** | **Progetto LaTeX & PDF** | **Cartella master del documento d'esame**: sorgenti LaTeX modulari (`main.tex`, `sezioni/`), figure UML e PDF finale compilato ([`main.pdf`](./MYAMA/Latex%20PDF/main.pdf)). |
+| 📂 **[`MYAMA/GRUPPO 1/`](./MYAMA/GRUPPO%201)** | **Gruppo 1 Workspace** | Requisiti di Sistema ([`System Requirements.md`](./MYAMA/GRUPPO%201/System%20Requirements.md)), modelli Visual Paradigm e bozze. |
+| 📂 **[`MYAMA/GRUPPO 2/`](./MYAMA/GRUPPO%202)** | **Gruppo 2 Workspace** | Schede Use Case integrali ([`User requirements definition.md`](./MYAMA/GRUPPO%202/User%20requirements%20definition.md)), elenco casi d'uso ([`LISTA USE CASE.md`](./MYAMA/GRUPPO%202/LISTA%20USE%20CASE.md)) e perimetro ([`FASE_1 - D, E.md`](./MYAMA/GRUPPO%202/FASE_1%20-%20D,%20E.md)). |
 | 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
 | 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
 | 📘 **[`guide/guida-progetto.md`](./guide/guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
 | 🚀 **[`guide/guida-operativa.md`](./guide/guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
 | 👥 **[`guide/divisione-compiti.md`](./guide/divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
+| 📅 **[`guide/plan-giorni.md`](./guide/plan-giorni.md)** | **Roadmap & Planning** | Pianificazione cronologica delle attività e tappe di avanzamento del progetto. |
 | 🛠️ **[`guide/guida-git.md`](./guide/guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
 | 📌 **[`guide/infoprof.md`](./guide/infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
 | 📚 **[`progettialtrui/`](./progettialtrui)** | **Benchmark Progetti** | Relazioni d'esame complete e modelli UML di riferimento (Pesca, Hotel TorVergata, RistorApp, Buongiorno). |
@@ -83,10 +86,11 @@ graph TD
 ```
 
 ### Ruoli & Attori Principali:
-- **Cittadino (Cliente)**: Autenticazione (credenziali / SPID), richiesta di ritiro a domicilio o conferimento in sede, geolocalizzazione, upload foto/dati rifiuto, preventivo e tracking stato.
-- **Autista AMA (Lavoratore)**: Consultazione itinerario, gestione capienza veicolo ($\sum \text{Pesi} \le \text{CaricoMax}$), registrazione esito ritiro a domicilio.
-- **Operatore di Sede (Lavoratore)**: Gestione varchi dei centri di raccolta, verifica conformità rifiuto e convalida scarico.
-- **Amministratore / Logistica**: Gestione sedi, associazione zone/CAP, anagrafica mezzi, turnazione lavoratori e tariffari.
+- **Cittadino (Cliente)**: Autenticazione (credenziali), richiesta di ritiro a domicilio o conferimento in sede, upload foto/dati rifiuto, verifica disponibilità e tracking stato prenotazione.
+- **Autista AMA (Lavoratore)**: Consultazione ritiri assegnati per il proprio turno, registrazione esito del ritiro e contatto con il cittadino.
+- **Operatore di Sede (Lavoratore)**: Consultazione prenotazioni del centro di raccolta, verifica prenotazione del cittadino e registrazione dell'esito dello scarico.
+- **Amministratore di Sede AMA**: Gestione disponibilità lavoratori, disponibilità mezzi, fasce orarie della sede, associazioni CAP/zone e generazione codici invito per il personale.
+- **Amministratore Generale AMA**: Gestione account degli Amministratori di sede (generazione codici invito e rimozione).
 
 ---
 
@@ -97,7 +101,7 @@ Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipende
 - 🐟 **[`progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
 - 🏨 **[`progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
 - 🍽️ **[`progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
-- 🏋️ **[`progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno*.
+- 🏋️ **[`progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno* (riferimento primario di struttura).
 - ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
 
 ---
@@ -115,15 +119,21 @@ PROGETTOISW/
 │   ├── 📘 guida-progetto.md                                   # Teoria orientata al progetto e modello mentale
 │   ├── 🚀 guida-operativa.md                                  # Guida operativa passo-passo per redigere la specifica
 │   ├── 👥 divisione-compiti.md                                # Piano di divisione compiti per 5 persone
+│   ├── 📅 plan-giorni.md                                      # Pianificazione cronologica e roadmap
 │   ├── 🛠️ guida-git.md                                        # Guida pratica Git/GitHub per i collaboratori
 │   └── 📌 infoprof.md                                        # Linee guida esame e scadenze del docente
 │
-├── 📂 MYAMA/                                                 # Cartella di sviluppo del progetto d'esame
-│   ├── 📂 GRUPPO 1/
-│   │   └── 📄 output.md                                      # Bozza introduzione, contesto e attori (Gruppo 1)
-│   ├── 📂 GRUPPO 2/
-│   │   └── 📄 FASE_1 - D, E.md                               # Analisi perimetro, scope e checklist (Gruppo 2)
-│   └── 📄 glossario.md                                       # Glossario dei termini di dominio MyAma
+├── 📂 MYAMA/                                                 # Cartella operativa di sviluppo del progetto d'esame
+│   ├── 📂 GRUPPO 1/                                          # Requisiti di sistema, modelli .vpp e bozze
+│   ├── 📂 GRUPPO 2/                                          # Schede Use Case, elenchi e analisi scope
+│   ├── 📂 Latex PDF/                                         # Progetto master LaTeX per la compilazione della relazione finale
+│   │   ├── 📄 main.tex                                       # File master con preambolo e include modulari
+│   │   ├── 📄 main.pdf                                       # PDF finale compilato e sincronizzato
+│   │   ├── 🐍 compile_pdf.py                                 # Script di compilazione a 2 passate
+│   │   ├── 📂 sezioni/                                       # 6 capitoli LaTeX (Introduzione, Glossario, Use Case, Requisiti, OOA, Patterns)
+│   │   └── 📂 figure/                                        # Diagrammi UML esportati (.png)
+│   ├── 📄 glossario.md                                       # Glossario dei termini di dominio MyAma
+│   └── 📄 specifica_MyAma.md                                 # Specifica integrata in Markdown
 │
 ├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
 │   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
@@ -131,21 +141,9 @@ PROGETTOISW/
 │
 ├── 📂 progettialtrui/                                        # Benchmark e progetti d'esame completi di riferimento
 │   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
-│   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
-│   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale
 │   ├── 📂 Progetto_Hotel_Mongelli/                           # Progetto "Hotel TorVergata"
-│   │   ├── 📝 Progetto_Mongelli_Hotel.md                     # Trascrizione Markdown completa (59 pag.)
-│   │   ├── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf         # PDF originale
-│   │   ├── 📂 FileProgetto/                                  # Modelli Visual Paradigm (.vpp) estratti
-│   │   └── 📦 FileProgetto.zip
 │   ├── 📂 Progetto_RistorApp_Bianchini/                      # Progetto "RistorApp"
-│   │   ├── 📝 Progetto_Bianchini_RistorApp.md                # Trascrizione Markdown completa (80 pag.)
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.pdf       # PDF originale
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.vpp       # Modello sorgente Visual Paradigm
-│   │   ├── 📄 Solo per i Class Diagrams...vpp
-│   │   └── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip
-│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno"
-│       └── 📄 Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf
+│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno" (Benchmark primario)
 │
 └── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
     ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
@@ -159,12 +157,12 @@ PROGETTOISW/
 In conformità con quanto richiesto dal **Prof. Andrea D'Ambrogio**:
 
 1. **Documento di Specifica Software (SRS)**:
-   - Redatto secondo il template standard **IEEE 830-1998** (disponibile in [`MYAMA/specifica/specifica.md`](./MYAMA/specifica/specifica.md)).
+   - Redatto secondo il template standard **IEEE 830-1998** (disponibile nel progetto LaTeX [`MYAMA/Latex PDF/`](./MYAMA/Latex%20PDF)).
    - Capitolo 1: *Introduzione & Problem Statement*.
    - Capitolo 2: *Glossario dei termini*.
-   - Capitolo 3: *User Requirements Definition* (Funzionali, Non Funzionali e di Dominio).
-   - Capitolo 4: *Verificabilità dei Requisiti* (criteri di accettazione e testabilità).
-   - Capitolo 5: *Specifica OOA (Object Oriented Analysis)* con Use Case Diagrams, schede descrittive, Sequence Diagrams, State Diagrams e **Unrefined Class Diagram**.
+   - Capitolo 3: *User Requirements Definition* (Use Cases con diagrammi e schede descrittive per ogni attore).
+   - Capitolo 4: *System Requirements* (Requisiti Funzionali, Non Funzionali e di Dominio).
+   - Capitolo 5: *Specifica OOA (Object Oriented Analysis)* con Activity Diagrams, Sequence Diagrams (BCE) e **Unrefined Class Diagram**.
 2. **Appendice Progettazione con Design Pattern**:
    - Applicazione formale di almeno **2 Design Pattern** (es. *Strategy*, *State*, *Factory Method*, *Observer*).
    - Evoluzione da *Unrefined Class Diagram* a **Refined Class Diagram** (con classi del pattern, metodi, tipi e visibilità).

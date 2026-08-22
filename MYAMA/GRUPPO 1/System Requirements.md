@@ -17,7 +17,8 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 | Autista AMA | RF-09 | Registrazione esito ritiro | Il sistema deve permettere all'autista di registrare l'esito (es. positivo o negativo) del ritiro a domicilio effettuato. |
 | Operatore di Sede | RF-10 | Verifica e registrazione conferimento | Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito al momento dello scarico del rifiuto. |
 | Amministratore Sede | RF-11 | Gestione risorse e disponibilità | Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. |
-| Amministratore Sede | RF-12 | Generazione codici invito | Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovi operatori di sede. |
+| Amministratore Sede | RF-12 | Generazione codici invito | Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale. |
+| Amministratore Sede | RF-13 | Rimozione personale | Il sistema deve permettere all'amministratore di rimuovere account del personale dal sistema. |
 
 ---
 
