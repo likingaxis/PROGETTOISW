@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "8fab7942d0c752ea",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "32d455458ecf8333",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "LISTA ACTIVITY DIAGRAM"
-            }
-          }
-        ]
-      },
-      {
         "id": "b8b87295d0a7380e",
         "type": "tabs",
         "children": [
@@ -208,31 +188,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "32d455458ecf8333",
+  "active": "4776544381e89a3f",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Visualizzare ritiri assegnati _ Consultare dettagli del ritiro  .jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Visualizzare prenotazioni della sede _ Consultare dettagli  .jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Verificare prenotazione del cittadino.jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Registrare esito del ritiro.jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Registrare esito del conferimento.jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA/Chiamare cittadino.jpg",
-    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA",
-    "MYAMA/GRUPPO 1/New Folder/Visualizzare ritiri assegnati _ Consultare dettagli del ritiro  .jpg",
-    "MYAMA/GRUPPO 1/New Folder/Visualizzare prenotazioni della sede _ Consultare dettagli  .jpg",
-    "MYAMA/GRUPPO 1/New Folder/Verificare prenotazione del cittadino.jpg",
-    "MYAMA/GRUPPO 1/New Folder/Registrare esito del ritiro.jpg",
-    "MYAMA/GRUPPO 1/New Folder/Registrare esito del conferimento.jpg",
-    "MYAMA/GRUPPO 1/New Folder",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM SAMUELE/Amministratore generale AMA",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM SAMUELE/Utente non registrato - Utente di sistema",
-    "MYAMA/GRUPPO 2/FOTO ACTIVITY DIAGRAM SAMUELE",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_003d",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_002d",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_001d",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/Latex PDF/figure/uc_amministratore_generale.jpg",
+    "MYAMA/Latex PDF/figure/uc_amministratore_sede.jpg",
+    "MYAMA/Latex PDF/figure/uc_operatore_sede.jpg",
+    "MYAMA/Latex PDF/figure/uc_autista.jpg",
+    "MYAMA/Latex PDF/figure/uc_cittadino.jpg",
+    "MYAMA/Latex PDF/figure/uc_utente_non_registrato.jpg",
+    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_003d",
+    "MYAMA/GRUPPO 1/Use Case/Use Case Diagram2.jpg",
+    "MYAMA/GRUPPO 1/Use Case/OperatoreSedeAMA.jpg",
+    "MYAMA/GRUPPO 1/Use Case/Use Case Diagram1.jpg",
+    "MYAMA/GRUPPO 1/Use Case/AutistaAMA.jpg",
+    "MYAMA/GRUPPO 1/Use Case/AmministratoriAMA.jpg",
+    "MYAMA/GRUPPO 1/Use Case",
     "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_000f",
-    "MYAMA/GRUPPO 2/ActivityLuca.vpp",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_003d",
+    "MYAMA/GRUPPO 1/New Folder",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_002d",
+    "MYAMA/GRUPPO 2/ActivityLuca.vpp.bak_004d",
+    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_002d",
+    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_001d",
+    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_000f",
+    "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA",
+    "MYAMA/GRUPPO 2/User requirements definition.md",
     "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "guide/guida-operativa.md",
     "guide/guida-git.md",
