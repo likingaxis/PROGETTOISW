@@ -29,3 +29,10 @@
 | **Notifica** | Comunicazione automatica generata dal sistema (email, SMS o notifica in-app) per aggiornare il Cittadino o il personale su conferme, promemoria o variazioni di stato delle prenotazioni. |
 | **Report / Statistiche** | Informazioni aggregate e indicatori di performance (volumi gestiti, ritiri completati, trend per zona) consultabili dalla direzione aziendale per finalità analitiche e decisionali. |
 | **Sistema** | L'applicazione software integrata MyAma nel suo complesso, comprensiva di tutti i moduli web e mobili per i diversi profili utente. |
+| **Codice di Invito** | Codice alfanumerico univoco generato dagli amministratori, utilizzato per autorizzare e abilitare la registrazione del personale aziendale assegnando automaticamente il ruolo corretto. |
+| **RBAC (Role-Based Access Control)** | Modello di controllo degli accessi adottato dalla piattaforma che regola i permessi di visualizzazione e interazione degli utenti in base al ruolo aziendale o utente ricoperto. |
+| **Competenza Territoriale** | Regole logiche che vincolano i servizi di ritiro a domicilio e di conferimento in sede a specifiche aree geografiche (identificate tramite CAP) gestite da una determinata Sede AMA. |
+| **Capacità del Veicolo** | Parametro indicante il carico logistico massimo (in peso o volume) supportato da un automezzo, utilizzato dal sistema per limitare e calcolare quanti ritiri assegnare in un singolo turno. |
+| **Informativa Privacy** | Documentazione legale che esplicita le modalità di trattamento e conservazione dei dati personali, accettata obbligatoriamente da tutti gli utenti durante la procedura di registrazione. |
+| **Responsive Design** | Paradigma di sviluppo dell'interfaccia utente che garantisce l'adattabilità automatica di layout e contenuti alle dimensioni dello schermo del dispositivo utilizzato (smartphone, tablet, PC). |
+| **Hashing** | Metodologia crittografica unidirezionale adottata dal sistema per la memorizzazione sicura delle credenziali di accesso (password) all'interno del database. |
