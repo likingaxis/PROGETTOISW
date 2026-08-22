@@ -32,7 +32,7 @@
 20. Gestire disponibilità dei veicoli  
 21. Gestire disponibilità della sede e fasce orarie  
 22. Gestire associazioni tra sede e zone/CAP  
-23. Rimuovere operatori di sede AMA
+23. Rimuovere personale
 
 **Amministratore generale AMA**  
 24. Generare codice amministratore di sede  

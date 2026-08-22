@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "MYAMA/GRUPPO 2/User requirements definition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "User requirements definition"
+            }
+          },
+          {
+            "id": "32d455458ecf8333",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
                 "mode": "source",
                 "source": false
@@ -190,14 +204,15 @@
   },
   "active": "ff8a1177feec5472",
   "lastOpenFiles": [
-    "guide/guida-operativa.md",
     "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
+    "guide/guida-operativa.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001f",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000d",
     "guide/guida-git.md",
     "guide/divisione-compiti.md",
     "MYAMA/GRUPPO 1/System Requirements.md",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
     "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822114207.png",
     "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822113932.png",
     "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822111525.png",
@@ -206,7 +221,6 @@
     "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822095418.png",
     "MYAMA/GRUPPO 1/FOTOusecase",
     "MYAMA/GRUPPO 1/New folder",
-    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "MYAMA/Latex PDF/figure/uc_amministratore_generale.png",
     "MYAMA/Latex PDF/figure/uc_amministratore_sede.png",
     "MYAMA/Latex PDF/figure/uc_operatore_sede.png",
