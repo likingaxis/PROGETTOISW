@@ -1,6 +1,6 @@
 # Use case Utente non registrato + Utente di sistema
 ### Diagramma UTENTE NON REGISTRATO + UTENTE DI SISTEMA
-![[Pasted image 20260822095418.png]]
+![[Use Case Diagram1.jpg]]
 ### Documentazione
 
 | **Use Case**            | **Registrarsi come cittadino**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -46,7 +46,7 @@
 # Use case Cittadino registrato
 
 ### Diagramma Cittadino registrato
-![[Pasted image 20260822104235.png]]
+![[Use Case Diagram2.jpg]]
 ### Documentazione
 
 | **Use Case**            | **Richiedere ritiro a domicilio**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -135,7 +135,7 @@
 # Use case Autista AMA
 
 ### Diagramma Autista AMA
-![[Pasted image 20260822110439.png]]
+![[AutistaAMA.jpg]]
 ### Documentazione
 | **Use Case**            | **Visualizzare ritiri assegnati**                                                                                                                                                                                                                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -178,7 +178,7 @@
 # Use case Operatore di sede AMA
 
 ### Diagramma Operatore di sede AMA
-![[Pasted image 20260822111525.png]]
+![[OperatoreSedeAMA.jpg]]
 ### Documentazione
 | **Use Case**            | **Visualizzare prenotazioni della sede**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -220,7 +220,7 @@
 # Use case Amministratore di sede AMA
 
 ### Diagramma Amministratore di sede AMA
-![[Pasted image 20260822114207.png|535]]
+![[AmministratoriAMA.jpg]]
 
 ### Documentazione
 
@@ -284,7 +284,7 @@
 # Use case Amministratore generale AMA
 
 ### Diagramma Amministratore generale AMA
-![[Pasted image 20260822113932.png]]
+![[Amministratore generale AMA.jpg]]
 
 ### Documentazione
 

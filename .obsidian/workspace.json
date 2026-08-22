@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MYAMA/GRUPPO 2/User requirements definition.md",
+                "file": "MYAMA/GRUPPO 1/System Requirements.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "User requirements definition"
+              "title": "System Requirements"
             }
           }
         ]
@@ -190,6 +190,9 @@
   },
   "active": "4776544381e89a3f",
   "lastOpenFiles": [
+    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
+    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/Latex PDF/figure/uc_amministratore_generale.jpg",
     "MYAMA/Latex PDF/figure/uc_amministratore_sede.jpg",
     "MYAMA/Latex PDF/figure/uc_operatore_sede.jpg",
@@ -201,9 +204,7 @@
     "MYAMA/GRUPPO 1/Use Case/OperatoreSedeAMA.jpg",
     "MYAMA/GRUPPO 1/Use Case/Use Case Diagram1.jpg",
     "MYAMA/GRUPPO 1/Use Case/AutistaAMA.jpg",
-    "MYAMA/GRUPPO 1/Use Case/AmministratoriAMA.jpg",
     "MYAMA/GRUPPO 1/Use Case",
-    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_003d",
     "MYAMA/GRUPPO 1/New Folder",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_002d",
@@ -212,8 +213,6 @@
     "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_001d",
     "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_000f",
     "MYAMA/GRUPPO 1/ACTIVITY DIAGRAM OPERATORE E AUTISTA",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
-    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "guide/guida-operativa.md",
     "guide/guida-git.md",
     "guide/divisione-compiti.md",
