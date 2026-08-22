@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MYAMA/GRUPPO 2/CHECKLIST.md",
+                "file": "MYAMA/GRUPPO 2/User requirements definition.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CHECKLIST"
+              "title": "User requirements definition"
             }
           }
         ]
@@ -208,13 +208,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "7dfb75497080a9fe",
+  "active": "eb2f46e58ad6512d",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
+    "MYAMA/GRUPPO 1/System Requirements.md",
     "MYAMA/GRUPPO 2/User requirements definition.md",
+    "Pasted image 20260822095334.png",
+    "Pasted image 20260822095418.png",
+    "MYAMA/GRUPPO 1/Use Case Diagram1.jpg",
+    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_004d",
+    "MYAMA/GRUPPO 2/CHECKLIST.md",
+    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
     "MYAMA/glossario.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_005d",
-    "MYAMA/GRUPPO 2/CHECKLIST.md",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_004d",
     "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_003d",
     "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
