@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "5fc3cb705e8cdbc0",
+    "id": "087a4342f5473a2d",
     "type": "split",
     "children": [
       {
-        "id": "8fab7942d0c752ea",
+        "id": "f76c10e0c73ed205",
         "type": "tabs",
         "children": [
           {
-            "id": "ff8a1177feec5472",
+            "id": "3dc9d9e128387c59",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "32d455458ecf8333",
+            "id": "f1aebd7a90950bc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,23 +34,34 @@
               "icon": "lucide-file",
               "title": "LISTA ACTIVITY DIAGRAM"
             }
+          },
+          {
+            "id": "ae084c9dfd37439d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "MYAMA/GRUPPO 2/Esempio activity diagram.jpg"
+              },
+              "icon": "lucide-image",
+              "title": "Esempio activity diagram"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "9812e4770ec747ee",
+    "id": "6b5cbc3ed5389fc8",
     "type": "split",
     "children": [
       {
-        "id": "e642124ea851b280",
+        "id": "1bba9759af6ec5cb",
         "type": "tabs",
         "children": [
           {
-            "id": "9c886ceb60df6579",
+            "id": "1f0af0163515c6c3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -61,11 +72,11 @@
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Esplora file"
             }
           },
           {
-            "id": "e9b03289c66eb251",
+            "id": "9d1b50990f555697",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -78,11 +89,11 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "Ricerca"
             }
           },
           {
-            "id": "31c5db8d5296f894",
+            "id": "8f2bf0e657016fe6",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -91,30 +102,31 @@
                 "searchQuery": ""
               },
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Segnalibri"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "8c65822325ca7bb7",
+    "id": "659f62a9ab9cdec4",
     "type": "split",
     "children": [
       {
-        "id": "2303848a74b703de",
+        "id": "3f36def2a905b5f3",
         "type": "tabs",
         "children": [
           {
-            "id": "d0a0981022ef4ff9",
+            "id": "5aafaf1e3dc00041",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MYAMA/GRUPPO 2/CHECKLIST.md",
+                "file": "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,25 +136,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Riferimenti"
             }
           },
           {
-            "id": "41eb65d26f11d2c9",
+            "id": "a59a1e31286e2d78",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MYAMA/GRUPPO 2/CHECKLIST.md",
+                "file": "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Collegamenti in uscita"
             }
           },
           {
-            "id": "3f7e7c98f9e9b991",
+            "id": "cca56dfc51bc3928",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,11 +165,11 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Etichette"
             }
           },
           {
-            "id": "f24d193928ed5d80",
+            "id": "60b28d70b8bfff0f",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -167,22 +179,22 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "All properties"
+              "title": "Tutte le proprietà"
             }
           },
           {
-            "id": "a93913ac20381d5c",
+            "id": "637b1eb51b5a9408",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "MYAMA/GRUPPO 2/CHECKLIST.md",
+                "file": "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Struttura"
             }
           }
         ]
@@ -194,51 +206,49 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "switcher:Apri selettore rapido": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false
     }
   },
-  "active": "32d455458ecf8333",
+  "active": "3dc9d9e128387c59",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 2/Esempio activity diagram.jpg",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001d",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000f",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_015d-journal",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_015d",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_014d-journal",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_014d",
     "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
-    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
-    "guide/guida-operativa.md",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_001f",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_000d",
-    "guide/guida-git.md",
-    "guide/divisione-compiti.md",
+    "MYAMA/GRUPPO 2/User requirements definition.md",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_013d-journal",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_013d",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_012d-journal",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_012d",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_011d-journal",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_011d",
+    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_010d-journal",
+    "MYAMA/GRUPPO 2/Esempio activity diagram.jpg",
+    "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
     "MYAMA/GRUPPO 1/System Requirements.md",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822114207.png",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822113932.png",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822111525.png",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822110439.png",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822104235.png",
-    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822095418.png",
-    "MYAMA/GRUPPO 1/FOTOusecase",
-    "MYAMA/GRUPPO 1/New folder",
-    "MYAMA/Latex PDF/figure/uc_amministratore_generale.png",
-    "MYAMA/Latex PDF/figure/uc_amministratore_sede.png",
-    "MYAMA/Latex PDF/figure/uc_operatore_sede.png",
-    "MYAMA/Latex PDF/figure/uc_autista.png",
+    "MYAMA/specifica_MyAma.md",
+    "MYAMA/glossario.md",
+    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
+    "MYAMA/GRUPPO 2/FASE_1 - D, E.md",
     "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore generale AMA.md",
     "MYAMA/GRUPPO 2/CHECKLIST.md",
-    "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore di sede AMA.md",
-    "MYAMA/GRUPPO 1/davidelUseCase.vpp.bak_008d",
     "MYAMA/GRUPPO 1/output2.md",
-    "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_006d",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_005d",
-    "MYAMA/GRUPPO 1/ValerioUseCase.vpp.bak_004d",
-    "MYAMA/glossario.md",
-    "MYAMA/GRUPPO 2/FASE_1 - D, E.md"
+    "MYAMA/GRUPPO 1/output.md",
+    "MYAMA/Latex PDF/figure/uc_utente_non_registrato.png",
+    "MYAMA/Latex PDF/figure/uc_operatore_sede.png",
+    "MYAMA/Latex PDF/figure/uc_cittadino.png",
+    "MYAMA/Latex PDF/figure/uc_autista.png",
+    "MYAMA/Latex PDF/figure/uc_amministratore_sede.png",
+    "MYAMA/Latex PDF/figure/uc_amministratore_generale.png",
+    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822114207.png",
+    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822113932.png",
+    "MYAMA/GRUPPO 1/FOTOusecase/Pasted image 20260822111525.png"
   ]
 }

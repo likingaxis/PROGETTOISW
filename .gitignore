@@ -9,3 +9,4 @@ build/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.obsidian
