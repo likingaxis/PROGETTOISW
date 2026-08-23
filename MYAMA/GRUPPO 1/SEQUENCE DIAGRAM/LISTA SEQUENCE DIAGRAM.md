@@ -27,10 +27,10 @@ AMMINISTRATORE DI SEDE AMA
 18. SequenceGenerareCodiceInvitoPersonale(fatto)
 19. SequenceGestireDisponibilitaLavoratori(fatto)
 20. SequenceGestireDisponibilitaVeicoli(fatto)
-21. SequenceGestireDisponibilitaSede
-22. SequenceGestireAssociazioniSedeZoneCAP
+21. SequenceGestireDisponibilitaSede(fatto)
+22. SequenceGestireAssociazioniSedeZoneCAP![alt text](image.png)
 23. SequenceRimuoverePersonaleAMA
 
 AMMINISTRATORE GENERALE AMA
 24. SequenceGenerareCodiceAmministratoreSede(fatto)
-25. SequenceRimuovereAmministratoreSede
+25. SequenceRimuovereAmministratoreSede(fatto)
