@@ -25,19 +25,19 @@ Il progetto è incentrato sull'ingegnerizzazione e specifica formale del sistema
 
 | Risorsa | Natura | Descrizione |
 |---|---|---|
-| 📂 **[`MYAMA/Latex PDF/`](./MYAMA/Latex%20PDF)** | **Progetto LaTeX & PDF** | **Cartella master del documento d'esame**: sorgenti LaTeX modulari (`main.tex`, `sezioni/`), figure UML e PDF finale compilato ([`main.pdf`](./MYAMA/Latex%20PDF/main.pdf)). |
-| 📂 **[`MYAMA/GRUPPO 1/`](./MYAMA/GRUPPO%201)** | **Gruppo 1 Workspace** | Requisiti di Sistema ([`System Requirements.md`](./MYAMA/GRUPPO%201/System%20Requirements.md)), modelli Visual Paradigm e bozze. |
-| 📂 **[`MYAMA/GRUPPO 2/`](./MYAMA/GRUPPO%202)** | **Gruppo 2 Workspace** | Schede Use Case integrali ([`User requirements definition.md`](./MYAMA/GRUPPO%202/User%20requirements%20definition.md)), elenco casi d'uso ([`LISTA USE CASE.md`](./MYAMA/GRUPPO%202/LISTA%20USE%20CASE.md)) e perimetro ([`FASE_1 - D, E.md`](./MYAMA/GRUPPO%202/FASE_1%20-%20D,%20E.md)). |
+| 📂 **[`MYAMA/PROGETTOFINALE/`](./MYAMA/PROGETTOFINALE)** | **Specifica Consolidata** | **Cartella centrale del progetto d'esame**: contiene tutti i diagrammi (Use Case, Activity, Class), i requisiti di sistema, il glossario, la specifica Markdown e il progetto LaTeX compilabile ([`Latex PDF/`](./MYAMA/PROGETTOFINALE/Latex%20PDF)). |
+| 📂 **[`MYAMA/GRUPPO 1/`](./MYAMA/GRUPPO%201)** | **Gruppo 1 Workspace** | Sequence Diagram ([`SEQUENCE DIAGRAM/`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM)), bozze di metodi, messaggi e modelli Visual Paradigm. |
+| 📂 **[`MYAMA/GRUPPO 2/`](./MYAMA/GRUPPO%202)** | **Gruppo 2 Workspace** | Area di lavoro per il secondo sottogruppo di sviluppo. |
 | 💡 **[`idea.md`](./idea.md)** | **Visione Generale** | Riepilogo sintetico e intuitivo di MyAma (cittadini, sedi, ritiro a domicilio, conferimento) pensato per allineare rapidamente l'intero gruppo. |
-| 📋 **[`ideaprogetto.md`](./ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
+| 🧠 **[`KNOWLEDGE/ideaprogetto.md`](./KNOWLEDGE/ideaprogetto.md)** | **Analisi di Dominio** | Analisi formale del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA. |
 | 📘 **[`guide/guida-progetto.md`](./guide/guida-progetto.md)** | **Teoria & Modello Mentale** | Filo logico metodologico che spiega *perché* ogni passaggio serve (da Problem Statement a Use Case, Requisiti, Diagrammi dinamici/statici e Design Pattern). |
 | 🚀 **[`guide/guida-operativa.md`](./guide/guida-operativa.md)** | **Guida Operativa** | Manuale pratico sequenziale di redazione della specifica (input/output di fase, decisioni da prendere e analisi delle parti parallelizzabili). |
 | 👥 **[`guide/divisione-compiti.md`](./guide/divisione-compiti.md)** | **Organizzazione Team** | Piano organizzativo per i 5 componenti del gruppo (coppie, task condivisi, review incrociate e merge). |
 | 📅 **[`guide/plan-giorni.md`](./guide/plan-giorni.md)** | **Roadmap & Planning** | Pianificazione cronologica delle attività e tappe di avanzamento del progetto. |
 | 🛠️ **[`guide/guida-git.md`](./guide/guida-git.md)** | **Guida Collaboratori Git** | Manuale pratico Git & GitHub (inviti, setup, ciclo `pull`/`add`/`commit`/`push`, branch e gestione conflitti). |
 | 📌 **[`guide/infoprof.md`](./guide/infoprof.md)** | **Linee Guida Docente** | Istruzioni ufficiali del Prof. Andrea D'Ambrogio: standard IEEE 830-1998, OOA, tool Visual Paradigm e scadenze d'esame. |
-| 📚 **[`progettialtrui/`](./progettialtrui)** | **Benchmark Progetti** | Relazioni d'esame complete e modelli UML di riferimento (Pesca, Hotel TorVergata, RistorApp, Buongiorno). |
-| ♻️ **[`MYAMABASIDATI/`](./MYAMABASIDATI)** | **Dominio Pregresso** | Documentazione e trascrizione integrale del progetto originale MyAma per il corso di Basi di Dati. |
+| 📚 **[`OTHER PROGETTI/`](./OTHER%20PROGETTI)** | **Benchmark Progetti** | Relazioni d'esame complete e modelli UML di riferimento (Pesca, Hotel TorVergata, RistorApp, Buongiorno, SteamPlatform). |
+| ♻️ **[`PROGETTO DATA BASI/`](./PROGETTO%20DATA%20BASI)** | **Dominio Pregresso** | Documentazione e trascrizione integrale del progetto originale MyAma per il corso di Basi di Dati. |
 | 📖 **[`TEORIA/`](./TEORIA)** | **Dispense Teoriche** | Compendi completi del corso di Ingegneria del Software (Vault Obsidian con schemi e figure). |
 | 🌳 **[`tree.md`](./tree.md)** | **Mappa della Repository** | Indice dettagliato con descrizione sintetica *one-line* di ogni singola cartella, file e trascrizione. |
 
@@ -94,15 +94,16 @@ graph TD
 
 ---
 
-## 📚 Trascrizioni Integrali dei Progetti di Riferimento (`progettialtrui/`)
+## 📚 Trascrizioni Integrali dei Progetti di Riferimento (`OTHER PROGETTI/`)
 
-Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono organizzate in sottocartelle dedicate dentro [`progettialtrui/`](./progettialtrui):
+Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipendere da lettori PDF binari, tutte le relazioni benchmark sono organizzate in sottocartelle dedicate dentro [`OTHER PROGETTI/`](./OTHER%20PROGETTI):
 
-- 🐟 **[`progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
-- 🏨 **[`progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
-- 🍽️ **[`progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
-- 🏋️ **[`progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno* (riferimento primario di struttura).
-- ♻️ **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
+- 🐟 **[`OTHER PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md`](./OTHER%20PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md)** — Relazione completa (76 pagine) del progetto *Campionato di Pesca Sportiva*.
+- 🏨 **[`OTHER PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md)** — Relazione completa (59 pagine) del progetto *Hotel TorVergata*.
+- 🍽️ **[`OTHER PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md)** — Relazione completa (80 pagine) del progetto *RistorApp*.
+- 🏋️ **[`OTHER PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./OTHER%20PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf)** — Relazione PDF del progetto *Buongiorno* (riferimento primario di struttura).
+- 🎮 **[`OTHER PROGETTI/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/ProgettoISW_25_26.pdf`](./OTHER%20PROGETTI/SteamPlatform_Arbia,Di%20Iacovo,%20Malatesta,%20Marzi,%20Quartucci/ProgettoISW_25_26.pdf)** — Relazione PDF e sorgenti del progetto *SteamPlatform*.
+- ♻️ **[`PROGETTO DATA BASI/BASI_PROGETTO.md`](./PROGETTO%20DATA%20BASI/BASI_PROGETTO.md)** — Trascrizione della specifica iniziale di *MyAma* per Basi di Dati (30 pagine).
 
 ---
 
@@ -112,42 +113,47 @@ Per facilitare l'analisi testuale e il confronto pagina per pagina senza dipende
 PROGETTOISW/
 ├── 📄 README.md                                              # Presentazione generale del repository
 ├── 💡 idea.md                                                 # Idea sintetica del progetto per allineare il gruppo
-├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business
-├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
+├── 🌳 tree.md                                                # Mappa dettagliata e commentata dell'albero file
 │
 ├── 📂 guide/                                                 # Guide metodologiche, operative e organizzative
-│   ├── 📘 guida-progetto.md                                   # Teoria orientata al progetto e modello mentale
-│   ├── 🚀 guida-operativa.md                                  # Guida operativa passo-passo per redigere la specifica
+│   ├── 🧭 guida-progetto.md                                   # Teoria orientata al progetto e modello mentale
+│   ├── 🛠️ guida-operativa.md                                  # Guida operativa passo-passo per redigere la specifica
 │   ├── 👥 divisione-compiti.md                                # Piano di divisione compiti per 5 persone
 │   ├── 📅 plan-giorni.md                                      # Pianificazione cronologica e roadmap
-│   ├── 🛠️ guida-git.md                                        # Guida pratica Git/GitHub per i collaboratori
-│   └── 📌 infoprof.md                                        # Linee guida esame e scadenze del docente
+│   ├── 🐙 guida-git.md                                        # Guida pratica Git/GitHub per i collaboratori
+│   └── 👨‍🏫 infoprof.md                                        # Linee guida esame e scadenze del docente
+│
+├── 📂 KNOWLEDGE/                                             # Dominio di Business
+│   └── 🧠 ideaprogetto.md                                     # Documento di visione, dominio e regole di business
 │
 ├── 📂 MYAMA/                                                 # Cartella operativa di sviluppo del progetto d'esame
-│   ├── 📂 GRUPPO 1/                                          # Requisiti di sistema, modelli .vpp e bozze
-│   ├── 📂 GRUPPO 2/                                          # Schede Use Case, elenchi e analisi scope
-│   ├── 📂 Latex PDF/                                         # Progetto master LaTeX per la compilazione della relazione finale
-│   │   ├── 📄 main.tex                                       # File master con preambolo e include modulari
-│   │   ├── 📄 main.pdf                                       # PDF finale compilato e sincronizzato
-│   │   ├── 🐍 compile_pdf.py                                 # Script di compilazione a 2 passate
-│   │   ├── 📂 sezioni/                                       # 6 capitoli LaTeX (Introduzione, Glossario, Use Case, Requisiti, OOA, Patterns)
-│   │   └── 📂 figure/                                        # Diagrammi UML esportati (.png)
-│   ├── 📄 glossario.md                                       # Glossario dei termini di dominio MyAma
-│   └── 📄 specifica_MyAma.md                                 # Specifica integrata in Markdown
+│   ├── 📂 GRUPPO 1/                                          # Workspace Gruppo 1: diagrammi di sequenza e modelli VP preliminari
+│   │   └── 📂 SEQUENCE DIAGRAM/                              # Analisi di messaggi, metodi e chiamate sincrone/asincrone
+│   ├── 📂 GRUPPO 2/                                          # Workspace Gruppo 2
+│   └── 📂 PROGETTOFINALE/                                    # Cartella consolidata con tutti gli artefatti finali
+│       ├── 📂 ACTIVITY DIAGRAM/                              # Modelli .vpp e immagini diagrammi di attività
+│       ├── 📂 CLASS DIAGRAM/                                 # Class Diagram Unrefined (.vpp)
+│       ├── 📂 INTRODUZIONE/                                  # Versioni e bozze della sezione introduttiva
+│       ├── 📂 Latex PDF/                                     # Progetto LaTeX master per compilazione della relazione
+│       ├── 📂 SYSTEM REQUIREMENTS/                           # Specifica formale dei requisiti di sistema
+│       ├── 📂 USE CASE DIAGRAM/                              # Use Case, attori e User Requirements Definition
+│       ├── 📄 glossario.md                                   # Glossario di dominio del sistema MyAma
+│       └── 📄 specifica_MyAma.md                             # Specifica integrata in formato Markdown
 │
-├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
-│   ├── 📝 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale pagina per pagina
-│   └── 📄 BASI PROGETTO.pdf                                  # PDF originale (30 pag.)
+├── 📂 PROGETTO DATA BASI/                                    # Progetto pregresso di Basi di Dati (fonte di dominio)
+│   ├── 📄 BASI_PROGETTO.md                                   # Trascrizione Markdown integrale
+│   └── 📄 BASI PROGETTO.pdf                                  # Documento PDF originale (30 pag.)
 │
-├── 📂 progettialtrui/                                        # Benchmark e progetti d'esame completi di riferimento
+├── 📂 OTHER PROGETTI/                                        # Benchmark e progetti d'esame completi di riferimento
 │   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
 │   ├── 📂 Progetto_Hotel_Mongelli/                           # Progetto "Hotel TorVergata"
 │   ├── 📂 Progetto_RistorApp_Bianchini/                      # Progetto "RistorApp"
-│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno" (Benchmark primario)
+│   ├── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno" (Benchmark primario)
+│   └── 📂 SteamPlatform_Arbia.../                            # Progetto "SteamPlatform"
 │
 └── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
-    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software (178 figure)
-    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso di Andrea (50 figure)
+    ├── 📂 ISW_obsidian_full/                                 # Dispensa generale di Ingegneria del Software
+    └── 📂 IS_andrea_obsidian_full/                           # Dispensa completa del corso
 ```
 
 ---
@@ -157,7 +163,7 @@ PROGETTOISW/
 In conformità con quanto richiesto dal **Prof. Andrea D'Ambrogio**:
 
 1. **Documento di Specifica Software (SRS)**:
-   - Redatto secondo il template standard **IEEE 830-1998** (disponibile nel progetto LaTeX [`MYAMA/Latex PDF/`](./MYAMA/Latex%20PDF)).
+   - Redatto secondo il template standard **IEEE 830-1998** (disponibile nel progetto LaTeX [`MYAMA/PROGETTOFINALE/Latex PDF/`](./MYAMA/PROGETTOFINALE/Latex%20PDF)).
    - Capitolo 1: *Introduzione & Problem Statement*.
    - Capitolo 2: *Glossario dei termini*.
    - Capitolo 3: *User Requirements Definition* (Use Cases con diagrammi e schede descrittive per ogni attore).

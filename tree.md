@@ -1,118 +1,10 @@
-# 🌳 Mappa della Repository - `tree.md`
+# 📂 Mappa della Repository (Progetto ISW - MyAma)
 
-Questa mappa descrive la struttura dell'intero workspace, dettagliando ogni cartella, file, specifica LaTeX, trascrizione Markdown (`.md`) e contenuto degli archivi con una spiegazione sintetica (*oneline*) del relativo scopo.
+Questo documento fornisce una panoramica strutturata e descrittiva di tutte le cartelle e i file presenti nella repository. Serve come bussola per orientarsi rapidamente tra i vari documenti di progetto, le dispense di teoria e i progetti di riferimento.
 
----
-
-## 📁 Struttura ad Albero
-
-```text
-PROGETTOISW/
-├── 📄 README.md                                              # Presentazione generale del repository e guida rapida
-├── 💡 idea.md                                                 # Idea sintetica del progetto per allineare rapidamente il gruppo
-├── 📋 ideaprogetto.md                                         # Documento di visione, dominio e regole di business MyAma
-├── 📄 tree.md                                                # Mappa dettagliata e commentata dell'albero file
-│
-├── 📂 guide/                                                 # Guide metodologiche, operative e organizzative
-│   ├── 📘 guida-progetto.md                                   # Teoria orientata al progetto e modello mentale (da Problem Statement a Design Pattern)
-│   ├── 🚀 guida-operativa.md                                  # Guida operativa passo-passo (flusso sequenziale e step concreti per la specifica)
-│   ├── 👥 divisione-compiti.md                                # Piano di divisione compiti per 5 persone (fasi, coppie, review e merge)
-│   ├── 📅 plan-giorni.md                                      # Roadmap temporale e pianificazione giornaliera delle attività
-│   ├── 🛠️ guida-git.md                                        # Guida pratica a Git/GitHub per collaboratori del gruppo
-│   └── 📌 infoprof.md                                        # Linee guida esame e scadenze ufficiali del docente
-│
-├── 📂 MYAMA/                                                 # Cartella operativa di sviluppo del progetto d'esame
-│   ├── 📂 GRUPPO 1/                                          # Spazio di lavoro Gruppo 1 (Requisiti, diagrammi e draft)
-│   │   ├── 📄 System Requirements.md                         # Requisiti funzionali (RF-01..13), non funzionali (RNF) e di dominio (RD)
-│   │   ├── 📄 davideluserRequirementsDefinition.md           # Bozza iniziale User Requirements Gruppo 1
-│   │   ├── 📄 davidelUseCase.vpp                             # File di modellazione Use Case Visual Paradigm (Davide)
-│   │   ├── 📄 ValerioUseCase.vpp                             # File di modellazione Use Case Visual Paradigm (Valerio)
-│   │   ├── 📄 output.md                                      # Bozza introduzione, contesto e attori
-│   │   ├── 📄 output2.md                                     # Bozza di raffinamento requisiti
-│   │   └── 📂 FOTOusecase/                                   # Esportazioni grafiche dei diagrammi use case
-│   │
-│   ├── 📂 GRUPPO 2/                                          # Spazio di lavoro Gruppo 2 (Use Cases, schede e scope)
-│   │   ├── 📄 LISTA USE CASE.md                              # Elenco unificato dei casi d'uso per attore
-│   │   ├── 📄 User requirements definition.md                # Specifica integrale schede Use Case (tabelle formali 1:1)
-│   │   ├── 📄 Documentazione Use Case — Amministratore...md  # Documentazione Use Case per Amministratore Generale
-│   │   ├── 📄 FASE_1 - D, E.md                               # Analisi perimetro, scope in/out e checklist
-│   │   └── 📄 CHECKLIST.md                                   # Checklist operativa di avanzamento
-│   │
-│   ├── 📂 Latex PDF/                                         # Progetto LaTeX per la generazione della relazione finale IEEE 830
-│   │   ├── 📄 main.tex                                       # File sorgente master LaTeX (preambolo, indici, include sezioni)
-│   │   ├── 📄 main.pdf                                       # Documento PDF d'esame compilato e sincronizzato
-│   │   ├── 🐍 compile_pdf.py                                 # Script di compilazione a 2 passate (MiKTeX/TeX Live)
-│   │   ├── 📄 README.md                                      # Guida e istruzioni di compilazione LaTeX/Overleaf
-│   │   ├── 📄 specifica_MyAma.md                             # Bozza complessiva della specifica in Markdown
-│   │   ├── 📂 sezioni/                                       # Moduli LaTeX dei capitoli della specifica
-│   │   │   ├── 📄 01_introduzione.tex                        # Cap. 1: Introduzione e mappatura classi di utenza
-│   │   │   ├── 📄 02_glossario.tex                           # Cap. 2: Glossario dei termini di dominio
-│   │   │   ├── 📄 03_user_requirements.tex                   # Cap. 3: User Requirements Definition con diagrammi e tabelle
-│   │   │   ├── 📄 04_system_requirements.tex                 # Cap. 4: Requisiti di sistema (RF, RNF, RD e verificabilità)
-│   │   │   ├── 📄 05_modelli_ooa.tex                         # Cap. 5: Activity, Sequence e Class Diagrams
-│   │   │   └── 📄 06_design_patterns.tex                     # Cap. 6: Design Patterns GoF applicati
-│   │   ├── 📂 figure/                                        # Diagrammi UML esportati (.jpg) e loghi del documento
-│   │   │   ├── 🖼️ uc_utente_non_registrato.jpg               # Diagramma Use Case Utente non registrato + Sistema
-│   │   │   ├── 🖼️ uc_cittadino.jpg                           # Diagramma Use Case Cittadino registrato
-│   │   │   ├── 🖼️ uc_autista.jpg                             # Diagramma Use Case Autista AMA
-│   │   │   ├── 🖼️ uc_operatore_sede.jpg                      # Diagramma Use Case Operatore di sede AMA
-│   │   │   ├── 🖼️ uc_amministratore_sede.jpg                 # Diagramma Use Case Amministratore di sede AMA
-│   │   │   ├── 🖼️ uc_amministratore_generale.jpg             # Diagramma Use Case Amministratore generale AMA
-│   │   │   ├── 🖼️ tor_vergata_logo.png                       # Logo ufficiale Ateneo per il frontespizio
-│   │   │   ├── 🖼️ cover.jpg / cover.pdf                      # Elementi grafici di copertina
-│   │   │   └── 📄 .gitkeep
-│   │   └── 📂 sorgenti_vpp/                                  # Archivio modelli sorgente Visual Paradigm per la consegna
-│   │
-│   ├── 📄 glossario.md                                       # Glossario dei termini di dominio MyAma
-│   └── 📄 specifica_MyAma.md                                 # Bozza unificata in Markdown della specifica MyAma
-│
-├── 📂 MYAMABASIDATI/                                         # Progetto pregresso di Basi di Dati (fonte di dominio)
-│   ├── 📄 BASI PROGETTO.pdf                                  # PDF originale del progetto Basi di Dati (30 pag.)
-│   └── 📝 BASI_PROGETTO.md                                   # Trascrizione testuale integrale pagina per pagina
-│
-├── 📂 progettialtrui/                                        # Benchmark e relazioni d'esame suddivise per progetto
-│   ├── 📂 Progetto_Pesca_Cipolletta/                         # Progetto "Campionato Pesca Sportiva"
-│   │   ├── 📝 Progetto_Cipolletta_Pesca.md                   # Trascrizione Markdown completa (76 pag.)
-│   │   └── 📄 Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf    # PDF originale
-│   │
-│   ├── 📂 Progetto_Hotel_Mongelli/                           # Progetto "Hotel TorVergata"
-│   │   ├── 📝 Progetto_Mongelli_Hotel.md                     # Trascrizione Markdown completa (59 pag.)
-│   │   ├── 📄 Progetto_Mongelli_Pace_Rossi_Sandu.pdf         # PDF originale
-│   │   ├── 📂 FileProgetto/                                  # Modelli Visual Paradigm (.vpp) estratti
-│   │   └── 📦 FileProgetto.zip
-│   │
-│   ├── 📂 Progetto_RistorApp_Bianchini/                      # Progetto "RistorApp"
-│   │   ├── 📝 Progetto_Bianchini_RistorApp.md                # Trascrizione Markdown completa (80 pag.)
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.pdf       # PDF originale
-│   │   ├── 📄 Progetto_Bianchini_Corsetti_Mazzenga.vpp       # Modello sorgente Visual Paradigm
-│   │   ├── 📄 Solo per i Class Diagrams (Unrefined, Refined).vpp
-│   │   └── 📦 Progetto_Bianchini_Corsetti_Mazzenga.zip
-│   │
-│   └── 📂 Progetto_Buongiorno_Machowski/                     # Progetto "Buongiorno" (Benchmark principale di struttura)
-│       └── 📄 Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf # PDF originale
-│
-└── 📂 TEORIA/                                                # Compendi teorici completi in formato Obsidian Vault
-    ├── 📂 ISW_obsidian_full/
-    │   └── 📂 ISW_obsidian_full/
-    │       ├── 📄 ISW.md                                     # Trascrizione completa teoria ISW (~372 KB)
-    │       ├── 📄 README.txt
-    │       └── 📂 assets/ (178 figure/diagrammi)
-    └── 📂 IS_andrea_obsidian_full/
-        └── 📂 IS_andrea_obsidian_full/
-            ├── 📄 IS_andrea.md                               # Trascrizione completa teoria Andrea (90 pag.)
-            ├── 📄 README.md
-            └── 📂 assets/ (50 figure/diagrammi)
-```
-
----
-
-## 📋 Descrizione Dettagliata delle Cartelle e dei File
-
-### 0. File Principali di Root
-- **[`README.md`](./README.md)**: Presentazione generale del repository con badge, indice di navigazione rapida, visione del progetto MyAma e sintesi dei requisiti d'esame.
-- **[`idea.md`](./idea.md)**: **Visione Sintetica del Progetto**: documento agile e intuitivo per allineare l'intero gruppo sul funzionamento di massima di MyAma (cittadino, sedi, ritiro a domicilio, conferimento e ruoli dei lavoratori AMA).
-- **[`ideaprogetto.md`](./ideaprogetto.md)**: **Dominio & Analisi Approfondita**: documento formale con analisi del problema (*problem statement*), attori, regole di business, servizi erogati e scenari di modellazione OOA.
-- **[`tree.md`](./tree.md)**: Mappa strutturale completa dell'intera repository con descrizione *oneline* e dettagliata di ogni singolo elemento.
+- **[`README.md`](./README.md)**: Presentazione generale del progetto, ruoli, struttura e requisiti d'esame.
+- **[`idea.md`](./idea.md)**: Visione sintetica del progetto per allineare il gruppo sul dominio di MyAma.
+- **[`tree.md`](./tree.md)**: Mappa strutturale completa dell'intera repository con collegamenti diretti.
 
 ---
 
@@ -128,57 +20,89 @@ PROGETTOISW/
 
 ---
 
-### 2. `MYAMA/` (Cartella Operativa di Progetto)
+### 2. `KNOWLEDGE/` (Dominio di Business e Visione)
+*Documentazione fondamentale sul dominio e sulle regole di business del sistema MyAma.*
+
+- **[`KNOWLEDGE/ideaprogetto.md`](./KNOWLEDGE/ideaprogetto.md)**: **Documento di Visione ed Esplorazione del Dominio**: specifica dettagliata del problem statement, analisi dei servizi (ritiro a domicilio e conferimento in sede), matrice degli attori, regole di business e mappatura dei requisiti OOA con opportunità per i Design Pattern.
+
+---
+
+### 3. `MYAMA/` (Cartella Operativa di Progetto)
 *Spazio di lavoro dedicato alla stesura, modellazione e integrazione della specifica software d'esame.*
 
-- **[`MYAMA/GRUPPO 1/`](./MYAMA/GRUPPO%201)**: Cartella del sottogruppo 1 con i file di lavoro relativi a Requisiti di Sistema ([`System Requirements.md`](./MYAMA/GRUPPO%201/System%20Requirements.md)), modelli Visual Paradigm (`davidelUseCase.vpp`, `ValerioUseCase.vpp`) e bozze di use case e contesto.
-- **[`MYAMA/GRUPPO 2/`](./MYAMA/GRUPPO%202)**: Cartella del sottogruppo 2 con l'elenco consolidato dei casi d'uso ([`LISTA USE CASE.md`](./MYAMA/GRUPPO%202/LISTA%20USE%20CASE.md)), la specifica integrale tabellare ([`User requirements definition.md`](./MYAMA/GRUPPO%202/User%20requirements%20definition.md)) e l'analisi di perimetro e scope ([`FASE_1 - D, E.md`](./MYAMA/GRUPPO%202/FASE_1%20-%20D,%20E.md)).
-- **[`MYAMA/Latex PDF/`](./MYAMA/Latex%20PDF)**: Progetto LaTeX completo e compilabile per la relazione d'esame finale:
-  - [`main.tex`](./MYAMA/Latex%20PDF/main.tex): File master con configurazione grafica, frontespizio, macro e import delle sezioni.
-  - [`main.pdf`](./MYAMA/Latex%20PDF/main.pdf): Documento PDF finale compilato.
-  - [`compile_pdf.py`](./MYAMA/Latex%20PDF/compile_pdf.py): Script Python per la compilazione automatizzata a 2 passate.
-  - [`sezioni/`](./MYAMA/Latex%20PDF/sezioni): Cartella con i 6 capitoli modulari in LaTeX (`01_introduzione.tex`, `02_glossario.tex`, `03_user_requirements.tex`, `04_system_requirements.tex`, `05_modelli_ooa.tex`, `06_design_patterns.tex`).
-  - [`figure/`](./MYAMA/Latex%20PDF/figure): Immagini dei diagrammi UML esportati ad alta definizione.
-- **[`MYAMA/glossario.md`](./MYAMA/glossario.md)**: Glossario dei termini di dominio del sistema MyAma.
-- **[`MYAMA/specifica_MyAma.md`](./MYAMA/specifica_MyAma.md)**: Specifica integrata in formato Markdown.
+#### 📂 `MYAMA/PROGETTOFINALE/` (Artefatti Consolidati di Progetto)
+- **[`MYAMA/PROGETTOFINALE/glossario.md`](./MYAMA/PROGETTOFINALE/glossario.md)**: Glossario formale dei termini di dominio del sistema MyAma.
+- **[`MYAMA/PROGETTOFINALE/specifica_MyAma.md`](./MYAMA/PROGETTOFINALE/specifica_MyAma.md)**: Specifica integrata e consolidata in formato Markdown.
+- **[`MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/`](./MYAMA/PROGETTOFINALE/ACTIVITY%20DIAGRAM)**:
+  - **[`LISTA ACTIVITY DIAGRAM.md`](./MYAMA/PROGETTOFINALE/ACTIVITY%20DIAGRAM/LISTA%20ACTIVITY%20DIAGRAM.md)**: Indice e tracciamento di tutti gli Activity Diagram previsti.
+  - Cartelle con diagrammi esportati (`.jpg`/`.png`) e modelli sorgente (`.vpp`) suddivisi per membro del gruppo: Alfredo, Davide (`davidelUseCase.vpp`), Luca (`ActivityLuca.vpp`), Samuele (sottocartelle per Amministratore Generale e Utente non registrato/Cittadino), Valerio.
+- **[`MYAMA/PROGETTOFINALE/CLASS DIAGRAM/`](./MYAMA/PROGETTOFINALE/CLASS%20DIAGRAM)**:
+  - `class diagram unrefined.vpp`: Modello sorgente Visual Paradigm dell'Unrefined Class Diagram.
+- **[`MYAMA/PROGETTOFINALE/INTRODUZIONE/`](./MYAMA/PROGETTOFINALE/INTRODUZIONE)**:
+  - `INTRODUZIONE CHAT GPT.md` e `INTRODUZIONE NO CHAT GPT.md`: Bozze e testi per l'introduzione e il problem statement della relazione.
+- **[`MYAMA/PROGETTOFINALE/SYSTEM REQUIREMENTS/`](./MYAMA/PROGETTOFINALE/SYSTEM%20REQUIREMENTS)**:
+  - **[`System Requirements.md`](./MYAMA/PROGETTOFINALE/SYSTEM%20REQUIREMENTS/System%20Requirements.md)**: Specifica dei Requisiti Funzionali, Non Funzionali e di Dominio.
+- **[`MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/`](./MYAMA/PROGETTOFINALE/USE%20CASE%20DIAGRAM)**:
+  - **[`LISTA USE CASE.md`](./MYAMA/PROGETTOFINALE/USE%20CASE%20DIAGRAM/LISTA%20USE%20CASE.md)**: Elenco completo e strutturato di tutti i Casi d'Uso del sistema.
+  - **[`User requirements definition.md`](./MYAMA/PROGETTOFINALE/USE%20CASE%20DIAGRAM/User%20requirements%20definition.md)**: Schede descrittive dettagliate per ciascun Use Case.
+  - **`Use Case/`**: Modelli `.vpp` (`davidelUseCase.vpp`, `ValerioUseCase.vpp`) e diagrammi esportati in JPG per ciascun attore.
+- **[`MYAMA/PROGETTOFINALE/Latex PDF/`](./MYAMA/PROGETTOFINALE/Latex%20PDF)**: Progetto LaTeX master per la relazione d'esame:
+  - [`main.tex`](./MYAMA/PROGETTOFINALE/Latex%20PDF/main.tex): Master file con configurazione grafica, frontespizio e inclusione dei capitoli.
+  - [`main.pdf`](./MYAMA/PROGETTOFINALE/Latex%20PDF/main.pdf): Documento PDF compilato della relazione finale.
+  - [`compile_pdf.py`](./MYAMA/PROGETTOFINALE/Latex%20PDF/compile_pdf.py): Script Python di automazione per la compilazione del documento.
+  - [`sezioni/`](./MYAMA/PROGETTOFINALE/Latex%20PDF/sezioni): Capitoli modulari LaTeX (`01_introduzione.tex`, `02_glossario.tex`, `03_user_requirements.tex`, `04_system_requirements.tex`, `05_modelli_ooa.tex`, `06_design_patterns.tex`).
+  - [`figure/`](./MYAMA/PROGETTOFINALE/Latex%20PDF/figure): Repository di tutte le immagini e i diagrammi esportati ad alta risoluzione per il PDF.
+
+#### 📂 `MYAMA/GRUPPO 1/` (Workspace di Lavoro Sottogruppo 1)
+- `ProgettoVPdavidel.vpp`, `RefinedClassDIagam.vpp`: Modelli di lavoro preliminari.
+- **[`MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM)**:
+  - **[`LISTA SEQUENCE DIAGRAM.md`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM/LISTA%20SEQUENCE%20DIAGRAM.md)**: Elenco dei sequence diagram da realizzare.
+  - **[`MESSAGGI.md`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM/MESSAGGI.md)**, **[`METODI.md`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM/METODI.md)**, **[`METODI ASSOCIATI A MESSAGGI.md`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM/METODI%20ASSOCIATI%20A%20MESSAGGI.md)**, **[`SINCRONA E ASINCRONA.md`](./MYAMA/GRUPPO%201/SEQUENCE%20DIAGRAM/SINCRONA%20E%20ASINCRONA.md)**: Note metodologiche per la modellazione dei flussi dinamici BCE.
+
+#### 📂 `MYAMA/GRUPPO 2/` (Workspace di Lavoro Sottogruppo 2)
+- Cartella di lavoro per il secondo sottogruppo.
 
 ---
 
-### 3. `MYAMABASIDATI/`
+### 4. `PROGETTO DATA BASI/` (Dominio Pregresso MyAma)
 *Cartella contenente il progetto pregresso del corso di Basi di Dati (disponibile sia in PDF che in trascrizione Markdown per consultazione diretta del dominio).*
 
-- **[`MYAMABASIDATI/`](./MYAMABASIDATI)**: Cartella del progetto di riferimento per il dominio "MyAma".
-- **[`MYAMABASIDATI/BASI_PROGETTO.md`](./MYAMABASIDATI/BASI_PROGETTO.md)**: Trascrizione integrale in formato Markdown (pagina per pagina) della specifica di "MyAma".
-- **[`MYAMABASIDATI/BASI PROGETTO.pdf`](./MYAMABASIDATI/BASI%20PROGETTO.pdf)**: Documento originale in formato PDF (30 pag.).
+- **[`PROGETTO DATA BASI/`](./PROGETTO%20DATA%20BASI)**: Cartella del progetto di riferimento per il dominio "MyAma".
+- **[`PROGETTO DATA BASI/BASI_PROGETTO.md`](./PROGETTO%20DATA%20BASI/BASI_PROGETTO.md)**: Trascrizione integrale in formato Markdown (pagina per pagina) della specifica di "MyAma" per Basi di Dati.
+- **[`PROGETTO DATA BASI/BASI PROGETTO.pdf`](./PROGETTO%20DATA%20BASI/BASI%20PROGETTO.pdf)**: Documento originale in formato PDF (30 pag.).
+- **[`PROGETTO DATA BASI/prompt_immagine.md`](./PROGETTO%20DATA%20BASI/prompt_immagine.md)**: Documento ausiliario.
 
 ---
 
-### 4. `progettialtrui/`
+### 5. `OTHER PROGETTI/` (Benchmark e Progetti d'Esame di Riferimento)
 *Cartella contenente i progetti d'esame di riferimento, ciascuno organizzato in una propria sottocartella dedicata contenente PDF, trascrizioni Markdown `.md` e modelli UML `.vpp`.*
 
-- **[`progettialtrui/`](./progettialtrui)**: Raccolta dei progetti benchmark di altri studenti.
-- **[`progettialtrui/Progetto_Pesca_Cipolletta/`](./progettialtrui/Progetto_Pesca_Cipolletta)**:
-  - [`Progetto_Cipolletta_Pesca.md`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md): Trascrizione testuale integrale (76 pagine).
-  - [`Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf`](./progettialtrui/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir.pdf): Documento PDF originale.
-- **[`progettialtrui/Progetto_Hotel_Mongelli/`](./progettialtrui/Progetto_Hotel_Mongelli)**:
-  - [`Progetto_Mongelli_Hotel.md`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md): Trascrizione testuale integrale (59 pagine).
-  - [`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./progettialtrui/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf): Documento PDF originale.
-  - [`FileProgetto/`](./progettialtrui/Progetto_Hotel_Mongelli/FileProgetto): Modelli sorgente Visual Paradigm estratti (`.vpp`).
-  - [`FileProgetto.zip`](./progettialtrui/Progetto_Hotel_Mongelli/FileProgetto.zip): Archivio compresso dei modelli.
-- **[`progettialtrui/Progetto_RistorApp_Bianchini/`](./progettialtrui/Progetto_RistorApp_Bianchini)**:
-  - [`Progetto_Bianchini_RistorApp.md`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md): Trascrizione testuale integrale (80 pagine).
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.pdf`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf): Documento PDF originale.
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.vpp`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.vpp): File di progetto Visual Paradigm.
-  - [`Solo per i Class Diagrams (Unrefined, Refined).vpp`](./progettialtrui/Progetto_RistorApp_Bianchini/Solo%20per%20i%20Class%20Diagrams%20(Unrefined,%20Refined).vpp): File di modelli per i Class Diagram.
-  - [`Progetto_Bianchini_Corsetti_Mazzenga.zip`](./progettialtrui/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.zip): Archivio compresso del progetto.
-- **[`progettialtrui/Progetto_Buongiorno_Machowski/`](./progettialtrui/Progetto_Buongiorno_Machowski)**:
-  - [`Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf): Documento PDF originale di riferimento per la struttura della specifica.
+- **[`OTHER PROGETTI/`](./OTHER%20PROGETTI)**: Raccolta dei progetti benchmark di altri studenti.
+- **[`OTHER PROGETTI/Progetto_Pesca_Cipolletta/`](./OTHER%20PROGETTI/Progetto_Pesca_Cipolletta)**:
+  - [`Progetto_Cipolletta_Pesca.md`](./OTHER%20PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md): Trascrizione testuale integrale (76 pagine).
+  - [`Progetto_Cipolletta_Noce_Salvucci_Sfeir_250128_154245.pdf`](./OTHER%20PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir_250128_154245.pdf): Documento PDF originale.
+- **[`OTHER PROGETTI/Progetto_Hotel_Mongelli/`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli)**:
+  - [`Progetto_Mongelli_Hotel.md`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md): Trascrizione testuale integrale (59 pagine).
+  - [`Progetto_Mongelli_Pace_Rossi_Sandu.pdf`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf): Documento PDF originale.
+  - [`FileProgetto/`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli/FileProgetto): Modelli sorgente Visual Paradigm estratti (`.vpp`).
+  - [`FileProgetto.zip`](./OTHER%20PROGETTI/Progetto_Hotel_Mongelli/FileProgetto.zip): Archivio compresso dei modelli.
+- **[`OTHER PROGETTI/Progetto_RistorApp_Bianchini/`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini)**:
+  - [`Progetto_Bianchini_RistorApp.md`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md): Trascrizione testuale integrale (80 pagine).
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.pdf`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf): Documento PDF originale.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.vpp`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.vpp): File di progetto Visual Paradigm.
+  - [`Solo per i Class Diagrams (Unrefined, Refined).vpp`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Solo%20per%20i%20Class%20Diagrams%20%28Unrefined,%20Refined%29.vpp): File di modelli per i Class Diagram.
+  - [`Progetto_Bianchini_Corsetti_Mazzenga.zip`](./OTHER%20PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.zip): Archivio compresso del progetto.
+- **[`OTHER PROGETTI/Progetto_Buongiorno_Machowski/`](./OTHER%20PROGETTI/Progetto_Buongiorno_Machowski)**:
+  - [`Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf`](./OTHER%20PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf): Documento PDF originale di riferimento primario per la struttura della specifica IEEE 830.
+- **[`OTHER PROGETTI/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/`](./OTHER%20PROGETTI/SteamPlatform_Arbia,Di%20Iacovo,%20Malatesta,%20Marzi,%20Quartucci)**:
+  - [`ProgettoISW_25_26.pdf`](./OTHER%20PROGETTI/SteamPlatform_Arbia,Di%20Iacovo,%20Malatesta,%20Marzi,%20Quartucci/ProgettoISW_25_26.pdf): Documento PDF della relazione.
+  - `ISW Progetto.vpp`: File di progetto Visual Paradigm.
 
 ---
 
-### 5. `TEORIA/`
+### 6. `TEORIA/` (Compendi Teorici Completi)
 *Cartella contenente le dispense teoriche complete del corso di Ingegneria del Software in formato Obsidian Vault Markdown con immagini, tabelle e diagrammi integrati.*
 
 - **[`TEORIA/`](./TEORIA)**: Cartella principale con i compendi di teoria.
-- **[`ISW_obsidian_full/`](./TEORIA/ISW_obsidian_full)**: Vault Obsidian con [`ISW.md`](./TEORIA/ISW_obsidian_full/ISW_obsidian_full/ISW.md) (teoria completa) e 178 immagini.
-- **[`IS_andrea_obsidian_full/`](./TEORIA/IS_andrea_obsidian_full)**: Vault Obsidian con [`IS_andrea.md`](./TEORIA/IS_andrea_obsidian_full/IS_andrea_obsidian_full/IS_andrea.md) (90 pagine di appunti) e 50 figure.
+- **[`TEORIA/ISW_obsidian_full/`](./TEORIA/ISW_obsidian_full)**: Vault Obsidian con [`ISW.md`](./TEORIA/ISW_obsidian_full/ISW_obsidian_full/ISW.md) (dispensa teorica generale completa) e 178 immagini a corredo.
+- **[`TEORIA/IS_andrea_obsidian_full/`](./TEORIA/IS_andrea_obsidian_full)**: Vault Obsidian con [`IS_andrea.md`](./TEORIA/IS_andrea_obsidian_full/IS_andrea_obsidian_full/IS_andrea.md) (90 pagine di appunti del corso) e 50 figure integrate.
