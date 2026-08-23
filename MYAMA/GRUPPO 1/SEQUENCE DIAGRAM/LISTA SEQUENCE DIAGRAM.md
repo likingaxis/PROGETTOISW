@@ -1,36 +1,36 @@
 UTENTE
-1.  SequenceRegistrarsiComeCittadino
-2.  SequenceRegistrarsiTramiteCodiceInvito
-3.  SequenceEffettuareAccesso
+1.  SequenceRegistrarsiComeCittadino(fatto)
+2.  SequenceRegistrarsiTramiteCodiceInvito(fatto)
+3.  SequenceEffettuareAccesso(fatto)
 
 CITTADINO
-4.  SequenceRichiedereRitiroADomicilio
-5.  SequencePrenotareConferimentoSedeAMA
-6.  SequenceVisualizzareSediCompatibili
+4.  SequenceRichiedereRitiroADomicilio(fatto)
+5.  SequencePrenotareConferimentoSedeAMA(fatto)
+6.  SequenceVisualizzareSediCompatibili 
 7.  SequenceVisualizzareDateEFasceOrarie
-8.  SequenceVisualizzarePrenotazioniAttive
-9.  SequenceAnnullarePrenotazione
-10. SequenceVisualizzareStoricoPrenotazioni
-11. SequenceValutareServizio
+8.  SequenceVisualizzarePrenotazioniAttive(fatto)
+9.  SequenceAnnullarePrenotazione(fatto)
+10. SequenceVisualizzareStoricoPrenotazioni(fatto)
+11. SequenceValutareServizio(fatto)
 
 AUTISTA AMA
-12. SequenceVisualizzareRitiriAssegnati
-13. SequenceRegistrareEsitoRitiro
-14. SequenceChiamareCittadino
+12. SequenceVisualizzareRitiriAssegnati(fatto)
+13. SequenceRegistrareEsitoRitiro(fatto)
+14. SequenceChiamareCittadino(fatto)
 
 OPERATORE DI SEDE AMA
-15. SequenceVisualizzarePrenotazioniSede
-16. SequenceVerificarePrenotazioneCittadino
-17. SequenceRegistrareEsitoConferimento
+15. SequenceVisualizzarePrenotazioniSede(fatto)
+16. SequenceVerificarePrenotazioneCittadino(fatto)
+17. SequenceRegistrareEsitoConferimento(fatto)
 
 AMMINISTRATORE DI SEDE AMA
-18. SequenceGenerareCodiceInvitoPersonale
-19. SequenceGestireDisponibilitaLavoratori
-20. SequenceGestireDisponibilitaVeicoli
-21. SequenceGestireDisponibilitaSede
-22. SequenceGestireAssociazioniSedeZoneCAP
+18. SequenceGenerareCodiceInvitoPersonale(fatto)
+19. SequenceGestireDisponibilitaLavoratori(fatto)
+20. SequenceGestireDisponibilitaVeicoli(fatto)
+21. SequenceGestireDisponibilitaSede(fatto)
+22. SequenceGestireAssociazioniSedeZoneCAP![alt text](image.png)
 23. SequenceRimuoverePersonaleAMA
 
 AMMINISTRATORE GENERALE AMA
-24. SequenceGenerareCodiceAmministratoreSede
-25. SequenceRimuovereAmministratoreSede
+24. SequenceGenerareCodiceAmministratoreSede(fatto)
+25. SequenceRimuovereAmministratoreSede(fatto)
