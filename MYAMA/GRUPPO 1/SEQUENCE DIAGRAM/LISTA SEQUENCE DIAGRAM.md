@@ -1,0 +1,36 @@
+UTENTE
+1.  SequenceRegistrarsiComeCittadino
+2.  SequenceRegistrarsiTramiteCodiceInvito
+3.  SequenceEffettuareAccesso
+
+CITTADINO
+4.  SequenceRichiedereRitiroADomicilio
+5.  SequencePrenotareConferimentoSedeAMA
+6.  SequenceVisualizzareSediCompatibili
+7.  SequenceVisualizzareDateEFasceOrarie
+8.  SequenceVisualizzarePrenotazioniAttive
+9.  SequenceAnnullarePrenotazione
+10. SequenceVisualizzareStoricoPrenotazioni
+11. SequenceValutareServizio
+
+AUTISTA AMA
+12. SequenceVisualizzareRitiriAssegnati
+13. SequenceRegistrareEsitoRitiro
+14. SequenceChiamareCittadino
+
+OPERATORE DI SEDE AMA
+15. SequenceVisualizzarePrenotazioniSede
+16. SequenceVerificarePrenotazioneCittadino
+17. SequenceRegistrareEsitoConferimento
+
+AMMINISTRATORE DI SEDE AMA
+18. SequenceGenerareCodiceInvitoPersonale
+19. SequenceGestireDisponibilitaLavoratori
+20. SequenceGestireDisponibilitaVeicoli
+21. SequenceGestireDisponibilitaSede
+22. SequenceGestireAssociazioniSedeZoneCAP
+23. SequenceRimuoverePersonaleAMA
+
+AMMINISTRATORE GENERALE AMA
+24. SequenceGenerareCodiceAmministratoreSede
+25. SequenceRimuovereAmministratoreSede
