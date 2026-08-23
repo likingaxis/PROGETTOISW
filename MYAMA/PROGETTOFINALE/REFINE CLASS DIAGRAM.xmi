@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0">
+  <xmi:Documentation exporter="MyAma Refined Class Diagram" exporterVersion="1.0"/>
+
+  <uml:Model xmi:type="uml:Model" xmi:id="model_root" name="MyAma_RefinedClassDiagram">
+
+    <!-- ========================================================== -->
+    <!-- PACKAGE: Entity Classes                                      -->
+    <!-- ========================================================== -->
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_entity" name="Entity">
+
+      <!-- UtenteSistema (abstract) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UtenteSistema" name="UtenteSistema" isAbstract="true">
+        <ownedAttribute xmi:id="attr_US_id" name="id" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_US_nome" name="nome" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_US_cognome" name="cognome" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_US_email" name="email" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_US_password" name="password" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+      <!-- Cittadino -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Cittadino" name="Cittadino">
+        <generalization xmi:id="gen_Cittadino_UtenteSistema" general="cls_UtenteSistema"/>
+        <ownedAttribute xmi:id="attr_Cit_codiceFiscale" name="codiceFiscale" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Cit_telefono" name="telefono" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Cit_indirizzo" name="indirizzo" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Cit_CAP" name="CAP" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Cit_getTelefono" name="getTelefono" visibility="public">
+          <ownedParameter xmi:id="param_Cit_getTelefono_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- LavoratoreAMA (abstract) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_LavoratoreAMA" name="LavoratoreAMA" isAbstract="true">
+        <generalization xmi:id="gen_LavoratoreAMA_UtenteSistema" general="cls_UtenteSistema"/>
+        <ownedAttribute xmi:id="attr_Lav_idDipendente" name="idDipendente" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Lav_telefono" name="telefono" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Lav_getDettagli" name="getDettagli" visibility="public">
+          <ownedParameter xmi:id="param_Lav_getDettagli_id" name="idLavoratore" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Lav_getDettagli_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- AutistaAMA -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AutistaAMA" name="AutistaAMA">
+        <generalization xmi:id="gen_AutistaAMA_LavoratoreAMA" general="cls_LavoratoreAMA"/>
+        <ownedOperation xmi:id="op_Aut_getRitiriAssegnati" name="getRitiriAssegnati" visibility="public">
+          <ownedParameter xmi:id="param_Aut_getRitiriAssegnati_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- OperatoreSedeAMA -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_OperatoreSedeAMA" name="OperatoreSedeAMA">
+        <generalization xmi:id="gen_OperatoreSedeAMA_LavoratoreAMA" general="cls_LavoratoreAMA"/>
+      </packagedElement>
+
+      <!-- AmministratoreSedeAMA -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreSedeAMA" name="AmministratoreSedeAMA">
+        <generalization xmi:id="gen_AmministratoreSedeAMA_UtenteSistema" general="cls_UtenteSistema"/>
+        <ownedOperation xmi:id="op_AdminSede_getSedeAssociata" name="getSedeAssociata" visibility="public">
+          <ownedParameter xmi:id="param_AdminSede_getSedeAssociata_ret" direction="return" type="cls_SedeAMA"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- AmministratoreGeneraleAMA -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreGeneraleAMA" name="AmministratoreGeneraleAMA">
+        <generalization xmi:id="gen_AmministratoreGeneraleAMA_UtenteSistema" general="cls_UtenteSistema"/>
+        <ownedOperation xmi:id="op_AdminGen_getElencoAdminSede" name="getElencoAdminSede" visibility="public">
+          <ownedParameter xmi:id="param_AdminGen_getElencoAdminSede_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_AdminGen_getDettagli" name="getDettagli" visibility="public">
+          <ownedParameter xmi:id="param_AdminGen_getDettagli_id" name="idAdminSede" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_AdminGen_getDettagli_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- Prenotazione (abstract) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Prenotazione" name="Prenotazione" isAbstract="true">
+        <ownedAttribute xmi:id="attr_Pren_idPrenotazione" name="idPrenotazione" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Pren_data" name="data" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Pren_fasciaOraria" name="fasciaOraria" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Pren_stato" name="stato" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Pren_destroyEntity" name="destroyEntity" visibility="public">
+          <ownedParameter xmi:id="param_Pren_destroyEntity_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Pren_setValutazione" name="setValutazione" visibility="public">
+          <ownedParameter xmi:id="param_Pren_setValutazione_data" name="data" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Pren_modificaStato" name="modificaStato" visibility="public">
+          <ownedParameter xmi:id="param_Pren_modificaStato_esito" name="esito" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Pren_aggiornaStato" name="aggiornaStato" visibility="public">
+          <ownedParameter xmi:id="param_Pren_aggiornaStato_esito" name="esito" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Pren_verificaValidita" name="verificaValidita" visibility="public">
+          <ownedParameter xmi:id="param_Pren_verVal_sede" name="sede" direction="in" type="cls_SedeAMA"/>
+          <ownedParameter xmi:id="param_Pren_verVal_data" name="data" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Pren_verVal_fasciaOraria" name="fasciaOraria" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Pren_verVal_stato" name="stato" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Pren_verVal_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- RitiroDomicilio -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_RitiroDomicilio" name="RitiroDomicilio">
+        <generalization xmi:id="gen_RitiroDomicilio_Prenotazione" general="cls_Prenotazione"/>
+        <ownedAttribute xmi:id="attr_Rit_indirizzoRitiro" name="indirizzoRitiro" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+      <!-- ConferimentoSede -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ConferimentoSede" name="ConferimentoSede">
+        <generalization xmi:id="gen_ConferimentoSede_Prenotazione" general="cls_Prenotazione"/>
+      </packagedElement>
+
+      <!-- Valutazione -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Valutazione" name="Valutazione">
+        <ownedAttribute xmi:id="attr_Val_voto" name="voto" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Val_commento" name="commento" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+      <!-- Rifiuto -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Rifiuto" name="Rifiuto">
+        <ownedAttribute xmi:id="attr_Rif_descrizione" name="descrizione" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Rif_pesoStimato" name="pesoStimato" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Rif_volumeStimato" name="volumeStimato" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Rif_foto" name="foto" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+      <!-- TipologiaRifiuto -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_TipologiaRifiuto" name="TipologiaRifiuto">
+        <ownedAttribute xmi:id="attr_Tip_idTipologia" name="idTipologia" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Tip_nome" name="nome" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Tip_descrizione" name="descrizione" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+      <!-- SedeAMA -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_SedeAMA" name="SedeAMA">
+        <ownedAttribute xmi:id="attr_Sede_idSede" name="idSede" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Sede_nome" name="nome" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Sede_indirizzo" name="indirizzo" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Sede_CAP" name="CAP" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Sede_recuperaPrenotazioniSede" name="recuperaPrenotazioniSede" visibility="public">
+          <ownedParameter xmi:id="param_Sede_recPren_idSede" name="idSede" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Sede_recPren_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Sede_recuperaLavoratori" name="recuperaLavoratori" visibility="public">
+          <ownedParameter xmi:id="param_Sede_recLav_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Sede_recuperaVeicoli" name="recuperaVeicoli" visibility="public">
+          <ownedParameter xmi:id="param_Sede_recVeic_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Sede_recuperaZoneCAPAssociate" name="recuperaZoneCAPAssociate" visibility="public">
+          <ownedParameter xmi:id="param_Sede_recZone_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Sede_associaZonaCAP" name="associaZonaCAP" visibility="public">
+          <ownedParameter xmi:id="param_Sede_assZona_zona" name="zonaCAP" direction="in" type="cls_ZonaCAP"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Sede_rimuoviZonaCAP" name="rimuoviZonaCAP" visibility="public">
+          <ownedParameter xmi:id="param_Sede_rimZona_zona" name="zonaCAP" direction="in" type="cls_ZonaCAP"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- Veicolo -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Veicolo" name="Veicolo">
+        <ownedAttribute xmi:id="attr_Veic_idVeicolo" name="idVeicolo" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Veic_targa" name="targa" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Veic_capacitaPeso" name="capacitaPeso" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Veic_capacitaVolume" name="capacitaVolume" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Veic_recuperaDisponibilita" name="recuperaDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_Veic_recDisp_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- Disponibilita -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Disponibilita" name="Disponibilita">
+        <ownedAttribute xmi:id="attr_Disp_data" name="data" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Disp_oraInizio" name="oraInizio" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Disp_oraFine" name="oraFine" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_Disp_inserisciDisponibilita" name="inserisciDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_Disp_ins_data" name="data" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Disp_ins_oraInizio" name="oraInizio" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Disp_ins_oraFine" name="oraFine" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_Disp_aggiornaDisponibilita" name="aggiornaDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_Disp_agg_data" name="data" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Disp_agg_oraInizio" name="oraInizio" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_Disp_agg_oraFine" name="oraFine" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- CodiceInvito -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_CodiceInvito" name="CodiceInvito">
+        <ownedAttribute xmi:id="attr_CI_codice" name="codice" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_CI_ruoloAssociato" name="ruoloAssociato" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_CI_valido" name="valido" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_CI_utilizzato" name="utilizzato" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_CI_creaCodice" name="creaCodice" visibility="public">
+          <ownedParameter xmi:id="param_CI_creaCodice_ruolo" name="ruolo" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_CI_creaCodice_ret" direction="return" type="cls_CodiceInvito"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- ZonaCAP (NUOVA) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ZonaCAP" name="ZonaCAP">
+        <ownedAttribute xmi:id="attr_ZC_cap" name="cap" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_ZC_nomeZona" name="nomeZona" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="op_ZC_cercaZonaCAP" name="cercaZonaCAP" visibility="public">
+          <ownedParameter xmi:id="param_ZC_cercaZonaCAP_cap" name="cap" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="param_ZC_cercaZonaCAP_ret" direction="return" type="cls_ZonaCAP"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- Assegnazione (NUOVA) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Assegnazione" name="Assegnazione">
+        <ownedAttribute xmi:id="attr_Ass_idAssegnazione" name="idAssegnazione" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="attr_Ass_dataAssegnazione" name="dataAssegnazione" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+
+    </packagedElement>
+    <!-- END PACKAGE Entity -->
+
+    <!-- ========================================================== -->
+    <!-- PACKAGE: Boundary Classes                                    -->
+    <!-- ========================================================== -->
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_boundary" name="Boundary">
+
+      <!-- RegistrationInterface -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_RegistrationInterface" name="RegistrationInterface">
+        <ownedOperation xmi:id="op_RI_richiediRegistrazione" name="richiediRegistrazione" visibility="public">
+          <ownedParameter xmi:id="param_RI_richiediReg_email" name="email" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_RI_richiediReg_passHash" name="passHash" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_RI_richiediReg_username" name="username" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_RI_mostraInterfacciaRegistrazione" name="mostraInterfacciaRegistrazione" visibility="public"/>
+        <ownedOperation xmi:id="op_RI_mostraInterfacciaLogin" name="mostraInterfacciaLogin" visibility="public"/>
+        <ownedOperation xmi:id="op_RI_showRegistrationInterface" name="showRegistrationInterface" visibility="public">
+          <ownedParameter xmi:id="param_RI_showRI_errorData" name="errorData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_RI_redirectToLogin" name="redirectToLogin" visibility="public"/>
+      </packagedElement>
+
+      <!-- InvitationRegistrationInterface -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_InvitationRegistrationInterface" name="InvitationRegistrationInterface">
+        <ownedOperation xmi:id="op_IRI_richiediRegistrazione" name="richiediRegistrazione" visibility="public">
+          <ownedParameter xmi:id="param_IRI_code" name="code" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_IRI_role" name="role" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_IRI_email" name="email" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_IRI_passHash" name="passHash" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_IRI_username" name="username" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- LoginInterface -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_LoginInterface" name="LoginInterface">
+        <ownedOperation xmi:id="op_LI_richiediLogin" name="richiediLogin" visibility="public">
+          <ownedParameter xmi:id="param_LI_email" name="email" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_LI_passHash" name="passHash" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_LI_username" name="username" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_LI_showLoginInterface" name="showLoginInterface" visibility="public">
+          <ownedParameter xmi:id="param_LI_showLI_errorData" name="errorData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_LI_forwardLoginData" name="forwardLoginData" visibility="public">
+          <ownedParameter xmi:id="param_LI_fwdLogin_sessionID" name="sessionID" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_LI_fwdLogin_role" name="role" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- HomeBookInterface -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_HomeBookInterface" name="HomeBookInterface">
+        <ownedOperation xmi:id="op_HBI_getAvailability" name="getAvailability" visibility="public">
+          <ownedParameter xmi:id="param_HBI_getAv_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_HBI_richiediRitiroADomicilio" name="richiediRitiroADomicilio" visibility="public">
+          <ownedParameter xmi:id="param_HBI_richRit_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_HBI_prenotazioneConfermata" name="prenotazioneConfermata" visibility="public"/>
+        <ownedOperation xmi:id="op_HBI_fasciaOrariaNonDisponibile" name="fasciaOrariaNonDisponibile" visibility="public"/>
+      </packagedElement>
+
+      <!-- WasteDisposalInterface -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_WasteDisposalInterface" name="WasteDisposalInterface">
+        <ownedOperation xmi:id="op_WDI_getAvailability" name="getAvailability" visibility="public">
+          <ownedParameter xmi:id="param_WDI_getAv_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_WDI_richiediConferimento" name="richiediConferimento" visibility="public">
+          <ownedParameter xmi:id="param_WDI_richConf_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_WDI_prenotazioneConfermata" name="prenotazioneConfermata" visibility="public"/>
+        <ownedOperation xmi:id="op_WDI_fasciaOrariaNonDisponibile" name="fasciaOrariaNonDisponibile" visibility="public"/>
+      </packagedElement>
+
+      <!-- BookingHistory -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_BookingHistory" name="BookingHistory">
+        <ownedOperation xmi:id="op_BH_getStoricoPrenotazioni" name="getStoricoPrenotazioni" visibility="public">
+          <ownedParameter xmi:id="param_BH_getSP_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_BH_getSP_filter" name="filter" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_BH_mostraStoricoPrenotazioni" name="mostraStoricoPrenotazioni" visibility="public">
+          <ownedParameter xmi:id="param_BH_mostraSP_bookList" name="bookList" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_BH_annullaPrenotazione" name="annullaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_BH_annPren_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_BH_monstraCancellazioneEffettuata" name="monstraCancellazioneEffettuata" visibility="public"/>
+        <ownedOperation xmi:id="op_BH_mostraErroreCancellazione" name="mostraErroreCancellazione" visibility="public"/>
+        <ownedOperation xmi:id="op_BH_valutaPrenotazione" name="valutaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_BH_valPren_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_BH_valPren_val" name="valutazione" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_BH_confermaValutazione" name="confermaValutazione" visibility="public"/>
+        <ownedOperation xmi:id="op_BH_mostraErroreValutazione" name="mostraErroreValutazione" visibility="public"/>
+      </packagedElement>
+
+      <!-- PannelloAutistaUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_PannelloAutistaUI" name="PannelloAutistaUI">
+        <ownedOperation xmi:id="op_PAU_richiediRitiriAssegnati" name="richiediRitiriAssegnati" visibility="public"/>
+        <ownedOperation xmi:id="op_PAU_mostraRitiri" name="mostraRitiri" visibility="public"/>
+        <ownedOperation xmi:id="op_PAU_inserisciEsito" name="inserisciEsito" visibility="public">
+          <ownedParameter xmi:id="param_PAU_insEsito_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_PAU_mostraConferma" name="mostraConferma" visibility="public"/>
+        <ownedOperation xmi:id="op_PAU_mostraMessaggioErrore" name="mostraMessaggioErrore" visibility="public"/>
+        <ownedOperation xmi:id="op_PAU_mostraChiamata" name="mostraChiamata" visibility="public"/>
+        <ownedOperation xmi:id="op_PAU_mostraInformazione" name="mostraInformazione" visibility="public"/>
+      </packagedElement>
+
+      <!-- PannelloSedeUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_PannelloSedeUI" name="PannelloSedeUI">
+        <ownedOperation xmi:id="op_PSU_richiediPrenotazioniSede" name="richiediPrenotazioniSede" visibility="public"/>
+        <ownedOperation xmi:id="op_PSU_mostraPrenotazioni" name="mostraPrenotazioni" visibility="public">
+          <ownedParameter xmi:id="param_PSU_mostraPren_lista" name="listaPrenotazioni" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- ControlloVarcoUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ControlloVarcoUI" name="ControlloVarcoUI">
+        <ownedOperation xmi:id="op_CVU_inserisciIdPrenotazione" name="inserisciIdPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_CVU_insId_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CVU_mostraDettagliConferimento" name="mostraDettagliConferimento" visibility="public">
+          <ownedParameter xmi:id="param_CVU_mostraDet_dettagli" name="dettagli" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CVU_mostraPrenotazioneNonTrovata" name="mostraPrenotazioneNonTrovata" visibility="public"/>
+        <ownedOperation xmi:id="op_CVU_mostraEsitoVerifica" name="mostraEsitoVerifica" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestioneConferimentoUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneConferimentoUI" name="GestioneConferimentoUI">
+        <ownedOperation xmi:id="op_GCU_selezionaPrenotazione" name="selezionaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_GCU_selPren_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCU_inserisciEsito" name="inserisciEsito" visibility="public">
+          <ownedParameter xmi:id="param_GCU_insEsito_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCU_confermaRegistrazione" name="confermaRegistrazione" visibility="public">
+          <ownedParameter xmi:id="param_GCU_confReg_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GCU_confReg_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCU_mostraDettagliConferimento" name="mostraDettagliConferimento" visibility="public">
+          <ownedParameter xmi:id="param_GCU_mostraDet_dettagli" name="dettagliConferimento" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCU_segnalaErroreEsito" name="segnalaErroreEsito" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestioneCodiciUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneCodiciUI" name="GestioneCodiciUI">
+        <ownedOperation xmi:id="op_GCodUI_richiediCodiceAdminSede" name="richiediCodiceAdminSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_mostraCodiceGenerato" name="mostraCodiceGenerato" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_mostraElencoAdminSede" name="mostraElencoAdminSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_richiediDettagli" name="richiediDettagli" visibility="public">
+          <ownedParameter xmi:id="param_GCodUI_richDet_id" name="idAdminSede" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCodUI_mostraDettagli" name="mostraDettagli" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_richiediRimozione" name="richiediRimozione" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_confermaRimozione" name="confermaRimozione" visibility="public"/>
+        <ownedOperation xmi:id="op_GCodUI_annullaOperazione" name="annullaOperazione" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestionePersonaleUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestionePersonaleUI" name="GestionePersonaleUI">
+        <ownedOperation xmi:id="op_GPU_accedeGestionePersonale" name="accedeGestionePersonale" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_richiediGenerazioneCodice" name="richiediGenerazioneCodice" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_mostraCodiceInvito" name="mostraCodiceInvito" visibility="public">
+          <ownedParameter xmi:id="param_GPU_mostraCod_codice" name="codiceGenerato" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPU_richiediLavoratoriSede" name="richiediLavoratoriSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_mostraLavoratori" name="mostraLavoratori" visibility="public">
+          <ownedParameter xmi:id="param_GPU_mostraLav_lista" name="listaLavoratori" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPU_selezionaLavoratore" name="selezionaLavoratore" visibility="public">
+          <ownedParameter xmi:id="param_GPU_selLav_id" name="idLavoratore" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPU_mostraInformazioni" name="mostraInformazioni" visibility="public">
+          <ownedParameter xmi:id="param_GPU_mostraInfo_det" name="dettagliLavoratore" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPU_richiediRimozione" name="richiediRimozione" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_confermaRimozione" name="confermaRimozione" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_mostraConfermaOperazione" name="mostraConfermaOperazione" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_mostraErroreLavoratore" name="mostraErroreLavoratore" visibility="public"/>
+        <ownedOperation xmi:id="op_GPU_mostraErroreAutorizzazione" name="mostraErroreAutorizzazione" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestioneSedeUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneSedeUI" name="GestioneSedeUI">
+        <ownedOperation xmi:id="op_GSU_richiediDisponibilitaSede" name="richiediDisponibilitaSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_richiediGestioneDisponibilitaSede" name="richiediGestioneDisponibilitaSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_mostraDisponibilita" name="mostraDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_GSU_mostraDisp_lista" name="disponibilitaAttuali" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GSU_mostraConfermaAggiornamento" name="mostraConfermaAggiornamento" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_mostraErroreDisponibilita" name="mostraErroreDisponibilita" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_mostraRichiestaConferma" name="mostraRichiestaConferma" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_richiediGestioneZoneCAP" name="richiediGestioneZoneCAP" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_mostraZoneCAPAssociate" name="mostraZoneCAPAssociate" visibility="public">
+          <ownedParameter xmi:id="param_GSU_mostraZone_lista" name="zoneCAPAssociate" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GSU_mostraErroreCAP" name="mostraErroreCAP" visibility="public"/>
+        <ownedOperation xmi:id="op_GSU_mostraErroreAssociazione" name="mostraErroreAssociazione" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestioneVeicoliUI -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneVeicoliUI" name="GestioneVeicoliUI">
+        <ownedOperation xmi:id="op_GVU_richiediGestioneDisponibilitaVeicoli" name="richiediGestioneDisponibilitaVeicoli" visibility="public"/>
+        <ownedOperation xmi:id="op_GVU_richiediVeicoliSede" name="richiediVeicoliSede" visibility="public"/>
+        <ownedOperation xmi:id="op_GVU_mostraVeicoli" name="mostraVeicoli" visibility="public">
+          <ownedParameter xmi:id="param_GVU_mostraVeic_lista" name="listaVeicoli" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVU_selezionaVeicolo" name="selezionaVeicolo" visibility="public">
+          <ownedParameter xmi:id="param_GVU_selVeic_id" name="idVeicolo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVU_mostraDisponibilita" name="mostraDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_GVU_mostraDisp_lista" name="disponibilitaAttuali" direction="out"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVU_mostraConfermaAggiornamento" name="mostraConfermaAggiornamento" visibility="public"/>
+        <ownedOperation xmi:id="op_GVU_mostraErroreDisponibilita" name="mostraErroreDisponibilita" visibility="public"/>
+        <ownedOperation xmi:id="op_GVU_mostraRichiestaConferma" name="mostraRichiestaConferma" visibility="public"/>
+      </packagedElement>
+
+    </packagedElement>
+    <!-- END PACKAGE Boundary -->
+
+    <!-- ========================================================== -->
+    <!-- PACKAGE: Control Classes                                     -->
+    <!-- ========================================================== -->
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_control" name="Control">
+
+      <!-- UserAccessEndpoint -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserAccessEndpoint" name="UserAccessEndpoint">
+        <ownedOperation xmi:id="op_UAE_registrationForward" name="registrationForward" visibility="public">
+          <ownedParameter xmi:id="param_UAE_regFwd_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_registrationForwardByRole" name="registrationForward" visibility="public">
+          <ownedParameter xmi:id="param_UAE_regFwdR_role" name="role" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_regFwdR_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_loginForward" name="loginForward" visibility="public">
+          <ownedParameter xmi:id="param_UAE_loginFwd_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_loginTest" name="loginTest" visibility="public">
+          <ownedParameter xmi:id="param_UAE_loginTest_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_loginTest_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_checkAccount" name="checkAccount" visibility="public">
+          <ownedParameter xmi:id="param_UAE_checkAcc_email" name="email" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_checkAcc_passHash" name="passHash" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_checkAcc_userName" name="userName" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_checkAcc_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_checkVCode" name="checkVCode" visibility="public">
+          <ownedParameter xmi:id="param_UAE_checkVC_code" name="validationCode" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_checkVC_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_forwardCreateUserByRole" name="forwardCreateUserByRole" visibility="public">
+          <ownedParameter xmi:id="param_UAE_fwdCUBR_role" name="role" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UAE_fwdCUBR_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UAE_redirectLoginInterface" name="redirectLoginInterface" visibility="public"/>
+      </packagedElement>
+
+      <!-- AMAServiceController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AMAServiceController" name="AMAServiceController">
+        <ownedOperation xmi:id="op_ASC_forwardAvailabilityRequest" name="forwardAvailabilityRequest" visibility="public">
+          <ownedParameter xmi:id="param_ASC_fwdAvReq_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_forwardBookRequest" name="forwardBookRequest" visibility="public">
+          <ownedParameter xmi:id="param_ASC_fwdBookReq_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_requestAvailabilityCheck" name="requestAvailabilityCheck" visibility="public">
+          <ownedParameter xmi:id="param_ASC_reqAvCheck_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_requestAvailabilityList" name="requestAvailabilityList" visibility="public">
+          <ownedParameter xmi:id="param_ASC_reqAvList_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_forwardBookHistoryRequest" name="forwardBookHistoryRequest" visibility="public">
+          <ownedParameter xmi:id="param_ASC_fwdBHReq_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_ASC_fwdBHReq_filter" name="filter" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_forwardCancelRequest" name="forwardCancelRequest" visibility="public">
+          <ownedParameter xmi:id="param_ASC_fwdCanReq_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_forwardCommentRequest" name="forwardCommentRequest" visibility="public">
+          <ownedParameter xmi:id="param_ASC_fwdComReq_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_ASC_fwdComReq_val" name="valutazione" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_ASC_forwardNotAvailable" name="forwardNotAvailable" visibility="public"/>
+        <ownedOperation xmi:id="op_ASC_forwardAvailable" name="forwardAvailable" visibility="public"/>
+        <ownedOperation xmi:id="op_ASC_forwardError" name="forwardError" visibility="public"/>
+        <ownedOperation xmi:id="op_ASC_forwardConfirm" name="forwardConfirm" visibility="public"/>
+      </packagedElement>
+
+      <!-- UserRegistry (AMAServiceRegister) -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserRegistry" name="UserRegistry">
+        <ownedOperation xmi:id="op_UR_createUser" name="createUser" visibility="public">
+          <ownedParameter xmi:id="param_UR_createUser_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_createUser_ret" direction="return" type="cls_UtenteSistema"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_createUserByRole" name="createUserByRole" visibility="public">
+          <ownedParameter xmi:id="param_UR_createUBR_role" name="role" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_createUBR_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_createUBR_ret" direction="return" type="cls_UtenteSistema"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_getBookHistory" name="getBookHistory" visibility="public">
+          <ownedParameter xmi:id="param_UR_getBH_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_getBH_filter" name="filter" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_getBH_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_cancelBook" name="cancelBook" visibility="public">
+          <ownedParameter xmi:id="param_UR_cancelBook_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_cancelBook_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_commentBook" name="commentBook" visibility="public">
+          <ownedParameter xmi:id="param_UR_commentBook_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_commentBook_val" name="valutazione" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_commentBook_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_getHomeBookAvailabilityList" name="getHomeBookAvailabilityList" visibility="public">
+          <ownedParameter xmi:id="param_UR_getHBAL_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_getHBAL_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_checkHomeBookAvailability" name="checkHomeBookAvailability" visibility="public">
+          <ownedParameter xmi:id="param_UR_checkHBA_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_checkHBA_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_getAvailabilityList" name="getAvailabilityList" visibility="public">
+          <ownedParameter xmi:id="param_UR_getAL_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_getAL_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_checkAvailability" name="checkAvailability" visibility="public">
+          <ownedParameter xmi:id="param_UR_checkAv_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_checkAv_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_newHomeBookRequest" name="newHomeBookRequest" visibility="public">
+          <ownedParameter xmi:id="param_UR_newHBR_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_newHBR_ret" direction="return" type="cls_RitiroDomicilio"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_UR_newDisposalRequest" name="newDisposalRequest" visibility="public">
+          <ownedParameter xmi:id="param_UR_newDR_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UR_newDR_ret" direction="return" type="cls_ConferimentoSede"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- UserFactory -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserFactory" name="UserFactory">
+        <ownedOperation xmi:id="op_UF_createUserByRole" name="createUserByRole" visibility="public">
+          <ownedParameter xmi:id="param_UF_cUBR_role" name="role" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UF_cUBR_userData" name="userData" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_UF_cUBR_ret" direction="return" type="cls_UtenteSistema"/>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- GestoreRitiriController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestoreRitiriController" name="GestoreRitiriController">
+        <ownedOperation xmi:id="op_GRC_visualizzaRitiriAssegnati" name="visualizzaRitiriAssegnati" visibility="public">
+          <ownedParameter xmi:id="param_GRC_visRit_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GRC_registraEsitoRitiro" name="registraEsitoRitiro" visibility="public">
+          <ownedParameter xmi:id="param_GRC_regEsRit_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GRC_regEsRit_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- GestoreEsitoController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestoreEsitoController" name="GestoreEsitoController">
+        <ownedOperation xmi:id="op_GEC_registraEsito" name="registraEsito" visibility="public">
+          <ownedParameter xmi:id="param_GEC_regEs_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GEC_regEs_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- ContattoController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ContattoController" name="ContattoController">
+        <ownedOperation xmi:id="op_CC_richiediDettagli" name="richiediDettagli" visibility="public">
+          <ownedParameter xmi:id="param_CC_richDet_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_CC_richDet_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CC_getDettagli" name="getDettagli" visibility="public">
+          <ownedParameter xmi:id="param_CC_getDet_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_CC_getDet_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- CodiciController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_CodiciController" name="CodiciController">
+        <ownedOperation xmi:id="op_CodC_generaCodice" name="generaCodice" visibility="public">
+          <ownedParameter xmi:id="param_CodC_genCod_tipo" name="tipo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_CodC_genCod_ret" direction="return" type="cls_CodiceInvito"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CodC_getElencoAdminSede" name="getElencoAdminSede" visibility="public">
+          <ownedParameter xmi:id="param_CodC_getElenco_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CodC_richiediDettagli" name="richiediDettagli" visibility="public">
+          <ownedParameter xmi:id="param_CodC_richDet_id" name="idAdminSede" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_CodC_confermaRimozione" name="confermaRimozione" visibility="public"/>
+      </packagedElement>
+
+      <!-- GestioneSedeController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneSedeController" name="GestioneSedeController">
+        <ownedOperation xmi:id="op_GSC_recuperaPrenotazioniSede" name="recuperaPrenotazioniSede" visibility="public">
+          <ownedParameter xmi:id="param_GSC_recPren_idSede" name="idSede" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GSC_recPren_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GSC_modificaDisponibilita" name="modificaDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_GSC_modDisp_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GSC_modDisp_oraInizio" name="oraInizio" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GSC_modDisp_oraFine" name="oraFine" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GSC_modificaAssociazione" name="modificaAssociazione" visibility="public">
+          <ownedParameter xmi:id="param_GSC_modAss_cap" name="cap" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GSC_modAss_op" name="operazione" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- AccettazioneController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AccettazioneController" name="AccettazioneController">
+        <ownedOperation xmi:id="op_AC_cercaPrenotazione" name="cercaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_AC_cercaPren_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_AC_cercaPren_ret" direction="return" type="cls_Prenotazione"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_AC_verificaPrenotazione" name="verificaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_AC_verPren_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_AC_verPren_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_AC_registraEsito" name="registraEsito" visibility="public">
+          <ownedParameter xmi:id="param_AC_regEs_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_AC_regEs_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_AC_verificaEsito" name="verificaEsito" visibility="public">
+          <ownedParameter xmi:id="param_AC_verEs_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_AC_verEs_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- GestioneConferimentoController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneConferimentoController" name="GestioneConferimentoController">
+        <ownedOperation xmi:id="op_GCC_selezionaPrenotazione" name="selezionaPrenotazione" visibility="public">
+          <ownedParameter xmi:id="param_GCC_selPren_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GCC_selPren_ret" direction="return" type="cls_Prenotazione"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCC_inserisciEsito" name="inserisciEsito" visibility="public">
+          <ownedParameter xmi:id="param_GCC_insEs_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GCC_confermaRegistrazione" name="confermaRegistrazione" visibility="public">
+          <ownedParameter xmi:id="param_GCC_confReg_id" name="id" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GCC_confReg_esito" name="esito" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- GestionePersonaleController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestionePersonaleController" name="GestionePersonaleController">
+        <ownedOperation xmi:id="op_GPC_generaCodiceInvito" name="generaCodiceInvito" visibility="public">
+          <ownedParameter xmi:id="param_GPC_genCI_ruolo" name="ruolo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GPC_genCI_ret" direction="return" type="cls_CodiceInvito"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPC_recuperaLavoratori" name="recuperaLavoratori" visibility="public">
+          <ownedParameter xmi:id="param_GPC_recLav_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPC_richiediDettagli" name="richiediDettagli" visibility="public">
+          <ownedParameter xmi:id="param_GPC_richDet_id" name="idLavoratore" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPC_rimuoviPersonale" name="rimuoviPersonale" visibility="public">
+          <ownedParameter xmi:id="param_GPC_rimPers_id" name="idLavoratore" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPC_modificaDisponibilita" name="modificaDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_GPC_modDisp_idLav" name="idLavoratore" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GPC_modDisp_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GPC_modDisp_oraInizio" name="oraInizio" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GPC_modDisp_oraFine" name="oraFine" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GPC_verificaAssociazione" name="verificaAssociazione" visibility="public">
+          <ownedParameter xmi:id="param_GPC_verAss_lav" name="lavoratore" direction="in" type="cls_LavoratoreAMA"/>
+          <ownedParameter xmi:id="param_GPC_verAss_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Boolean"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- GestioneVeicoliController -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneVeicoliController" name="GestioneVeicoliController">
+        <ownedOperation xmi:id="op_GVC_recuperaVeicoli" name="recuperaVeicoli" visibility="public">
+          <ownedParameter xmi:id="param_GVC_recVeic_ret" direction="return"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVC_modificaDisponibilita" name="modificaDisponibilita" visibility="public">
+          <ownedParameter xmi:id="param_GVC_modDisp_idVeic" name="idVeicolo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+          <ownedParameter xmi:id="param_GVC_modDisp_data" name="data" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GVC_modDisp_oraInizio" name="oraInizio" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+          <ownedParameter xmi:id="param_GVC_modDisp_oraFine" name="oraFine" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#String"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVC_confermaModifiche" name="confermaModifiche" visibility="public">
+          <ownedParameter xmi:id="param_GVC_confMod_idVeic" name="idVeicolo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="op_GVC_selezionaVeicolo" name="selezionaVeicolo" visibility="public">
+          <ownedParameter xmi:id="param_GVC_selVeic_idVeic" name="idVeicolo" direction="in"><type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.0/uml.xml#Integer"/></ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+    </packagedElement>
+    <!-- END PACKAGE Control -->
+
+    <!-- ========================================================== -->
+    <!-- ASSOCIATIONS                                                 -->
+    <!-- ========================================================== -->
+
+    <!-- Cittadino -> Prenotazione (1 to 0..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Cittadino_Prenotazione" name="ha">
+      <memberEnd xmi:idref="assocEnd_Cittadino_Prenotazione_src"/>
+      <memberEnd xmi:idref="assocEnd_Cittadino_Prenotazione_tgt"/>
+      <ownedEnd xmi:id="assocEnd_Cittadino_Prenotazione_src" name="cittadino" type="cls_Cittadino" association="assoc_Cittadino_Prenotazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_CPsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_CPsrc" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_Cittadino_Prenotazione_tgt" name="prenotazioni" type="cls_Prenotazione" association="assoc_Cittadino_Prenotazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_CPtgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_CPtgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- Prenotazione -> Rifiuto (1..1 to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Prenotazione_Rifiuto" name="riguarda">
+      <memberEnd xmi:idref="assocEnd_PR_src"/>
+      <memberEnd xmi:idref="assocEnd_PR_tgt"/>
+      <ownedEnd xmi:id="assocEnd_PR_src" name="prenotazione" type="cls_Prenotazione" association="assoc_Prenotazione_Rifiuto">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_PRsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_PRsrc" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_PR_tgt" name="rifiuto" type="cls_Rifiuto" association="assoc_Prenotazione_Rifiuto">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_PRtgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_PRtgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- Prenotazione -> Valutazione (1 to 0..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Prenotazione_Valutazione" name="haValutazione">
+      <memberEnd xmi:idref="assocEnd_PV_src"/>
+      <memberEnd xmi:idref="assocEnd_PV_tgt"/>
+      <ownedEnd xmi:id="assocEnd_PV_src" name="prenotazione" type="cls_Prenotazione" association="assoc_Prenotazione_Valutazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_PVsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_PVsrc" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_PV_tgt" name="valutazione" type="cls_Valutazione" association="assoc_Prenotazione_Valutazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_PVtgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_PVtgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- Rifiuto -> TipologiaRifiuto (0..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Rifiuto_TipologiaRifiuto" name="haTipologia">
+      <memberEnd xmi:idref="assocEnd_RT_src"/>
+      <memberEnd xmi:idref="assocEnd_RT_tgt"/>
+      <ownedEnd xmi:id="assocEnd_RT_src" name="rifiuti" type="cls_Rifiuto" association="assoc_Rifiuto_TipologiaRifiuto">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RTsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RTsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_RT_tgt" name="tipologia" type="cls_TipologiaRifiuto" association="assoc_Rifiuto_TipologiaRifiuto">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RTtgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RTtgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- RitiroDomicilio -> AutistaAMA (0..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_RitiroDomicilio_AutistaAMA" name="assegnatoA">
+      <memberEnd xmi:idref="assocEnd_RA_src"/>
+      <memberEnd xmi:idref="assocEnd_RA_tgt"/>
+      <ownedEnd xmi:id="assocEnd_RA_src" name="ritiri" type="cls_RitiroDomicilio" association="assoc_RitiroDomicilio_AutistaAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RAsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RAsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_RA_tgt" name="autista" type="cls_AutistaAMA" association="assoc_RitiroDomicilio_AutistaAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RAtgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RAtgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- AutistaAMA -> Veicolo (0..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_AutistaAMA_Veicolo" name="guida">
+      <memberEnd xmi:idref="assocEnd_AV_src"/>
+      <memberEnd xmi:idref="assocEnd_AV_tgt"/>
+      <ownedEnd xmi:id="assocEnd_AV_src" name="autisti" type="cls_AutistaAMA" association="assoc_AutistaAMA_Veicolo">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_AVsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_AVsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_AV_tgt" name="veicolo" type="cls_Veicolo" association="assoc_AutistaAMA_Veicolo">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_AVtgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_AVtgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- ConferimentoSede -> SedeAMA (0..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_ConferimentoSede_SedeAMA" name="pressoSede">
+      <memberEnd xmi:idref="assocEnd_CS_src"/>
+      <memberEnd xmi:idref="assocEnd_CS_tgt"/>
+      <ownedEnd xmi:id="assocEnd_CS_src" name="conferimenti" type="cls_ConferimentoSede" association="assoc_ConferimentoSede_SedeAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_CSsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_CSsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_CS_tgt" name="sede" type="cls_SedeAMA" association="assoc_ConferimentoSede_SedeAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_CStgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_CStgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- OperatoreSedeAMA -> SedeAMA (1..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_OperatoreSedeAMA_SedeAMA" name="lavoraPresso">
+      <memberEnd xmi:idref="assocEnd_OS_src"/>
+      <memberEnd xmi:idref="assocEnd_OS_tgt"/>
+      <ownedEnd xmi:id="assocEnd_OS_src" name="operatori" type="cls_OperatoreSedeAMA" association="assoc_OperatoreSedeAMA_SedeAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_OSsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_OSsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_OS_tgt" name="sede" type="cls_SedeAMA" association="assoc_OperatoreSedeAMA_SedeAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_OStgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_OStgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- AmministratoreSedeAMA -> CodiceInvito (1..1 to 1..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_AmministratoreSedeAMA_CodiceInvito" name="gestisceCodici">
+      <memberEnd xmi:idref="assocEnd_ACI_src"/>
+      <memberEnd xmi:idref="assocEnd_ACI_tgt"/>
+      <ownedEnd xmi:id="assocEnd_ACI_src" name="amministratore" type="cls_AmministratoreSedeAMA" association="assoc_AmministratoreSedeAMA_CodiceInvito">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_ACIsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_ACIsrc" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_ACI_tgt" name="codici" type="cls_CodiceInvito" association="assoc_AmministratoreSedeAMA_CodiceInvito">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_ACItgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_ACItgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- LavoratoreAMA -> Disponibilita (0..* to 0..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_LavoratoreAMA_Disponibilita" name="haDisponibilita">
+      <memberEnd xmi:idref="assocEnd_LD_src"/>
+      <memberEnd xmi:idref="assocEnd_LD_tgt"/>
+      <ownedEnd xmi:id="assocEnd_LD_src" name="lavoratori" type="cls_LavoratoreAMA" association="assoc_LavoratoreAMA_Disponibilita">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_LDsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_LDsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_LD_tgt" name="disponibilita" type="cls_Disponibilita" association="assoc_LavoratoreAMA_Disponibilita">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_LDtgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_LDtgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- Veicolo -> Disponibilita (0..* to 0..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Veicolo_Disponibilita" name="haDisponibilitaVeicolo">
+      <memberEnd xmi:idref="assocEnd_VD_src"/>
+      <memberEnd xmi:idref="assocEnd_VD_tgt"/>
+      <ownedEnd xmi:id="assocEnd_VD_src" name="veicoli" type="cls_Veicolo" association="assoc_Veicolo_Disponibilita">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_VDsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_VDsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_VD_tgt" name="disponibilita" type="cls_Disponibilita" association="assoc_Veicolo_Disponibilita">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_VDtgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_VDtgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- SedeAMA -> ZonaCAP (1..* to 0..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_SedeAMA_ZonaCAP" name="serveZona">
+      <memberEnd xmi:idref="assocEnd_SZ_src"/>
+      <memberEnd xmi:idref="assocEnd_SZ_tgt"/>
+      <ownedEnd xmi:id="assocEnd_SZ_src" name="sedi" type="cls_SedeAMA" association="assoc_SedeAMA_ZonaCAP">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_SZsrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_SZsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_SZ_tgt" name="zoneCAP" type="cls_ZonaCAP" association="assoc_SedeAMA_ZonaCAP">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_SZtgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_SZtgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- RitiroDomicilio -> Assegnazione (1..1 to 0..*) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_RitiroDomicilio_Assegnazione" name="haAssegnazione">
+      <memberEnd xmi:idref="assocEnd_RAss_src"/>
+      <memberEnd xmi:idref="assocEnd_RAss_tgt"/>
+      <ownedEnd xmi:id="assocEnd_RAss_src" name="ritiro" type="cls_RitiroDomicilio" association="assoc_RitiroDomicilio_Assegnazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RAsssrc" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RAsssrc" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_RAss_tgt" name="assegnazioni" type="cls_Assegnazione" association="assoc_RitiroDomicilio_Assegnazione">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_RAsstgt" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_RAsstgt" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+
+    <!-- Assegnazione -> AutistaAMA (0..* to 1..1) -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_Assegnazione_AutistaAMA" name="assegnatoAutista">
+      <memberEnd xmi:idref="assocEnd_AssAut_src"/>
+      <memberEnd xmi:idref="assocEnd_AssAut_tgt"/>
+      <ownedEnd xmi:id="assocEnd_AssAut_src" name="assegnazioni" type="cls_Assegnazione" association="assoc_Assegnazione_AutistaAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_AssAutsrc" value="0"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_AssAutsrc" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="assocEnd_AssAut_tgt" name="autista" type="cls_AutistaAMA" association="assoc_Assegnazione_AutistaAMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_AssAuttgt" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_AssAuttgt" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+
+  </uml:Model>
+</xmi:XMI>
