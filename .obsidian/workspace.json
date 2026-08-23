@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "55f239c7a91b2e36",
+        "id": "0e49465d84360589",
         "type": "tabs",
         "children": [
           {
-            "id": "fd08dfe59854d209",
+            "id": "78936adfc684f35f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI ASSOCIATI A MESSAGGI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "METODI ASSOCIATI A MESSAGGI"
+            }
+          },
+          {
+            "id": "f3cd91ec9cbd0e5c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +34,49 @@
               "icon": "lucide-file",
               "title": "LISTA SEQUENCE DIAGRAM"
             }
+          },
+          {
+            "id": "77b9ca26c981090b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MESSAGGI"
+            }
+          },
+          {
+            "id": "7ec32bc50afa19a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/SINCRONA E ASINCRONA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SINCRONA E ASINCRONA"
+            }
+          },
+          {
+            "id": "27b66485299b500b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "MYAMA/PROGETTOFINALE/CLASS DIAGRAM/CLASS DIAGRAM unrefined.jpg"
+              },
+              "icon": "lucide-image",
+              "title": "CLASS DIAGRAM unrefined"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -46,7 +101,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Esplora file"
             }
           },
           {
@@ -83,7 +138,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.9453125
+    "width": 370.9453125,
+    "collapsed": true
   },
   "right": {
     "id": "659f62a9ab9cdec4",
@@ -179,55 +235,62 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "switcher:Apri selettore rapido": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false
     }
   },
-  "active": "fd08dfe59854d209",
+  "active": "27b66485299b500b",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 1/RefinedClassDIagam.vpp",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_008d-journal",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_008d",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_007d-journal",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_007d",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI.md",
-    "progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/image.png",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_027d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_027d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_026d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_026d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_025d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_025d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_024d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_024d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_023d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_023d",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/LISTA SEQUENCE DIAGRAM.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI ASSOCIATI A MESSAGGI.md",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_006d-journal",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_006d",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_005d-journal",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_005d",
-    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_004d-journal",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrarsi tramite codice invito.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare prenotazioni della sede.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare prenotazioni attive.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare date e fasce disponibili.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizare ritiri assegnati dettagli.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/verifica prenotazioni.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/valutare il servizio.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrre esito ritiro.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrare esito confermate.png",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/prenotare sedi compatibii.png",
-    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/SINCRONA E ASINCRONA.md",
+    "MYAMA/PROGETTOFINALE/CLASS DIAGRAM/CLASS DIAGRAM unrefined.jpg",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/LISTA USE CASE.md",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI.md",
+    "PROGETTO DATA BASI/tor_vergata_logo.png",
+    "PROGETTO DATA BASI/prompt_immagine.md",
+    "PROGETTO DATA BASI/cover.jpg",
+    "PROGETTO DATA BASI/BASI_PROGETTO.md",
+    "OTHER PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md",
+    "OTHER PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md",
+    "OTHER PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md",
+    "MYAMA/PROGETTOFINALE/specifica_MyAma.md",
+    "MYAMA/PROGETTOFINALE/glossario.md",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM SAMUELE/Utente non registrato - Utente di sistema/Registrarsi tramite codice di invito.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM SAMUELE/Utente non registrato - Utente di sistema/Registrarsi come cittadino.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM SAMUELE/Utente non registrato - Utente di sistema/Effettuare accesso.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM SAMUELE/Amministratore generale AMA/Rimuovere amministratore di sede AMA.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM SAMUELE/Amministratore generale AMA/Generare codice amministratore di sede.jpg",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/Use Case/Use Case Diagram2.jpg",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/Use Case/Use Case Diagram1.jpg",
+    "MYAMA/PROGETTOFINALE/SYSTEM REQUIREMENTS/System Requirements.md",
+    "MYAMA/PROGETTOFINALE/Latex PDF/specifica_MyAma.md",
+    "MYAMA/PROGETTOFINALE/Latex PDF/README.md",
+    "MYAMA/PROGETTOFINALE/INTRODUZIONE/INTRODUZIONE NO CHAT GPT.md",
+    "MYAMA/PROGETTOFINALE/INTRODUZIONE/INTRODUZIONE CHAT GPT.md",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/LISTA ACTIVITY DIAGRAM.md",
+    "KNOWLEDGE/ideaprogetto.md",
+    "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
     "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore generale AMA.md",
     "MYAMA/GRUPPO 1/BOZZA GPT PUNTO 9.md",
-    "MYAMA/GRUPPO 1/CORREZIONI CHAT.md",
-    "MYAMA/GRUPPO 2/User requirements definition.md",
-    "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
-    "MYAMA/GRUPPO 1/System Requirements.md",
-    "MYAMA/specifica_MyAma.md",
-    "MYAMA/glossario.md",
-    "MYAMA/GRUPPO 2/LISTA USE CASE.md",
-    "MYAMA/GRUPPO 2/FASE_1 - D, E.md",
-    "MYAMA/GRUPPO 2/CHECKLIST.md",
-    "MYAMA/GRUPPO 1/output2.md",
-    "MYAMA/GRUPPO 1/output.md"
+    "MYAMA/GRUPPO 1/CORREZIONI CHAT.md"
   ]
 }
