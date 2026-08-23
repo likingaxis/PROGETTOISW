@@ -47,6 +47,16 @@
     pdfsubject={Ingegneria del Software - Università di Roma Tor Vergata}
 }
 
+% --- GESTIONE FLOAT E COMPATTAMENTO ---
+\setlength{\floatsep}{10pt plus 3pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 3pt minus 3pt}
+\setlength{\intextsep}{10pt plus 3pt minus 2pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{totalnumber}{5}
+
 % --- STILE INTESTAZIONI E PIÈ DI PAGINA ---
 \pagestyle{fancy}
 \fancyhf{}
@@ -88,13 +98,13 @@ Post-condizioni & #7 \\ \hline
 % ==========================================
 % INDICI
 % ==========================================
-\newpage
 \pagenumbering{Roman}
 \tableofcontents
-\newpage
+\clearpage
 \listoffigures
+\vspace{1.5cm}
 \listoftables
-\newpage
+\clearpage
 \pagenumbering{arabic}
 
 % ==========================================

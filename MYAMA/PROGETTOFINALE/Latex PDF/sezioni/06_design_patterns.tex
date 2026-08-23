@@ -24,10 +24,10 @@ L'applicazione del pattern comportamentale \textbf{Observer} consente di disacco
     \item Le classi concrete (\texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier}, \texttt{RegistroSedeObserver}) implementano l'interfaccia. Ad ogni transizione di stato, il metodo \texttt{notifyObservers()} propaga l'evento a tutti gli ascoltatori registrati.
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     % \includegraphics[width=0.85\textwidth]{figure/pattern_observer.png}
-    \fbox{\parbox[c][6.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dell'Observer Pattern esportato da Visual Paradigm ]}}}
+    \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dell'Observer Pattern esportato da Visual Paradigm ]}}}
     \caption{Struttura UML del Design Pattern Observer applicato a MyAma}
     \label{fig:pattern_observer}
 \end{figure}
@@ -54,10 +54,10 @@ L'applicazione dello \textbf{Strategy Pattern} permette di incapsulare ciascuna 
     \item La classe di contesto \texttt{GestoreAssegnazione} mantiene un riferimento all'interfaccia \texttt{AssegnazioneStrategy}, potendo cambiare algoritmo dinamicamente a tempo di esecuzione (\textit{Dependency Injection} / configurazione).
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     % \includegraphics[width=0.85\textwidth]{figure/pattern_strategy.png}
-    \fbox{\parbox[c][6.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dello Strategy Pattern esportato da Visual Paradigm ]}}}
+    \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dello Strategy Pattern esportato da Visual Paradigm ]}}}
     \caption{Struttura UML del Design Pattern Strategy per l'allocazione delle risorse}
     \label{fig:pattern_strategy}
 \end{figure}
