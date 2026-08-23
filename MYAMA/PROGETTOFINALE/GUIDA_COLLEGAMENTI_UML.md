@@ -159,21 +159,21 @@ Le dipendenze BCE si rappresentano con una **freccia tratteggiata** (`<<use>>`).
 
 ### 3.2 Dipendenze Control → Entity
 
-| # | Control | Entity utilizzate | Justification |
-|---|---------|-------------------|---------------|
-| D17 | UserAccessEndpoint | UtenteSistema, Cittadino, LavoratoreAMA | Crea utenti, verifica credenziali |
-| D18 | UserRegistry | UtenteSistema, Cittadino, Prenotazione, Valutazione, RitiroDomicilio, ConferimentoSede | CRUD su prenotazioni e utenti |
-| D19 | UserFactory | UtenteSistema, Cittadino | Factory per creare utenti per ruolo |
-| D20 | AMAServiceController | Prenotazione, RitiroDomicilio, ConferimentoSede, Valutazione | Forwarding operazioni prenotazione |
-| D21 | GestoreRitiriController | AutistaAMA, Prenotazione, Assegnazione | Gestisce ritiri assegnati |
-| D22 | GestoreEsitoController | Prenotazione, RitiroDomicilio | Registra esito del ritiro |
-| D23 | ContattoController | Cittadino | Recupera dati contatto cittadino |
-| D24 | CodiciController | AmministratoreGeneraleAMA, CodiceInvito | Genera/rimuove codici admin |
-| D25 | GestioneSedeController | SedeAMA, Prenotazione, Disponibilita, ZonaCAP | Gestione completa sede |
-| D26 | AccettazioneController | Prenotazione, OperatoreSedeAMA | Verifica prenotazione al varco |
-| D27 | GestioneConferimentoController | Prenotazione | Registra esito conferimento |
-| D28 | GestionePersonaleController | LavoratoreAMA, CodiceInvito, AmministratoreSedeAMA, Disponibilita | Gestione personale sede |
-| D29 | GestioneVeicoliController | Veicolo, SedeAMA, Disponibilita, AmministratoreSedeAMA | Gestione veicoli sede |
+| #   | Control                        | Entity utilizzate                                                                      | Justification                       |
+| --- | ------------------------------ | -------------------------------------------------------------------------------------- | ----------------------------------- |
+| D17 | UserAccessEndpoint             | UtenteSistema, Cittadino, LavoratoreAMA                                                | Crea utenti, verifica credenziali   |
+| D18 | UserRegistry                   | UtenteSistema, Cittadino, Prenotazione, Valutazione, RitiroDomicilio, ConferimentoSede | CRUD su prenotazioni e utenti       |
+| D19 | UserFactory                    | UtenteSistema, Cittadino                                                               | Factory per creare utenti per ruolo |
+| D20 | AMAServiceController           | Prenotazione, RitiroDomicilio, ConferimentoSede, Valutazione                           | Forwarding operazioni prenotazione  |
+| D21 | GestoreRitiriController        | AutistaAMA, Prenotazione, Assegnazione                                                 | Gestisce ritiri assegnati           |
+| D22 | GestoreEsitoController         | Prenotazione, RitiroDomicilio                                                          | Registra esito del ritiro           |
+| D23 | ContattoController             | Cittadino                                                                              | Recupera dati contatto cittadino    |
+| D24 | CodiciController               | AmministratoreGeneraleAMA, CodiceInvito                                                | Genera/rimuove codici admin         |
+| D25 | GestioneSedeController         | SedeAMA, Prenotazione, Disponibilita, ZonaCAP                                          | Gestione completa sede              |
+| D26 | AccettazioneController         | Prenotazione, OperatoreSedeAMA                                                         | Verifica prenotazione al varco      |
+| D27 | GestioneConferimentoController | Prenotazione                                                                           | Registra esito conferimento         |
+| D28 | GestionePersonaleController    | LavoratoreAMA, CodiceInvito, AmministratoreSedeAMA, Disponibilita                      | Gestione personale sede             |
+| D29 | GestioneVeicoliController      | Veicolo, SedeAMA, Disponibilita, AmministratoreSedeAMA                                 | Gestione veicoli sede               |
 
 ### 3.3 Dipendenze Control → Control
 
