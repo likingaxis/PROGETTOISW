@@ -1,0 +1,426 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+left to right direction
+
+package "Boundary" {
+  class RegistrationInterface <<boundary>> {
+    + richiediRegistrazione(email: String, passHash: String, username: String)
+    + richiediRegistrazioneConCodice(userName: String, passHash: String, email: String, role: String, validationCode: String)
+    + validate(userData: Object): Boolean
+    + mostraInterfacciaRegistrazione(errorData: Object)
+    + mostraInterfacciaLogin(redirectData: Object)
+  }
+  class LoginInterface <<boundary>> {
+    + insertData(email: String, passHash: String, username: String)
+    + showLoginInterface(errorData: Object)
+    + accessAccount()
+  }
+  class BookingHistory <<boundary>> {
+    + getStoricoPrenotazioni(userData: Object, filter: String)
+    + annullaPrenotazione(data: Object)
+    + valutaPrenotazione(data: Object, valutazione: Valutazione)
+    + mostraStoricoPrenotazioni(bookList: List)
+    + mostraCancellazioneEffettuata()
+    + mostraErroreCancellazione()
+    + confermaValutazione()
+    + mostraErroreValutazione()
+  }
+  class HomeBookInterface <<boundary>> {
+    + getAvailability(data: Object)
+    + richiediRitiroADomicilio(data: Object)
+    + fasciaOrariaNonDisponibile()
+    + prenotazioneConfermata()
+  }
+  class WasteDisposalInterface <<boundary>> {
+    + getAvailability(data: Object)
+    + richiediConferimento(data: Object)
+    + fasciaOrariaNonDisponibile()
+    + prenotazioneConfermata()
+  }
+  class PannelloAutistaUI <<boundary>> {
+    + richiediRitiriAssegnati()
+    + selezionaRitiro(id: Integer)
+    + inserisciEsito(esito: String)
+    + mostraRitiri(listaRitiri: List)
+    + mostraDettagli(dettagli: Object)
+    + mostraConferma()
+    + mostraChiamata(recapitoTelefonico: String)
+  }
+  class PannelloSedeUI <<boundary>> {
+    + richiediPrenotazioniSede()
+    + selezionaPrenotazione(id: Integer)
+    + mostraPrenotazioni(listaPrenotazioni: List)
+    + mostraDettagliConferimento(dettagliConferimento: Object)
+  }
+  class GestioneConferimentoUI <<boundary>> {
+    + selezionaConferimento(id: Integer)
+    + inserisciEsito(esito: String)
+    + confermaRegistrazione()
+    + mostraDettagliConferimento(dettagli: Object)
+    + segnalaErroreEsito()
+    + mostraRichiestaConferma()
+    + mostraConfermaOperazione()
+  }
+  class ControlloVarcoUI <<boundary>> {
+    + inserisciIdPrenotazione(id: Integer)
+    + mostraPrenotazioneNonTrovata()
+    + mostraEsitoVerifica(esito: String)
+    + segnalaIncongruenza()
+  }
+  class GestionePersonaleUI <<boundary>> {
+    + richiediGenerazioneCodice()
+    + richiediGestioneDisponibilita()
+    + selezionaLavoratore(idLavoratore: String)
+    + inserisciDisponibilita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime)
+    + confermaModifiche()
+    + accedeGestionePersonale()
+    + richiediRimozione()
+    + confermaRimozione()
+    + annullaOperazione()
+  }
+  class GestioneSedeUI <<boundary>> {
+    + richiediGestioneZoneCAP()
+    + modificaAssociazione(cap: String, operazione: String)
+    + richiediGestioneDisponibilitaSede()
+    + inserisciDisponibilita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime)
+    + confermaModifiche()
+  }
+  class GestioneVeicoliUI <<boundary>> {
+    + richiediGestioneDisponibilitaVeicoli()
+    + selezionaVeicolo(idVeicolo: Integer)
+    + inserisciDisponibilita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime)
+    + confermaModifiche()
+  }
+  class GestioneAdminSedeUI <<boundary>> {
+    + accedeGestioneAdminSede()
+    + selezionaAdminSede(idAdminSede: String)
+    + richiediRimozione()
+    + confermaRimozione()
+    + annullaOperazione()
+  }
+  class GestioneCodiciUI <<boundary>> {
+    + richiediCodiceAdminSede()
+  }
+}
+
+package "Control" {
+  class UserAccessEndpoint <<control>> {
+    + registrationForward(userData: Object): Boolean
+    + checkVCode(validationCode: String): Boolean
+    + validationData(userData: Object): Boolean
+    + forwardData(userData: Object): Boolean
+  }
+  class AMAServiceController <<control>> {
+    + forwardCancelRequest(data: Object): Boolean
+    + requestAvailabilityList(data: Object): List
+    + requestAvailabilityCheck(data: Object): Boolean
+    + forwardAvailabilityRequest(data: Object): List
+    + forwardBookRequest(data: Object): Boolean
+    + forwardCommentRequest(data: Object, valutazione: Valutazione): Boolean
+    + forwardBookHistoryRequest(userData: Object, filter: String): List
+  }
+  class GestoreRitiriController <<control>> {
+    + richiediRitiriAssegnati(): List
+    + selezionaRitiro(id: Integer): String
+  }
+  class GestoreEsitoController <<control>> {
+    + recuperaDettagli(id: Integer): String
+    + registraEsito(id: Integer, esito: String): Boolean
+  }
+  class ContattoController <<control>> {
+    + richiediDettagli(id: Integer): String
+  }
+  class GestioneSedeController <<control>> {
+    + richiediPrenotazioniSede(): List
+    + selezionaPrenotazione(id: Integer): String
+    + richiediZoneCAPAssociate(): List
+    + modificaAssociazione(cap: String, operazione: String): Boolean
+    + richiediDisponibilitaSede(): List
+    + modificaDisponibilita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime): Boolean
+    + confermaModifiche(): Boolean
+  }
+  class GestioneConferimentoController <<control>> {
+    + selezionaConferimento(id: Integer): String
+    + registraEsito(id: Integer, esito: String): Boolean
+    + confermaRegistrazione(id: Integer, esito: String): Boolean
+  }
+  class AccettazioneController <<control>> {
+    + verificaPrenotazione(id: Integer): Boolean
+  }
+  class GestionePersonaleController <<control>> {
+    + getElencoAdminSede(): List
+    + richiediDettagli(id: String): String
+    + disabilitaAdminSede(idAdminSede: String): Boolean
+    + generaCodiceInvito(ruolo: String): CodiceInvito
+    + richiediLavoratoriSede(): List
+    + selezionaLavoratore(idLavoratore: String): String
+    + modificaDisponibilita(idLavoratore: String, data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime): Boolean
+    + confermaModifiche(idLavoratore: String): Boolean
+    + richiediPersonaleSede(): List
+    + rimuoviPersonale(idLavoratore: String): Boolean
+  }
+  class GestioneVeicoliController <<control>> {
+    + richiediVeicoliSede(): List
+    + selezionaVeicolo(idVeicolo: Integer): List
+    + modificaDisponibilita(idVeicolo: Integer, data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime): Boolean
+    + confermaModifiche(idVeicolo: Integer): Boolean
+  }
+  class CodiciController <<control>> {
+    + generaCodice(ruolo: String): CodiceInvito
+  }
+}
+
+package "Entity / Dominio" {
+  abstract class UtenteSistema <<entity>> {
+    - id: int
+    - nome: String
+    - cognome: String
+    - email: String
+    - password: String
+    + effettuaAccesso(email: String, password: String): Boolean
+    + effettuaLogout()
+    + verificaEmail(email: String): Boolean
+    + isAbilitato(): Boolean
+  }
+  class Cittadino <<entity>> {
+    - codiceFiscale: String
+    - telefono: String
+    - indirizzo: String
+    - CAP: String
+    + registrati(datiPersonali: Object): Boolean
+    + recuperaInformazioniCittadino(id: Integer): String
+  }
+  abstract class LavoratoreAMA <<entity>> {
+    - idDipendente: String
+    - telefono: String
+    + registratiConCodiceInvito(codice: String): Boolean
+    + recuperaDisponibilita(): List
+    + getDettagli(idLavoratore: String): String
+  }
+  class AutistaAMA <<entity>> {
+    + visualizzaRitiriAssegnati(): List
+    + consultaDettagliRitiro(id: Integer): RitiroDomicilio
+    + registraEsitoRitiro(id: Integer, esito: String): Boolean
+  }
+  class OperatoreSedeAMA <<entity>> {
+    + getSedeAssociata(): SedeAMA
+  }
+  class AmministratoreSedeAMA <<entity>> {
+    + getSedeAssociata(): SedeAMA
+    + verificaAutorizzazione(ruolo: String): Boolean
+    + getDettagli(idAdminSede: String): String
+    + disabilitaAccount(): Boolean
+    + fetchAmministratoriSede(): List
+  }
+  class AmministratoreGeneraleAMA <<entity>> {
+  }
+  class CodiceInvito <<entity>> {
+    - codice: String
+    - ruoloAssociato: String
+    - valido: boolean
+    - utilizzato: boolean
+    + creaCodice(ruolo: String): CodiceInvito
+    + verificaValidita(): Boolean
+    + utilizza()
+    + isUtilizzato(): Boolean
+  }
+  class Veicolo <<entity>> {
+    - idVeicolo: int
+    - targa: String
+    - capacitaPeso: double
+    - capacitaVolume: double
+    + recuperaDisponibilita(): List
+    + verificaDisponibilita(data: LocalDate): Boolean
+    + verificaCapacita(peso: Real, volume: Real): Boolean
+  }
+  abstract class Prenotazione <<entity>> {
+    - idPrenotazione: int
+    - data: LocalDate
+    - fasciaOraria: String
+    - stato: String
+    + annulla(): Boolean
+    + modificaStato(stato: String)
+    + getDettagli(id: Integer): String
+    + setValutazione(valutazione: Valutazione): Boolean
+    + recuperaPrenotazioniSede(idSede: Integer): List
+    + recuperaDettagli(id: Integer): String
+    + verificaEsito(esito: String): Boolean
+    + aggiornaStato(esito: String): Boolean
+    + cercaPrenotazione(id: Integer): Prenotazione
+    + verificaValidita(sede: SedeAMA, data: LocalDate, fasciaOraria: String, stato: String): Boolean
+  }
+  class RitiroDomicilio <<entity>> {
+    - indirizzoRitiro: String
+    + creaRitiro(data: Object): RitiroDomicilio
+    + registraEsito(esito: String)
+  }
+  class ConferimentoSede <<entity>> {
+    + creaConferimento(data: Object): ConferimentoSede
+    + registraEsito(esito: String)
+  }
+  class Valutazione <<entity>> {
+    - voto: int
+    - commento: String
+    + creaValutazione(voto: Integer, commento: String): Valutazione
+  }
+  class Rifiuto <<entity>> {
+    - descrizione: String
+    - pesoStimato: double
+    - volumeStimato: double
+    - foto: String
+    + creaRifiuto(datiRifiuto: Object): Boolean
+    + aggiungiFoto(foto: String)
+    + modificaDatiRifiuto(datiRifiuto: Object)
+    + getDettagli(): String
+  }
+  class TipologiaRifiuto <<entity>> {
+    - idTipologia: int
+    - nome: String
+    - descrizione: String
+    + verificaCompatibilita(rifiuto: Rifiuto): Boolean
+    + getDescrizione(): String
+  }
+  class SedeAMA <<entity>> {
+    - idSede: int
+    - nome: String
+    - indirizzo: String
+    - CAP: String
+    + recuperaZoneCAPAssociate(): List
+    + associaZonaCAP(zonaCAP: ZonaCAP): Boolean
+    + rimuoviZonaCAP(zonaCAP: ZonaCAP): Boolean
+    + recuperaLavoratori(): List
+    + recuperaPersonale(): List
+    + verificaAssociazione(lavoratore: LavoratoreAMA): Boolean
+    + rimuoviLavoratore(lavoratore: LavoratoreAMA): Boolean
+    + recuperaDisponibilita(): List
+    + recuperaVeicoli(): List
+    + verificaCompatibilita(cap: String, tipologiaRifiuto: TipologiaRifiuto): Boolean
+  }
+  class Disponibilita <<entity>> {
+    - data: LocalDate
+    - oraInizio: LocalTime
+    - oraFine: LocalTime
+    + verificaValidita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime): Boolean
+    + aggiornaDisponibilita(data: LocalDate, oraInizio: LocalTime, oraFine: LocalTime): Boolean
+    + verificaDisponibilita(data: LocalDate, fasciaOraria: String): Boolean
+    + prenotaSlot(): Boolean
+    + liberaSlot()
+    + getFasceDisponibili(): List
+  }
+  class ZonaCAP <<entity>> {
+    - cap: String
+    + cercaZonaCAP(cap: String): ZonaCAP
+    + verificaCAP(cap: String): Boolean
+    + getSediCompatibili(): List
+  }
+  class Assegnazione <<entity>> {
+    + recuperaAssegnazioni(): List
+    + creaAssegnazione(): Boolean
+    + assegnaLavoratore(lavoratore: AutistaAMA)
+    + assegnaVeicolo(veicolo: Veicolo)
+    + rimuoviAssegnazione()
+    + getDettagliAssegnazione(): String
+  }
+}
+
+package "Repository / Register" {
+  class AMAServiceRegister <<repository>> {
+    + cancelBook(data: Object): Boolean
+    + getAvailabilityList(data: Object): List
+    + checkAvailability(data: Object): Boolean
+    + newDisposalRequest(data: Object): ConferimentoSede
+    + getHomeBookAvailabilityList(data: Object): List
+    + checkHomeBookAvailability(data: Object): Boolean
+    + newHomeBookRequest(data: Object): RitiroDomicilio
+    + commentBook(data: Object, valutazione: Valutazione): Boolean
+    + getBookHistory(userData: Object, filter: String): List
+  }
+  class AccountRepository <<repository>> {
+    + creaCittadino(email: String, passHash: String, username: String): Cittadino
+    + checkAccount(email: String, passHash: String, userName: String): Boolean
+    + creaLavoratore(userName: String, passHash: String, email: String, role: String): LavoratoreAMA
+  }
+}
+
+UtenteSistema <|-- Cittadino
+UtenteSistema <|-- LavoratoreAMA
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+UtenteSistema <|-- AmministratoreSedeAMA
+UtenteSistema <|-- AmministratoreGeneraleAMA
+Prenotazione <|-- RitiroDomicilio
+Prenotazione <|-- ConferimentoSede
+
+Cittadino "1" -- "0..*" Prenotazione : possiede
+Prenotazione "1" *-- "1" Rifiuto : riguarda
+TipologiaRifiuto "1" -- "0..*" Rifiuto : classifica
+SedeAMA "1" -- "0..*" ConferimentoSede : presso
+SedeAMA "1" -- "0..*" LavoratoreAMA : personaleSede
+SedeAMA "1" -- "0..*" Veicolo : veicoliSede
+SedeAMA "1" -- "1" AmministratoreSedeAMA : amministrazioneSede
+SedeAMA "0..*" -- "0..*" ZonaCAP : coperturaCAP
+SedeAMA "1" -- "0..*" Disponibilita : disponibilitaSede
+LavoratoreAMA "1" -- "0..*" Disponibilita : disponibilitaLavoratore
+Veicolo "1" -- "0..*" Disponibilita : disponibilitaVeicolo
+RitiroDomicilio "1" *-- "0..1" Assegnazione : assegnazioneRitiro
+AutistaAMA "1" -- "0..*" Assegnazione : assegnazioneAutista
+Veicolo "1" -- "0..*" Assegnazione : assegnazioneVeicolo
+Disponibilita "1" -- "0..*" Prenotazione : slotPrenotazione
+Prenotazione "1" *-- "0..1" Valutazione : valutazionePrenotazione
+AmministratoreSedeAMA "1" -- "0..*" CodiceInvito : codiciPersonale
+AmministratoreGeneraleAMA "1" -- "0..*" CodiceInvito : codiciAdminSede
+
+RegistrationInterface ..> UserAccessEndpoint : usa
+LoginInterface ..> UserAccessEndpoint : usa
+BookingHistory ..> AMAServiceController : usa
+HomeBookInterface ..> AMAServiceController : usa
+WasteDisposalInterface ..> AMAServiceController : usa
+PannelloAutistaUI ..> ContattoController : usa
+PannelloAutistaUI ..> GestoreEsitoController : usa
+PannelloAutistaUI ..> GestoreRitiriController : usa
+PannelloSedeUI ..> GestioneSedeController : usa
+GestioneConferimentoUI ..> GestioneConferimentoController : usa
+ControlloVarcoUI ..> AccettazioneController : usa
+GestionePersonaleUI ..> GestionePersonaleController : usa
+GestioneSedeUI ..> GestioneSedeController : usa
+GestioneVeicoliUI ..> GestioneVeicoliController : usa
+GestioneAdminSedeUI ..> GestionePersonaleController : usa
+GestioneCodiciUI ..> CodiciController : usa
+UserAccessEndpoint ..> Cittadino : usa
+UserAccessEndpoint ..> LavoratoreAMA : usa
+UserAccessEndpoint ..> AccountRepository : usa
+AMAServiceController ..> AMAServiceRegister : usa
+GestoreRitiriController ..> AutistaAMA : usa
+GestoreRitiriController ..> Assegnazione : usa
+GestoreRitiriController ..> Prenotazione : usa
+GestoreEsitoController ..> AutistaAMA : usa
+GestoreEsitoController ..> RitiroDomicilio : usa
+GestoreEsitoController ..> Prenotazione : usa
+ContattoController ..> Cittadino : usa
+GestioneSedeController ..> Prenotazione : usa
+GestioneSedeController ..> AmministratoreSedeAMA : usa
+GestioneSedeController ..> ZonaCAP : usa
+GestioneSedeController ..> SedeAMA : usa
+GestioneSedeController ..> Disponibilita : usa
+GestioneConferimentoController ..> Prenotazione : usa
+AccettazioneController ..> OperatoreSedeAMA : usa
+AccettazioneController ..> Prenotazione : usa
+GestionePersonaleController ..> AmministratoreSedeAMA : usa
+GestionePersonaleController ..> CodiceInvito : usa
+GestionePersonaleController ..> SedeAMA : usa
+GestionePersonaleController ..> LavoratoreAMA : usa
+GestionePersonaleController ..> Disponibilita : usa
+GestioneVeicoliController ..> AmministratoreSedeAMA : usa
+GestioneVeicoliController ..> SedeAMA : usa
+GestioneVeicoliController ..> Veicolo : usa
+GestioneVeicoliController ..> Disponibilita : usa
+CodiciController ..> CodiceInvito : usa
+AMAServiceRegister ..> Prenotazione : usa
+AMAServiceRegister ..> ConferimentoSede : usa
+AMAServiceRegister ..> RitiroDomicilio : usa
+AccountRepository ..> Cittadino : usa
+AccountRepository ..> LavoratoreAMA : usa
+Prenotazione ..> Valutazione : usa
+@enduml

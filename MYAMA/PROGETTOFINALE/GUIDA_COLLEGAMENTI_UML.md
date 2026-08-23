@@ -177,11 +177,11 @@ Le dipendenze BCE si rappresentano con una **freccia tratteggiata** (`<<use>>`).
 
 ### 3.3 Dipendenze Control → Control
 
-| # | Control sorgente | Control destinazione | Justification |
-|---|------------------|---------------------|---------------|
-| D30 | UserAccessEndpoint | UserRegistry | `registrationForward()` → `createUser()` |
-| D31 | UserAccessEndpoint | UserFactory | `forwardCreateUserByRole()` → `createUserByRole()` |
-| D32 | AMAServiceController | UserRegistry | `forwardBookRequest()` → `newHomeBookRequest()` |
+| #   | Control sorgente     | Control destinazione | Justification                                      |
+| --- | -------------------- | -------------------- | -------------------------------------------------- |
+| D30 | UserAccessEndpoint   | UserRegistry         | `registrationForward()` → `createUser()`           |
+| D31 | UserAccessEndpoint   | UserFactory          | `forwardCreateUserByRole()` → `createUserByRole()` |
+| D32 | AMAServiceController | UserRegistry         | `forwardBookRequest()` → `newHomeBookRequest()`    |
 
 **Come farlo in VP:**
 1. Seleziona lo strumento **Dependency** dalla toolbar
@@ -197,12 +197,12 @@ Le dipendenze BCE si rappresentano con una **freccia tratteggiata** (`<<use>>`).
 > **Composizione** (rombo pieno ◆): il componente NON può esistere senza il contenitore.
 > **Aggregazione** (rombo vuoto ◇): il componente PUÒ esistere indipendentemente.
 
-| Tipo | Classe contenitore | Classe componente | Motivazione |
-|------|-------------------|-------------------|-------------|
-| **Composizione** ◆ | Prenotazione | Valutazione | La valutazione non ha senso senza la prenotazione (A3) |
-| **Aggregazione** ◇ | SedeAMA | ZonaCAP | La zona CAP esiste indipendentemente dalla sede (A12) |
-| **Aggregazione** ◇ | SedeAMA | Veicolo | Il veicolo può essere riassegnato (A6 transitivo) |
-| **Composizione** ◆ | RitiroDomicilio | Assegnazione | L'assegnazione non esiste senza il ritiro (A13) |
+| Tipo               | Classe contenitore | Classe componente | Motivazione                                            |
+| ------------------ | ------------------ | ----------------- | ------------------------------------------------------ |
+| **Composizione** ◆ | Prenotazione       | Valutazione       | La valutazione non ha senso senza la prenotazione (A3) |
+| **Aggregazione** ◇ | SedeAMA            | ZonaCAP           | La zona CAP esiste indipendentemente dalla sede (A12)  |
+| **Aggregazione** ◇ | SedeAMA            | Veicolo           | Il veicolo può essere riassegnato (A6 transitivo)      |
+| **Composizione** ◆ | RitiroDomicilio    | Assegnazione      | L'assegnazione non esiste senza il ritiro (A13)        |
 
 **Come farlo in VP:**
 - Per **Composizione**: seleziona **Composition** dalla toolbar

@@ -1,0 +1,2795 @@
+{
+  "diagramName": "MyAma Refined Class Diagram BCE Complete",
+  "sourceSequenceDiagramCount": 23,
+  "normalizations": [
+    "`RitiroADomicilio` → `RitiroDomicilio`.",
+    "`PersonaleAMA` → `LavoratoreAMA`.",
+    "L'entity `Operatore di Sede AMA` → `OperatoreSedeAMA`; l'attore resta `Operatore di Sede AMA`.",
+    "`GestionePersonale Controller` → `GestionePersonaleController`.",
+    "`Contatto controller` → `ContattoController`.",
+    "`Account DB` → `AccountRepository` con stereotipo `repository`.",
+    "`AMAServiceRegister` mantenuto come nome, ma classificato `repository`.",
+    "Stereotipi `Boundary/Control/Entity` normalizzati in `boundary/control/entity`.",
+    "`registraEdito(esito)` corretto in `registraEsito(esito)`.",
+    "La registrazione cittadino usa `RegistrationInterface.validate(userData)` come self-validation, in accordo con la revisione fatta in chat; `UserAccessEndpoint` coordina la registrazione dopo la validazione.",
+    "Nel sequence `RegistrareEsitoConferimento` la logica dell'ALT viene interpretata in modo coerente: esito non valido → errore; esito valido → richiesta di conferma e aggiornamento.",
+    "Le relazioni dirette `AutistaAMA—Veicolo` e `AutistaAMA—RitiroDomicilio` dell'unrefined sono sostituite da `Assegnazione`, perché i sequence introducono esplicitamente questa entity.",
+    "Le associazioni specifiche Autista/Operatore→Sede sono ricondotte alla relazione più generale `SedeAMA—LavoratoreAMA`.",
+    "`ZonaCAP` e `Assegnazione` sono aggiunte perché compaiono esplicitamente nei sequence ma non nelle 17 classi del JSON unrefined."
+  ],
+  "classes": [
+    {
+      "name": "UtenteSistema",
+      "stereotype": "entity",
+      "abstract": true,
+      "attributes": [
+        [
+          "id",
+          "int",
+          "private"
+        ],
+        [
+          "nome",
+          "String",
+          "private"
+        ],
+        [
+          "cognome",
+          "String",
+          "private"
+        ],
+        [
+          "email",
+          "String",
+          "private"
+        ],
+        [
+          "password",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "effettuaAccesso",
+          "params": [
+            [
+              "email",
+              "String"
+            ],
+            [
+              "password",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "effettuaLogout",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "verificaEmail",
+          "params": [
+            [
+              "email",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "isAbilitato",
+          "params": [],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "Cittadino",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "codiceFiscale",
+          "String",
+          "private"
+        ],
+        [
+          "telefono",
+          "String",
+          "private"
+        ],
+        [
+          "indirizzo",
+          "String",
+          "private"
+        ],
+        [
+          "CAP",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "registrati",
+          "params": [
+            [
+              "datiPersonali",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "recuperaInformazioniCittadino",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "LavoratoreAMA",
+      "stereotype": "entity",
+      "abstract": true,
+      "attributes": [
+        [
+          "idDipendente",
+          "String",
+          "private"
+        ],
+        [
+          "telefono",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "registratiConCodiceInvito",
+          "params": [
+            [
+              "codice",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "recuperaDisponibilita",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "getDettagli",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ]
+          ],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "AutistaAMA",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "visualizzaRitiriAssegnati",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "consultaDettagliRitiro",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "RitiroDomicilio"
+        },
+        {
+          "name": "registraEsitoRitiro",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ],
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "OperatoreSedeAMA",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getSedeAssociata",
+          "params": [],
+          "return": "SedeAMA"
+        }
+      ]
+    },
+    {
+      "name": "AmministratoreSedeAMA",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getSedeAssociata",
+          "params": [],
+          "return": "SedeAMA"
+        },
+        {
+          "name": "verificaAutorizzazione",
+          "params": [
+            [
+              "ruolo",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "getDettagli",
+          "params": [
+            [
+              "idAdminSede",
+              "String"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "disabilitaAccount",
+          "params": [],
+          "return": "Boolean"
+        },
+        {
+          "name": "fetchAmministratoriSede",
+          "params": [],
+          "return": "List"
+        }
+      ]
+    },
+    {
+      "name": "AmministratoreGeneraleAMA",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "CodiceInvito",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "codice",
+          "String",
+          "private"
+        ],
+        [
+          "ruoloAssociato",
+          "String",
+          "private"
+        ],
+        [
+          "valido",
+          "boolean",
+          "private"
+        ],
+        [
+          "utilizzato",
+          "boolean",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "creaCodice",
+          "params": [
+            [
+              "ruolo",
+              "String"
+            ]
+          ],
+          "return": "CodiceInvito"
+        },
+        {
+          "name": "verificaValidita",
+          "params": [],
+          "return": "Boolean"
+        },
+        {
+          "name": "utilizza",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "isUtilizzato",
+          "params": [],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "Veicolo",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "idVeicolo",
+          "int",
+          "private"
+        ],
+        [
+          "targa",
+          "String",
+          "private"
+        ],
+        [
+          "capacitaPeso",
+          "double",
+          "private"
+        ],
+        [
+          "capacitaVolume",
+          "double",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "recuperaDisponibilita",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "verificaDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "verificaCapacita",
+          "params": [
+            [
+              "peso",
+              "Real"
+            ],
+            [
+              "volume",
+              "Real"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "Prenotazione",
+      "stereotype": "entity",
+      "abstract": true,
+      "attributes": [
+        [
+          "idPrenotazione",
+          "int",
+          "private"
+        ],
+        [
+          "data",
+          "LocalDate",
+          "private"
+        ],
+        [
+          "fasciaOraria",
+          "String",
+          "private"
+        ],
+        [
+          "stato",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "annulla",
+          "params": [],
+          "return": "Boolean"
+        },
+        {
+          "name": "modificaStato",
+          "params": [
+            [
+              "stato",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "getDettagli",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "setValutazione",
+          "params": [
+            [
+              "valutazione",
+              "Valutazione"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "recuperaPrenotazioniSede",
+          "params": [
+            [
+              "idSede",
+              "Integer"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "recuperaDettagli",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "verificaEsito",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "aggiornaStato",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "cercaPrenotazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "Prenotazione"
+        },
+        {
+          "name": "verificaValidita",
+          "params": [
+            [
+              "sede",
+              "SedeAMA"
+            ],
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "fasciaOraria",
+              "String"
+            ],
+            [
+              "stato",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "RitiroDomicilio",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "indirizzoRitiro",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "creaRitiro",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "RitiroDomicilio"
+        },
+        {
+          "name": "registraEsito",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "ConferimentoSede",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "creaConferimento",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "ConferimentoSede"
+        },
+        {
+          "name": "registraEsito",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "Valutazione",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "voto",
+          "int",
+          "private"
+        ],
+        [
+          "commento",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "creaValutazione",
+          "params": [
+            [
+              "voto",
+              "Integer"
+            ],
+            [
+              "commento",
+              "String"
+            ]
+          ],
+          "return": "Valutazione"
+        }
+      ]
+    },
+    {
+      "name": "Rifiuto",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "descrizione",
+          "String",
+          "private"
+        ],
+        [
+          "pesoStimato",
+          "double",
+          "private"
+        ],
+        [
+          "volumeStimato",
+          "double",
+          "private"
+        ],
+        [
+          "foto",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "creaRifiuto",
+          "params": [
+            [
+              "datiRifiuto",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "aggiungiFoto",
+          "params": [
+            [
+              "foto",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "modificaDatiRifiuto",
+          "params": [
+            [
+              "datiRifiuto",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "getDettagli",
+          "params": [],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "TipologiaRifiuto",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "idTipologia",
+          "int",
+          "private"
+        ],
+        [
+          "nome",
+          "String",
+          "private"
+        ],
+        [
+          "descrizione",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "verificaCompatibilita",
+          "params": [
+            [
+              "rifiuto",
+              "Rifiuto"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "getDescrizione",
+          "params": [],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "SedeAMA",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "idSede",
+          "int",
+          "private"
+        ],
+        [
+          "nome",
+          "String",
+          "private"
+        ],
+        [
+          "indirizzo",
+          "String",
+          "private"
+        ],
+        [
+          "CAP",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "recuperaZoneCAPAssociate",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "associaZonaCAP",
+          "params": [
+            [
+              "zonaCAP",
+              "ZonaCAP"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "rimuoviZonaCAP",
+          "params": [
+            [
+              "zonaCAP",
+              "ZonaCAP"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "recuperaLavoratori",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "recuperaPersonale",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "verificaAssociazione",
+          "params": [
+            [
+              "lavoratore",
+              "LavoratoreAMA"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "rimuoviLavoratore",
+          "params": [
+            [
+              "lavoratore",
+              "LavoratoreAMA"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "recuperaDisponibilita",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "recuperaVeicoli",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "verificaCompatibilita",
+          "params": [
+            [
+              "cap",
+              "String"
+            ],
+            [
+              "tipologiaRifiuto",
+              "TipologiaRifiuto"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "Disponibilita",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "data",
+          "LocalDate",
+          "private"
+        ],
+        [
+          "oraInizio",
+          "LocalTime",
+          "private"
+        ],
+        [
+          "oraFine",
+          "LocalTime",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "verificaValidita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "aggiornaDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "verificaDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "fasciaOraria",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "prenotaSlot",
+          "params": [],
+          "return": "Boolean"
+        },
+        {
+          "name": "liberaSlot",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "getFasceDisponibili",
+          "params": [],
+          "return": "List"
+        }
+      ]
+    },
+    {
+      "name": "ZonaCAP",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [
+        [
+          "cap",
+          "String",
+          "private"
+        ]
+      ],
+      "operations": [
+        {
+          "name": "cercaZonaCAP",
+          "params": [
+            [
+              "cap",
+              "String"
+            ]
+          ],
+          "return": "ZonaCAP"
+        },
+        {
+          "name": "verificaCAP",
+          "params": [
+            [
+              "cap",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "getSediCompatibili",
+          "params": [],
+          "return": "List"
+        }
+      ]
+    },
+    {
+      "name": "Assegnazione",
+      "stereotype": "entity",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "recuperaAssegnazioni",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "creaAssegnazione",
+          "params": [],
+          "return": "Boolean"
+        },
+        {
+          "name": "assegnaLavoratore",
+          "params": [
+            [
+              "lavoratore",
+              "AutistaAMA"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "assegnaVeicolo",
+          "params": [
+            [
+              "veicolo",
+              "Veicolo"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "rimuoviAssegnazione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "getDettagliAssegnazione",
+          "params": [],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "RegistrationInterface",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediRegistrazione",
+          "params": [
+            [
+              "email",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "username",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "richiediRegistrazioneConCodice",
+          "params": [
+            [
+              "userName",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "email",
+              "String"
+            ],
+            [
+              "role",
+              "String"
+            ],
+            [
+              "validationCode",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "validate",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "mostraInterfacciaRegistrazione",
+          "params": [
+            [
+              "errorData",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraInterfacciaLogin",
+          "params": [
+            [
+              "redirectData",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "LoginInterface",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "insertData",
+          "params": [
+            [
+              "email",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "username",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "showLoginInterface",
+          "params": [
+            [
+              "errorData",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "accessAccount",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "BookingHistory",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getStoricoPrenotazioni",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ],
+            [
+              "filter",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "annullaPrenotazione",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "valutaPrenotazione",
+          "params": [
+            [
+              "data",
+              "Object"
+            ],
+            [
+              "valutazione",
+              "Valutazione"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraStoricoPrenotazioni",
+          "params": [
+            [
+              "bookList",
+              "List"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraCancellazioneEffettuata",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraErroreCancellazione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "confermaValutazione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraErroreValutazione",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "HomeBookInterface",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getAvailability",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "richiediRitiroADomicilio",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "fasciaOrariaNonDisponibile",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "prenotazioneConfermata",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "WasteDisposalInterface",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getAvailability",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "richiediConferimento",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "fasciaOrariaNonDisponibile",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "prenotazioneConfermata",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "PannelloAutistaUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediRitiriAssegnati",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "selezionaRitiro",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "inserisciEsito",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraRitiri",
+          "params": [
+            [
+              "listaRitiri",
+              "List"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraDettagli",
+          "params": [
+            [
+              "dettagli",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraConferma",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraChiamata",
+          "params": [
+            [
+              "recapitoTelefonico",
+              "String"
+            ]
+          ],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "PannelloSedeUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediPrenotazioniSede",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "selezionaPrenotazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraPrenotazioni",
+          "params": [
+            [
+              "listaPrenotazioni",
+              "List"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraDettagliConferimento",
+          "params": [
+            [
+              "dettagliConferimento",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestioneConferimentoUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "selezionaConferimento",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "inserisciEsito",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "confermaRegistrazione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraDettagliConferimento",
+          "params": [
+            [
+              "dettagli",
+              "Object"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "segnalaErroreEsito",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraRichiestaConferma",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraConfermaOperazione",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "ControlloVarcoUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "inserisciIdPrenotazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "mostraPrenotazioneNonTrovata",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "mostraEsitoVerifica",
+          "params": [
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "segnalaIncongruenza",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestionePersonaleUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediGenerazioneCodice",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "richiediGestioneDisponibilita",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "selezionaLavoratore",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "inserisciDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "accedeGestionePersonale",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "richiediRimozione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "confermaRimozione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "annullaOperazione",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestioneSedeUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediGestioneZoneCAP",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "modificaAssociazione",
+          "params": [
+            [
+              "cap",
+              "String"
+            ],
+            [
+              "operazione",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "richiediGestioneDisponibilitaSede",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "inserisciDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestioneVeicoliUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediGestioneDisponibilitaVeicoli",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "selezionaVeicolo",
+          "params": [
+            [
+              "idVeicolo",
+              "Integer"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "inserisciDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestioneAdminSedeUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "accedeGestioneAdminSede",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "selezionaAdminSede",
+          "params": [
+            [
+              "idAdminSede",
+              "String"
+            ]
+          ],
+          "return": "void"
+        },
+        {
+          "name": "richiediRimozione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "confermaRimozione",
+          "params": [],
+          "return": "void"
+        },
+        {
+          "name": "annullaOperazione",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "GestioneCodiciUI",
+      "stereotype": "boundary",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediCodiceAdminSede",
+          "params": [],
+          "return": "void"
+        }
+      ]
+    },
+    {
+      "name": "UserAccessEndpoint",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "registrationForward",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "checkVCode",
+          "params": [
+            [
+              "validationCode",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "validationData",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "forwardData",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "AMAServiceController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "forwardCancelRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "requestAvailabilityList",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "requestAvailabilityCheck",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "forwardAvailabilityRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "forwardBookRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "forwardCommentRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ],
+            [
+              "valutazione",
+              "Valutazione"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "forwardBookHistoryRequest",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ],
+            [
+              "filter",
+              "String"
+            ]
+          ],
+          "return": "List"
+        }
+      ]
+    },
+    {
+      "name": "GestoreRitiriController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediRitiriAssegnati",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "selezionaRitiro",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "GestoreEsitoController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "recuperaDettagli",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "registraEsito",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ],
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "ContattoController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediDettagli",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        }
+      ]
+    },
+    {
+      "name": "GestioneSedeController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediPrenotazioniSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "selezionaPrenotazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "richiediZoneCAPAssociate",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "modificaAssociazione",
+          "params": [
+            [
+              "cap",
+              "String"
+            ],
+            [
+              "operazione",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "richiediDisponibilitaSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "modificaDisponibilita",
+          "params": [
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "GestioneConferimentoController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "selezionaConferimento",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "registraEsito",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ],
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "confermaRegistrazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ],
+            [
+              "esito",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "AccettazioneController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "verificaPrenotazione",
+          "params": [
+            [
+              "id",
+              "Integer"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "GestionePersonaleController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "getElencoAdminSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "richiediDettagli",
+          "params": [
+            [
+              "id",
+              "String"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "disabilitaAdminSede",
+          "params": [
+            [
+              "idAdminSede",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "generaCodiceInvito",
+          "params": [
+            [
+              "ruolo",
+              "String"
+            ]
+          ],
+          "return": "CodiceInvito"
+        },
+        {
+          "name": "richiediLavoratoriSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "selezionaLavoratore",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ]
+          ],
+          "return": "String"
+        },
+        {
+          "name": "modificaDisponibilita",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ],
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "richiediPersonaleSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "rimuoviPersonale",
+          "params": [
+            [
+              "idLavoratore",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "GestioneVeicoliController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "richiediVeicoliSede",
+          "params": [],
+          "return": "List"
+        },
+        {
+          "name": "selezionaVeicolo",
+          "params": [
+            [
+              "idVeicolo",
+              "Integer"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "modificaDisponibilita",
+          "params": [
+            [
+              "idVeicolo",
+              "Integer"
+            ],
+            [
+              "data",
+              "LocalDate"
+            ],
+            [
+              "oraInizio",
+              "LocalTime"
+            ],
+            [
+              "oraFine",
+              "LocalTime"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "confermaModifiche",
+          "params": [
+            [
+              "idVeicolo",
+              "Integer"
+            ]
+          ],
+          "return": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "CodiciController",
+      "stereotype": "control",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "generaCodice",
+          "params": [
+            [
+              "ruolo",
+              "String"
+            ]
+          ],
+          "return": "CodiceInvito"
+        }
+      ]
+    },
+    {
+      "name": "AMAServiceRegister",
+      "stereotype": "repository",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "cancelBook",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "getAvailabilityList",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "checkAvailability",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "newDisposalRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "ConferimentoSede"
+        },
+        {
+          "name": "getHomeBookAvailabilityList",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "List"
+        },
+        {
+          "name": "checkHomeBookAvailability",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "newHomeBookRequest",
+          "params": [
+            [
+              "data",
+              "Object"
+            ]
+          ],
+          "return": "RitiroDomicilio"
+        },
+        {
+          "name": "commentBook",
+          "params": [
+            [
+              "data",
+              "Object"
+            ],
+            [
+              "valutazione",
+              "Valutazione"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "getBookHistory",
+          "params": [
+            [
+              "userData",
+              "Object"
+            ],
+            [
+              "filter",
+              "String"
+            ]
+          ],
+          "return": "List"
+        }
+      ]
+    },
+    {
+      "name": "AccountRepository",
+      "stereotype": "repository",
+      "abstract": false,
+      "attributes": [],
+      "operations": [
+        {
+          "name": "creaCittadino",
+          "params": [
+            [
+              "email",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "username",
+              "String"
+            ]
+          ],
+          "return": "Cittadino"
+        },
+        {
+          "name": "checkAccount",
+          "params": [
+            [
+              "email",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "userName",
+              "String"
+            ]
+          ],
+          "return": "Boolean"
+        },
+        {
+          "name": "creaLavoratore",
+          "params": [
+            [
+              "userName",
+              "String"
+            ],
+            [
+              "passHash",
+              "String"
+            ],
+            [
+              "email",
+              "String"
+            ],
+            [
+              "role",
+              "String"
+            ]
+          ],
+          "return": "LavoratoreAMA"
+        }
+      ]
+    }
+  ],
+  "generalizations": [
+    {
+      "child": "Cittadino",
+      "parent": "UtenteSistema"
+    },
+    {
+      "child": "LavoratoreAMA",
+      "parent": "UtenteSistema"
+    },
+    {
+      "child": "AutistaAMA",
+      "parent": "LavoratoreAMA"
+    },
+    {
+      "child": "OperatoreSedeAMA",
+      "parent": "LavoratoreAMA"
+    },
+    {
+      "child": "AmministratoreSedeAMA",
+      "parent": "UtenteSistema"
+    },
+    {
+      "child": "AmministratoreGeneraleAMA",
+      "parent": "UtenteSistema"
+    },
+    {
+      "child": "RitiroDomicilio",
+      "parent": "Prenotazione"
+    },
+    {
+      "child": "ConferimentoSede",
+      "parent": "Prenotazione"
+    }
+  ],
+  "associations": [
+    {
+      "name": "possiede",
+      "classA": "Cittadino",
+      "multiplicityA": "1",
+      "classB": "Prenotazione",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "riguarda",
+      "classA": "Prenotazione",
+      "multiplicityA": "1",
+      "classB": "Rifiuto",
+      "multiplicityB": "1",
+      "aggregation": "A_composite"
+    },
+    {
+      "name": "classifica",
+      "classA": "TipologiaRifiuto",
+      "multiplicityA": "1",
+      "classB": "Rifiuto",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "presso",
+      "classA": "SedeAMA",
+      "multiplicityA": "1",
+      "classB": "ConferimentoSede",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "personaleSede",
+      "classA": "SedeAMA",
+      "multiplicityA": "1",
+      "classB": "LavoratoreAMA",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "veicoliSede",
+      "classA": "SedeAMA",
+      "multiplicityA": "1",
+      "classB": "Veicolo",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "amministrazioneSede",
+      "classA": "SedeAMA",
+      "multiplicityA": "1",
+      "classB": "AmministratoreSedeAMA",
+      "multiplicityB": "1",
+      "aggregation": null
+    },
+    {
+      "name": "coperturaCAP",
+      "classA": "SedeAMA",
+      "multiplicityA": "0..*",
+      "classB": "ZonaCAP",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "disponibilitaSede",
+      "classA": "SedeAMA",
+      "multiplicityA": "1",
+      "classB": "Disponibilita",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "disponibilitaLavoratore",
+      "classA": "LavoratoreAMA",
+      "multiplicityA": "1",
+      "classB": "Disponibilita",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "disponibilitaVeicolo",
+      "classA": "Veicolo",
+      "multiplicityA": "1",
+      "classB": "Disponibilita",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "assegnazioneRitiro",
+      "classA": "RitiroDomicilio",
+      "multiplicityA": "1",
+      "classB": "Assegnazione",
+      "multiplicityB": "0..1",
+      "aggregation": "A_composite"
+    },
+    {
+      "name": "assegnazioneAutista",
+      "classA": "AutistaAMA",
+      "multiplicityA": "1",
+      "classB": "Assegnazione",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "assegnazioneVeicolo",
+      "classA": "Veicolo",
+      "multiplicityA": "1",
+      "classB": "Assegnazione",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "slotPrenotazione",
+      "classA": "Disponibilita",
+      "multiplicityA": "1",
+      "classB": "Prenotazione",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "valutazionePrenotazione",
+      "classA": "Prenotazione",
+      "multiplicityA": "1",
+      "classB": "Valutazione",
+      "multiplicityB": "0..1",
+      "aggregation": "A_composite"
+    },
+    {
+      "name": "codiciPersonale",
+      "classA": "AmministratoreSedeAMA",
+      "multiplicityA": "1",
+      "classB": "CodiceInvito",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    },
+    {
+      "name": "codiciAdminSede",
+      "classA": "AmministratoreGeneraleAMA",
+      "multiplicityA": "1",
+      "classB": "CodiceInvito",
+      "multiplicityB": "0..*",
+      "aggregation": null
+    }
+  ],
+  "dependencies": [
+    {
+      "client": "RegistrationInterface",
+      "supplier": "UserAccessEndpoint"
+    },
+    {
+      "client": "LoginInterface",
+      "supplier": "UserAccessEndpoint"
+    },
+    {
+      "client": "BookingHistory",
+      "supplier": "AMAServiceController"
+    },
+    {
+      "client": "HomeBookInterface",
+      "supplier": "AMAServiceController"
+    },
+    {
+      "client": "WasteDisposalInterface",
+      "supplier": "AMAServiceController"
+    },
+    {
+      "client": "PannelloAutistaUI",
+      "supplier": "ContattoController"
+    },
+    {
+      "client": "PannelloAutistaUI",
+      "supplier": "GestoreEsitoController"
+    },
+    {
+      "client": "PannelloAutistaUI",
+      "supplier": "GestoreRitiriController"
+    },
+    {
+      "client": "PannelloSedeUI",
+      "supplier": "GestioneSedeController"
+    },
+    {
+      "client": "GestioneConferimentoUI",
+      "supplier": "GestioneConferimentoController"
+    },
+    {
+      "client": "ControlloVarcoUI",
+      "supplier": "AccettazioneController"
+    },
+    {
+      "client": "GestionePersonaleUI",
+      "supplier": "GestionePersonaleController"
+    },
+    {
+      "client": "GestioneSedeUI",
+      "supplier": "GestioneSedeController"
+    },
+    {
+      "client": "GestioneVeicoliUI",
+      "supplier": "GestioneVeicoliController"
+    },
+    {
+      "client": "GestioneAdminSedeUI",
+      "supplier": "GestionePersonaleController"
+    },
+    {
+      "client": "GestioneCodiciUI",
+      "supplier": "CodiciController"
+    },
+    {
+      "client": "UserAccessEndpoint",
+      "supplier": "Cittadino"
+    },
+    {
+      "client": "UserAccessEndpoint",
+      "supplier": "LavoratoreAMA"
+    },
+    {
+      "client": "UserAccessEndpoint",
+      "supplier": "AccountRepository"
+    },
+    {
+      "client": "AMAServiceController",
+      "supplier": "AMAServiceRegister"
+    },
+    {
+      "client": "GestoreRitiriController",
+      "supplier": "AutistaAMA"
+    },
+    {
+      "client": "GestoreRitiriController",
+      "supplier": "Assegnazione"
+    },
+    {
+      "client": "GestoreRitiriController",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "GestoreEsitoController",
+      "supplier": "AutistaAMA"
+    },
+    {
+      "client": "GestoreEsitoController",
+      "supplier": "RitiroDomicilio"
+    },
+    {
+      "client": "GestoreEsitoController",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "ContattoController",
+      "supplier": "Cittadino"
+    },
+    {
+      "client": "GestioneSedeController",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "GestioneSedeController",
+      "supplier": "AmministratoreSedeAMA"
+    },
+    {
+      "client": "GestioneSedeController",
+      "supplier": "ZonaCAP"
+    },
+    {
+      "client": "GestioneSedeController",
+      "supplier": "SedeAMA"
+    },
+    {
+      "client": "GestioneSedeController",
+      "supplier": "Disponibilita"
+    },
+    {
+      "client": "GestioneConferimentoController",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "AccettazioneController",
+      "supplier": "OperatoreSedeAMA"
+    },
+    {
+      "client": "AccettazioneController",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "GestionePersonaleController",
+      "supplier": "AmministratoreSedeAMA"
+    },
+    {
+      "client": "GestionePersonaleController",
+      "supplier": "CodiceInvito"
+    },
+    {
+      "client": "GestionePersonaleController",
+      "supplier": "SedeAMA"
+    },
+    {
+      "client": "GestionePersonaleController",
+      "supplier": "LavoratoreAMA"
+    },
+    {
+      "client": "GestionePersonaleController",
+      "supplier": "Disponibilita"
+    },
+    {
+      "client": "GestioneVeicoliController",
+      "supplier": "AmministratoreSedeAMA"
+    },
+    {
+      "client": "GestioneVeicoliController",
+      "supplier": "SedeAMA"
+    },
+    {
+      "client": "GestioneVeicoliController",
+      "supplier": "Veicolo"
+    },
+    {
+      "client": "GestioneVeicoliController",
+      "supplier": "Disponibilita"
+    },
+    {
+      "client": "CodiciController",
+      "supplier": "CodiceInvito"
+    },
+    {
+      "client": "AMAServiceRegister",
+      "supplier": "Prenotazione"
+    },
+    {
+      "client": "AMAServiceRegister",
+      "supplier": "ConferimentoSede"
+    },
+    {
+      "client": "AMAServiceRegister",
+      "supplier": "RitiroDomicilio"
+    },
+    {
+      "client": "AccountRepository",
+      "supplier": "Cittadino"
+    },
+    {
+      "client": "AccountRepository",
+      "supplier": "LavoratoreAMA"
+    },
+    {
+      "client": "Prenotazione",
+      "supplier": "Valutazione"
+    }
+  ]
+}
