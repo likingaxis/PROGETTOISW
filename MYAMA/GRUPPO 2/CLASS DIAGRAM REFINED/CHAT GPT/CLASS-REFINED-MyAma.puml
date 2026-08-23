@@ -1,0 +1,208 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+
+abstract class UtenteSistema {
+  - idUtente: String
+  - nome: String
+  - cognome: String
+  - email: String
+  - passwordHash: String
+  - abilitato: Boolean
+  + effettuaAccesso(email: String, password: String): Boolean
+  + effettuaLogout(): void
+  + verificaEmail(email: String): Boolean
+  + isAbilitato(): Boolean
+}
+
+class Cittadino {
+  - telefono: String
+  - indirizzo: String
+  - cap: String
+  + registrati(datiPersonali: String): Boolean
+  + richiediRitiro(): RitiroDomicilio
+  + prenotaConferimento(): ConferimentoSede
+  + visualizzaPrenotazioniAttive(): Prenotazione
+  + annullaPrenotazione(idPrenotazione: String): Boolean
+  + consultaStoricoPrenotazioni(): Prenotazione
+  + valutaServizio(idPrenotazione: String, voto: Integer, commento: String): Valutazione
+}
+
+abstract class LavoratoreAMA {
+  - matricola: String
+  + registratiConCodiceInvito(codice: String): Boolean
+  + visualizzaAttivitaAssegnate(): String
+}
+
+class AutistaAMA {
+  + visualizzaRitiriAssegnati(): RitiroDomicilio
+  + consultaDettagliRitiro(idRitiro: String): RitiroDomicilio
+  + registraEsitoRitiro(idRitiro: String, esito: String): Boolean
+  + chiamaCittadino(idCittadino: String): void
+}
+
+class OperatoreSedeAMA {
+  + visualizzaPrenotazioniSede(): ConferimentoSede
+  + consultaDettagliConferimento(idPrenotazione: String): ConferimentoSede
+  + verificaPrenotazione(idPrenotazione: String): Boolean
+  + registraEsitoConferimento(idPrenotazione: String, esito: String): Boolean
+}
+
+class AmministratoreSedeAMA {
+  + generaCodiceInvitoPersonale(ruolo: String): CodiceInvito
+  + gestisciDisponibilitaLavoratori(): void
+  + gestisciDisponibilitaVeicoli(): void
+  + gestisciDisponibilitaSede(): void
+  + gestisciAssociazioniSedeZoneCAP(): void
+  + rimuoviPersonaleAMA(idUtente: String): Boolean
+}
+
+class AmministratoreGeneraleAMA {
+  + generaCodiceAmministratoreSede(): CodiceInvito
+  + rimuoviAmministratoreSede(idUtente: String): Boolean
+}
+
+abstract class Prenotazione {
+  - idPrenotazione: String
+  - data: Date
+  - fasciaOraria: String
+  - stato: String
+  - codicePrenotazione: String
+  + creaPrenotazione(): Boolean
+  + annulla(): Boolean
+  + modificaStato(stato: String): void
+  + getDettagli(): String
+  + verificaStato(): Boolean
+}
+
+class RitiroDomicilio {
+  - indirizzoRitiro: String
+  - esito: String
+  + creaRitiro(indirizzo: String): Boolean
+  + impostaIndirizzoRitiro(indirizzo: String): void
+  + registraEsito(esito: String): void
+}
+
+class ConferimentoSede {
+  - esito: String
+  + creaConferimento(sede: SedeAMA): Boolean
+  + impostaSede(sede: SedeAMA): void
+  + registraEsito(esito: String): void
+}
+
+class Rifiuto {
+  - idRifiuto: String
+  - descrizione: String
+  - pesoStimato: Real
+  - volumeStimato: Real
+  - foto: String
+  + creaRifiuto(datiRifiuto: String): Boolean
+  + aggiungiFoto(foto: String): void
+  + modificaDatiRifiuto(): void
+  + getDettagli(): String
+}
+
+class TipologiaRifiuto {
+  - idTipologia: String
+  - nome: String
+  - descrizione: String
+  + verificaCompatibilita(rifiuto: Rifiuto): Boolean
+  + getDescrizione(): String
+}
+
+class SedeAMA {
+  - idSede: String
+  - nome: String
+  - indirizzo: String
+  - attiva: Boolean
+  + verificaCompatibilita(cap: String, tipologiaRifiuto: TipologiaRifiuto): Boolean
+  + visualizzaDisponibilita(): Disponibilita
+  + aggiungiDisponibilita(disponibilita: Disponibilita): void
+  + rimuoviDisponibilita(disponibilita: Disponibilita): void
+}
+
+class ZonaCAP {
+  - cap: String
+  - zona: String
+  + verificaCAP(cap: String): Boolean
+  + getSediCompatibili(): SedeAMA
+}
+
+class Disponibilita {
+  - idDisponibilita: String
+  - data: Date
+  - fasciaOraria: String
+  - postiDisponibili: Integer
+  + verificaDisponibilita(data: Date, fasciaOraria: String): Boolean
+  + prenotaSlot(): Boolean
+  + liberaSlot(): void
+  + getFasceDisponibili(): String
+}
+
+class Veicolo {
+  - idVeicolo: String
+  - targa: String
+  - capacitaPeso: Real
+  - capacitaVolume: Real
+  - disponibile: Boolean
+  + verificaDisponibilita(data: Date): Boolean
+  + verificaCapacita(peso: Real, volume: Real): Boolean
+  + assegna(): void
+  + libera(): void
+}
+
+class Assegnazione {
+  - idAssegnazione: String
+  - dataTurno: Date
+  + creaAssegnazione(): Boolean
+  + assegnaLavoratore(lavoratore: AutistaAMA): void
+  + assegnaVeicolo(veicolo: Veicolo): void
+  + rimuoviAssegnazione(): void
+  + getDettagliAssegnazione(): String
+}
+
+class CodiceInvito {
+  - codice: String
+  - ruolo: String
+  - utilizzato: Boolean
+  - scadenza: Date
+  + verificaValidita(): Boolean
+  + utilizza(): void
+  + isUtilizzato(): Boolean
+}
+
+class Valutazione {
+  - idValutazione: String
+  - voto: Integer
+  - commento: String
+  + creaValutazione(voto: Integer, commento: String): Boolean
+  + modificaValutazione(voto: Integer, commento: String): void
+  + getValutazione(): String
+}
+
+UtenteSistema <|-- Cittadino
+UtenteSistema <|-- LavoratoreAMA
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+UtenteSistema <|-- AmministratoreSedeAMA
+UtenteSistema <|-- AmministratoreGeneraleAMA
+Prenotazione <|-- RitiroDomicilio
+Prenotazione <|-- ConferimentoSede
+Cittadino "1" -- "0..*" Prenotazione : possiede
+Prenotazione "1" *-- "1" Rifiuto : riguarda
+TipologiaRifiuto "1" -- "0..*" Rifiuto : classifica
+SedeAMA "1" -- "0..*" ConferimentoSede : presso
+SedeAMA "1" -- "0..*" RitiroDomicilio : gestisceRitiri
+SedeAMA "0..*" -- "0..*" ZonaCAP : copre
+SedeAMA "1" *-- "0..*" Disponibilita : offre
+SedeAMA "1" o-- "0..*" Veicolo : disponeDi
+SedeAMA "1" -- "0..*" LavoratoreAMA : assegnaPersonale
+SedeAMA "1" -- "1" AmministratoreSedeAMA : amministra
+RitiroDomicilio "1" *-- "0..1" Assegnazione : assegnazioneRitiro
+AutistaAMA "1" -- "0..*" Assegnazione : assegnazioneAutista
+Veicolo "1" -- "0..*" Assegnazione : assegnazioneVeicolo
+Prenotazione "0..*" -- "1" Disponibilita : usaSlot
+Prenotazione "1" *-- "0..1" Valutazione : riceve
+AmministratoreSedeAMA "1" -- "0..*" CodiceInvito : generaPersonale
+AmministratoreGeneraleAMA "1" -- "0..*" CodiceInvito : generaAdmin
+@enduml

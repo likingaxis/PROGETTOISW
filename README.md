@@ -133,6 +133,7 @@ PROGETTOISW/
 │   └── 📂 PROGETTOFINALE/                                    # Cartella consolidata con tutti gli artefatti finali
 │       ├── 📂 ACTIVITY DIAGRAM/                              # Modelli .vpp e immagini diagrammi di attività
 │       ├── 📂 CLASS DIAGRAM/                                 # Class Diagram Unrefined (.vpp)
+│       ├── 📂 SEQUENCE DIAGRAM/                                 # Class Diagram Unrefined (.vpp)
 │       ├── 📂 INTRODUZIONE/                                  # Versioni e bozze della sezione introduttiva
 │       ├── 📂 Latex PDF/                                     # Progetto LaTeX master per compilazione della relazione
 │       ├── 📂 SYSTEM REQUIREMENTS/                           # Specifica formale dei requisiti di sistema

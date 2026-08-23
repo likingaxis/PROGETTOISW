@@ -119,42 +119,163 @@ I processi amministrativi consentono di gestire le risorse umane, i mezzi logist
 % =========================================================================
 \newpage
 \subsection{Sequence Diagrams}
-I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistema durante l'esecuzione dei casi d'uso, applicando il pattern architetturale \textbf{BCE} (\textit{Boundary}, \textit{Control}, \textit{Entity}).
+I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistema durante l'esecuzione dei casi d'uso, applicando il pattern architetturale \textbf{BCE} (\textit{Boundary}, \textit{Control}, \textit{Entity}). Di seguito sono riportati i diagrammi principali, raggruppati per attore.
 
 \clearpage
-\subsubsection{Sequence Diagram: UC-C01 Prenotazione Ritiro a Domicilio}
-Descrive la collaborazione tra l'interfaccia utente (\textit{Boundary} \texttt{PrenotazioneRitiroUI}), il coordinatore logico (\textit{Control} \texttt{GestorePrenotazioneRitiro}) e le entità di dominio (\textit{Entity} \texttt{Cittadino}, \texttt{ZonaCAP}, \texttt{Veicolo}, \texttt{Prenotazione}).
+\subsubsection{Utente non registrato e Utente di sistema}
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_prenota_ritiro.png}
-    \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Prenotazione Ritiro esportato da Visual Paradigm ]}}}
-    \caption{Sequence Diagram (BCE) --- Realizzazione UC-C01 (Prenotazione Ritiro a Domicilio)}
-    \label{fig:seq_ritiro}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_Utente_non_Registrazione_cittadino.jpg}
+    \caption{Sequence Diagram --- Registrarsi come cittadino}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_registrazione_Tramite_codice_invito.jpg}
+    \caption{Sequence Diagram --- Registrarsi tramite codice di invito}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_EseguiAccesso.jpg}
+    \caption{Sequence Diagram --- Effettuare accesso}
+\end{figure}
+
+
+\clearpage
+\subsubsection{Cittadino}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramRichiedereRitiroADomicilio.jpg}
+    \caption{Sequence Diagram --- Richiedere ritiro a domicilio}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramPrenotaConferimento.jpg}
+    \caption{Sequence Diagram --- Prenotare conferimento presso sede AMA}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramVisualizzarePrenotazioniAttive.jpg}
+    \caption{Sequence Diagram --- Visualizzare prenotazioni attive}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramAnnullarePrenotazione.jpg}
+    \caption{Sequence Diagram --- Annullare prenotazione}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramVisualizzaStorico.jpg}
+    \caption{Sequence Diagram --- Visualizzare storico prenotazioni}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_DiagramValutarePrenotazione.jpg}
+    \caption{Sequence Diagram --- Valutare il servizio}
 \end{figure}
 
 \clearpage
-\subsubsection{Sequence Diagram: UC-A02 Registrazione Esito Ritiro}
-Descrive la collaborazione tra l'applicazione mobile dell'autista (\textit{Boundary} \texttt{PannelloAutistaUI}), il controllore degli esiti (\textit{Control} \texttt{GestoreEsitoRitiro}) e le entità (\textit{Entity} \texttt{Prenotazione}, \texttt{Itinerario}, \texttt{Notifica}).
+\subsubsection{Autista AMA}
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_esito_ritiro.png}
-    \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Registrazione Esito Ritiro esportato da Visual Paradigm ]}}}
-    \caption{Sequence Diagram (BCE) --- Realizzazione UC-A02 (Registrazione Esito Ritiro)}
-    \label{fig:seq_esito}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_Visualizzare_ritiri_assegnati.jpg}
+    \caption{Sequence Diagram --- Visualizzare ritiri assegnati}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_Registrare_esito_ritiro.jpg}
+    \caption{Sequence Diagram --- Registrare esito del ritiro}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_Chiamare_cittadino.jpg}
+    \caption{Sequence Diagram --- Chiamare cittadino}
 \end{figure}
 
 \clearpage
-\subsubsection{Sequence Diagram: UC-O02 Convalida e Scarico al Varco}
-Descrive la scansione del pass di conferimento presso il varco (\textit{Boundary} \texttt{PannelloVarcoUI}), l'elaborazione del controllore (\textit{Control} \texttt{GestoreAccettazioneSede}) e l'aggiornamento dell'entità (\textit{Entity} \texttt{Prenotazione}, \texttt{SedeAMA}).
+\subsubsection{Operatore di Sede AMA}
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_conferimento_sede.png}
-    \fbox{\parbox[c][7.5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Sequence Diagram (BCE) per la Convalida Conferimento esportato da Visual Paradigm ]}}}
-    \caption{Sequence Diagram (BCE) --- Realizzazione UC-O02 (Convalida Conferimento al Varco)}
-    \label{fig:seq_conferimento}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceVisualizzarePrenotazioniSede.jpg}
+    \caption{Sequence Diagram --- Visualizzare prenotazioni della sede}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceVerificarePrenotazioneCittadino.jpg}
+    \caption{Sequence Diagram --- Verificare prenotazione del cittadino}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceRegistrareEsitoConferimento.jpg}
+    \caption{Sequence Diagram --- Registrare esito del conferimento}
+\end{figure}
+
+\clearpage
+\subsubsection{Amministratore di Sede AMA}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceGenerareCodiceInvitoPersonale.jpg}
+    \caption{Sequence Diagram --- Generare codice invito}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaLavoratori.jpg}
+    \caption{Sequence Diagram --- Gestire disponibilità dei lavoratori}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaVeicoli.jpg}
+    \caption{Sequence Diagram --- Gestire disponibilità dei veicoli}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaSede.jpg}
+    \caption{Sequence Diagram --- Gestire disponibilità della sede e fasce orarie}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceGestireAssociazioniSedeZoneCAP.jpg}
+    \caption{Sequence Diagram --- Gestire associazioni tra sede e zone/CAP}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_SequenceRimuoverePersonaleAMA.jpg}
+    \caption{Sequence Diagram --- Rimuovere personale}
+\end{figure}
+
+\clearpage
+\subsubsection{Amministratore Generale AMA}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_AmministratoreGeneraleGeneraCodici.jpg}
+    \caption{Sequence Diagram --- Generare codice amministratore di sede}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/seq_RimuovereAmministratoreDiSedeAMA.jpg}
+    \caption{Sequence Diagram --- Rimuovere amministratore di sede AMA}
 \end{figure}
 
 % =========================================================================
@@ -170,20 +291,9 @@ Il modello \textit{Unrefined} illustra le entità concettuali e le loro relazion
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/class_unrefined.png}
-    \fbox{\parbox[c][8.5cm][c]{0.9\textwidth}{\centering \textsf{[ Inserire qui il Class Diagram Unrefined esportato da Visual Paradigm ]}}}
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/class_CLASS_DIAGRAM_unrefined.jpg}
     \caption{Class Diagram --- Versione Unrefined (Modello di Dominio)}
     \label{fig:class_unrefined}
 \end{figure}
 
-\clearpage
-\subsubsection{Class Diagram Refined (Modello di Specifica Consolidato)}
-Il modello \textit{Refined} integra le classi Boundary e Control emerse dai Sequence Diagram, esplicita le visibilità (\textit{public}, \textit{protected}, \textit{private}), le tipizzazioni dei parametri e dei valori di ritorno, le molteplicità delle associazioni e la navigabilità.
-
-\begin{figure}[htbp]
-    \centering
-    % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/class_refined.png}
-    \fbox{\parbox[c][8.5cm][c]{0.9\textwidth}{\centering \textsf{[ Inserire qui il Class Diagram Refined esportato da Visual Paradigm ]}}}
-    \caption{Class Diagram --- Versione Refined (Specifica OOA Consolidata)}
-    \label{fig:class_refined}
-\end{figure}
+% Nota: il Class Diagram Refined verrà inserito in seguito, come concordato.

@@ -15,9 +15,13 @@ La presente sezione definisce in modo formale e non ambiguo i termini specialist
 
 \textbf{MyAma} & Piattaforma digitale integrata dedicata alla gestione, pianificazione e prenotazione dei servizi di smaltimento dei rifiuti ingombranti e speciali per la città di Roma. \\ \hline
 
+\textbf{AMA (Azienda Municipale Ambiente)} & Azienda municipalizzata di Roma Capitale responsabile dei servizi di igiene urbana e gestione dei rifiuti. Nel contesto del progetto, rappresenta l'ente operativo che eroga i servizi di ritiro a domicilio e conferimento in sede tramite la piattaforma MyAma. \\ \hline
+
 \textbf{Cittadino (Non Registrato / Visitatore)} & Utente esterno non autenticato che accede al sistema per consultare informazioni pubbliche sui servizi, tariffe, regolamenti e sedi AMA attive, e che può effettuare la registrazione. \\ \hline
 
 \textbf{Cittadino (Registrato)} & Utente esterno autenticato che usufruisce dei servizi di MyAma per richiedere ritiri a domicilio o prenotare conferimenti in sede, monitorare lo stato delle proprie richieste, rilasciare valutazioni e ricevere notifiche. \\ \hline
+
+\textbf{Utente di sistema} & Qualsiasi utente autenticato che ha effettuato l'accesso alla piattaforma, indipendentemente dal ruolo ricoperto (Cittadino, Autista, Operatore, Amministratore). Viene reindirizzato alle funzionalità previste dal proprio profilo. \\ \hline
 
 \textbf{Autista AMA} & Dipendente operativo AMA incaricato dello svolgimento dei ritiri a domicilio. Consulta i ritiri assegnati, raggiunge l'indirizzo indicato dal Cittadino, effettua il carico e registra l'esito del servizio. \\ \hline
 
@@ -41,13 +45,21 @@ La presente sezione definisce in modo formale e non ambiguo i termini specialist
 
 \textbf{Tariffa / Preventivo} & Quota economica calcolata dal sistema per l'erogazione del servizio di smaltimento, determinata in base alla tipologia, al volume del rifiuto o alla presenza di servizi speciali oltre la franchigia comunale gratuita. \\ \hline
 
+\textbf{Franchigia comunale} & Soglia quantitativa o economica stabilita dal Comune entro la quale il servizio di smaltimento è erogato gratuitamente al Cittadino. Oltre tale soglia il sistema calcola una tariffa proporzionale. \\ \hline
+
 \textbf{Itinerario di Ritiro} & Sequenza ordinata degli appuntamenti di ritiro a domicilio assegnati a uno specifico Autista e Mezzo per un dato turno lavorativo all'interno della zona di competenza. \\ \hline
 
 \textbf{Valutazione / Feedback} & Giudizio qualitativo (espresso tramite scala di punteggio ed eventuali note descrittive) che il Cittadino può rilasciare al termine di un servizio completato per misurare gradimento e puntualità. \\ \hline
 
-\textbf{Rifiuto ingombrante} & Bene durevole, oggetto voluminoso o materiale speciale (es. mobili, grandi elettrodomestici, RAEE) che non può essere conferito nei normali cassonetti stradali. \\ \hline
+\textbf{Storico prenotazioni} & Archivio consultabile dal Cittadino che raccoglie l'elenco delle prenotazioni concluse (completate, annullate o non eseguite), con i relativi dettagli ed esiti, a fini di tracciabilità e trasparenza. \\ \hline
 
-\textbf{Tipologia di rifiuto} & Classificazione merceologica e normativa del rifiuto (es. legno, metallo, RAEE, ingombranti misti), necessaria per verificare la conformità di scarico e il mezzo idoneo. \\ \hline
+\textbf{Rifiuto ingombrante} & Bene durevole, oggetto voluminoso o materiale speciale (es.\ mobili, grandi elettrodomestici, RAEE) che non può essere conferito nei normali cassonetti stradali. \\ \hline
+
+\textbf{Tipologia di rifiuto} & Classificazione merceologica e normativa del rifiuto (es.\ legno, metallo, RAEE, ingombranti misti), necessaria per verificare la conformità di scarico e il mezzo idoneo. \\ \hline
+
+\textbf{RAEE (Rifiuti di Apparecchiature Elettriche ed Elettroniche)} & Categoria normativa di rifiuti comprendente apparecchiature elettriche ed elettroniche dismesse (es.\ frigoriferi, lavatrici, monitor), soggetta a procedure specifiche di raccolta e smaltimento e conferibile solo presso sedi autorizzate. \\ \hline
+
+\textbf{Conformità del rifiuto} & Verifica effettuata dal personale AMA (Autista al domicilio o Operatore al varco della sede) per accertare che il materiale presentato corrisponda per tipologia, quantità e caratteristiche a quanto dichiarato dal Cittadino nella prenotazione. In caso di non conformità il servizio può essere rifiutato. \\ \hline
 
 \textbf{Sede AMA / Centro di Raccolta} & Struttura fisica territoriale (isola ecologica) abilitata alla ricezione e allo stoccaggio temporaneo di determinate tipologie di rifiuti conferiti dai cittadini. \\ \hline
 
@@ -55,7 +67,13 @@ La presente sezione definisce in modo formale e non ambiguo i termini specialist
 
 \textbf{Veicolo / Mezzo AMA} & Automezzo aziendale impiegato per i ritiri a domicilio, caratterizzato da limiti di portata utile (peso massimo) e volume di carico. \\ \hline
 
+\textbf{Capacità del Veicolo} & Parametro indicante il carico logistico massimo (in peso o volume) supportato da un automezzo, utilizzato dal sistema per limitare e calcolare quanti ritiri assegnare in un singolo turno. \\ \hline
+
+\textbf{Carico residuo} & Capacità di trasporto ancora disponibile su un Veicolo AMA durante un turno operativo, calcolata sottraendo il peso/volume dei ritiri già assegnati dalla capacità massima del mezzo. Determina l'accettabilità di ulteriori assegnazioni. \\ \hline
+
 \textbf{Disponibilità / Slot Orario} & Fascia temporale definita (data e intervallo orario) in cui un servizio può essere prenotato ed erogato, calcolata in base alla capienza residua dei mezzi e ai turni del personale. \\ \hline
+
+\textbf{Turno di servizio} & Intervallo temporale (tipicamente giornaliero) durante il quale un Lavoratore AMA è in servizio attivo e un Veicolo è operativo. Vincola la pianificazione degli itinerari di ritiro e le disponibilità della sede. \\ \hline
 
 \textbf{Assegnazione} & Associazione formale e logistica tra una prenotazione di ritiro a domicilio e le risorse operative aziendali (Autista, Veicolo, data e percorso). \\ \hline
 
@@ -65,17 +83,21 @@ La presente sezione definisce in modo formale e non ambiguo i termini specialist
 
 \textbf{Report / Statistiche} & Informazioni aggregate e indicatori di performance (volumi gestiti, ritiri completati, trend per zona) consultabili dalla direzione aziendale per finalità analitiche e decisionali. \\ \hline
 
+\textbf{Competenza Territoriale} & Regole logiche che vincolano i servizi di ritiro a domicilio e di conferimento in sede a specifiche aree geografiche (identificate tramite CAP) gestite da una determinata Sede AMA. \\ \hline
+
 \textbf{Sistema} & L'applicazione software integrata MyAma nel suo complesso, comprensiva di tutti i moduli web e mobili per i diversi profili utente. \\ \hline
 
 \textbf{Codice di Invito} & Codice alfanumerico univoco generato dagli amministratori, utilizzato per autorizzare e abilitare la registrazione del personale aziendale assegnando automaticamente il ruolo corretto. \\ \hline
 
+\textbf{Informativa Privacy} & Documentazione legale che esplicita le modalità di trattamento e conservazione dei dati personali, accettata obbligatoriamente da tutti gli utenti durante la procedura di registrazione. \\ \hline
+
 \textbf{RBAC (Role-Based Access Control)} & Modello di controllo degli accessi adottato dalla piattaforma che regola i permessi di visualizzazione e interazione degli utenti in base al ruolo aziendale o utente ricoperto. \\ \hline
 
-\textbf{Competenza Territoriale} & Regole logiche che vincolano i servizi di ritiro a domicilio e di conferimento in sede a specifiche aree geografiche (identificate tramite CAP) gestite da una determinata Sede AMA. \\ \hline
+\textbf{BCE (Boundary, Control, Entity)} & Pattern architetturale utilizzato nella modellazione dei Sequence Diagram per separare le responsabilità degli oggetti in tre stereotipi: \textit{Boundary} (interfaccia con l'attore), \textit{Control} (logica applicativa e coordinamento) ed \textit{Entity} (dati persistenti del dominio). \\ \hline
 
-\textbf{Capacità del Veicolo} & Parametro indicante il carico logistico massimo (in peso o volume) supportato da un automezzo, utilizzato dal sistema per limitare e calcolare quanti ritiri assegnare in un singolo turno. \\ \hline
+\textbf{Observer Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per disaccoppiare la classe \texttt{Prenotazione} dai sottosistemi che devono reagire alle sue transizioni di stato (notifiche al Cittadino, aggiornamento dashboard Autista, registro operativo della Sede), evitando dipendenze rigide verso classi concrete. \\ \hline
 
-\textbf{Informativa Privacy} & Documentazione legale che esplicita le modalità di trattamento e conservazione dei dati personali, accettata obbligatoriamente da tutti gli utenti durante la procedura di registrazione. \\ \hline
+\textbf{Strategy Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per incapsulare in classi intercambiabili le diverse politiche di allocazione dei ritiri ai veicoli (massimizzazione carico, prossimità territoriale, bilanciamento carichi), consentendo al \texttt{GestoreAssegnazione} di variare l'algoritmo senza modificare la propria struttura. \\ \hline
 
 \textbf{Responsive Design} & Paradigma di sviluppo dell'interfaccia utente che garantisce l'adattabilità automatica di layout e contenuti alle dimensioni dello schermo del dispositivo utilizzato (smartphone, tablet, PC). \\ \hline
 

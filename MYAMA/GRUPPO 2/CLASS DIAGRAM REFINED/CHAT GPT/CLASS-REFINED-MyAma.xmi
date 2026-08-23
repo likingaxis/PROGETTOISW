@@ -1,0 +1,502 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xmi:XMI xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmi:version="2.5.1">
+  <uml:Model xmi:id="model_myama" name="MyAma Refined Class Diagram">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_String" name="String" />
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_Boolean" name="Boolean" />
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_Integer" name="Integer" />
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_Real" name="Real" />
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_Date" name="Date" />
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="pt_void" name="void" />
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_UtenteSistema" name="UtenteSistema" isAbstract="true">
+      <ownedAttribute xmi:id="attr_UtenteSistema_1" name="idUtente" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_UtenteSistema_2" name="nome" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_UtenteSistema_3" name="cognome" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_UtenteSistema_4" name="email" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_UtenteSistema_5" name="passwordHash" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_UtenteSistema_6" name="abilitato" visibility="private" type="pt_Boolean" />
+      <ownedOperation xmi:id="op_UtenteSistema_1" name="effettuaAccesso" visibility="public">
+        <ownedParameter xmi:id="param_UtenteSistema_1_1" name="email" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="param_UtenteSistema_1_2" name="password" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_UtenteSistema_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_UtenteSistema_2" name="effettuaLogout" visibility="public" />
+      <ownedOperation xmi:id="op_UtenteSistema_3" name="verificaEmail" visibility="public">
+        <ownedParameter xmi:id="param_UtenteSistema_3_1" name="email" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_UtenteSistema_3" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_UtenteSistema_4" name="isAbilitato" visibility="public">
+        <ownedParameter xmi:id="ret_UtenteSistema_4" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Cittadino" name="Cittadino" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Cittadino_1" name="telefono" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Cittadino_2" name="indirizzo" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Cittadino_3" name="cap" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_Cittadino_1" name="registrati" visibility="public">
+        <ownedParameter xmi:id="param_Cittadino_1_1" name="datiPersonali" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Cittadino_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_2" name="richiediRitiro" visibility="public">
+        <ownedParameter xmi:id="ret_Cittadino_2" name="return" direction="return" type="cls_RitiroDomicilio" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_3" name="prenotaConferimento" visibility="public">
+        <ownedParameter xmi:id="ret_Cittadino_3" name="return" direction="return" type="cls_ConferimentoSede" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_4" name="visualizzaPrenotazioniAttive" visibility="public">
+        <ownedParameter xmi:id="ret_Cittadino_4" name="return" direction="return" type="cls_Prenotazione" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_5" name="annullaPrenotazione" visibility="public">
+        <ownedParameter xmi:id="param_Cittadino_5_1" name="idPrenotazione" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Cittadino_5" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_6" name="consultaStoricoPrenotazioni" visibility="public">
+        <ownedParameter xmi:id="ret_Cittadino_6" name="return" direction="return" type="cls_Prenotazione" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Cittadino_7" name="valutaServizio" visibility="public">
+        <ownedParameter xmi:id="param_Cittadino_7_1" name="idPrenotazione" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="param_Cittadino_7_2" name="voto" direction="in" type="pt_Integer" />
+        <ownedParameter xmi:id="param_Cittadino_7_3" name="commento" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Cittadino_7" name="return" direction="return" type="cls_Valutazione" />
+      </ownedOperation>
+      <generalization xmi:id="gen_1" general="cls_UtenteSistema" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_LavoratoreAMA" name="LavoratoreAMA" isAbstract="true">
+      <ownedAttribute xmi:id="attr_LavoratoreAMA_1" name="matricola" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_LavoratoreAMA_1" name="registratiConCodiceInvito" visibility="public">
+        <ownedParameter xmi:id="param_LavoratoreAMA_1_1" name="codice" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_LavoratoreAMA_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_LavoratoreAMA_2" name="visualizzaAttivitaAssegnate" visibility="public">
+        <ownedParameter xmi:id="ret_LavoratoreAMA_2" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+      <generalization xmi:id="gen_2" general="cls_UtenteSistema" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_AutistaAMA" name="AutistaAMA" isAbstract="false">
+      <ownedOperation xmi:id="op_AutistaAMA_1" name="visualizzaRitiriAssegnati" visibility="public">
+        <ownedParameter xmi:id="ret_AutistaAMA_1" name="return" direction="return" type="cls_RitiroDomicilio" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_AutistaAMA_2" name="consultaDettagliRitiro" visibility="public">
+        <ownedParameter xmi:id="param_AutistaAMA_2_1" name="idRitiro" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_AutistaAMA_2" name="return" direction="return" type="cls_RitiroDomicilio" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_AutistaAMA_3" name="registraEsitoRitiro" visibility="public">
+        <ownedParameter xmi:id="param_AutistaAMA_3_1" name="idRitiro" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="param_AutistaAMA_3_2" name="esito" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_AutistaAMA_3" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_AutistaAMA_4" name="chiamaCittadino" visibility="public">
+        <ownedParameter xmi:id="param_AutistaAMA_4_1" name="idCittadino" direction="in" type="pt_String" />
+      </ownedOperation>
+      <generalization xmi:id="gen_3" general="cls_LavoratoreAMA" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_OperatoreSedeAMA" name="OperatoreSedeAMA" isAbstract="false">
+      <ownedOperation xmi:id="op_OperatoreSedeAMA_1" name="visualizzaPrenotazioniSede" visibility="public">
+        <ownedParameter xmi:id="ret_OperatoreSedeAMA_1" name="return" direction="return" type="cls_ConferimentoSede" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_OperatoreSedeAMA_2" name="consultaDettagliConferimento" visibility="public">
+        <ownedParameter xmi:id="param_OperatoreSedeAMA_2_1" name="idPrenotazione" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_OperatoreSedeAMA_2" name="return" direction="return" type="cls_ConferimentoSede" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_OperatoreSedeAMA_3" name="verificaPrenotazione" visibility="public">
+        <ownedParameter xmi:id="param_OperatoreSedeAMA_3_1" name="idPrenotazione" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_OperatoreSedeAMA_3" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_OperatoreSedeAMA_4" name="registraEsitoConferimento" visibility="public">
+        <ownedParameter xmi:id="param_OperatoreSedeAMA_4_1" name="idPrenotazione" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="param_OperatoreSedeAMA_4_2" name="esito" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_OperatoreSedeAMA_4" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <generalization xmi:id="gen_4" general="cls_LavoratoreAMA" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreSedeAMA" name="AmministratoreSedeAMA" isAbstract="false">
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_1" name="generaCodiceInvitoPersonale" visibility="public">
+        <ownedParameter xmi:id="param_AmministratoreSedeAMA_1_1" name="ruolo" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_AmministratoreSedeAMA_1" name="return" direction="return" type="cls_CodiceInvito" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_2" name="gestisciDisponibilitaLavoratori" visibility="public" />
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_3" name="gestisciDisponibilitaVeicoli" visibility="public" />
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_4" name="gestisciDisponibilitaSede" visibility="public" />
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_5" name="gestisciAssociazioniSedeZoneCAP" visibility="public" />
+      <ownedOperation xmi:id="op_AmministratoreSedeAMA_6" name="rimuoviPersonaleAMA" visibility="public">
+        <ownedParameter xmi:id="param_AmministratoreSedeAMA_6_1" name="idUtente" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_AmministratoreSedeAMA_6" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <generalization xmi:id="gen_5" general="cls_UtenteSistema" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreGeneraleAMA" name="AmministratoreGeneraleAMA" isAbstract="false">
+      <ownedOperation xmi:id="op_AmministratoreGeneraleAMA_1" name="generaCodiceAmministratoreSede" visibility="public">
+        <ownedParameter xmi:id="ret_AmministratoreGeneraleAMA_1" name="return" direction="return" type="cls_CodiceInvito" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_AmministratoreGeneraleAMA_2" name="rimuoviAmministratoreSede" visibility="public">
+        <ownedParameter xmi:id="param_AmministratoreGeneraleAMA_2_1" name="idUtente" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_AmministratoreGeneraleAMA_2" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <generalization xmi:id="gen_6" general="cls_UtenteSistema" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Prenotazione" name="Prenotazione" isAbstract="true">
+      <ownedAttribute xmi:id="attr_Prenotazione_1" name="idPrenotazione" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Prenotazione_2" name="data" visibility="private" type="pt_Date" />
+      <ownedAttribute xmi:id="attr_Prenotazione_3" name="fasciaOraria" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Prenotazione_4" name="stato" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Prenotazione_5" name="codicePrenotazione" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_Prenotazione_1" name="creaPrenotazione" visibility="public">
+        <ownedParameter xmi:id="ret_Prenotazione_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Prenotazione_2" name="annulla" visibility="public">
+        <ownedParameter xmi:id="ret_Prenotazione_2" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Prenotazione_3" name="modificaStato" visibility="public">
+        <ownedParameter xmi:id="param_Prenotazione_3_1" name="stato" direction="in" type="pt_String" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Prenotazione_4" name="getDettagli" visibility="public">
+        <ownedParameter xmi:id="ret_Prenotazione_4" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Prenotazione_5" name="verificaStato" visibility="public">
+        <ownedParameter xmi:id="ret_Prenotazione_5" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_RitiroDomicilio" name="RitiroDomicilio" isAbstract="false">
+      <ownedAttribute xmi:id="attr_RitiroDomicilio_1" name="indirizzoRitiro" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_RitiroDomicilio_2" name="esito" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_RitiroDomicilio_1" name="creaRitiro" visibility="public">
+        <ownedParameter xmi:id="param_RitiroDomicilio_1_1" name="indirizzo" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_RitiroDomicilio_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_RitiroDomicilio_2" name="impostaIndirizzoRitiro" visibility="public">
+        <ownedParameter xmi:id="param_RitiroDomicilio_2_1" name="indirizzo" direction="in" type="pt_String" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_RitiroDomicilio_3" name="registraEsito" visibility="public">
+        <ownedParameter xmi:id="param_RitiroDomicilio_3_1" name="esito" direction="in" type="pt_String" />
+      </ownedOperation>
+      <generalization xmi:id="gen_7" general="cls_Prenotazione" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_ConferimentoSede" name="ConferimentoSede" isAbstract="false">
+      <ownedAttribute xmi:id="attr_ConferimentoSede_1" name="esito" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_ConferimentoSede_1" name="creaConferimento" visibility="public">
+        <ownedParameter xmi:id="param_ConferimentoSede_1_1" name="sede" direction="in" type="cls_SedeAMA" />
+        <ownedParameter xmi:id="ret_ConferimentoSede_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_ConferimentoSede_2" name="impostaSede" visibility="public">
+        <ownedParameter xmi:id="param_ConferimentoSede_2_1" name="sede" direction="in" type="cls_SedeAMA" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_ConferimentoSede_3" name="registraEsito" visibility="public">
+        <ownedParameter xmi:id="param_ConferimentoSede_3_1" name="esito" direction="in" type="pt_String" />
+      </ownedOperation>
+      <generalization xmi:id="gen_8" general="cls_Prenotazione" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Rifiuto" name="Rifiuto" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Rifiuto_1" name="idRifiuto" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Rifiuto_2" name="descrizione" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Rifiuto_3" name="pesoStimato" visibility="private" type="pt_Real" />
+      <ownedAttribute xmi:id="attr_Rifiuto_4" name="volumeStimato" visibility="private" type="pt_Real" />
+      <ownedAttribute xmi:id="attr_Rifiuto_5" name="foto" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_Rifiuto_1" name="creaRifiuto" visibility="public">
+        <ownedParameter xmi:id="param_Rifiuto_1_1" name="datiRifiuto" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Rifiuto_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Rifiuto_2" name="aggiungiFoto" visibility="public">
+        <ownedParameter xmi:id="param_Rifiuto_2_1" name="foto" direction="in" type="pt_String" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Rifiuto_3" name="modificaDatiRifiuto" visibility="public" />
+      <ownedOperation xmi:id="op_Rifiuto_4" name="getDettagli" visibility="public">
+        <ownedParameter xmi:id="ret_Rifiuto_4" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_TipologiaRifiuto" name="TipologiaRifiuto" isAbstract="false">
+      <ownedAttribute xmi:id="attr_TipologiaRifiuto_1" name="idTipologia" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_TipologiaRifiuto_2" name="nome" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_TipologiaRifiuto_3" name="descrizione" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_TipologiaRifiuto_1" name="verificaCompatibilita" visibility="public">
+        <ownedParameter xmi:id="param_TipologiaRifiuto_1_1" name="rifiuto" direction="in" type="cls_Rifiuto" />
+        <ownedParameter xmi:id="ret_TipologiaRifiuto_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_TipologiaRifiuto_2" name="getDescrizione" visibility="public">
+        <ownedParameter xmi:id="ret_TipologiaRifiuto_2" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_SedeAMA" name="SedeAMA" isAbstract="false">
+      <ownedAttribute xmi:id="attr_SedeAMA_1" name="idSede" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_SedeAMA_2" name="nome" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_SedeAMA_3" name="indirizzo" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_SedeAMA_4" name="attiva" visibility="private" type="pt_Boolean" />
+      <ownedOperation xmi:id="op_SedeAMA_1" name="verificaCompatibilita" visibility="public">
+        <ownedParameter xmi:id="param_SedeAMA_1_1" name="cap" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="param_SedeAMA_1_2" name="tipologiaRifiuto" direction="in" type="cls_TipologiaRifiuto" />
+        <ownedParameter xmi:id="ret_SedeAMA_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_SedeAMA_2" name="visualizzaDisponibilita" visibility="public">
+        <ownedParameter xmi:id="ret_SedeAMA_2" name="return" direction="return" type="cls_Disponibilita" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_SedeAMA_3" name="aggiungiDisponibilita" visibility="public">
+        <ownedParameter xmi:id="param_SedeAMA_3_1" name="disponibilita" direction="in" type="cls_Disponibilita" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_SedeAMA_4" name="rimuoviDisponibilita" visibility="public">
+        <ownedParameter xmi:id="param_SedeAMA_4_1" name="disponibilita" direction="in" type="cls_Disponibilita" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_ZonaCAP" name="ZonaCAP" isAbstract="false">
+      <ownedAttribute xmi:id="attr_ZonaCAP_1" name="cap" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_ZonaCAP_2" name="zona" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_ZonaCAP_1" name="verificaCAP" visibility="public">
+        <ownedParameter xmi:id="param_ZonaCAP_1_1" name="cap" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_ZonaCAP_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_ZonaCAP_2" name="getSediCompatibili" visibility="public">
+        <ownedParameter xmi:id="ret_ZonaCAP_2" name="return" direction="return" type="cls_SedeAMA" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Disponibilita" name="Disponibilita" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Disponibilita_1" name="idDisponibilita" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Disponibilita_2" name="data" visibility="private" type="pt_Date" />
+      <ownedAttribute xmi:id="attr_Disponibilita_3" name="fasciaOraria" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Disponibilita_4" name="postiDisponibili" visibility="private" type="pt_Integer" />
+      <ownedOperation xmi:id="op_Disponibilita_1" name="verificaDisponibilita" visibility="public">
+        <ownedParameter xmi:id="param_Disponibilita_1_1" name="data" direction="in" type="pt_Date" />
+        <ownedParameter xmi:id="param_Disponibilita_1_2" name="fasciaOraria" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Disponibilita_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Disponibilita_2" name="prenotaSlot" visibility="public">
+        <ownedParameter xmi:id="ret_Disponibilita_2" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Disponibilita_3" name="liberaSlot" visibility="public" />
+      <ownedOperation xmi:id="op_Disponibilita_4" name="getFasceDisponibili" visibility="public">
+        <ownedParameter xmi:id="ret_Disponibilita_4" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Veicolo" name="Veicolo" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Veicolo_1" name="idVeicolo" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Veicolo_2" name="targa" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Veicolo_3" name="capacitaPeso" visibility="private" type="pt_Real" />
+      <ownedAttribute xmi:id="attr_Veicolo_4" name="capacitaVolume" visibility="private" type="pt_Real" />
+      <ownedAttribute xmi:id="attr_Veicolo_5" name="disponibile" visibility="private" type="pt_Boolean" />
+      <ownedOperation xmi:id="op_Veicolo_1" name="verificaDisponibilita" visibility="public">
+        <ownedParameter xmi:id="param_Veicolo_1_1" name="data" direction="in" type="pt_Date" />
+        <ownedParameter xmi:id="ret_Veicolo_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Veicolo_2" name="verificaCapacita" visibility="public">
+        <ownedParameter xmi:id="param_Veicolo_2_1" name="peso" direction="in" type="pt_Real" />
+        <ownedParameter xmi:id="param_Veicolo_2_2" name="volume" direction="in" type="pt_Real" />
+        <ownedParameter xmi:id="ret_Veicolo_2" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Veicolo_3" name="assegna" visibility="public" />
+      <ownedOperation xmi:id="op_Veicolo_4" name="libera" visibility="public" />
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Assegnazione" name="Assegnazione" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Assegnazione_1" name="idAssegnazione" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Assegnazione_2" name="dataTurno" visibility="private" type="pt_Date" />
+      <ownedOperation xmi:id="op_Assegnazione_1" name="creaAssegnazione" visibility="public">
+        <ownedParameter xmi:id="ret_Assegnazione_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Assegnazione_2" name="assegnaLavoratore" visibility="public">
+        <ownedParameter xmi:id="param_Assegnazione_2_1" name="lavoratore" direction="in" type="cls_AutistaAMA" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Assegnazione_3" name="assegnaVeicolo" visibility="public">
+        <ownedParameter xmi:id="param_Assegnazione_3_1" name="veicolo" direction="in" type="cls_Veicolo" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Assegnazione_4" name="rimuoviAssegnazione" visibility="public" />
+      <ownedOperation xmi:id="op_Assegnazione_5" name="getDettagliAssegnazione" visibility="public">
+        <ownedParameter xmi:id="ret_Assegnazione_5" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_CodiceInvito" name="CodiceInvito" isAbstract="false">
+      <ownedAttribute xmi:id="attr_CodiceInvito_1" name="codice" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_CodiceInvito_2" name="ruolo" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_CodiceInvito_3" name="utilizzato" visibility="private" type="pt_Boolean" />
+      <ownedAttribute xmi:id="attr_CodiceInvito_4" name="scadenza" visibility="private" type="pt_Date" />
+      <ownedOperation xmi:id="op_CodiceInvito_1" name="verificaValidita" visibility="public">
+        <ownedParameter xmi:id="ret_CodiceInvito_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_CodiceInvito_2" name="utilizza" visibility="public" />
+      <ownedOperation xmi:id="op_CodiceInvito_3" name="isUtilizzato" visibility="public">
+        <ownedParameter xmi:id="ret_CodiceInvito_3" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="cls_Valutazione" name="Valutazione" isAbstract="false">
+      <ownedAttribute xmi:id="attr_Valutazione_1" name="idValutazione" visibility="private" type="pt_String" />
+      <ownedAttribute xmi:id="attr_Valutazione_2" name="voto" visibility="private" type="pt_Integer" />
+      <ownedAttribute xmi:id="attr_Valutazione_3" name="commento" visibility="private" type="pt_String" />
+      <ownedOperation xmi:id="op_Valutazione_1" name="creaValutazione" visibility="public">
+        <ownedParameter xmi:id="param_Valutazione_1_1" name="voto" direction="in" type="pt_Integer" />
+        <ownedParameter xmi:id="param_Valutazione_1_2" name="commento" direction="in" type="pt_String" />
+        <ownedParameter xmi:id="ret_Valutazione_1" name="return" direction="return" type="pt_Boolean" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Valutazione_2" name="modificaValutazione" visibility="public">
+        <ownedParameter xmi:id="param_Valutazione_2_1" name="voto" direction="in" type="pt_Integer" />
+        <ownedParameter xmi:id="param_Valutazione_2_2" name="commento" direction="in" type="pt_String" />
+      </ownedOperation>
+      <ownedOperation xmi:id="op_Valutazione_3" name="getValutazione" visibility="public">
+        <ownedParameter xmi:id="ret_Valutazione_3" name="return" direction="return" type="pt_String" />
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_1" name="possiede" memberEnd="end_1_a end_1_b">
+      <ownedEnd xmi:id="end_1_a" name="cittadino" type="cls_Cittadino" association="assoc_1" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_1_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_1_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_1_b" name="prenotazione" type="cls_Prenotazione" association="assoc_1" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_1_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_1_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_2" name="riguarda" memberEnd="end_2_a end_2_b">
+      <ownedEnd xmi:id="end_2_a" name="prenotazione" type="cls_Prenotazione" association="assoc_2" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_2_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_2_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_2_b" name="rifiuto" type="cls_Rifiuto" association="assoc_2" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_2_b" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_2_b" value="1" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_3" name="classifica" memberEnd="end_3_a end_3_b">
+      <ownedEnd xmi:id="end_3_a" name="tipologiaRifiuto" type="cls_TipologiaRifiuto" association="assoc_3" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_3_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_3_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_3_b" name="rifiuto" type="cls_Rifiuto" association="assoc_3" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_3_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_3_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_4" name="presso" memberEnd="end_4_a end_4_b">
+      <ownedEnd xmi:id="end_4_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_4" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_4_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_4_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_4_b" name="conferimentoSede" type="cls_ConferimentoSede" association="assoc_4" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_4_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_4_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_5" name="gestisceRitiri" memberEnd="end_5_a end_5_b">
+      <ownedEnd xmi:id="end_5_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_5" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_5_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_5_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_5_b" name="ritiroDomicilio" type="cls_RitiroDomicilio" association="assoc_5" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_5_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_5_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_6" name="copre" memberEnd="end_6_a end_6_b">
+      <ownedEnd xmi:id="end_6_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_6" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_6_a" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_6_a" value="*" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_6_b" name="zonaCAP" type="cls_ZonaCAP" association="assoc_6" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_6_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_6_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_7" name="offre" memberEnd="end_7_a end_7_b">
+      <ownedEnd xmi:id="end_7_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_7" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_7_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_7_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_7_b" name="disponibilita" type="cls_Disponibilita" association="assoc_7" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_7_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_7_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_8" name="disponeDi" memberEnd="end_8_a end_8_b">
+      <ownedEnd xmi:id="end_8_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_8" aggregation="shared">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_8_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_8_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_8_b" name="veicolo" type="cls_Veicolo" association="assoc_8" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_8_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_8_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_9" name="assegnaPersonale" memberEnd="end_9_a end_9_b">
+      <ownedEnd xmi:id="end_9_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_9" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_9_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_9_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_9_b" name="lavoratoreAMA" type="cls_LavoratoreAMA" association="assoc_9" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_9_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_9_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_10" name="amministra" memberEnd="end_10_a end_10_b">
+      <ownedEnd xmi:id="end_10_a" name="sedeAMA" type="cls_SedeAMA" association="assoc_10" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_10_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_10_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_10_b" name="amministratoreSedeAMA" type="cls_AmministratoreSedeAMA" association="assoc_10" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_10_b" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_10_b" value="1" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_11" name="assegnazioneRitiro" memberEnd="end_11_a end_11_b">
+      <ownedEnd xmi:id="end_11_a" name="ritiroDomicilio" type="cls_RitiroDomicilio" association="assoc_11" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_11_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_11_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_11_b" name="assegnazione" type="cls_Assegnazione" association="assoc_11" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_11_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_11_b" value="1" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_12" name="assegnazioneAutista" memberEnd="end_12_a end_12_b">
+      <ownedEnd xmi:id="end_12_a" name="autistaAMA" type="cls_AutistaAMA" association="assoc_12" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_12_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_12_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_12_b" name="assegnazione" type="cls_Assegnazione" association="assoc_12" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_12_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_12_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_13" name="assegnazioneVeicolo" memberEnd="end_13_a end_13_b">
+      <ownedEnd xmi:id="end_13_a" name="veicolo" type="cls_Veicolo" association="assoc_13" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_13_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_13_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_13_b" name="assegnazione" type="cls_Assegnazione" association="assoc_13" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_13_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_13_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_14" name="usaSlot" memberEnd="end_14_a end_14_b">
+      <ownedEnd xmi:id="end_14_a" name="prenotazione" type="cls_Prenotazione" association="assoc_14" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_14_a" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_14_a" value="*" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_14_b" name="disponibilita" type="cls_Disponibilita" association="assoc_14" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_14_b" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_14_b" value="1" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_15" name="riceve" memberEnd="end_15_a end_15_b">
+      <ownedEnd xmi:id="end_15_a" name="prenotazione" type="cls_Prenotazione" association="assoc_15" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_15_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_15_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_15_b" name="valutazione" type="cls_Valutazione" association="assoc_15" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_15_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_15_b" value="1" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_16" name="generaPersonale" memberEnd="end_16_a end_16_b">
+      <ownedEnd xmi:id="end_16_a" name="amministratoreSedeAMA" type="cls_AmministratoreSedeAMA" association="assoc_16" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_16_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_16_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_16_b" name="codiceInvito" type="cls_CodiceInvito" association="assoc_16" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_16_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_16_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_17" name="generaAdmin" memberEnd="end_17_a end_17_b">
+      <ownedEnd xmi:id="end_17_a" name="amministratoreGeneraleAMA" type="cls_AmministratoreGeneraleAMA" association="assoc_17" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_17_a" value="1" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_17_a" value="1" />
+      </ownedEnd>
+      <ownedEnd xmi:id="end_17_b" name="codiceInvito" type="cls_CodiceInvito" association="assoc_17" aggregation="none">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lv_17_b" value="0" />
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="uv_17_b" value="*" />
+      </ownedEnd>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>
