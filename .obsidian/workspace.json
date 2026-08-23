@@ -6,7 +6,7 @@
       {
         "id": "0e49465d84360589",
         "type": "tabs",
-        "dimension": 38.059701492537314,
+        "dimension": 48.027718550106606,
         "children": [
           {
             "id": "78936adfc684f35f",
@@ -23,7 +23,7 @@
             }
           },
           {
-            "id": "b132e5f484408353",
+            "id": "f3cd91ec9cbd0e5c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -49,15 +49,7 @@
               "icon": "lucide-file",
               "title": "MESSAGGI"
             }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "474544b5a2dec6f2",
-        "type": "tabs",
-        "dimension": 61.940298507462686,
-        "children": [
+          },
           {
             "id": "7ec32bc50afa19a0",
             "type": "leaf",
@@ -71,7 +63,15 @@
               "icon": "lucide-file",
               "title": "SINCRONA E ASINCRONA"
             }
-          },
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "474544b5a2dec6f2",
+        "type": "tabs",
+        "dimension": 51.97228144989339,
+        "children": [
           {
             "id": "780f243b253e3565",
             "type": "leaf",
@@ -83,8 +83,33 @@
               "icon": "lucide-file-text",
               "title": "Progetto_Buongiorno_Machowski_Muscillo_Politano"
             }
+          },
+          {
+            "id": "bf8c8b53307c32c4",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrarsi tramite codice invito.png"
+              },
+              "icon": "lucide-image",
+              "title": "registrarsi tramite codice invito"
+            }
+          },
+          {
+            "id": "68ca7df1e82916d5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "progettialtrui/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/ProgettoISW_25_26.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ProgettoISW_25_26"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -146,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.9453125,
-    "collapsed": true
+    "width": 370.9453125
   },
   "right": {
     "id": "659f62a9ab9cdec4",
@@ -252,37 +276,37 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "7ec32bc50afa19a0",
+  "active": "68ca7df1e82916d5",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 1/data.zip",
-    "MYAMA/GRUPPO 1/project.xml",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI_sboig.vpp.bak_000f",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI.vpp.bak_001f",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI.vpp.bak_000d-journal",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI.vpp.bak_000d",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
-    "progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf",
-    "progettialtrui/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/ProgettoISW_25_26.pdf",
+    "MYAMA/GRUPPO 1/RefinedClassDIagam.vpp",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_008d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_008d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_007d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_007d",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/SINCRONA E ASINCRONA.md",
+    "progettialtrui/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI ASSOCIATI A MESSAGGI.md",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI_sboig.vpp",
-    "MYAMA/GRUPPO 1/BOZZA GPT PUNTO 9.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM",
-    "MYAMA/GRUPPO 1/BOZZA_CLASS_DIAGRAMI_AILUCI_sborg.vpp.bak_000f",
-    "MYAMA/GRUPPO 1/CORREZIONI CHAT.md",
-    "MYAMA/GRUPPO 1/Class Diagram1.jpg",
-    "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore generale AMA.md",
-    "MYAMA/GRUPPO 2/Esempio activity diagram.jpg",
-    "MYAMA/Latex PDF/figure/act_visualizzare_prenotazioni.jpg",
-    "MYAMA/Latex PDF/figure/act_valutare_servizio.jpg",
-    "MYAMA/Latex PDF/figure/act_rimuovere_admin.jpg",
-    "MYAMA/Latex PDF/figure/act_richiesta_ritiro.jpg",
-    "MYAMA/Latex PDF/figure/act_registrarsi_invito.jpg",
-    "MYAMA/Latex PDF/figure/act_registrarsi_cittadino.jpg",
-    "MYAMA/Latex PDF/figure/act_prenota_conferimento.jpg",
-    "MYAMA/Latex PDF/figure/act_operatore_verificare.jpg",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_006d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_006d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_005d-journal",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_005d",
+    "MYAMA/GRUPPO 1/ProgettoVPdavidel.vpp.bak_004d-journal",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrarsi tramite codice invito.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare prenotazioni della sede.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare prenotazioni attive.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizzare date e fasce disponibili.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/visualizare ritiri assegnati dettagli.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/verifica prenotazioni.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/valutare il servizio.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrre esito ritiro.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/registrare esito confermate.png",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/Fanculo  negri/prenotare sedi compatibii.png",
     "MYAMA/GRUPPO 2/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/SINCRONA E ASINCRONA.md",
+    "MYAMA/GRUPPO 2/Documentazione Use Case — Amministratore generale AMA.md",
+    "MYAMA/GRUPPO 1/BOZZA GPT PUNTO 9.md",
+    "MYAMA/GRUPPO 1/CORREZIONI CHAT.md",
     "MYAMA/GRUPPO 2/User requirements definition.md",
     "MYAMA/GRUPPO 1/davideluserRequirementsDefinition.md",
     "MYAMA/GRUPPO 1/System Requirements.md",
