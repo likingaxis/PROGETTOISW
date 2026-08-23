@@ -138,24 +138,24 @@ Le dipendenze BCE si rappresentano con una **freccia tratteggiata** (`<<use>>`).
 
 ### 3.1 Dipendenze Boundary → Control
 
-| # | Boundary | Control | Justification |
-|---|----------|---------|---------------|
-| D1 | RegistrationInterface | UserAccessEndpoint | SD: `richiediRegistrazione()` → `registrationForward()` |
-| D2 | InvitationRegistrationInterface | UserAccessEndpoint | SD: registrazione con codice invito → `registrationForward(role, userData)` |
-| D3 | LoginInterface | UserAccessEndpoint | SD: `richiediLogin()` → `loginForward()` |
-| D4 | HomeBookInterface | AMAServiceController | SD: `getAvailability()` → `forwardAvailabilityRequest()` |
-| D5 | WasteDisposalInterface | AMAServiceController | SD: `getAvailability()` → `requestAvailabilityCheck()` |
-| D6 | BookingHistory | AMAServiceController | SD: `getStoricoPrenotazioni()` → `forwardBookHistoryRequest()` |
-| D7 | PannelloAutistaUI | GestoreRitiriController | SD: `richiediRitiriAssegnati()` → `visualizzaRitiriAssegnati()` |
-| D8 | PannelloAutistaUI | GestoreEsitoController | SD: `inserisciEsito()` → `registraEsito()` |
-| D9 | PannelloAutistaUI | ContattoController | SD: `mostraChiamata()` → `richiediDettagli()` |
-| D10 | PannelloSedeUI | GestioneSedeController | SD: `richiediPrenotazioniSede()` → `recuperaPrenotazioniSede()` |
-| D11 | ControlloVarcoUI | AccettazioneController | SD: `inserisciIdPrenotazione()` → `cercaPrenotazione()` |
-| D12 | GestioneConferimentoUI | GestioneConferimentoController | SD: `selezionaPrenotazione()` → `selezionaPrenotazione()` |
-| D13 | GestioneCodiciUI | CodiciController | SD: `richiediCodiceAdminSede()` → `generaCodice()` |
-| D14 | GestionePersonaleUI | GestionePersonaleController | SD: `richiediGenerazioneCodice()` → `generaCodiceInvito()` |
-| D15 | GestioneSedeUI | GestioneSedeController | SD: `richiediDisponibilitaSede()` → `modificaDisponibilita()` |
-| D16 | GestioneVeicoliUI | GestioneVeicoliController | SD: `richiediVeicoliSede()` → `recuperaVeicoli()` |
+| #   | Boundary                        | Control                        | Justification                                                               |
+| --- | ------------------------------- | ------------------------------ | --------------------------------------------------------------------------- |
+| D1  | RegistrationInterface           | UserAccessEndpoint             | SD: `richiediRegistrazione()` → `registrationForward()`                     |
+| D2  | InvitationRegistrationInterface | UserAccessEndpoint             | SD: registrazione con codice invito → `registrationForward(role, userData)` |
+| D3  | LoginInterface                  | UserAccessEndpoint             | SD: `richiediLogin()` → `loginForward()`                                    |
+| D4  | HomeBookInterface               | AMAServiceController           | SD: `getAvailability()` → `forwardAvailabilityRequest()`                    |
+| D5  | WasteDisposalInterface          | AMAServiceController           | SD: `getAvailability()` → `requestAvailabilityCheck()`                      |
+| D6  | BookingHistory                  | AMAServiceController           | SD: `getStoricoPrenotazioni()` → `forwardBookHistoryRequest()`              |
+| D7  | PannelloAutistaUI               | GestoreRitiriController        | SD: `richiediRitiriAssegnati()` → `visualizzaRitiriAssegnati()`             |
+| D8  | PannelloAutistaUI               | GestoreEsitoController         | SD: `inserisciEsito()` → `registraEsito()`                                  |
+| D9  | PannelloAutistaUI               | ContattoController             | SD: `mostraChiamata()` → `richiediDettagli()`                               |
+| D10 | PannelloSedeUI                  | GestioneSedeController         | SD: `richiediPrenotazioniSede()` → `recuperaPrenotazioniSede()`             |
+| D11 | ControlloVarcoUI                | AccettazioneController         | SD: `inserisciIdPrenotazione()` → `cercaPrenotazione()`                     |
+| D12 | GestioneConferimentoUI          | GestioneConferimentoController | SD: `selezionaPrenotazione()` → `selezionaPrenotazione()`                   |
+| D13 | GestioneCodiciUI                | CodiciController               | SD: `richiediCodiceAdminSede()` → `generaCodice()`                          |
+| D14 | GestionePersonaleUI             | GestionePersonaleController    | SD: `richiediGenerazioneCodice()` → `generaCodiceInvito()`                  |
+| D15 | GestioneSedeUI                  | GestioneSedeController         | SD: `richiediDisponibilitaSede()` → `modificaDisponibilita()`               |
+| D16 | GestioneVeicoliUI               | GestioneVeicoliController      | SD: `richiediVeicoliSede()` → `recuperaVeicoli()`                           |
 
 ### 3.2 Dipendenze Control → Entity
 
