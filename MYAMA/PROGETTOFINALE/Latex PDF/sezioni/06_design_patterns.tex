@@ -73,7 +73,7 @@ In questo modo, la classe \texttt{Prenotazione} si limita a mantenere una lista 
     \item \textbf{ConcreteObserver:} Le classi concrete che implementano l'interfaccia, ovvero \texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier} e \texttt{RegistroSedeObserver}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
 \end{itemize}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figure/pattern_observer.jpg}
     \caption{Struttura UML del Design Pattern Observer applicato a MyAma}
@@ -106,7 +106,7 @@ Il controller dedicato alla pianificazione interagirà unicamente con un'interfa
     \item \textbf{ConcreteStrategy:} Le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{MaxCaricoStrategy}, \texttt{ProssimitaCAPStrategy} e \texttt{BilanciamentoCaricoStrategy}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 \end{itemize}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figure/pattern_strategy.jpg}
     \caption{Struttura UML del Design Pattern Strategy per l'allocazione delle risorse}

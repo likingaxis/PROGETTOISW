@@ -11,19 +11,19 @@ Gli Activity Diagram descrivono i flussi operativi, le diramazioni decisionali e
 \subsubsection{Utente non registrato e Utente di sistema}
 Questi diagrammi modellano i flussi di base per l'ingresso nel sistema, dalla registrazione fino all'autenticazione.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_registrarsi_cittadino.jpg}
     \caption{Activity Diagram --- Registrarsi come cittadino}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_registrarsi_invito.jpg}
     \caption{Activity Diagram --- Registrarsi tramite codice di invito}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_effettuare_accesso.jpg}
     \caption{Activity Diagram --- Effettuare accesso}
@@ -32,31 +32,31 @@ Questi diagrammi modellano i flussi di base per l'ingresso nel sistema, dalla re
 \subsubsection{Cittadino}
 I seguenti diagrammi illustrano le interazioni del cittadino per usufruire dei servizi AMA, dalla prenotazione fino alla valutazione finale.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_richiesta_ritiro.jpg}
     \caption{Activity Diagram --- Richiesta ritiro a domicilio}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_prenota_conferimento.jpg}
     \caption{Activity Diagram --- Prenotare conferimento in sede}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_visualizzare_prenotazioni.jpg}
     \caption{Activity Diagram --- Visualizzare prenotazioni attive}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_annullare_prenotazione.jpg}
     \caption{Activity Diagram --- Annullare prenotazione}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_valutare_servizio.jpg}
     \caption{Activity Diagram --- Valutare il servizio}
@@ -65,19 +65,19 @@ I seguenti diagrammi illustrano le interazioni del cittadino per usufruire dei s
 \subsubsection{Autista e Operatore di Sede AMA}
 Questi diagrammi modellano il flusso di lavoro logistico del personale sul campo: lo svolgimento del servizio, i controlli di conformità e la registrazione dell'esito.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_autista_registrare_esito.jpg}
     \caption{Activity Diagram --- Registrare esito del ritiro (Autista)}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_operatore_verificare.jpg}
     \caption{Activity Diagram --- Verificare prenotazione del cittadino (Operatore di Sede)}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_operatore_esito_conferimento.jpg}
     \caption{Activity Diagram --- Registrare esito del conferimento (Operatore di Sede)}
@@ -86,25 +86,25 @@ Questi diagrammi modellano il flusso di lavoro logistico del personale sul campo
 \subsubsection{Amministratori (di Sede e Generale)}
 I processi amministrativi consentono di gestire le risorse umane, i mezzi logistici e la configurazione strutturale delle sedi.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_admin_sede_genera_codice.png}
     \caption{Activity Diagram --- Generare codice di invito (Amministratore Sede)}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_admin_sede_gestire_fasce.png}
     \caption{Activity Diagram --- Gestire disponibilità della sede e fasce orarie}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_admin_sede_gestire_lavoratori.png}
     \caption{Activity Diagram --- Gestire disponibilità dei lavoratori}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/act_generare_codice_admin.jpg}
     \caption{Activity Diagram --- Generare codice amministratore di sede (Amministratore Generale)}
@@ -118,19 +118,19 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Utente non registrato e Utente di sistema}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_Utente_non_Registrazione_cittadino.jpg}
     \caption{Sequence Diagram --- Registrarsi come cittadino}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_registrazione_Tramite_codice_invito.jpg}
     \caption{Sequence Diagram --- Registrarsi tramite codice di invito}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_EseguiAccesso.jpg}
     \caption{Sequence Diagram --- Effettuare accesso}
@@ -138,37 +138,37 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Cittadino}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramRichiedereRitiroADomicilio.jpg}
     \caption{Sequence Diagram --- Richiedere ritiro a domicilio}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramPrenotaConferimento.jpg}
     \caption{Sequence Diagram --- Prenotare conferimento presso sede AMA}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramVisualizzarePrenotazioniAttive.jpg}
     \caption{Sequence Diagram --- Visualizzare prenotazioni attive}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramAnnullarePrenotazione.jpg}
     \caption{Sequence Diagram --- Annullare prenotazione}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramVisualizzaStorico.jpg}
     \caption{Sequence Diagram --- Visualizzare storico prenotazioni}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_DiagramValutarePrenotazione.jpg}
     \caption{Sequence Diagram --- Valutare il servizio}
@@ -176,19 +176,19 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Autista AMA}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_Visualizzare_ritiri_assegnati.jpg}
     \caption{Sequence Diagram --- Visualizzare ritiri assegnati}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_Registrare_esito_ritiro.jpg}
     \caption{Sequence Diagram --- Registrare esito del ritiro}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_Chiamare_cittadino.jpg}
     \caption{Sequence Diagram --- Chiamare cittadino}
@@ -196,19 +196,19 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Operatore di Sede AMA}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceVisualizzarePrenotazioniSede.jpg}
     \caption{Sequence Diagram --- Visualizzare prenotazioni della sede}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceVerificarePrenotazioneCittadino.jpg}
     \caption{Sequence Diagram --- Verificare prenotazione del cittadino}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceRegistrareEsitoConferimento.jpg}
     \caption{Sequence Diagram --- Registrare esito del conferimento}
@@ -216,37 +216,37 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Amministratore di Sede AMA}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceGenerareCodiceInvitoPersonale.jpg}
     \caption{Sequence Diagram --- Generare codice invito}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaLavoratori.jpg}
     \caption{Sequence Diagram --- Gestire disponibilità dei lavoratori}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaVeicoli.jpg}
     \caption{Sequence Diagram --- Gestire disponibilità dei veicoli}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceGestireDisponibilitaSede.jpg}
     \caption{Sequence Diagram --- Gestire disponibilità della sede e fasce orarie}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceGestireAssociazioniSedeZoneCAP.jpg}
     \caption{Sequence Diagram --- Gestire associazioni tra sede e zone/CAP}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_SequenceRimuoverePersonaleAMA.jpg}
     \caption{Sequence Diagram --- Rimuovere personale}
@@ -254,13 +254,13 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 
 \subsubsection{Amministratore Generale AMA}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_AmministratoreGeneraleGeneraCodici.jpg}
     \caption{Sequence Diagram --- Generare codice amministratore di sede}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figure/seq_RimuovereAmministratoreDiSedeAMA.jpg}
     \caption{Sequence Diagram --- Rimuovere amministratore di sede AMA}
@@ -275,7 +275,7 @@ I Class Diagram rappresentano la struttura statica delle entità, le classi di c
 \subsubsection{Class Diagram Unrefined (Modello Concettuale di Dominio)}
 Il modello \textit{Unrefined} illustra le entità concettuali e le loro relazioni primarie derivanti direttamente dall'analisi del dominio applicativo e dal glossario.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.80\textheight,keepaspectratio]{figure/class_CLASS_DIAGRAM_unrefined.jpg}
     \caption{Class Diagram --- Versione Unrefined (Modello di Dominio)}
