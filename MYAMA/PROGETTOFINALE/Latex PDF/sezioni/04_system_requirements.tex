@@ -1,6 +1,6 @@
 \section{System Requirements (Requisiti di Sistema)}
 
-I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e le regole di business che la piattaforma software \textbf{MyAma} deve soddisfare, in conformità alle linee guida dello standard IEEE 830-1998.
+I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e regole derivanti dal dominio, che la piattaforma software \textbf{MyAma} deve soddisfare.
 
 % =========================================================================
 % 4.1 REQUISITI FUNZIONALI
@@ -27,7 +27,7 @@ Utente di sistema & \textbf{RF-03} & Autenticazione & Il sistema deve permettere
 
 Cittadino & \textbf{RF-04} & Richiesta ritiro a domicilio & Il sistema deve permettere al cittadino di prenotare un ritiro a domicilio fornendo indirizzo, CAP e i dettagli del rifiuto ingombrante. \\ \hline
 
-Cittadino & \textbf{RF-05} & Verifica zona coperta & Il sistema deve verificare che il CAP o la zona indicata dal cittadino per il ritiro a domicilio sia effettivamente coperta dal servizio. \\ \hline
+Cittadino & \textbf{RF-05} & Fornire sedi coperte & Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o la zona specificata dal Cittadino nella configurazione del suo profilo. \\ \hline
 
 Cittadino & \textbf{RF-06} & Prenotazione conferimento & Il sistema deve permettere al cittadino di prenotare il conferimento del rifiuto presso una sede AMA compatibile con la propria zona. \\ \hline
 
@@ -37,7 +37,7 @@ Autista AMA & \textbf{RF-08} & Visualizzazione ritiri assegnati & Il sistema dev
 
 Autista AMA & \textbf{RF-09} & Registrazione esito ritiro & Il sistema deve permettere all'autista di registrare l'esito (es. positivo o negativo) del ritiro a domicilio effettuato. \\ \hline
 
-Operatore di Sede & \textbf{RF-10} & Verifica e registrazione conferimento & Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito al momento dello scarico del rifiuto. \\ \hline
+Operatore di Sede & \textbf{RF-10} & Verifica e registrazione conferimento & Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito. \\ \hline
 
 Amministratore Sede & \textbf{RF-11} & Gestione risorse e disponibilità & Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. \\ \hline
 
@@ -82,7 +82,7 @@ Questa sezione descrive i vincoli di qualità e le caratteristiche misurabili ch
 
 \textbf{RNF-07} & Usabilità & Il sistema deve offrire un'interfaccia semplice e intuitiva. Un cittadino deve poter completare una prenotazione in un massimo di \textbf{5 passaggi guidati}, con controlli che prevengano o segnalino gli errori di inserimento. Le funzionalità destinate al personale AMA devono essere organizzate in modo da ridurre al minimo la formazione necessaria. \\ \hline
 
-\textbf{RNF-08} & Sicurezza & Il sistema deve garantire riservatezza e integrità dei dati personali e aziendali. Le comunicazioni di rete devono utilizzare protocolli cifrati e le password devono essere memorizzate mediante algoritmi di hashing sicuri. L'accesso alle funzionalità e ai dati deve essere regolato mediante controllo degli accessi basato sui ruoli (\textbf{RBAC}): ciascun utente può accedere esclusivamente alle operazioni previste dal proprio ruolo e, per il personale AMA, ai dati necessari allo svolgimento delle attività della propria sede o competenza. \\ \hline
+\textbf{RNF-08} & Sicurezza & Il sistema deve garantire riservatezza e integrità dei dati personali e aziendali. Le comunicazioni di rete devono utilizzare protocolli cifrati e le password devono essere memorizzate mediante algoritmi di hashing sicuri. L'accesso alle funzionalità e ai dati deve essere regolato mediante controllo degli accessi basato sui ruoli (\textbf{RBAC}): ciascun utente può accedere esclusivamente alle operazioni previste dal proprio ruolo e, per il personale AMA, ai dati necessari allo svolgimento delle attività della propria sede o competenza.\newline\newline L'autenticazione dell'utente dovrebbe avvenire mediante l'uso di token di autenticazione per validare la sessione, che il server può rilasciare all'utente al momento del login. Successivamente l'utente specifica al server il token ad ogni richiesta. \\ \hline
 \end{longtable}
 \end{center}
 
@@ -103,7 +103,7 @@ Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto `
 \rowcolor{tableheader} \textbf{ID} & \textbf{Regola di Dominio} & \textbf{Descrizione} \\ \hline
 \endhead
 
-\textbf{RD-01} & Competenza Territoriale & Una richiesta di ritiro a domicilio o la scelta di una sede per il conferimento sono vincolate dalla competenza territoriale e dalle fasce orarie operative disponibili delle sedi. Il sistema può accettare richieste solo se il CAP o la zona indicata dall'utente sono coperti e assegnati a una Sede AMA attiva. \\ \hline
+\textbf{RD-01} & Competenza Territoriale & Una richiesta di ritiro a domicilio o la scelta di una sede per il conferimento sono vincolate dalla competenza territoriale e dalle fasce orarie operative disponibili delle sedi. Il sistema può accettare richieste solo se il CAP o la zona indicata nella richiesta utente sono coperti e assegnati a una Sede AMA attiva. \\ \hline
 
 \textbf{RD-02} & Vincolo di Capacità dei Veicoli & Durante la pianificazione dei ritiri a domicilio, il sistema non può assegnare a un singolo veicolo un numero di prenotazioni il cui peso o volume stimato superi il carico massimo consentito (capacità) del veicolo stesso per quel turno. Inoltre il rifiuto è ritirabile solo se conforme a quanto dichiarato, e se la sede o il veicolo assegnato sono abilitati a gestirlo. \\ \hline
 

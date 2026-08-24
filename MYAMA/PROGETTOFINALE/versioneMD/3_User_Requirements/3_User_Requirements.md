@@ -231,18 +231,6 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 
 
-
-| **Use Case**            | **Chiamare cittadino**                                                                                                                             |
-| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrizione**         | **Flusso delle azioni**                                                                                                                            |
-| **Attori**              | Autista AMA, Cittadino registrato                                                                                                                  |
-| **Precondizioni**       | L’autista AMA ha effettuato l’accesso al sistema ed è associato al ritiro relativo al cittadino da contattare.                                     |
-| **Scenario principale** | L’autista seleziona il ritiro, il sistema mostra il recapito telefonico e l'autista avvia la chiamata in autonomia tramite il proprio dispositivo. |
-| **Scenari alternativi** | Le informazioni di contatto non sono disponibili: il sistema segnala la mancanza del recapito all’autista, impedendogli di effettuare la chiamata. |
-| **Post-condizioni**     | L’autista ha visualizzato il contatto telefonico del cittadino e ha avuto la possibilità di avviare la chiamata.                                   |
-
-
-
 % =========================================================================
 % 3.4 OPERATORE DI SEDE AMA
 % =========================================================================
@@ -436,3 +424,4 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 
 ---
+

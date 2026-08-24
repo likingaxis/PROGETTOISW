@@ -1,4 +1,4 @@
-\section{User Requirements Definition}
+﻿\section{User Requirements Definition}
 
 La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del sistema \textbf{MyAma}, organizzati e strutturati in base alle differenti classi di attori che interagiscono con la piattaforma. Ciascuna sottosezione comprende il relativo diagramma Use Case esportato e le relative schede descrittive tabellari conformi allo standard di specifica dei requisiti.
 
@@ -19,51 +19,30 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Registrarsi come cittadino}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L'utente non registrato accede alla pagina di registrazione come cittadino.
-        \item L'utente compila il modulo di registrazione inserendo i dati richiesti.
-        \item Viene eseguito il caso d'uso \textit{Accettare dati sulla privacy}.
-        \item Il sistema verifica la correttezza e la completezza dei dati inseriti.
-        \item Se i dati sono validi e l'informativa sulla privacy è stata accettata, il sistema crea l'account con il ruolo di cittadino.
-        \item Il sistema conferma l'avvenuta registrazione.
-    \end{enumerate}
 }{
     Utente non registrato
 }{
     L'utente non possiede ancora un account nel sistema.
 }{
-    L'utente inserisce correttamente i dati richiesti, accetta l'informativa sulla privacy e completa la registrazione come cittadino.
+    L'utente inserisce correttamente i dati richiesti.<br>Viene eseguito il caso d'uso "Accettare dati sulla privacy".<br>Il sistema crea l'account con il ruolo di cittadino.
 }{
-    \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item I dati inseriti sono incompleti o non validi: il sistema impedisce la registrazione e segnala gli errori da correggere.
-        \item L'utente non accetta l'informativa sulla privacy: il sistema non permette di completare la registrazione.
-    \end{itemize}
+    L'utente inserisce dati incompleti o non validi: il sistema segnala gli errori e mostra nuovamente il form di registrazione, permettendo all'utente di correggere i dati inseriti.
 }{
     L'utente risulta registrato nel sistema con il ruolo di cittadino e dispone di un account utilizzabile per accedere alle funzionalità riservate.
 }
 
 \usecasetable{Registrarsi tramite codice di invito}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L'utente non registrato accede alla procedura di registrazione tramite codice di invito.
-        \item L'utente inserisce il codice di invito ricevuto.
-        \item Il sistema verifica la validità del codice di invito.
-        \item L'utente inserisce i dati richiesti per la registrazione.
-        \item Viene eseguito il caso d'uso \textit{Accettare dati sulla privacy}.
-        \item Il sistema associa all'account il ruolo previsto dal codice di invito (autista AMA, operatore di sede AMA o amministratore di sede AMA).
-        \item Il sistema crea l'account e conferma l'avvenuta registrazione.
-    \end{enumerate}
 }{
     Utente non registrato
 }{
     L'utente non possiede ancora un account nel sistema e ha ricevuto un codice di invito valido.
 }{
-    L'utente inserisce un codice di invito valido e i dati richiesti, accetta l'informativa sulla privacy e completa la registrazione. Il sistema gli assegna il ruolo previsto dal codice.
+    L'utente inserisce un codice di invito valido e i dati richiesti.<br>Viene eseguito il caso d'uso "Accettare dati sulla privacy".<br>Il sistema assegna all'utente il ruolo previsto dal codice e completa la registrazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item Il codice di invito inserito non è valido o è scaduto: il sistema impedisce la registrazione e segnala l'errore.
-        \item I dati inseriti sono incompleti o non validi: il sistema impedisce la registrazione e segnala gli errori da correggere.
-        \item L'utente non accetta l'informativa sulla privacy: il sistema non permette di completare la registrazione.
+        \item Il codice di invito non è valido o è scaduto: il sistema impedisce la registrazione e segnala l'errore.
+        \item I dati inseriti sono incompleti o non validi: il sistema segnala gli errori e consente all'utente di correggere i dati.
     \end{itemize}
 }{
     L'utente risulta registrato nel sistema con il ruolo associato al codice di invito e dispone di un account utilizzabile per accedere alle funzionalità previste per tale ruolo.
@@ -71,12 +50,6 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Accettare dati sulla privacy}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Durante una procedura di registrazione, il sistema mostra l'informativa relativa al trattamento dei dati personali.
-        \item L'utente non registrato prende visione dell'informativa sulla privacy.
-        \item L'utente esprime il proprio consenso al trattamento dei dati personali.
-        \item Il sistema registra l'accettazione e consente di proseguire con la procedura di registrazione in corso.
-    \end{enumerate}
 }{
     Utente non registrato
 }{
@@ -91,13 +64,6 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Effettuare accesso}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L'utente registrato accede alla pagina di autenticazione.
-        \item L'utente inserisce le proprie credenziali di accesso.
-        \item Il sistema verifica la correttezza delle credenziali inserite.
-        \item Se le credenziali sono valide, il sistema identifica il ruolo dell'utente.
-        \item Il sistema consente l'accesso alle funzionalità previste per il ruolo dell'utente.
-    \end{enumerate}
 }{
     Utente registrato
 }{
@@ -130,28 +96,17 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Richiedere ritiro a domicilio}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino accede alla funzionalità per richiedere un ritiro a domicilio.
-        \item Il cittadino inserisce la tipologia e i dettagli del rifiuto ingombrante da smaltire.
-        \item Il cittadino invia la richiesta di ritiro da smaltire.
-        \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e fornire all'utente le sedi AMA compatibili.
-        \item Il sistema verifica la disponibilità delle risorse necessarie (lavoratori, veicoli e capacità di carico) per ogni sede compatibile.
-        \item Il sistema fornisce per ogni sede effettivamente disponibile le fasce orarie possibili per il ritiro attraverso il caso d'uso \textit{Visualizzare date e fasce orarie disponibili}.
-        \item Il sistema mostra il riepilogo della richiesta con le scelte possibili.
-        \item Il cittadino seleziona la sede, la data e la fascia oraria per confermare la richiesta di ritiro.
-        \item Il sistema crea la prenotazione e ne conferma l'avvenuta registrazione.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha effettuato l’accesso al sistema ed è abilitato all’utilizzo delle funzionalità di prenotazione.
+    Il cittadino ha effettuato l'accesso al sistema ed è abilitato all'utilizzo delle funzionalità di prenotazione.
 }{
-    Il cittadino inserisce correttamente le informazioni sul rifiuto e sull’indirizzo, il sistema verifica la copertura territoriale, individua una o più disponibilità e il cittadino conferma la richiesta specificando la sede compatibile e la fascia oraria. La prenotazione viene registrata.
+    Il cittadino inserisce correttamente le informazioni sul rifiuto e sull'indirizzo, il sistema verifica la copertura territoriale, individua una o più disponibilità e il cittadino conferma la richiesta specificando la sede compatibile e la fascia oraria. La prenotazione viene registrata.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
         \item La zona o il CAP indicati non risultano coperti dal servizio: il sistema informa il cittadino che il ritiro non è disponibile.
-        \item Non sono disponibili risorse per il ritiro: il sistema informa il cittadino dell’assenza di disponibilità al momento.
-        \item Le informazioni inserite sono incomplete o non valide: il sistema richiede al cittadino di correggerle.
+        \item Non sono disponibili risorse per il ritiro: il sistema informa il cittadino dell'assenza di disponibilità.
+        \item Le informazioni inserite sono incomplete o non valide: il sistema segnala gli errori e richiede al cittadino di correggere i dati.
     \end{itemize}
 }{
     La richiesta di ritiro a domicilio è registrata nel sistema come prenotazione e contiene le informazioni relative al cittadino, al rifiuto, al luogo del ritiro e alla disponibilità assegnata.
@@ -159,21 +114,10 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Prenotare conferimento presso sede AMA}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino seleziona la funzionalità per prenotare il conferimento di un rifiuto presso una sede AMA.
-        \item Il cittadino inserisce la tipologia e i dettagli del rifiuto da smaltire e carica una foto del rifiuto.
-        \item Il cittadino invia la richiesta di conferimento.
-        \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e fornire all'utente le sedi AMA compatibili.
-        \item Il sistema verifica la disponibilità delle risorse necessarie (capacità di ricezione e disponibilità oraria) per ogni sede compatibile.
-        \item Il sistema fornisce per ogni sede effettivamente disponibile le fasce orarie possibili per il conferimento attraverso il caso d'uso \textit{Visualizzare date e fasce orarie disponibili}.
-        \item Il sistema mostra il riepilogo della richiesta con le scelte possibili.
-        \item Il cittadino seleziona la sede, la data e la fascia oraria per confermare la richiesta di conferimento.
-        \item Il sistema crea la prenotazione e ne conferma l'avvenuta registrazione.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha effettuato l’accesso al sistema.
+    Il cittadino ha effettuato l'accesso al sistema.
 }{
     Il cittadino inserisce correttamente le informazioni e la foto del rifiuto, seleziona una sede compatibile e una disponibilità valida, e conferma il conferimento. Il sistema registra la prenotazione.
 }{
@@ -184,18 +128,12 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Visualizzare sedi compatibili}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino specifica il tipo di servizio richiesto tra conferimento o ritiro e con quale tipologia di rifiuto.
-        \item Durante la procedura di prenotazione per il servizio richiesto, il sistema acquisisce la zona o il CAP del cittadino.
-        \item Il sistema verifica quali sedi AMA possono accettare il servizio richiesto.
-        \item Il sistema mostra al cittadino l’elenco delle sedi compatibili disponibili.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
     Il cittadino ha avviato la procedura di prenotazione per il conferimento o per il ritiro, ed ha inserito le informazioni sul rifiuto.
 }{
-    Il sistema individua una o più sedi compatibili con la zona del cittadino e le mostra all’utente.
+    Il sistema individua una o più sedi compatibili con la zona del cittadino e le mostra all'utente.
 }{
     Non sono presenti sedi compatibili con la zona indicata: il sistema informa il cittadino che non è possibile effettuare il servizio.
 }{
@@ -204,11 +142,6 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Visualizzare date e fasce orarie disponibili}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino specifica il tipo di servizio richiesto tra conferimento o ritiro e con quale tipologia di rifiuto.
-        \item Il cittadino specifica un insieme di sedi da interrogare.
-        \item Il sistema mostra al cittadino le fasce orarie disponibili.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
@@ -223,23 +156,16 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Annullare prenotazione}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Viene eseguito il caso d'uso \textit{Visualizzare prenotazioni attive} per accedere all'elenco e selezionare una prenotazione.
-        \item Il cittadino richiede l’annullamento della prenotazione selezionata.
-        \item Il sistema verifica che la prenotazione possa ancora essere annullata.
-        \item Il cittadino conferma l’annullamento.
-        \item Il sistema aggiorna lo stato della prenotazione e conferma l’avvenuto annullamento.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
     Il cittadino possiede almeno una prenotazione attiva che può essere annullata.
 }{
-    Il cittadino seleziona una prenotazione attiva, ne richiede l’annullamento e conferma l’operazione. Il sistema aggiorna lo stato della prenotazione.
+    Il cittadino seleziona una prenotazione attiva, ne richiede l'annullamento e conferma l'operazione. Il sistema aggiorna lo stato della prenotazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
         \item La prenotazione selezionata non può più essere annullata: il sistema informa il cittadino e non modifica lo stato della prenotazione.
-        \item Il cittadino interrompe l’operazione prima della conferma: la prenotazione rimane invariata.
+        \item Il cittadino interrompe l'operazione prima della conferma: la prenotazione rimane invariata.
     \end{itemize}
 }{
     La prenotazione risulta annullata nel sistema.
@@ -247,37 +173,24 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Visualizzare prenotazioni attive}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino accede alla sezione dedicata alle proprie prenotazioni.
-        \item Il sistema recupera le prenotazioni attive associate al cittadino.
-        \item Il sistema mostra l’elenco delle prenotazioni attive.
-        \item Il cittadino seleziona una prenotazione per visualizzarne i dettagli.
-        \item Il sistema mostra le informazioni dettagliate della prenotazione (servizio, data, orario, luogo, stato).
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha effettuato l’accesso al sistema.
+    Il cittadino ha effettuato l'accesso al sistema.
 }{
     Il cittadino accede all'elenco delle prenotazioni e visualizza i dettagli di quelle attive.
 }{
     Il cittadino non possiede prenotazioni attive: il sistema informa che non sono presenti prenotazioni da visualizzare.
 }{
-    Il cittadino ha consultato l’elenco e i dettagli delle proprie prenotazioni attive.
+    Il cittadino ha consultato l'elenco e i dettagli delle proprie prenotazioni attive.
 }
 
 \usecasetable{Visualizzare storico prenotazioni}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino accede alla sezione dedicata allo storico delle prenotazioni.
-        \item Il sistema recupera le prenotazioni concluse o annullate associate al cittadino.
-        \item Il sistema mostra l’elenco dello storico.
-        \item Il cittadino seleziona una prenotazione per consultarne i dettagli.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha effettuato l’accesso al sistema.
+    Il cittadino ha effettuato l'accesso al sistema.
 }{
     Il cittadino accede allo storico e visualizza l'elenco e i dettagli delle proprie prenotazioni passate.
 }{
@@ -288,13 +201,6 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Valutare il servizio}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino accede ai dettagli di una prenotazione conclusa tramite lo storico.
-        \item Il sistema mostra la possibilità di lasciare una valutazione relativa al servizio ricevuto.
-        \item Il cittadino inserisce la propria valutazione.
-        \item Il cittadino conferma l’invio della valutazione.
-        \item Il sistema registra la valutazione associandola al servizio concluso.
-    \end{enumerate}
 }{
     Cittadino registrato
 }{
@@ -302,29 +208,9 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }{
     Il cittadino seleziona una prenotazione conclusa, inserisce la propria valutazione e la conferma. Il sistema registra correttamente la valutazione.
 }{
-    Il cittadino interrompe l’operazione prima della conferma: nessuna valutazione viene registrata.
+    Il cittadino interrompe l'operazione prima della conferma: nessuna valutazione viene registrata.
 }{
     La valutazione del cittadino risulta registrata e associata alla prenotazione conclusa.
-}
-
-\usecasetable{Chiamare Autista AMA}{
-    \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino accede ai dettagli di un ritiro a domicilio in corso o assegnato.
-        \item Il sistema mostra il recapito telefonico dell'autista AMA assegnato al ritiro.
-        \item Il cittadino avvia la chiamata all'autista tramite il proprio dispositivo (l'app Telefono).
-        \item Il sistema non gestisce la telefonata e non ne traccia necessariamente l'esito.
-    \end{enumerate}
-}{
-    Cittadino registrato
-}{
-    Il cittadino possiede una prenotazione di ritiro a domicilio in stato assegnato o in corso, con un autista AMA associato.
-}{
-    Il cittadino accede ai dettagli del ritiro, il sistema mostra il recapito telefonico dell'autista assegnato e il cittadino avvia la chiamata in autonomia tramite il proprio dispositivo.
-}{
-    Le informazioni di contatto non sono disponibili o l'autista non è ancora stato associato: il sistema segnala l'impossibilità di effettuare la chiamata.
-}{
-    Il cittadino ha visualizzato il recapito telefonico dell'autista AMA e ha avuto la possibilità di avviare la chiamata.
 }
 
 % =========================================================================
@@ -335,7 +221,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Diagramma}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_autista.jpg}
+    \includegraphics[width=0.85\textwidth]{figure/uc_autista.jpg}
     \caption{Use Case Diagram --- Autista AMA}
     \label{fig:uc_autista}
 \end{figure}
@@ -344,86 +230,44 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Visualizzare ritiri assegnati}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’autista AMA accede alla sezione dedicata ai ritiri assegnati.
-        \item Il sistema recupera i ritiri associati all’autista.
-        \item Il sistema mostra l’elenco dei ritiri assegnati, indicando le informazioni principali come data, fascia oraria e indirizzo.
-    \end{enumerate}
 }{
     Autista AMA
 }{
-    L’autista AMA ha effettuato l’accesso al sistema ed è associato ad almeno un ritiro.
+    L'autista AMA ha effettuato l'accesso al sistema ed è associato ad almeno un ritiro.
 }{
-    L’autista accede alla propria area e visualizza correttamente l’elenco dei ritiri che gli sono stati assegnati.
+    L'autista accede alla propria area e visualizza correttamente l'elenco dei ritiri che gli sono stati assegnati.
 }{
-    Non risultano ritiri assegnati all’autista: il sistema informa che non sono presenti attività da visualizzare.
+    Non risultano ritiri assegnati all'autista: il sistema informa che non sono presenti attività da visualizzare.
 }{
-    L’autista ha visualizzato l'elenco dei ritiri assegnati (nessuna modifica allo stato del sistema).
+    L'autista ha visualizzato l'elenco dei ritiri assegnati (nessuna modifica allo stato del sistema).
 }
 
 \usecasetable{Consultare dettagli del ritiro}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’autista AMA seleziona uno dei ritiri che gli sono stati assegnati.
-        \item Il sistema recupera le informazioni associate al ritiro selezionato.
-        \item Il sistema mostra i dettagli del ritiro, come indirizzo, data, fascia oraria, informazioni sul rifiuto e dati necessari per l’esecuzione del servizio.
-        \item L’autista consulta le informazioni disponibili prima di effettuare il ritiro.
-    \end{enumerate}
 }{
     Autista AMA
 }{
-    L’autista AMA ha effettuato l’accesso al sistema e ha selezionato un ritiro assegnato.
+    L'autista AMA ha effettuato l'accesso al sistema e ha selezionato un ritiro assegnato.
 }{
-    L’autista seleziona un ritiro e il sistema mostra correttamente tutte le informazioni necessarie per svolgere il servizio.
+    L'autista seleziona un ritiro e il sistema mostra correttamente tutte le informazioni necessarie per svolgere il servizio.
 }{
-    Le informazioni relative al ritiro non sono disponibili o risultano incomplete: il sistema segnala il problema all’autista.
+    Le informazioni relative al ritiro non sono disponibili o risultano incomplete: il sistema segnala il problema all'autista.
 }{
-    L’autista ha consultato i dettagli del ritiro senza modificare lo stato della prenotazione.
+    L'autista ha consultato i dettagli del ritiro senza modificare lo stato della prenotazione.
 }
 
 \usecasetable{Registrare esito del ritiro}{
-    \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’autista AMA seleziona il ritiro che ha effettuato.
-        \item Il sistema mostra le informazioni relative al ritiro selezionato.
-        \item L’autista indica l’esito del servizio svolto.
-        \item Il sistema verifica che l’esito inserito sia valido.
-        \item L’autista conferma la registrazione dell’esito.
-        \item Il sistema aggiorna lo stato della prenotazione in base all’esito registrato e conferma l’operazione.
-    \end{enumerate}
+    **Flusso delle azioni
 }{
-    Autista AMA
+    Autista
 }{
-    L’autista AMA ha effettuato l’accesso al sistema ed è associato al ritiro di cui deve registrare l’esito.
+    L'autista AMA ha effettuato l'accesso al sistema ed è associato al ritiro di cui deve registrare l'es
 }{
-    L’autista seleziona il ritiro effettuato, registra correttamente l’esito del servizio e conferma l’operazione. Il sistema aggiorna lo stato della prenotazione.
+    L'autista seleziona il ritiro effettuato, registra correttamente l'esito del servizio e conferma l'operazione. Il sistema aggiorna lo stato della prenotaz                                                                                                 | | \textbf{Scenari alternati L'esito inserito non è valido o è incompleto: il sistema segnala l'errore e richiede all'autista di correggere le informazioni.<br>Non è possibile aggiornare lo stato della prenotazione: il sistema segnala il problema e l'esito non viene registrato. trato. | | }Post-condizioni\textbf{     | L'esito del ritiro risulta registrato nel sistema e lo stato della prenotazione viene aggiornato di conse                                                                                                                                                  |     | }Use Case\textbf{            | }Chiamare cittadino\textbf{                                                                                                                             | | :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | | }Descrizione\textbf{         | }Flusso delle azioni\textbf{                                                                                                                            | | }Attori\textbf{              | Autista AMA, Cittadino registrato                                                                                                                  | | }Precondizioni\textbf{       | L'autista AMA ha effettuato l'accesso al sistema ed è associato al ritiro relativo al cittadino da contattare.                                     | | }Scenario principale** | L'autista seleziona il ritiro, il sistema mostra il recapito telefonico e l'autista avvia la chiamata in autonomia tramite il proprio dispositivo.
 }{
-    \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item L’esito inserito non è valido o è incompleto: il sistema segnala l’errore e richiede all’autista di correggere le informazioni.
-        \item Non è possibile aggiornare lo stato della prenotazione: il sistema segnala il problema e l’esito non viene registrato.
-    \end{itemize}
+    Le informazioni di contatto non sono disponibili: il sistema segnala la mancanza del recapito all'autista, impedendogli di effettuare la chiamata.
 }{
-    L’esito del ritiro risulta registrato nel sistema e lo stato della prenotazione viene aggiornato di conseguenza.
-}
-
-\usecasetable{Chiamare cittadino}{
-    \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’autista AMA seleziona il ritiro per il quale necessita di contattare il cittadino.
-        \item Il sistema mostra il recapito telefonico del cittadino associato alla prenotazione.
-        \item L’autista avvia la chiamata al cittadino tramite il proprio dispositivo (l'app Telefono).
-        \item Il sistema non gestisce la telefonata e non ne traccia necessariamente l'esito.
-    \end{enumerate}
-}{
-    Autista AMA
-}{
-    L’autista AMA ha effettuato l’accesso al sistema ed è associato al ritiro relativo al cittadino da contattare.
-}{
-    L’autista seleziona il ritiro, il sistema mostra il recapito telefonico e l'autista avvia la chiamata in autonomia tramite il proprio dispositivo.
-}{
-    Le informazioni di contatto non sono disponibili: il sistema segnala la mancanza del recapito all’autista, impedendogli di effettuare la chiamata.
-}{
-    L’autista ha visualizzato il contatto telefonico del cittadino e ha avuto la possibilità di avviare la chiamata.
+    L'autista ha visualizzato il contatto telefonico del cittadino e ha avuto la possibilità di avviare la chiamata.
 }
 
 % =========================================================================
@@ -434,72 +278,53 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Diagramma}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_operatore_sede.jpg}
+    \includegraphics[width=0.85\textwidth]{figure/uc_operatore_sede.jpg}
     \caption{Use Case Diagram --- Operatore di sede AMA}
-    \label{fig:uc_operatore_sede}
+    \label{fig:uc_operatore}
 \end{figure}
 
 \subsubsection{Documentazione}
 
 \usecasetable{Visualizzare prenotazioni della sede}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’operatore di sede AMA accede alla sezione dedicata alle prenotazioni della propria sede.
-        \item Il sistema recupera le prenotazioni associate alla sede in cui opera l’utente.
-        \item Il sistema mostra l’elenco delle prenotazioni relative ai conferimenti previsti presso la sede.
-    \end{enumerate}
 }{
     Operatore di sede AMA
 }{
-    L’operatore di sede AMA ha effettuato l’accesso al sistema ed è associato a una sede AMA.
+    L'operatore di sede AMA ha effettuato l'accesso al sistema ed è associato a una sede AMA.
 }{
-    L’operatore accede alla propria area e visualizza correttamente l’elenco delle prenotazioni associate alla sede.
+    L'operatore accede alla propria area e visualizza correttamente l'elenco delle prenotazioni associate alla sede.
 }{
-    Non risultano prenotazioni associate alla sede: il sistema informa l’operatore che non sono presenti conferimenti da visualizzare.
+    Non risultano prenotazioni associate alla sede: il sistema informa l'operatore che non sono presenti conferimenti da visualizzare.
 }{
-    L’operatore ha visualizzato l'elenco delle prenotazioni della sede (nessuna modifica allo stato delle prenotazioni).
+    L'operatore ha visualizzato l'elenco delle prenotazioni della sede (nessuna modifica allo stato delle prenotazioni).
 }
 
 \usecasetable{Consultare dettagli del conferimento}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’operatore di sede AMA seleziona una prenotazione relativa a un conferimento presso la propria sede.
-        \item Il sistema recupera le informazioni associate alla prenotazione selezionata.
-        \item Il sistema mostra i dettagli del conferimento, come cittadino, tipologia di rifiuto, data, fascia oraria e stato della prenotazione.
-        \item L’operatore consulta le informazioni disponibili per gestire correttamente il conferimento.
-    \end{enumerate}
 }{
     Operatore di sede AMA
 }{
-    L’operatore di sede AMA ha effettuato l’accesso al sistema e ha selezionato una prenotazione associata alla propria sede.
+    L'operatore di sede AMA ha effettuato l'accesso al sistema e ha selezionato una prenotazione associata alla propria sede.
 }{
-    L’operatore seleziona una prenotazione e il sistema mostra correttamente tutte le informazioni necessarie relative al conferimento.
+    L'operatore seleziona una prenotazione e il sistema mostra correttamente tutte le informazioni necessarie relative al conferimento.
 }{
-    Le informazioni relative al conferimento non sono disponibili o risultano incomplete: il sistema segnala il problema all’operatore.
+    Le informazioni relative al conferimento non sono disponibili o risultano incomplete: il sistema segnala il problema all'operatore.
 }{
-    L’operatore ha consultato i dettagli del conferimento senza modificare lo stato della prenotazione.
+    L'operatore ha consultato i dettagli del conferimento senza modificare lo stato della prenotazione.
 }
 
 \usecasetable{Verificare prenotazione del cittadino}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Il cittadino si presenta presso la sede AMA per effettuare il conferimento.
-        \item L’operatore di sede AMA individua la prenotazione associata al cittadino.
-        \item Il sistema mostra le informazioni relative alla prenotazione.
-        \item L’operatore confronta i dati della prenotazione con il conferimento da effettuare.
-        \item Il sistema verifica che la prenotazione sia valida e associata alla sede, alla data e alla fascia oraria previste.
-        \item Se la verifica ha esito positivo, l’operatore può procedere con la gestione del conferimento.
-    \end{enumerate}
 }{
     Operatore di sede AMA
 }{
     Il cittadino possiede una prenotazione per il conferimento presso la sede AMA e si presenta per usufruire del servizio.
 }{
-    L’operatore individua la prenotazione del cittadino, ne verifica la validità e conferma che il conferimento possa essere effettuato.
+    L'operatore individua la prenotazione del cittadino, ne verifica la validità e conferma che il conferimento possa essere effettuato.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item La prenotazione non viene trovata: il sistema informa l’operatore che non risulta alcuna prenotazione valida associata al cittadino.
-        \item La prenotazione risulta annullata, non valida o riferita a una sede, data o fascia oraria diversa: il sistema segnala l’incongruenza e non consente di procedere normalmente con il conferimento.
+        \item La prenotazione non viene trovata: il sistema informa l'operatore che non risulta alcuna prenotazione valida associata al cittadino.
+        \item La prenotazione risulta annullata, non valida o riferita a una sede, data o fascia oraria diversa: il sistema segnala l'incongruenza e non consente di procedere con il conferimento.
     \end{itemize}
 }{
     La prenotazione del cittadino risulta verificata e, se valida, il conferimento può essere effettuato.
@@ -507,27 +332,19 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Registrare esito del conferimento}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’operatore di sede AMA seleziona la prenotazione relativa al conferimento appena gestito.
-        \item Viene eseguito il caso d'uso \textit{Consultare dettagli del conferimento} e il sistema mostra le informazioni della prenotazione selezionata.
-        \item L’operatore indica l’esito del conferimento.
-        \item Il sistema verifica che l’esito inserito sia valido.
-        \item L’operatore conferma la registrazione dell’esito.
-        \item Il sistema aggiorna lo stato della prenotazione in base all’esito registrato e conferma l’operazione.
-    \end{enumerate}
 }{
     Operatore di sede AMA
 }{
-    L’operatore di sede AMA ha effettuato l’accesso al sistema e il conferimento associato alla prenotazione è stato verificato e gestito.
+    L'operatore di sede AMA ha effettuato l'accesso al sistema e il conferimento associato alla prenotazione è stato verificato e gestito.
 }{
-    L’operatore seleziona la prenotazione, registra correttamente l’esito del conferimento e conferma l’operazione. Il sistema aggiorna lo stato della prenotazione.
+    L'operatore seleziona la prenotazione, registra correttamente l'esito del conferimento e conferma l'operazione. Il sistema aggiorna lo stato della prenotazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item L’esito inserito è incompleto o non valido: il sistema segnala l’errore e richiede all’operatore di correggere le informazioni.
-        \item Non è possibile aggiornare lo stato della prenotazione: il sistema segnala il problema e l’esito non viene registrato.
+        \item L'esito inserito è incompleto o non valido: il sistema segnala l'errore e richiede all'operatore di correggere le informazioni.
+        \item Non è possibile aggiornare lo stato della prenotazione: il sistema segnala il problema e l'esito non viene registrato.
     \end{itemize}
 }{
-    L’esito del conferimento risulta registrato nel sistema e lo stato della prenotazione viene aggiornato di conseguenza.
+    L'esito del conferimento risulta registrato nel sistema e lo stato della prenotazione viene aggiornato di conseguenza.
 }
 
 % =========================================================================
@@ -538,33 +355,25 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Diagramma}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_amministratore_sede.jpg}
+    \includegraphics[width=0.85\textwidth]{figure/uc_amministratore_sede.jpg}
     \caption{Use Case Diagram --- Amministratore di sede AMA}
-    \label{fig:uc_amministratore_sede}
+    \label{fig:uc_admin_sede}
 \end{figure}
 
 \subsubsection{Documentazione}
 
 \usecasetable{Generare codice invito}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla funzionalità di generazione dei codici invito.
-        \item Il sistema mostra i ruoli per i quali l’amministratore è autorizzato a generare un codice.
-        \item L’amministratore seleziona il ruolo del personale da invitare.
-        \item Il sistema verifica che l’amministratore disponga dei permessi necessari per il ruolo selezionato.
-        \item Il sistema genera un codice invito associato al ruolo selezionato.
-        \item Il sistema mostra il codice generato all’amministratore, che può comunicarlo al futuro utente.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore di sede AMA ha effettuato l’accesso al sistema e dispone dei permessi per generare codici invito per i ruoli di propria competenza.
+    L'amministratore di sede AMA ha effettuato l'accesso al sistema e dispone dei permessi per generare codici invito per i ruoli di propria competenza.
 }{
-    L’amministratore seleziona un ruolo autorizzato e il sistema genera correttamente un codice invito utilizzabile per la registrazione del nuovo utente.
+    L'amministratore seleziona un ruolo autorizzato e il sistema genera correttamente un codice invito utilizzabile per la registrazione del nuovo utente.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item Il ruolo selezionato non rientra tra quelli che l’amministratore di sede è autorizzato a creare: il sistema impedisce la generazione del codice.
-        \item Si verifica un errore durante la generazione del codice: il sistema informa l’amministratore e non crea alcun invito valido.
+        \item Il ruolo selezionato non rientra tra quelli che l'amministratore di sede è autorizzato a creare: il sistema impedisce la generazione del codice.
+        \item Si verifica un errore durante la generazione del codice: il sistema informa l'amministratore e non crea alcun invito valido.
     \end{itemize}
 }{
     È stato generato un codice invito valido, associato al ruolo selezionato e utilizzabile da un utente non registrato per completare la relativa procedura di registrazione.
@@ -572,25 +381,15 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Gestire disponibilità dei lavoratori}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla sezione dedicata alla gestione dei lavoratori della propria sede.
-        \item Il sistema mostra l’elenco dei lavoratori associati alla sede e le relative disponibilità.
-        \item L’amministratore seleziona il lavoratore di cui intende gestire la disponibilità.
-        \item Il sistema mostra le informazioni attualmente registrate.
-        \item L’amministratore inserisce o modifica le disponibilità del lavoratore.
-        \item Il sistema verifica la validità delle informazioni inserite.
-        \item L’amministratore conferma le modifiche.
-        \item Il sistema aggiorna le disponibilità del lavoratore.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore ha effettuato l’accesso al sistema e il lavoratore interessato risulta associato alla sede amministrata.
+    L'amministratore ha effettuato l'accesso al sistema e il lavoratore interessato risulta associato alla sede amministrata.
 }{
-    L’amministratore seleziona un lavoratore, modifica correttamente le relative disponibilità e conferma l’operazione. Il sistema registra le nuove informazioni.
+    L'amministratore seleziona un lavoratore, modifica correttamente le relative disponibilità e conferma l'operazione. Il sistema registra le nuove informazioni.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item Le disponibilità inserite non sono valide o risultano incomplete: il sistema segnala l’errore e richiede una correzione.
+        \item Le disponibilità inserite non sono valide o risultano incomplete: il sistema segnala l'errore e richiede una correzione.
         \item Il lavoratore selezionato non risulta più associato alla sede: il sistema impedisce la modifica.
     \end{itemize}
 }{
@@ -599,26 +398,16 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Rimuovere personale}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla sezione dedicata al personale della sede.
-        \item Il sistema mostra i membri del personale associati alla sede.
-        \item L’amministratore seleziona il membro del personale che intende rimuovere.
-        \item Il sistema mostra le informazioni del profilo selezionato.
-        \item L’amministratore richiede la rimozione del membro dalla sede.
-        \item Il sistema richiede conferma dell’operazione.
-        \item L’amministratore conferma la rimozione.
-        \item Il sistema rimuove l’associazione tra il membro del personale e la sede e conferma l’operazione.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore ha effettuato l’accesso al sistema e il membro del personale selezionato risulta associato alla sede amministrata.
+    L'amministratore ha effettuato l'accesso al sistema e il membro del personale selezionato risulta associato alla sede amministrata.
 }{
-    L’amministratore seleziona un membro del personale, ne richiede la rimozione e conferma l’operazione. Il sistema aggiorna correttamente l’associazione.
+    L'amministratore seleziona un membro del personale, ne richiede la rimozione e conferma l'operazione. Il sistema aggiorna correttamente l'associazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item Il membro selezionato non risulta più associato alla sede: il sistema informa l’amministratore e non effettua modifiche.
-        \item L’amministratore annulla l’operazione prima della conferma: nessuna modifica viene effettuata.
+        \item L'amministratore annulla l'operazione prima della conferma: nessuna modifica viene effettuata.
+        \item Si verifica un errore durante la rimozione: il sistema informa l'amministratore e non modifica l'associazione.
     \end{itemize}
 }{
     Il membro del personale non risulta più associato alla sede AMA amministrata.
@@ -626,26 +415,16 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Gestire disponibilità dei veicoli}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla sezione dedicata ai veicoli.
-        \item Il sistema mostra i veicoli associati alla sede e le relative informazioni di disponibilità.
-        \item L’amministratore seleziona un veicolo.
-        \item Il sistema mostra la disponibilità attualmente registrata.
-        \item L’amministratore modifica le informazioni di disponibilità del veicolo.
-        \item Il sistema verifica la validità dei dati inseriti.
-        \item L’amministratore conferma le modifiche.
-        \item Il sistema aggiorna la disponibilità del veicolo.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore ha effettuato l’accesso al sistema e il veicolo selezionato risulta associato alla sede.
+    L'amministratore ha effettuato l'accesso al sistema e il veicolo selezionato risulta associato alla sede.
 }{
-    L’amministratore seleziona un veicolo, modifica correttamente la sua disponibilità e conferma l’operazione.
+    L'amministratore seleziona un veicolo, modifica correttamente la sua disponibilità e conferma l'operazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item I dati inseriti non sono validi: il sistema segnala l’errore e richiede una correzione.
-        \item Il veicolo non risulta disponibile o associato alla sede: il sistema impedisce l’aggiornamento delle relative informazioni.
+        \item I dati inseriti non sono validi: il sistema segnala l'errore e richiede una correzione.
+        \item Il veicolo non risulta più disponibile o associato alla sede: il sistema impedisce l'aggiornamento delle relative informazioni.
     \end{itemize}
 }{
     La disponibilità del veicolo risulta aggiornata nel sistema e può essere utilizzata per la pianificazione dei ritiri.
@@ -653,47 +432,30 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Gestire disponibilità della sede e fasce orarie}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla sezione dedicata alla configurazione della sede.
-        \item Il sistema mostra le informazioni relative ai giorni e alle fasce orarie attualmente disponibili per i conferimenti.
-        \item L’amministratore seleziona le disponibilità che intende modificare.
-        \item L’amministratore inserisce, modifica o rimuove giorni e fasce orarie disponibili.
-        \item Il sistema verifica la validità delle informazioni inserite.
-        \item L’amministratore conferma le modifiche.
-        \item Il sistema aggiorna le disponibilità della sede.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore ha effettuato l’accesso al sistema ed è associato alla sede da configurare.
+    L'amministratore ha effettuato l'accesso al sistema ed è associato alla sede da configurare.
 }{
-    L’amministratore modifica correttamente i giorni o le fasce orarie disponibili per i conferimenti e conferma l’operazione.
+    L'amministratore modifica correttamente i giorni o le fasce orarie disponibili per i conferimenti e conferma l'operazione.
 }{
-    Le fasce orarie inserite non sono valide o presentano incongruenze: il sistema segnala l’errore e richiede una correzione.
+    Le fasce orarie inserite non sono valide o presentano incongruenze: il sistema segnala l'errore e richiede una correzione.
 }{
     Le disponibilità della sede e le relative fasce orarie risultano aggiornate e possono essere utilizzate dal sistema per le prenotazioni dei cittadini.
 }
 
 \usecasetable{Gestire associazioni tra sede e zone/CAP}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore di sede AMA accede alla sezione dedicata alla copertura territoriale della sede.
-        \item Il sistema mostra le zone e i CAP attualmente associati alla sede.
-        \item L’amministratore aggiunge, modifica o rimuove un’associazione tra la sede e una zona o un CAP.
-        \item Il sistema verifica la validità dell’associazione indicata.
-        \item L’amministratore conferma le modifiche.
-        \item Il sistema aggiorna le associazioni territoriali della sede.
-    \end{enumerate}
 }{
     Amministratore di sede AMA
 }{
-    L’amministratore ha effettuato l’accesso al sistema ed è associato alla sede da configurare.
+    L'amministratore ha effettuato l'accesso al sistema ed è associato alla sede da configurare.
 }{
-    L’amministratore modifica correttamente le zone o i CAP associati alla propria sede e conferma l’operazione.
+    L'amministratore modifica correttamente le zone o i CAP associati alla propria sede e conferma l'operazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item La zona o il CAP indicati non sono validi: il sistema segnala l’errore e non registra l’associazione.
-        \item L’associazione indicata risulta già presente: il sistema informa l’amministratore e non crea un duplicato.
+        \item La zona o il CAP indicati non sono validi: il sistema segnala l'errore e non aggiorna l'associazione.
+        \item L'associazione indicata risulta già presente: il sistema informa l'amministratore e non crea un duplicato.
     \end{itemize}
 }{
     Le associazioni tra la sede AMA e le relative zone o CAP risultano aggiornate e possono essere utilizzate dal sistema per determinare le sedi compatibili con le richieste dei cittadini.
@@ -709,31 +471,23 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
     \centering
     \includegraphics[width=0.75\textwidth]{figure/uc_amministratore_generale.jpg}
     \caption{Use Case Diagram --- Amministratore generale AMA}
-    \label{fig:uc_amministratore_generale}
+    \label{fig:uc_admin_generale}
 \end{figure}
 
 \subsubsection{Documentazione}
 
 \usecasetable{Generare codice amministratore di sede}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore generale AMA accede alla funzionalità per la generazione dei codici invito.
-        \item Il sistema verifica che l’amministratore generale disponga dei permessi necessari.
-        \item L’amministratore generale seleziona la generazione di un codice destinato alla registrazione di un nuovo amministratore di sede AMA.
-        \item Il sistema genera un codice invito associato al ruolo di amministratore di sede AMA.
-        \item Il sistema mostra il codice generato all’amministratore generale.
-        \item L’amministratore generale può comunicare il codice al futuro amministratore di sede, che potrà utilizzarlo durante la registrazione.
-    \end{enumerate}
 }{
     Amministratore generale AMA
 }{
-    L’amministratore generale AMA ha effettuato l’accesso al sistema e dispone dei permessi necessari per generare codici invito destinati alla registrazione di amministratori di sede AMA.
+    L'amministratore generale AMA ha effettuato l'accesso al sistema e dispone dei permessi necessari per generare codici invito destinati alla registrazione di amministratori di sede AMA.
 }{
-    L’amministratore generale richiede la generazione di un nuovo codice invito per un amministratore di sede. Il sistema verifica i permessi, genera correttamente il codice e lo rende disponibile all’amministratore generale.
+    L'amministratore generale richiede la generazione di un nuovo codice invito per un amministratore di sede. Il sistema verifica i permessi, genera correttamente il codice e lo rende disponibile all'amministratore generale.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore generale non dispone dei permessi necessari: il sistema impedisce la generazione del codice.
-        \item Si verifica un errore durante la generazione: il sistema informa l’amministratore generale e non produce alcun codice valido.
+        \item L'amministratore generale annulla la generazione prima della conferma: nessun codice di invito viene generato.
+        \item Si verifica un errore durante la generazione: il sistema informa l'amministratore generale e non produce alcun codice valido.
     \end{itemize}
 }{
     È stato generato un codice invito valido associato al ruolo di amministratore di sede AMA, utilizzabile da un utente non registrato per completare la relativa procedura di registrazione.
@@ -741,28 +495,18 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 
 \usecasetable{Rimuovere amministratori di sede AMA}{
     \textbf{Flusso delle azioni}
-    \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore generale AMA accede alla sezione dedicata alla gestione degli amministratori di sede.
-        \item Il sistema mostra l’elenco degli amministratori di sede AMA registrati nel sistema.
-        \item L’amministratore generale seleziona l’amministratore di sede che intende rimuovere.
-        \item Il sistema mostra le informazioni relative all’amministratore selezionato.
-        \item L’amministratore generale richiede la rimozione dell’amministratore di sede.
-        \item Il sistema richiede conferma dell’operazione.
-        \item L’amministratore generale conferma la rimozione.
-        \item Il sistema rimuove o disabilita l’associazione dell’utente al ruolo di amministratore di sede AMA e conferma l’operazione.
-    \end{enumerate}
 }{
     Amministratore generale AMA
 }{
-    L’amministratore generale AMA ha effettuato l’accesso al sistema e l’amministratore di sede selezionato risulta registrato e attivo nel sistema.
+    L'amministratore generale AMA ha effettuato l'accesso al sistema e l'amministratore di sede selezionato risulta registrato e attivo nel sistema.
 }{
-    L’amministratore generale seleziona un amministratore di sede, ne richiede la rimozione e conferma l’operazione. Il sistema aggiorna correttamente le informazioni relative al ruolo dell’utente.
+    L'amministratore generale seleziona un amministratore di sede, ne richiede la rimozione e conferma l'operazione. Il sistema aggiorna correttamente le informazioni relative al ruolo dell'utente.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item L’amministratore selezionato non risulta più presente o attivo nel sistema: il sistema informa l’amministratore generale e non effettua modifiche.
-        \item L’amministratore generale interrompe l’operazione prima della conferma: nessuna modifica viene effettuata.
-        \item Il sistema non riesce a completare la rimozione: l’operazione viene annullata e viene mostrato un messaggio di errore.
+        \item L'amministratore generale annulla l'operazione prima della conferma: nessuna modifica viene effettuata.
+        \item Si verifica un errore durante la rimozione: il sistema informa l'amministratore generale e l'utente mantiene il ruolo di amministratore di sede.
     \end{itemize}
 }{
-    L’utente selezionato non risulta più abilitato a operare come amministratore di sede AMA nel sistema.
+    L'utente selezionato non risulta più abilitato a operare come amministratore di sede AMA nel sistema.
 }
+
