@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+         xmlns:uml="http://schema.omg.org/spec/UML/2.0"
+         xmi:version="2.1">
+
+  <uml:Model xmi:type="uml:Model" xmi:id="model_root" name="MyAma_Refined_ClassDiagram">
+
+    <!-- ENUMERATIONS -->
+
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_StatoPrenotazione" name="StatoPrenotazione">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_IN_ATTESA" name="IN_ATTESA"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_CONFERMATA" name="CONFERMATA"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_IN_CORSO" name="IN_CORSO"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_COMPLETATA" name="COMPLETATA"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_ANNULLATA" name="ANNULLATA"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_NON_ESEGUITA" name="NON_ESEGUITA"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_EsitoServizio" name="EsitoServizio">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_COMPLETATO" name="COMPLETATO"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_CITTADINO_ASSENTE" name="CITTADINO_ASSENTE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_RIFIUTO_NON_CONFORME" name="RIFIUTO_NON_CONFORME"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_RuoloUtente" name="RuoloUtente">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_CITTADINO" name="CITTADINO"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_AUTISTA" name="AUTISTA"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_OPERATORE_SEDE" name="OPERATORE_SEDE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_AMMINISTRATORE_SEDE" name="AMMINISTRATORE_SEDE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_AMMINISTRATORE_GENERALE" name="AMMINISTRATORE_GENERALE"/>
+    </packagedElement>
+
+    <!-- BOUNDARY LAYER -->
+
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_boundary" name="Boundary Layer">
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_RegistrationInterface" name="RegistrationInterface"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_InvitationRegistrationInterface" name="InvitationRegistrationInterface"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_LoginInterface" name="LoginInterface"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_HomeBookInterface" name="HomeBookInterface"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_WasteDisposalInterface" name="WasteDisposalInterface"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_BookingHistory" name="BookingHistory"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_PannelloAutistaUI" name="PannelloAutistaUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_PannelloSedeUI" name="PannelloSedeUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ControlloVarcoUI" name="ControlloVarcoUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneConferimentoUI" name="GestioneConferimentoUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneCodiciUI" name="GestioneCodiciUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestionePersonaleUI" name="GestionePersonaleUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneSedeUI" name="GestioneSedeUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneVeicoliUI" name="GestioneVeicoliUI"/>
+    </packagedElement>
+
+    <!-- CONTROL LAYER -->
+
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_control" name="Control Layer">
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserAccessEndpoint" name="UserAccessEndpoint"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserRegistry" name="UserRegistry"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UserFactory" name="UserFactory"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AMAServiceController" name="AMAServiceController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestoreRitiriController" name="GestoreRitiriController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestoreEsitoController" name="GestoreEsitoController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ContattoController" name="ContattoController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneSedeController" name="GestioneSedeController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AccettazioneController" name="AccettazioneController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneConferimentoController" name="GestioneConferimentoController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_CodiciController" name="CodiciController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestionePersonaleController" name="GestionePersonaleController"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_GestioneVeicoliController" name="GestioneVeicoliController"/>
+    </packagedElement>
+
+    <!-- ENTITY LAYER -->
+
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_entity" name="Entity Layer">
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_UtenteSistema" name="UtenteSistema" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a01" name="id" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a02" name="nome" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a03" name="cognome" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a04" name="email" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a05" name="passwordHash" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="a06" name="abilitato" visibility="private"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="o01" name="effettuaAccesso" visibility="public">
+          <ownedParameter xmi:id="p01a" name="email" direction="in"/>
+          <ownedParameter xmi:id="p01b" name="password" direction="in"/>
+          <ownedParameter xmi:id="p01r" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="o02" name="effettuaLogout" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="o03" name="verificaEmail" visibility="public">
+          <ownedParameter xmi:id="p03a" name="email" direction="in"/>
+          <ownedParameter xmi:id="p03r" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="o04" name="isAbilitato" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Cittadino" name="Cittadino">
+        <ownedAttribute xmi:id="a07" name="codiceFiscale" visibility="private"/>
+        <ownedAttribute xmi:id="a08" name="telefono" visibility="private"/>
+        <ownedAttribute xmi:id="a09" name="indirizzo" visibility="private"/>
+        <ownedAttribute xmi:id="a10" name="CAP" visibility="private"/>
+        <ownedOperation xmi:id="o05" name="registrati" visibility="public"><ownedParameter xmi:id="p05a" name="datiPersonali" direction="in"/><ownedParameter xmi:id="p05r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o06" name="richiediRitiro" visibility="public"/>
+        <ownedOperation xmi:id="o07" name="prenotaConferimento" visibility="public"/>
+        <ownedOperation xmi:id="o08" name="visualizzaPrenotazioniAttive" visibility="public"/>
+        <ownedOperation xmi:id="o09" name="annullaPrenotazione" visibility="public"><ownedParameter xmi:id="p09a" name="idPrenotazione" direction="in"/><ownedParameter xmi:id="p09r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o10" name="consultaStoricoPrenotazioni" visibility="public"/>
+        <ownedOperation xmi:id="o11" name="valutaServizio" visibility="public"><ownedParameter xmi:id="p11a" name="idPrenotazione" direction="in"/><ownedParameter xmi:id="p11b" name="voto" direction="in"/><ownedParameter xmi:id="p11c" name="commento" direction="in"/></ownedOperation>
+        <generalization xmi:id="g01" general="cls_UtenteSistema"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_LavoratoreAMA" name="LavoratoreAMA" isAbstract="true">
+        <ownedAttribute xmi:id="a11" name="idDipendente" visibility="private"/>
+        <ownedAttribute xmi:id="a12" name="telefono" visibility="private"/>
+        <ownedOperation xmi:id="o12" name="registratiConCodiceInvito" visibility="public"><ownedParameter xmi:id="p12a" name="codice" direction="in"/><ownedParameter xmi:id="p12r" direction="return"/></ownedOperation>
+        <generalization xmi:id="g02" general="cls_UtenteSistema"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AutistaAMA" name="AutistaAMA">
+        <ownedOperation xmi:id="o13" name="visualizzaRitiriAssegnati" visibility="public"/>
+        <ownedOperation xmi:id="o14" name="consultaDettagliRitiro" visibility="public"><ownedParameter xmi:id="p14a" name="idRitiro" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o15" name="registraEsitoRitiro" visibility="public"><ownedParameter xmi:id="p15a" name="idRitiro" direction="in"/><ownedParameter xmi:id="p15b" name="esito" direction="in"/><ownedParameter xmi:id="p15r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o16" name="chiamaCittadino" visibility="public"><ownedParameter xmi:id="p16a" name="idCittadino" direction="in"/></ownedOperation>
+        <generalization xmi:id="g03" general="cls_LavoratoreAMA"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_OperatoreSedeAMA" name="OperatoreSedeAMA">
+        <ownedOperation xmi:id="o17" name="visualizzaPrenotazioniSede" visibility="public"/>
+        <ownedOperation xmi:id="o18" name="consultaDettagliConferimento" visibility="public"><ownedParameter xmi:id="p18a" name="idPrenotazione" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o19" name="verificaPrenotazione" visibility="public"><ownedParameter xmi:id="p19a" name="idPrenotazione" direction="in"/><ownedParameter xmi:id="p19r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o20" name="registraEsitoConferimento" visibility="public"><ownedParameter xmi:id="p20a" name="idPrenotazione" direction="in"/><ownedParameter xmi:id="p20b" name="esito" direction="in"/><ownedParameter xmi:id="p20r" direction="return"/></ownedOperation>
+        <generalization xmi:id="g04" general="cls_LavoratoreAMA"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreSedeAMA" name="AmministratoreSedeAMA">
+        <ownedOperation xmi:id="o21" name="generaCodiceInvitoPersonale" visibility="public"><ownedParameter xmi:id="p21a" name="ruolo" direction="in"/><ownedParameter xmi:id="p21r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o22" name="gestisciDisponibilitaLavoratori" visibility="public"/>
+        <ownedOperation xmi:id="o23" name="gestisciDisponibilitaVeicoli" visibility="public"/>
+        <ownedOperation xmi:id="o24" name="gestisciDisponibilitaSede" visibility="public"/>
+        <ownedOperation xmi:id="o25" name="gestisciAssociazioniSedeZoneCAP" visibility="public"/>
+        <ownedOperation xmi:id="o26" name="rimuoviPersonaleAMA" visibility="public"><ownedParameter xmi:id="p26a" name="idUtente" direction="in"/><ownedParameter xmi:id="p26r" direction="return"/></ownedOperation>
+        <generalization xmi:id="g05" general="cls_UtenteSistema"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_AmministratoreGeneraleAMA" name="AmministratoreGeneraleAMA">
+        <ownedOperation xmi:id="o27" name="generaCodiceAmministratoreSede" visibility="public"><ownedParameter xmi:id="p27a" name="sede" direction="in"/><ownedParameter xmi:id="p27r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o28" name="rimuoviAmministratoreSede" visibility="public"><ownedParameter xmi:id="p28a" name="idUtente" direction="in"/><ownedParameter xmi:id="p28r" direction="return"/></ownedOperation>
+        <generalization xmi:id="g06" general="cls_UtenteSistema"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Prenotazione" name="Prenotazione" isAbstract="true">
+        <ownedAttribute xmi:id="a13" name="idPrenotazione" visibility="private"/>
+        <ownedAttribute xmi:id="a14" name="data" visibility="private"/>
+        <ownedAttribute xmi:id="a15" name="fasciaOraria" visibility="private"/>
+        <ownedAttribute xmi:id="a16" name="stato" visibility="private"/>
+        <ownedAttribute xmi:id="a17" name="codicePrenotazione" visibility="private"/>
+        <ownedOperation xmi:id="o29" name="creaPrenotazione" visibility="public"/>
+        <ownedOperation xmi:id="o30" name="annulla" visibility="public"/>
+        <ownedOperation xmi:id="o31" name="modificaStato" visibility="public"><ownedParameter xmi:id="p31a" name="stato" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o32" name="verificaStato" visibility="public"/>
+        <ownedOperation xmi:id="o33" name="getDettagli" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_RitiroDomicilio" name="RitiroDomicilio">
+        <ownedAttribute xmi:id="a18" name="indirizzoRitiro" visibility="private"/>
+        <ownedAttribute xmi:id="a19" name="esito" visibility="private"/>
+        <ownedOperation xmi:id="o34" name="creaRitiro" visibility="public"><ownedParameter xmi:id="p34a" name="indirizzo" direction="in"/><ownedParameter xmi:id="p34r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o35" name="impostaIndirizzoRitiro" visibility="public"><ownedParameter xmi:id="p35a" name="indirizzo" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o36" name="registraEsito" visibility="public"><ownedParameter xmi:id="p36a" name="esito" direction="in"/></ownedOperation>
+        <generalization xmi:id="g07" general="cls_Prenotazione"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ConferimentoSede" name="ConferimentoSede">
+        <ownedAttribute xmi:id="a20" name="esito" visibility="private"/>
+        <ownedOperation xmi:id="o37" name="creaConferimento" visibility="public"><ownedParameter xmi:id="p37a" name="sede" direction="in"/><ownedParameter xmi:id="p37r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o38" name="impostaSede" visibility="public"><ownedParameter xmi:id="p38a" name="sede" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o39" name="registraEsito" visibility="public"><ownedParameter xmi:id="p39a" name="esito" direction="in"/></ownedOperation>
+        <generalization xmi:id="g08" general="cls_Prenotazione"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Rifiuto" name="Rifiuto">
+        <ownedAttribute xmi:id="a21" name="descrizione" visibility="private"/>
+        <ownedAttribute xmi:id="a22" name="pesoStimato" visibility="private"/>
+        <ownedAttribute xmi:id="a23" name="volumeStimato" visibility="private"/>
+        <ownedAttribute xmi:id="a24" name="foto" visibility="private"/>
+        <ownedOperation xmi:id="o40" name="creaRifiuto" visibility="public"><ownedParameter xmi:id="p40a" name="datiRifiuto" direction="in"/><ownedParameter xmi:id="p40r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o41" name="aggiungiFoto" visibility="public"><ownedParameter xmi:id="p41a" name="foto" direction="in"/></ownedOperation>
+        <ownedOperation xmi:id="o42" name="modificaDatiRifiuto" visibility="public"/>
+        <ownedOperation xmi:id="o43" name="getDettagli" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_TipologiaRifiuto" name="TipologiaRifiuto">
+        <ownedAttribute xmi:id="a25" name="idTipologia" visibility="private"/>
+        <ownedAttribute xmi:id="a26" name="nome" visibility="private"/>
+        <ownedAttribute xmi:id="a27" name="descrizione" visibility="private"/>
+        <ownedOperation xmi:id="o44" name="verificaCompatibilita" visibility="public"><ownedParameter xmi:id="p44a" name="rifiuto" direction="in"/><ownedParameter xmi:id="p44r" direction="return"/></ownedOperation>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_SedeAMA" name="SedeAMA">
+        <ownedAttribute xmi:id="a28" name="idSede" visibility="private"/>
+        <ownedAttribute xmi:id="a29" name="nome" visibility="private"/>
+        <ownedAttribute xmi:id="a30" name="indirizzo" visibility="private"/>
+        <ownedAttribute xmi:id="a31" name="CAP" visibility="private"/>
+        <ownedOperation xmi:id="o45" name="verificaCompatibilita" visibility="public"><ownedParameter xmi:id="p45a" name="cap" direction="in"/><ownedParameter xmi:id="p45b" name="tipologia" direction="in"/><ownedParameter xmi:id="p45r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o46" name="visualizzaDisponibilita" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ZonaCAP" name="ZonaCAP">
+        <ownedAttribute xmi:id="a32" name="CAP" visibility="private"/>
+        <ownedAttribute xmi:id="a33" name="zona" visibility="private"/>
+        <ownedOperation xmi:id="o47" name="verificaCAP" visibility="public"><ownedParameter xmi:id="p47a" name="cap" direction="in"/><ownedParameter xmi:id="p47r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o48" name="getSediCompatibili" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Disponibilita" name="Disponibilita" isAbstract="true">
+        <ownedAttribute xmi:id="a34" name="data" visibility="private"/>
+        <ownedAttribute xmi:id="a35" name="oraInizio" visibility="private"/>
+        <ownedAttribute xmi:id="a36" name="oraFine" visibility="private"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_DisponibilitaLavoratore" name="DisponibilitaLavoratore">
+        <generalization xmi:id="g09" general="cls_Disponibilita"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_DisponibilitaVeicolo" name="DisponibilitaVeicolo">
+        <generalization xmi:id="g10" general="cls_Disponibilita"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_DisponibilitaSede" name="DisponibilitaSede">
+        <ownedAttribute xmi:id="a37" name="postiDisponibili" visibility="private"/>
+        <ownedOperation xmi:id="o49" name="prenotaSlot" visibility="public"/>
+        <ownedOperation xmi:id="o50" name="liberaSlot" visibility="public"/>
+        <generalization xmi:id="g11" general="cls_Disponibilita"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Veicolo" name="Veicolo">
+        <ownedAttribute xmi:id="a38" name="idVeicolo" visibility="private"/>
+        <ownedAttribute xmi:id="a39" name="targa" visibility="private"/>
+        <ownedAttribute xmi:id="a40" name="capacitaPeso" visibility="private"/>
+        <ownedAttribute xmi:id="a41" name="capacitaVolume" visibility="private"/>
+        <ownedOperation xmi:id="o51" name="verificaDisponibilita" visibility="public"><ownedParameter xmi:id="p51a" name="data" direction="in"/><ownedParameter xmi:id="p51r" direction="return"/></ownedOperation>
+        <ownedOperation xmi:id="o52" name="verificaCapacita" visibility="public"><ownedParameter xmi:id="p52a" name="peso" direction="in"/><ownedParameter xmi:id="p52b" name="volume" direction="in"/><ownedParameter xmi:id="p52r" direction="return"/></ownedOperation>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Assegnazione" name="Assegnazione">
+        <ownedAttribute xmi:id="a42" name="idAssegnazione" visibility="private"/>
+        <ownedAttribute xmi:id="a43" name="dataTurno" visibility="private"/>
+        <ownedOperation xmi:id="o53" name="creaAssegnazione" visibility="public"/>
+        <ownedOperation xmi:id="o54" name="getDettagliAssegnazione" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_CodiceInvito" name="CodiceInvito">
+        <ownedAttribute xmi:id="a44" name="codice" visibility="private"/>
+        <ownedAttribute xmi:id="a45" name="ruoloAssociato" visibility="private"/>
+        <ownedAttribute xmi:id="a46" name="scadenza" visibility="private"/>
+        <ownedAttribute xmi:id="a47" name="utilizzato" visibility="private"/>
+        <ownedOperation xmi:id="o55" name="verificaValidita" visibility="public"/>
+        <ownedOperation xmi:id="o56" name="utilizza" visibility="public"/>
+        <ownedOperation xmi:id="o57" name="isUtilizzato" visibility="public"/>
+      </packagedElement>
+
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_Valutazione" name="Valutazione">
+        <ownedAttribute xmi:id="a48" name="voto" visibility="private"/>
+        <ownedAttribute xmi:id="a49" name="commento" visibility="private"/>
+        <ownedOperation xmi:id="o58" name="creaValutazione" visibility="public"><ownedParameter xmi:id="p58a" name="voto" direction="in"/><ownedParameter xmi:id="p58b" name="commento" direction="in"/><ownedParameter xmi:id="p58r" direction="return"/></ownedOperation>
+      </packagedElement>
+
+    </packagedElement>
+
+    <!-- ASSOCIATIONS -->
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc01" name="possiede">
+      <ownedEnd xmi:id="ae01a" name="cittadino" type="cls_Cittadino" association="assoc01"><lowerValue xmi:id="lv01a" value="1"/><upperValue xmi:id="uv01a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae01b" name="prenotazioni" type="cls_Prenotazione" association="assoc01"><lowerValue xmi:id="lv01b" value="0"/><upperValue xmi:id="uv01b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc02" name="riguarda">
+      <ownedEnd xmi:id="ae02a" name="prenotazione" type="cls_Prenotazione" aggregation="composite" association="assoc02"><lowerValue xmi:id="lv02a" value="1"/><upperValue xmi:id="uv02a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae02b" name="rifiuto" type="cls_Rifiuto" association="assoc02"><lowerValue xmi:id="lv02b" value="1"/><upperValue xmi:id="uv02b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc03" name="classifica">
+      <ownedEnd xmi:id="ae03a" name="tipologia" type="cls_TipologiaRifiuto" association="assoc03"><lowerValue xmi:id="lv03a" value="1"/><upperValue xmi:id="uv03a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae03b" name="rifiuti" type="cls_Rifiuto" association="assoc03"><lowerValue xmi:id="lv03b" value="0"/><upperValue xmi:id="uv03b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc04" name="valutazione">
+      <ownedEnd xmi:id="ae04a" name="prenotazione" type="cls_Prenotazione" aggregation="composite" association="assoc04"><lowerValue xmi:id="lv04a" value="1"/><upperValue xmi:id="uv04a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae04b" name="valutazione" type="cls_Valutazione" association="assoc04"><lowerValue xmi:id="lv04b" value="0"/><upperValue xmi:id="uv04b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc05" name="presso">
+      <ownedEnd xmi:id="ae05a" name="conferimenti" type="cls_ConferimentoSede" association="assoc05"><lowerValue xmi:id="lv05a" value="0"/><upperValue xmi:id="uv05a" value="*"/></ownedEnd>
+      <ownedEnd xmi:id="ae05b" name="sede" type="cls_SedeAMA" association="assoc05"><lowerValue xmi:id="lv05b" value="1"/><upperValue xmi:id="uv05b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc06" name="lavora presso">
+      <ownedEnd xmi:id="ae06a" name="operatori" type="cls_OperatoreSedeAMA" association="assoc06"><lowerValue xmi:id="lv06a" value="0"/><upperValue xmi:id="uv06a" value="*"/></ownedEnd>
+      <ownedEnd xmi:id="ae06b" name="sede" type="cls_SedeAMA" association="assoc06"><lowerValue xmi:id="lv06b" value="1"/><upperValue xmi:id="uv06b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc07" name="amministra">
+      <ownedEnd xmi:id="ae07a" name="amministratore" type="cls_AmministratoreSedeAMA" association="assoc07"><lowerValue xmi:id="lv07a" value="0"/><upperValue xmi:id="uv07a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae07b" name="sede" type="cls_SedeAMA" association="assoc07"><lowerValue xmi:id="lv07b" value="1"/><upperValue xmi:id="uv07b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc08" name="copre">
+      <ownedEnd xmi:id="ae08a" name="sedi" type="cls_SedeAMA" association="assoc08"><lowerValue xmi:id="lv08a" value="0"/><upperValue xmi:id="uv08a" value="*"/></ownedEnd>
+      <ownedEnd xmi:id="ae08b" name="zone" type="cls_ZonaCAP" association="assoc08"><lowerValue xmi:id="lv08b" value="0"/><upperValue xmi:id="uv08b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc09" name="dispone di">
+      <ownedEnd xmi:id="ae09a" name="sede" type="cls_SedeAMA" aggregation="shared" association="assoc09"><lowerValue xmi:id="lv09a" value="1"/><upperValue xmi:id="uv09a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae09b" name="veicoli" type="cls_Veicolo" association="assoc09"><lowerValue xmi:id="lv09b" value="0"/><upperValue xmi:id="uv09b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc10" name="personale">
+      <ownedEnd xmi:id="ae10a" name="sede" type="cls_SedeAMA" association="assoc10"><lowerValue xmi:id="lv10a" value="1"/><upperValue xmi:id="uv10a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae10b" name="lavoratori" type="cls_LavoratoreAMA" association="assoc10"><lowerValue xmi:id="lv10b" value="0"/><upperValue xmi:id="uv10b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc11">
+      <ownedEnd xmi:id="ae11a" name="lavoratore" type="cls_LavoratoreAMA" aggregation="composite" association="assoc11"><lowerValue xmi:id="lv11a" value="1"/><upperValue xmi:id="uv11a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae11b" name="disponibilita" type="cls_DisponibilitaLavoratore" association="assoc11"><lowerValue xmi:id="lv11b" value="0"/><upperValue xmi:id="uv11b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc12">
+      <ownedEnd xmi:id="ae12a" name="veicolo" type="cls_Veicolo" aggregation="composite" association="assoc12"><lowerValue xmi:id="lv12a" value="1"/><upperValue xmi:id="uv12a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae12b" name="disponibilita" type="cls_DisponibilitaVeicolo" association="assoc12"><lowerValue xmi:id="lv12b" value="0"/><upperValue xmi:id="uv12b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc13">
+      <ownedEnd xmi:id="ae13a" name="sede" type="cls_SedeAMA" aggregation="composite" association="assoc13"><lowerValue xmi:id="lv13a" value="1"/><upperValue xmi:id="uv13a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae13b" name="disponibilitaSede" type="cls_DisponibilitaSede" association="assoc13"><lowerValue xmi:id="lv13b" value="0"/><upperValue xmi:id="uv13b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc14">
+      <ownedEnd xmi:id="ae14a" name="ritiro" type="cls_RitiroDomicilio" aggregation="composite" association="assoc14"><lowerValue xmi:id="lv14a" value="1"/><upperValue xmi:id="uv14a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae14b" name="assegnazione" type="cls_Assegnazione" association="assoc14"><lowerValue xmi:id="lv14b" value="0"/><upperValue xmi:id="uv14b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc15" name="autista">
+      <ownedEnd xmi:id="ae15a" name="assegnazioni" type="cls_Assegnazione" association="assoc15"><lowerValue xmi:id="lv15a" value="0"/><upperValue xmi:id="uv15a" value="*"/></ownedEnd>
+      <ownedEnd xmi:id="ae15b" name="autista" type="cls_AutistaAMA" association="assoc15"><lowerValue xmi:id="lv15b" value="1"/><upperValue xmi:id="uv15b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc16" name="veicolo">
+      <ownedEnd xmi:id="ae16a" name="assegnazioni" type="cls_Assegnazione" association="assoc16"><lowerValue xmi:id="lv16a" value="0"/><upperValue xmi:id="uv16a" value="*"/></ownedEnd>
+      <ownedEnd xmi:id="ae16b" name="veicolo" type="cls_Veicolo" association="assoc16"><lowerValue xmi:id="lv16b" value="1"/><upperValue xmi:id="uv16b" value="1"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc17" name="genera personale">
+      <ownedEnd xmi:id="ae17a" name="amministratoreSede" type="cls_AmministratoreSedeAMA" association="assoc17"><lowerValue xmi:id="lv17a" value="1"/><upperValue xmi:id="uv17a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae17b" name="codiciInvito" type="cls_CodiceInvito" association="assoc17"><lowerValue xmi:id="lv17b" value="0"/><upperValue xmi:id="uv17b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc18" name="genera admin">
+      <ownedEnd xmi:id="ae18a" name="amministratoreGenerale" type="cls_AmministratoreGeneraleAMA" association="assoc18"><lowerValue xmi:id="lv18a" value="1"/><upperValue xmi:id="uv18a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae18b" name="codiciInvito" type="cls_CodiceInvito" association="assoc18"><lowerValue xmi:id="lv18b" value="0"/><upperValue xmi:id="uv18b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc19" name="slot">
+      <ownedEnd xmi:id="ae19a" name="disponibilitaSede" type="cls_DisponibilitaSede" association="assoc19"><lowerValue xmi:id="lv19a" value="1"/><upperValue xmi:id="uv19a" value="1"/></ownedEnd>
+      <ownedEnd xmi:id="ae19b" name="prenotazioni" type="cls_Prenotazione" association="assoc19"><lowerValue xmi:id="lv19b" value="0"/><upperValue xmi:id="uv19b" value="*"/></ownedEnd>
+    </packagedElement>
+
+    <!-- DEPENDENCIES (BCE) -->
+
+    <packagedElement xmi:type="uml:Usage" xmi:id="d01" client="cls_RegistrationInterface" supplier="cls_UserAccessEndpoint"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d02" client="cls_InvitationRegistrationInterface" supplier="cls_UserAccessEndpoint"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d03" client="cls_LoginInterface" supplier="cls_UserAccessEndpoint"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d04" client="cls_HomeBookInterface" supplier="cls_AMAServiceController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d05" client="cls_WasteDisposalInterface" supplier="cls_AMAServiceController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d06" client="cls_BookingHistory" supplier="cls_AMAServiceController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d07" client="cls_PannelloAutistaUI" supplier="cls_GestoreRitiriController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d08" client="cls_PannelloAutistaUI" supplier="cls_GestoreEsitoController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d09" client="cls_PannelloAutistaUI" supplier="cls_ContattoController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d10" client="cls_PannelloSedeUI" supplier="cls_GestioneSedeController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d11" client="cls_ControlloVarcoUI" supplier="cls_AccettazioneController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d12" client="cls_GestioneConferimentoUI" supplier="cls_GestioneConferimentoController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d13" client="cls_GestioneCodiciUI" supplier="cls_CodiciController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d14" client="cls_GestionePersonaleUI" supplier="cls_GestionePersonaleController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d15" client="cls_GestioneSedeUI" supplier="cls_GestioneSedeController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d16" client="cls_GestioneVeicoliUI" supplier="cls_GestioneVeicoliController"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d17" client="cls_UserAccessEndpoint" supplier="cls_UserRegistry"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d18" client="cls_UserAccessEndpoint" supplier="cls_UserFactory"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d19" client="cls_AMAServiceController" supplier="cls_UserRegistry"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d20" client="cls_UserAccessEndpoint" supplier="cls_UtenteSistema"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d21" client="cls_UserAccessEndpoint" supplier="cls_Cittadino"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d22" client="cls_UserAccessEndpoint" supplier="cls_LavoratoreAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d23" client="cls_UserAccessEndpoint" supplier="cls_CodiceInvito"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d24" client="cls_UserRegistry" supplier="cls_UtenteSistema"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d25" client="cls_UserRegistry" supplier="cls_Cittadino"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d26" client="cls_UserRegistry" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d27" client="cls_UserRegistry" supplier="cls_Valutazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d28" client="cls_UserRegistry" supplier="cls_RitiroDomicilio"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d29" client="cls_UserRegistry" supplier="cls_ConferimentoSede"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d30" client="cls_UserFactory" supplier="cls_UtenteSistema"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d31" client="cls_UserFactory" supplier="cls_Cittadino"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d32" client="cls_AMAServiceController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d33" client="cls_AMAServiceController" supplier="cls_RitiroDomicilio"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d34" client="cls_AMAServiceController" supplier="cls_ConferimentoSede"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d35" client="cls_AMAServiceController" supplier="cls_Rifiuto"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d36" client="cls_AMAServiceController" supplier="cls_SedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d37" client="cls_AMAServiceController" supplier="cls_ZonaCAP"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d38" client="cls_AMAServiceController" supplier="cls_DisponibilitaSede"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d39" client="cls_AMAServiceController" supplier="cls_Valutazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d40" client="cls_GestoreRitiriController" supplier="cls_AutistaAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d41" client="cls_GestoreRitiriController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d42" client="cls_GestoreRitiriController" supplier="cls_RitiroDomicilio"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d43" client="cls_GestoreRitiriController" supplier="cls_Assegnazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d44" client="cls_GestoreEsitoController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d45" client="cls_GestoreEsitoController" supplier="cls_RitiroDomicilio"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d46" client="cls_ContattoController" supplier="cls_Cittadino"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d47" client="cls_GestioneSedeController" supplier="cls_SedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d48" client="cls_GestioneSedeController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d49" client="cls_GestioneSedeController" supplier="cls_DisponibilitaSede"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d50" client="cls_GestioneSedeController" supplier="cls_ZonaCAP"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d51" client="cls_GestioneSedeController" supplier="cls_AmministratoreSedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d52" client="cls_AccettazioneController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d53" client="cls_AccettazioneController" supplier="cls_OperatoreSedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d54" client="cls_GestioneConferimentoController" supplier="cls_Prenotazione"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d55" client="cls_GestioneConferimentoController" supplier="cls_ConferimentoSede"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d56" client="cls_CodiciController" supplier="cls_AmministratoreGeneraleAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d57" client="cls_CodiciController" supplier="cls_CodiceInvito"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d58" client="cls_GestionePersonaleController" supplier="cls_LavoratoreAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d59" client="cls_GestionePersonaleController" supplier="cls_CodiceInvito"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d60" client="cls_GestionePersonaleController" supplier="cls_AmministratoreSedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d61" client="cls_GestionePersonaleController" supplier="cls_DisponibilitaLavoratore"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d62" client="cls_GestioneVeicoliController" supplier="cls_Veicolo"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d63" client="cls_GestioneVeicoliController" supplier="cls_SedeAMA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d64" client="cls_GestioneVeicoliController" supplier="cls_DisponibilitaVeicolo"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="d65" client="cls_GestioneVeicoliController" supplier="cls_AmministratoreSedeAMA"/>
+
+  </uml:Model>
+</xmi:XMI>
