@@ -1,0 +1,54 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Cittadino e Prenotazioni
+
+class HomeBookInterface <<boundary>>
+class WasteDisposalInterface <<boundary>>
+class BookingHistory <<boundary>>
+
+class AMAServiceController <<control>>
+class UserRegistry <<control>>
+
+class Cittadino <<entity>>
+abstract class Prenotazione <<entity>>
+class RitiroDomicilio <<entity>>
+class ConferimentoSede <<entity>>
+class Rifiuto <<entity>>
+class TipologiaRifiuto <<entity>>
+class SedeAMA <<entity>>
+class ZonaCAP <<entity>>
+class DisponibilitaSede <<entity>>
+class Valutazione <<entity>>
+class Assegnazione <<entity>>
+
+Prenotazione <|-- RitiroDomicilio
+Prenotazione <|-- ConferimentoSede
+
+HomeBookInterface ..> AMAServiceController : <<use>>
+WasteDisposalInterface ..> AMAServiceController : <<use>>
+BookingHistory ..> AMAServiceController : <<use>>
+
+AMAServiceController ..> UserRegistry : <<use>>
+AMAServiceController ..> Prenotazione : <<use>>
+AMAServiceController ..> RitiroDomicilio : <<use>>
+AMAServiceController ..> ConferimentoSede : <<use>>
+AMAServiceController ..> Rifiuto : <<use>>
+AMAServiceController ..> SedeAMA : <<use>>
+AMAServiceController ..> ZonaCAP : <<use>>
+AMAServiceController ..> DisponibilitaSede : <<use>>
+AMAServiceController ..> Valutazione : <<use>>
+
+Cittadino "1" -- "0..*" Prenotazione
+Prenotazione "1" *-- "1" Rifiuto
+TipologiaRifiuto "1" -- "0..*" Rifiuto
+Prenotazione "1" *-- "0..1" Valutazione
+ConferimentoSede "0..*" -- "1" SedeAMA
+SedeAMA "0..*" -- "0..*" ZonaCAP
+SedeAMA "1" *-- "0..*" DisponibilitaSede
+DisponibilitaSede "1" -- "0..*" Prenotazione
+RitiroDomicilio "1" *-- "0..1" Assegnazione
+
+@enduml

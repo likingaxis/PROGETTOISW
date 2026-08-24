@@ -1,0 +1,398 @@
+@startuml
+title MyAma - Refined Class Diagram Completo
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+' =========================================================
+' ENUMERATIONS
+' =========================================================
+
+enum StatoPrenotazione {
+  IN_ATTESA
+  CONFERMATA
+  IN_CORSO
+  COMPLETATA
+  ANNULLATA
+  NON_ESEGUITA
+}
+
+enum EsitoServizio {
+  COMPLETATO
+  CITTADINO_ASSENTE
+  RIFIUTO_NON_CONFORME
+}
+
+enum RuoloUtente {
+  CITTADINO
+  AUTISTA
+  OPERATORE_SEDE
+  AMMINISTRATORE_SEDE
+  AMMINISTRATORE_GENERALE
+}
+
+' =========================================================
+' BOUNDARY
+' =========================================================
+
+package "Boundary Layer" {
+  class RegistrationInterface <<boundary>>
+  class InvitationRegistrationInterface <<boundary>>
+  class LoginInterface <<boundary>>
+
+  class HomeBookInterface <<boundary>>
+  class WasteDisposalInterface <<boundary>>
+  class BookingHistory <<boundary>>
+
+  class PannelloAutistaUI <<boundary>>
+
+  class PannelloSedeUI <<boundary>>
+  class ControlloVarcoUI <<boundary>>
+  class GestioneConferimentoUI <<boundary>>
+
+  class GestioneCodiciUI <<boundary>>
+  class GestionePersonaleUI <<boundary>>
+  class GestioneSedeUI <<boundary>>
+  class GestioneVeicoliUI <<boundary>>
+}
+
+' =========================================================
+' CONTROL
+' =========================================================
+
+package "Control Layer" {
+  class UserAccessEndpoint <<control>>
+  class UserRegistry <<control>>
+  class UserFactory <<control>>
+
+  class AMAServiceController <<control>>
+
+  class GestoreRitiriController <<control>>
+  class GestoreEsitoController <<control>>
+  class ContattoController <<control>>
+
+  class GestioneSedeController <<control>>
+  class AccettazioneController <<control>>
+  class GestioneConferimentoController <<control>>
+
+  class CodiciController <<control>>
+  class GestionePersonaleController <<control>>
+  class GestioneVeicoliController <<control>>
+}
+
+' =========================================================
+' ENTITY
+' =========================================================
+
+package "Entity Layer" {
+
+  abstract class UtenteSistema <<entity>> {
+    - id : int
+    - nome : String
+    - cognome : String
+    - email : String
+    - passwordHash : String
+    - abilitato : boolean
+    + effettuaAccesso(email : String, password : String) : boolean
+    + effettuaLogout() : void
+    + verificaEmail(email : String) : boolean
+    + isAbilitato() : boolean
+  }
+
+  class Cittadino <<entity>> {
+    - codiceFiscale : String
+    - telefono : String
+    - indirizzo : String
+    - CAP : String
+    + registrati(datiPersonali) : boolean
+    + richiediRitiro() : void
+    + prenotaConferimento() : void
+    + visualizzaPrenotazioniAttive() : void
+    + annullaPrenotazione(idPrenotazione : int) : boolean
+    + consultaStoricoPrenotazioni() : void
+    + valutaServizio(idPrenotazione : int, voto : int, commento : String) : void
+  }
+
+  abstract class LavoratoreAMA <<entity>> {
+    - idDipendente : String
+    - telefono : String
+    + registratiConCodiceInvito(codice : String) : boolean
+  }
+
+  class AutistaAMA <<entity>> {
+    + visualizzaRitiriAssegnati() : void
+    + consultaDettagliRitiro(idRitiro : int) : void
+    + registraEsitoRitiro(idRitiro : int, esito : EsitoServizio) : boolean
+    + chiamaCittadino(idCittadino : int) : void
+  }
+
+  class OperatoreSedeAMA <<entity>> {
+    + visualizzaPrenotazioniSede() : void
+    + consultaDettagliConferimento(idPrenotazione : int) : void
+    + verificaPrenotazione(idPrenotazione : int) : boolean
+    + registraEsitoConferimento(idPrenotazione : int, esito : EsitoServizio) : boolean
+  }
+
+  class AmministratoreSedeAMA <<entity>> {
+    + generaCodiceInvitoPersonale(ruolo : RuoloUtente) : CodiceInvito
+    + gestisciDisponibilitaLavoratori() : void
+    + gestisciDisponibilitaVeicoli() : void
+    + gestisciDisponibilitaSede() : void
+    + gestisciAssociazioniSedeZoneCAP() : void
+    + rimuoviPersonaleAMA(idUtente : int) : boolean
+  }
+
+  class AmministratoreGeneraleAMA <<entity>> {
+    + generaCodiceAmministratoreSede(sede : SedeAMA) : CodiceInvito
+    + rimuoviAmministratoreSede(idUtente : int) : boolean
+  }
+
+  abstract class Prenotazione <<entity>> {
+    - idPrenotazione : int
+    - data : LocalDate
+    - fasciaOraria : String
+    - stato : StatoPrenotazione
+    - codicePrenotazione : String
+    + creaPrenotazione() : boolean
+    + annulla() : boolean
+    + modificaStato(stato : StatoPrenotazione) : void
+    + verificaStato() : boolean
+    + getDettagli() : String
+  }
+
+  class RitiroDomicilio <<entity>> {
+    - indirizzoRitiro : String
+    - esito : EsitoServizio
+    + creaRitiro(indirizzo : String) : boolean
+    + impostaIndirizzoRitiro(indirizzo : String) : void
+    + registraEsito(esito : EsitoServizio) : void
+  }
+
+  class ConferimentoSede <<entity>> {
+    - esito : EsitoServizio
+    + creaConferimento(sede : SedeAMA) : boolean
+    + impostaSede(sede : SedeAMA) : void
+    + registraEsito(esito : EsitoServizio) : void
+  }
+
+  class Rifiuto <<entity>> {
+    - descrizione : String
+    - pesoStimato : double
+    - volumeStimato : double
+    - foto : String
+    + creaRifiuto(datiRifiuto) : boolean
+    + aggiungiFoto(foto : String) : void
+    + modificaDatiRifiuto() : void
+    + getDettagli() : String
+  }
+
+  class TipologiaRifiuto <<entity>> {
+    - idTipologia : int
+    - nome : String
+    - descrizione : String
+    + verificaCompatibilita(rifiuto : Rifiuto) : boolean
+  }
+
+  class SedeAMA <<entity>> {
+    - idSede : int
+    - nome : String
+    - indirizzo : String
+    - CAP : String
+    + verificaCompatibilita(cap : String, tipologia : TipologiaRifiuto) : boolean
+    + visualizzaDisponibilita() : void
+  }
+
+  class ZonaCAP <<entity>> {
+    - CAP : String
+    - zona : String
+    + verificaCAP(cap : String) : boolean
+    + getSediCompatibili() : List<SedeAMA>
+  }
+
+  abstract class Disponibilita <<entity>> {
+    - data : LocalDate
+    - oraInizio : LocalTime
+    - oraFine : LocalTime
+  }
+
+  class DisponibilitaLavoratore <<entity>>
+  class DisponibilitaVeicolo <<entity>>
+
+  class DisponibilitaSede <<entity>> {
+    - postiDisponibili : int
+    + prenotaSlot() : boolean
+    + liberaSlot() : void
+  }
+
+  class Veicolo <<entity>> {
+    - idVeicolo : int
+    - targa : String
+    - capacitaPeso : double
+    - capacitaVolume : double
+    + verificaDisponibilita(data : LocalDate) : boolean
+    + verificaCapacita(peso : double, volume : double) : boolean
+  }
+
+  class Assegnazione <<entity>> {
+    - idAssegnazione : int
+    - dataTurno : LocalDate
+    + creaAssegnazione() : boolean
+    + getDettagliAssegnazione() : String
+  }
+
+  class CodiceInvito <<entity>> {
+    - codice : String
+    - ruoloAssociato : RuoloUtente
+    - scadenza : LocalDate
+    - utilizzato : boolean
+    + verificaValidita() : boolean
+    + utilizza() : void
+    + isUtilizzato() : boolean
+  }
+
+  class Valutazione <<entity>> {
+    - voto : int
+    - commento : String
+    + creaValutazione(voto : int, commento : String) : boolean
+  }
+}
+
+' =========================================================
+' GENERALIZZAZIONI
+' =========================================================
+
+UtenteSistema <|-- Cittadino
+UtenteSistema <|-- LavoratoreAMA
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+UtenteSistema <|-- AmministratoreSedeAMA
+UtenteSistema <|-- AmministratoreGeneraleAMA
+
+Prenotazione <|-- RitiroDomicilio
+Prenotazione <|-- ConferimentoSede
+
+Disponibilita <|-- DisponibilitaLavoratore
+Disponibilita <|-- DisponibilitaVeicolo
+Disponibilita <|-- DisponibilitaSede
+
+' =========================================================
+' ASSOCIAZIONI ENTITY
+' =========================================================
+
+Cittadino "1" -- "0..*" Prenotazione : possiede >
+Prenotazione "1" *-- "1" Rifiuto : riguarda
+TipologiaRifiuto "1" -- "0..*" Rifiuto : classifica >
+Prenotazione "1" *-- "0..1" Valutazione : valutazione
+ConferimentoSede "0..*" -- "1" SedeAMA : presso >
+OperatoreSedeAMA "0..*" -- "1" SedeAMA : lavora presso >
+AmministratoreSedeAMA "0..1" -- "1" SedeAMA : amministra >
+SedeAMA "0..*" -- "0..*" ZonaCAP : copre >
+SedeAMA "1" o-- "0..*" Veicolo : dispone di >
+SedeAMA "1" -- "0..*" LavoratoreAMA : personale >
+LavoratoreAMA "1" *-- "0..*" DisponibilitaLavoratore
+Veicolo "1" *-- "0..*" DisponibilitaVeicolo
+SedeAMA "1" *-- "0..*" DisponibilitaSede
+RitiroDomicilio "1" *-- "0..1" Assegnazione
+Assegnazione "0..*" -- "1" AutistaAMA : autista >
+Assegnazione "0..*" -- "1" Veicolo : veicolo >
+AmministratoreSedeAMA "1" -- "0..*" CodiceInvito : genera personale >
+AmministratoreGeneraleAMA "1" -- "0..*" CodiceInvito : genera admin >
+DisponibilitaSede "1" -- "0..*" Prenotazione : slot >
+
+' =========================================================
+' BOUNDARY -> CONTROL
+' =========================================================
+
+RegistrationInterface ..> UserAccessEndpoint : <<use>>
+InvitationRegistrationInterface ..> UserAccessEndpoint : <<use>>
+LoginInterface ..> UserAccessEndpoint : <<use>>
+
+HomeBookInterface ..> AMAServiceController : <<use>>
+WasteDisposalInterface ..> AMAServiceController : <<use>>
+BookingHistory ..> AMAServiceController : <<use>>
+
+PannelloAutistaUI ..> GestoreRitiriController : <<use>>
+PannelloAutistaUI ..> GestoreEsitoController : <<use>>
+PannelloAutistaUI ..> ContattoController : <<use>>
+
+PannelloSedeUI ..> GestioneSedeController : <<use>>
+ControlloVarcoUI ..> AccettazioneController : <<use>>
+GestioneConferimentoUI ..> GestioneConferimentoController : <<use>>
+
+GestioneCodiciUI ..> CodiciController : <<use>>
+GestionePersonaleUI ..> GestionePersonaleController : <<use>>
+GestioneSedeUI ..> GestioneSedeController : <<use>>
+GestioneVeicoliUI ..> GestioneVeicoliController : <<use>>
+
+' =========================================================
+' CONTROL -> CONTROL
+' =========================================================
+
+UserAccessEndpoint ..> UserRegistry : <<use>>
+UserAccessEndpoint ..> UserFactory : <<use>>
+AMAServiceController ..> UserRegistry : <<use>>
+
+' =========================================================
+' CONTROL -> ENTITY
+' =========================================================
+
+UserAccessEndpoint ..> UtenteSistema : <<use>>
+UserAccessEndpoint ..> Cittadino : <<use>>
+UserAccessEndpoint ..> LavoratoreAMA : <<use>>
+UserAccessEndpoint ..> CodiceInvito : <<use>>
+
+UserRegistry ..> UtenteSistema : <<use>>
+UserRegistry ..> Cittadino : <<use>>
+UserRegistry ..> Prenotazione : <<use>>
+UserRegistry ..> Valutazione : <<use>>
+UserRegistry ..> RitiroDomicilio : <<use>>
+UserRegistry ..> ConferimentoSede : <<use>>
+
+UserFactory ..> UtenteSistema : <<create>>
+UserFactory ..> Cittadino : <<create>>
+
+AMAServiceController ..> Prenotazione : <<use>>
+AMAServiceController ..> RitiroDomicilio : <<use>>
+AMAServiceController ..> ConferimentoSede : <<use>>
+AMAServiceController ..> Rifiuto : <<use>>
+AMAServiceController ..> SedeAMA : <<use>>
+AMAServiceController ..> ZonaCAP : <<use>>
+AMAServiceController ..> DisponibilitaSede : <<use>>
+AMAServiceController ..> Valutazione : <<use>>
+
+GestoreRitiriController ..> AutistaAMA : <<use>>
+GestoreRitiriController ..> Prenotazione : <<use>>
+GestoreRitiriController ..> RitiroDomicilio : <<use>>
+GestoreRitiriController ..> Assegnazione : <<use>>
+
+GestoreEsitoController ..> Prenotazione : <<use>>
+GestoreEsitoController ..> RitiroDomicilio : <<use>>
+
+ContattoController ..> Cittadino : <<use>>
+
+GestioneSedeController ..> SedeAMA : <<use>>
+GestioneSedeController ..> Prenotazione : <<use>>
+GestioneSedeController ..> DisponibilitaSede : <<use>>
+GestioneSedeController ..> ZonaCAP : <<use>>
+GestioneSedeController ..> AmministratoreSedeAMA : <<use>>
+
+AccettazioneController ..> Prenotazione : <<use>>
+AccettazioneController ..> OperatoreSedeAMA : <<use>>
+
+GestioneConferimentoController ..> Prenotazione : <<use>>
+GestioneConferimentoController ..> ConferimentoSede : <<use>>
+
+CodiciController ..> AmministratoreGeneraleAMA : <<use>>
+CodiciController ..> CodiceInvito : <<use>>
+
+GestionePersonaleController ..> LavoratoreAMA : <<use>>
+GestionePersonaleController ..> CodiceInvito : <<use>>
+GestionePersonaleController ..> AmministratoreSedeAMA : <<use>>
+GestionePersonaleController ..> DisponibilitaLavoratore : <<use>>
+
+GestioneVeicoliController ..> Veicolo : <<use>>
+GestioneVeicoliController ..> SedeAMA : <<use>>
+GestioneVeicoliController ..> DisponibilitaVeicolo : <<use>>
+GestioneVeicoliController ..> AmministratoreSedeAMA : <<use>>
+
+@enduml

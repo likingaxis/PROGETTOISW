@@ -1,0 +1,41 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Autista e Ritiri
+
+class PannelloAutistaUI <<boundary>>
+
+class GestoreRitiriController <<control>>
+class GestoreEsitoController <<control>>
+class ContattoController <<control>>
+
+class AutistaAMA <<entity>>
+class Cittadino <<entity>>
+class RitiroDomicilio <<entity>>
+abstract class Prenotazione <<entity>>
+class Assegnazione <<entity>>
+class Veicolo <<entity>>
+class Rifiuto <<entity>>
+
+Prenotazione <|-- RitiroDomicilio
+
+PannelloAutistaUI ..> GestoreRitiriController : <<use>>
+PannelloAutistaUI ..> GestoreEsitoController : <<use>>
+PannelloAutistaUI ..> ContattoController : <<use>>
+
+GestoreRitiriController ..> AutistaAMA : <<use>>
+GestoreRitiriController ..> Assegnazione : <<use>>
+GestoreRitiriController ..> RitiroDomicilio : <<use>>
+GestoreEsitoController ..> RitiroDomicilio : <<use>>
+GestoreEsitoController ..> Prenotazione : <<use>>
+ContattoController ..> Cittadino : <<use>>
+
+RitiroDomicilio "1" *-- "0..1" Assegnazione
+Assegnazione "0..*" -- "1" AutistaAMA
+Assegnazione "0..*" -- "1" Veicolo
+Prenotazione "1" *-- "1" Rifiuto
+Cittadino "1" -- "0..*" Prenotazione
+
+@enduml
