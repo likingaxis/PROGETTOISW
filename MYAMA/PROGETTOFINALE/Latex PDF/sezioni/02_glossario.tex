@@ -97,9 +97,9 @@ La presente sezione definisce in modo formale e non ambiguo i termini specialist
 
 \textbf{BCE (Boundary, Control, Entity)} & Pattern architetturale utilizzato nella modellazione dei Sequence Diagram per separare le responsabilità degli oggetti in tre stereotipi: \textit{Boundary} (interfaccia con l'attore), \textit{Control} (logica applicativa e coordinamento) ed \textit{Entity} (dati persistenti del dominio). \\ \hline
 
-\textbf{Observer Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per disaccoppiare la classe \texttt{Prenotazione} dai sottosistemi che devono reagire alle sue transizioni di stato (notifiche al Cittadino, aggiornamento dashboard Autista, registro operativo della Sede), evitando dipendenze rigide verso classi concrete. \\ \hline
+\textbf{Observer Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per disaccoppiare la classe \texttt{Prenotazione} dai sottosistemi che devono reagire alle sue transizioni di stato (\texttt{NotificaCittadino}, \texttt{AggiornamentoAutista}, \texttt{AggiornamentoSede}), mediante l'interfaccia astratta \texttt{ObserverPrenotazione}. \\ \hline
 
-\textbf{Strategy Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per incapsulare in classi intercambiabili le diverse politiche di allocazione dei ritiri ai veicoli (massimizzazione carico, prossimità territoriale, bilanciamento carichi), consentendo al \texttt{GestoreAssegnazione} di variare l'algoritmo senza modificare la propria struttura. \\ \hline
+\textbf{Strategy Pattern} & Design Pattern comportamentale (GoF) applicato nel progetto per incapsulare in classi concrete intercambiabili (\texttt{AssegnazionePerCapacita}, \texttt{AssegnazionePerZona}) le politiche di allocazione dei ritiri ai veicoli, consentendo al controllore di variare l'algoritmo mediante l'interfaccia \texttt{StrategiaAssegnazione}. \\ \hline
 
 \textbf{Responsive Design} & Paradigma di sviluppo dell'interfaccia utente che garantisce l'adattabilità automatica di layout e contenuti alle dimensioni dello schermo del dispositivo utilizzato (smartphone, tablet, PC). \\ \hline
 
