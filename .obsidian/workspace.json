@@ -4,61 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "0e49465d84360589",
+        "id": "8d709c023edc17dd",
         "type": "tabs",
         "children": [
           {
-            "id": "889c75a5351bfb80",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "OTHER PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Progetto_Mongelli_Pace_Rossi_Sandu"
-            }
-          },
-          {
-            "id": "6644708ca8a9172f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "OTHER PROGETTI/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/ProgettoISW_25_26.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "ProgettoISW_25_26"
-            }
-          },
-          {
-            "id": "50b4ab6371bbe3d8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "OTHER PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Progetto_Buongiorno_Machowski_Muscillo_Politano"
-            }
-          },
-          {
-            "id": "ae119ddb8cafff12",
+            "id": "635826c9fb49f781",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MYAMA/PROGETTOFINALE/GUIDA_COLLEGAMENTI_UML.md",
+                "file": "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GUIDA_COLLEGAMENTI_UML"
+              "title": "RELAZIONI_COMPLETE_REFINED_MyAma"
+            }
+          },
+          {
+            "id": "9d9c717b7c2dd64d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NOMI"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -226,53 +203,53 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "ae119ddb8cafff12",
+  "active": "635826c9fb49f781",
   "lastOpenFiles": [
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp.bak_002d-journal",
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp.bak_002d",
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp.bak_001d-journal",
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp.bak_001d",
-    "OTHER PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Pace_Rossi_Sandu.pdf",
-    "OTHER PROGETTI/SteamPlatform_Arbia,Di Iacovo, Malatesta, Marzi, Quartucci/ProgettoISW_25_26.pdf",
-    "OTHER PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf",
+    "fix_tex.py",
+    "diag2.py",
+    "diag.py",
+    "MYAMA/PROGETTOFINALE/Latex PDF/figure/pattern_strategy.jpg",
+    "MYAMA/PROGETTOFINALE/Latex PDF/figure/pattern_observer.jpg",
+    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/design_pattern.md",
+    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern.vpp",
+    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern - Strategy.jpg",
+    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern - Observer.jpg",
+    "MYAMA/PROGETTOFINALE/DESIGN PATTERN",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/strategy.png",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/observer.png",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/STRATEGY_MyAma.puml",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/README.md",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/OBSERVER_MyAma.puml",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_005d-journal",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_005d",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_004d-journal",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM ALFREDO/Genera codice di invito.png",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md",
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/design_pattern.md",
+    "MYAMA/PROGETTOFINALE/design_pattern.md",
+    "MYAMA/PROGETTOFINALE/GUIDA_ASSOCIAZIONI_VELOCI.md",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/DOCUMENTAZIONE_ACTIVITY_DIAGRAM.md",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/registrazione accesso.png",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/operatore sede.png",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/entity model.png",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/RELAZIONI_COMPLETE_REFINED_MyAma.md",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/MyAma_PlantUML_Refined_Corretti/README_CORREZIONI.md",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/MyAma-Refined-Complete/NOTE-REFINED-COMPLETE.md",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/GUIDA_ASSOCIAZIONI_VELOCI.md",
     "MYAMA/PROGETTOFINALE/GUIDA_COLLEGAMENTI_UML.md",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM ALFREDO/AmministratoreGeneraleGeneraCodici.jpg",
+    "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/guida_class_diagram_refined.md",
+    "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/REFINE CLASS DIAGRAM.md",
+    "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/NOTE_INCERTEZZE_XMI.md",
+    "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/GUIDA_COLLEGAMENTI_UML.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI ASSOCIATI A MESSAGGI.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/LISTA SEQUENCE DIAGRAM.md",
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp.bak_000f",
-    "MYAMA/GRUPPO 1/refined class diagram davidel.vpp",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/NOTE-REFINED.md",
-    "OTHER PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Noce_Salvucci_Sfeir_250128_154245.pdf",
-    "OTHER PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_Corsetti_Mazzenga.pdf",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/KNOWLEDGE.MD",
     "MYAMA/PROGETTOFINALE/NOTE_INCERTEZZE_XMI.md",
-    "MYAMA/PROGETTOFINALE/REFINE CLASS DIAGRAM.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/SINCRONA E ASINCRONA.md",
-    "MYAMA/PROGETTOFINALE/CLASS DIAGRAM/CLASS DIAGRAM unrefined.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/LISTA SEQUENCE DIAGRAM.md",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/registrazione_Tramite_codice_invito.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/Utente_non_Registrazione_cittadino.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/EseguiAccesso.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM SAMUELE/SequenceGestireDisponibilitaVeicoli.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceVisualizzarePrenotazioniSede.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceVerificarePrenotazioneCittadino.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceRimuoverePersonaleAMA.jpg",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceRegistrareEsitoConferimento.jpg",
-    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/LISTA USE CASE.md",
-    "PROGETTO DATA BASI/prompt_immagine.md",
-    "PROGETTO DATA BASI/BASI_PROGETTO.md",
-    "OTHER PROGETTI/Progetto_RistorApp_Bianchini/Progetto_Bianchini_RistorApp.md",
-    "OTHER PROGETTI/Progetto_Pesca_Cipolletta/Progetto_Cipolletta_Pesca.md",
-    "OTHER PROGETTI/Progetto_Hotel_Mongelli/Progetto_Mongelli_Hotel.md",
-    "MYAMA/PROGETTOFINALE/specifica_MyAma.md",
-    "MYAMA/PROGETTOFINALE/glossario.md",
-    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
-    "MYAMA/PROGETTOFINALE/SYSTEM REQUIREMENTS/System Requirements.md",
-    "MYAMA/PROGETTOFINALE/Latex PDF/specifica_MyAma.md",
-    "MYAMA/PROGETTOFINALE/Latex PDF/README.md",
-    "MYAMA/PROGETTOFINALE/INTRODUZIONE/INTRODUZIONE NO CHAT GPT.md",
-    "MYAMA/PROGETTOFINALE/INTRODUZIONE/INTRODUZIONE CHAT GPT.md"
+    "MYAMA/PROGETTOFINALE/REFINE CLASS DIAGRAM.md"
   ]
 }
