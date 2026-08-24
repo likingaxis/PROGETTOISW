@@ -1,0 +1,41 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Operatore di Sede e Conferimenti
+
+class PannelloSedeUI <<boundary>>
+class ControlloVarcoUI <<boundary>>
+class GestioneConferimentoUI <<boundary>>
+
+class GestioneSedeController <<control>>
+class AccettazioneController <<control>>
+class GestioneConferimentoController <<control>>
+
+class OperatoreSedeAMA <<entity>>
+class SedeAMA <<entity>>
+class ConferimentoSede <<entity>>
+abstract class Prenotazione <<entity>>
+class Cittadino <<entity>>
+class Rifiuto <<entity>>
+
+Prenotazione <|-- ConferimentoSede
+
+PannelloSedeUI ..> GestioneSedeController : <<use>>
+ControlloVarcoUI ..> AccettazioneController : <<use>>
+GestioneConferimentoUI ..> GestioneConferimentoController : <<use>>
+
+GestioneSedeController ..> SedeAMA : <<use>>
+GestioneSedeController ..> Prenotazione : <<use>>
+AccettazioneController ..> Prenotazione : <<use>>
+AccettazioneController ..> OperatoreSedeAMA : <<use>>
+GestioneConferimentoController ..> ConferimentoSede : <<use>>
+GestioneConferimentoController ..> Prenotazione : <<use>>
+
+OperatoreSedeAMA "0..*" -- "1" SedeAMA
+ConferimentoSede "0..*" -- "1" SedeAMA
+Cittadino "1" -- "0..*" Prenotazione
+Prenotazione "1" *-- "1" Rifiuto
+
+@enduml

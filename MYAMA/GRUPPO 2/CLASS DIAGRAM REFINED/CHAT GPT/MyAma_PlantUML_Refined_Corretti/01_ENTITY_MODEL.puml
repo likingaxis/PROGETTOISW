@@ -1,0 +1,234 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Refined Entity Model
+
+abstract class UtenteSistema <<entity>> {
+  - id : int
+  - nome : String
+  - cognome : String
+  - email : String
+  - passwordHash : String
+  - abilitato : boolean
+  + effettuaAccesso(email : String, password : String) : boolean
+  + effettuaLogout() : void
+  + verificaEmail(email : String) : boolean
+  + isAbilitato() : boolean
+}
+
+class Cittadino <<entity>> {
+  - codiceFiscale : String
+  - telefono : String
+  - indirizzo : String
+  - CAP : String
+  + registrati(datiPersonali) : boolean
+  + richiediRitiro() : void
+  + prenotaConferimento() : void
+  + visualizzaPrenotazioniAttive() : void
+  + annullaPrenotazione(idPrenotazione : int) : boolean
+  + consultaStoricoPrenotazioni() : void
+  + valutaServizio(idPrenotazione : int, voto : int, commento : String) : void
+}
+
+abstract class LavoratoreAMA <<entity>> {
+  - idDipendente : String
+  - telefono : String
+  + registratiConCodiceInvito(codice : String) : boolean
+}
+
+class AutistaAMA <<entity>> {
+  + visualizzaRitiriAssegnati() : void
+  + consultaDettagliRitiro(idRitiro : int) : void
+  + registraEsitoRitiro(idRitiro : int, esito : EsitoServizio) : boolean
+  + chiamaCittadino(idCittadino : int) : void
+}
+
+class OperatoreSedeAMA <<entity>> {
+  + visualizzaPrenotazioniSede() : void
+  + consultaDettagliConferimento(idPrenotazione : int) : void
+  + verificaPrenotazione(idPrenotazione : int) : boolean
+  + registraEsitoConferimento(idPrenotazione : int, esito : EsitoServizio) : boolean
+}
+
+class AmministratoreSedeAMA <<entity>> {
+  + generaCodiceInvitoPersonale(ruolo : RuoloUtente) : CodiceInvito
+  + gestisciDisponibilitaLavoratori() : void
+  + gestisciDisponibilitaVeicoli() : void
+  + gestisciDisponibilitaSede() : void
+  + gestisciAssociazioniSedeZoneCAP() : void
+  + rimuoviPersonaleAMA(idUtente : int) : boolean
+}
+
+class AmministratoreGeneraleAMA <<entity>> {
+  + generaCodiceAmministratoreSede(sede : SedeAMA) : CodiceInvito
+  + rimuoviAmministratoreSede(idUtente : int) : boolean
+}
+
+abstract class Prenotazione <<entity>> {
+  - idPrenotazione : int
+  - data : LocalDate
+  - fasciaOraria : String
+  - stato : StatoPrenotazione
+  - codicePrenotazione : String
+  + creaPrenotazione() : boolean
+  + annulla() : boolean
+  + modificaStato(stato : StatoPrenotazione) : void
+  + verificaStato() : boolean
+  + getDettagli() : String
+}
+
+class RitiroDomicilio <<entity>> {
+  - indirizzoRitiro : String
+  - esito : EsitoServizio
+  + creaRitiro(indirizzo : String) : boolean
+  + impostaIndirizzoRitiro(indirizzo : String) : void
+  + registraEsito(esito : EsitoServizio) : void
+}
+
+class ConferimentoSede <<entity>> {
+  - esito : EsitoServizio
+  + creaConferimento(sede : SedeAMA) : boolean
+  + impostaSede(sede : SedeAMA) : void
+  + registraEsito(esito : EsitoServizio) : void
+}
+
+class Rifiuto <<entity>> {
+  - descrizione : String
+  - pesoStimato : double
+  - volumeStimato : double
+  - foto : String
+  + creaRifiuto(datiRifiuto) : boolean
+  + aggiungiFoto(foto : String) : void
+  + modificaDatiRifiuto() : void
+  + getDettagli() : String
+}
+
+class TipologiaRifiuto <<entity>> {
+  - idTipologia : int
+  - nome : String
+  - descrizione : String
+  + verificaCompatibilita(rifiuto : Rifiuto) : boolean
+}
+
+class SedeAMA <<entity>> {
+  - idSede : int
+  - nome : String
+  - indirizzo : String
+  - CAP : String
+  + verificaCompatibilita(cap : String, tipologia : TipologiaRifiuto) : boolean
+  + visualizzaDisponibilita() : void
+}
+
+class ZonaCAP <<entity>> {
+  - CAP : String
+  - zona : String
+  + verificaCAP(cap : String) : boolean
+  + getSediCompatibili() : List<SedeAMA>
+}
+
+abstract class Disponibilita <<entity>> {
+  - data : LocalDate
+  - oraInizio : LocalTime
+  - oraFine : LocalTime
+}
+
+class DisponibilitaLavoratore <<entity>>
+class DisponibilitaVeicolo <<entity>>
+class DisponibilitaSede <<entity>> {
+  - postiDisponibili : int
+  + prenotaSlot() : boolean
+  + liberaSlot() : void
+}
+
+class Veicolo <<entity>> {
+  - idVeicolo : int
+  - targa : String
+  - capacitaPeso : double
+  - capacitaVolume : double
+  + verificaDisponibilita(data : LocalDate) : boolean
+  + verificaCapacita(peso : double, volume : double) : boolean
+}
+
+class Assegnazione <<entity>> {
+  - idAssegnazione : int
+  - dataTurno : LocalDate
+  + creaAssegnazione() : boolean
+  + getDettagliAssegnazione() : String
+}
+
+class CodiceInvito <<entity>> {
+  - codice : String
+  - ruoloAssociato : RuoloUtente
+  - scadenza : LocalDate
+  - utilizzato : boolean
+  + verificaValidita() : boolean
+  + utilizza() : void
+  + isUtilizzato() : boolean
+}
+
+class Valutazione <<entity>> {
+  - voto : int
+  - commento : String
+  + creaValutazione(voto : int, commento : String) : boolean
+}
+
+enum StatoPrenotazione {
+  IN_ATTESA
+  CONFERMATA
+  IN_CORSO
+  COMPLETATA
+  ANNULLATA
+  NON_ESEGUITA
+}
+
+enum EsitoServizio {
+  COMPLETATO
+  CITTADINO_ASSENTE
+  RIFIUTO_NON_CONFORME
+}
+
+enum RuoloUtente {
+  CITTADINO
+  AUTISTA
+  OPERATORE_SEDE
+  AMMINISTRATORE_SEDE
+  AMMINISTRATORE_GENERALE
+}
+
+UtenteSistema <|-- Cittadino
+UtenteSistema <|-- LavoratoreAMA
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+UtenteSistema <|-- AmministratoreSedeAMA
+UtenteSistema <|-- AmministratoreGeneraleAMA
+
+Prenotazione <|-- RitiroDomicilio
+Prenotazione <|-- ConferimentoSede
+
+Disponibilita <|-- DisponibilitaLavoratore
+Disponibilita <|-- DisponibilitaVeicolo
+Disponibilita <|-- DisponibilitaSede
+
+Cittadino "1" -- "0..*" Prenotazione : possiede >
+Prenotazione "1" *-- "1" Rifiuto : riguarda
+TipologiaRifiuto "1" -- "0..*" Rifiuto : classifica >
+Prenotazione "1" *-- "0..1" Valutazione : valutazione
+ConferimentoSede "0..*" -- "1" SedeAMA : presso >
+OperatoreSedeAMA "0..*" -- "1" SedeAMA : lavora presso >
+AmministratoreSedeAMA "0..1" -- "1" SedeAMA : amministra >
+SedeAMA "0..*" -- "0..*" ZonaCAP : copre >
+SedeAMA "1" o-- "0..*" Veicolo : dispone di >
+SedeAMA "1" -- "0..*" LavoratoreAMA : assegna personale >
+LavoratoreAMA "1" *-- "0..*" DisponibilitaLavoratore
+Veicolo "1" *-- "0..*" DisponibilitaVeicolo
+SedeAMA "1" *-- "0..*" DisponibilitaSede
+RitiroDomicilio "1" *-- "0..1" Assegnazione
+Assegnazione "0..*" -- "1" AutistaAMA : autista >
+Assegnazione "0..*" -- "1" Veicolo : veicolo >
+AmministratoreSedeAMA "1" -- "0..*" CodiceInvito : genera personale >
+AmministratoreGeneraleAMA "1" -- "0..*" CodiceInvito : genera admin >
+DisponibilitaSede "1" -- "0..*" Prenotazione : slot >
+
+@enduml

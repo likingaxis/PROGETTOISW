@@ -1,0 +1,47 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Registrazione e Accesso
+
+class RegistrationInterface <<boundary>>
+class InvitationRegistrationInterface <<boundary>>
+class LoginInterface <<boundary>>
+
+class UserAccessEndpoint <<control>>
+class UserRegistry <<control>>
+class UserFactory <<control>>
+
+abstract class UtenteSistema <<entity>>
+class Cittadino <<entity>>
+abstract class LavoratoreAMA <<entity>>
+class AutistaAMA <<entity>>
+class OperatoreSedeAMA <<entity>>
+class AmministratoreSedeAMA <<entity>>
+class AmministratoreGeneraleAMA <<entity>>
+class CodiceInvito <<entity>>
+
+UtenteSistema <|-- Cittadino
+UtenteSistema <|-- LavoratoreAMA
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+UtenteSistema <|-- AmministratoreSedeAMA
+UtenteSistema <|-- AmministratoreGeneraleAMA
+
+RegistrationInterface ..> UserAccessEndpoint : <<use>>
+InvitationRegistrationInterface ..> UserAccessEndpoint : <<use>>
+LoginInterface ..> UserAccessEndpoint : <<use>>
+
+UserAccessEndpoint ..> UserRegistry : <<use>>
+UserAccessEndpoint ..> UserFactory : <<use>>
+UserAccessEndpoint ..> UtenteSistema : <<use>>
+UserAccessEndpoint ..> Cittadino : <<use>>
+UserAccessEndpoint ..> LavoratoreAMA : <<use>>
+UserAccessEndpoint ..> CodiceInvito : <<use>>
+
+UserFactory ..> UtenteSistema : <<create>>
+UserFactory ..> Cittadino : <<create>>
+UserRegistry ..> UtenteSistema : <<use>>
+
+@enduml

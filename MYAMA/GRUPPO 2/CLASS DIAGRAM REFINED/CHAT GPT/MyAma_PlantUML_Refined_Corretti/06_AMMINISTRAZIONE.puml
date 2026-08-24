@@ -1,0 +1,72 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title MyAma - Amministrazione Sede e Generale
+
+class GestioneCodiciUI <<boundary>>
+class GestionePersonaleUI <<boundary>>
+class GestioneSedeUI <<boundary>>
+class GestioneVeicoliUI <<boundary>>
+
+class CodiciController <<control>>
+class GestionePersonaleController <<control>>
+class GestioneSedeController <<control>>
+class GestioneVeicoliController <<control>>
+
+class AmministratoreSedeAMA <<entity>>
+class AmministratoreGeneraleAMA <<entity>>
+abstract class LavoratoreAMA <<entity>>
+class AutistaAMA <<entity>>
+class OperatoreSedeAMA <<entity>>
+class SedeAMA <<entity>>
+class Veicolo <<entity>>
+class ZonaCAP <<entity>>
+abstract class Disponibilita <<entity>>
+class DisponibilitaLavoratore <<entity>>
+class DisponibilitaVeicolo <<entity>>
+class DisponibilitaSede <<entity>>
+class CodiceInvito <<entity>>
+
+LavoratoreAMA <|-- AutistaAMA
+LavoratoreAMA <|-- OperatoreSedeAMA
+Disponibilita <|-- DisponibilitaLavoratore
+Disponibilita <|-- DisponibilitaVeicolo
+Disponibilita <|-- DisponibilitaSede
+
+GestioneCodiciUI ..> CodiciController : <<use>>
+GestionePersonaleUI ..> GestionePersonaleController : <<use>>
+GestioneSedeUI ..> GestioneSedeController : <<use>>
+GestioneVeicoliUI ..> GestioneVeicoliController : <<use>>
+
+CodiciController ..> AmministratoreGeneraleAMA : <<use>>
+CodiciController ..> CodiceInvito : <<use>>
+
+GestionePersonaleController ..> AmministratoreSedeAMA : <<use>>
+GestionePersonaleController ..> LavoratoreAMA : <<use>>
+GestionePersonaleController ..> CodiceInvito : <<use>>
+GestionePersonaleController ..> DisponibilitaLavoratore : <<use>>
+
+GestioneSedeController ..> AmministratoreSedeAMA : <<use>>
+GestioneSedeController ..> SedeAMA : <<use>>
+GestioneSedeController ..> ZonaCAP : <<use>>
+GestioneSedeController ..> DisponibilitaSede : <<use>>
+
+GestioneVeicoliController ..> AmministratoreSedeAMA : <<use>>
+GestioneVeicoliController ..> SedeAMA : <<use>>
+GestioneVeicoliController ..> Veicolo : <<use>>
+GestioneVeicoliController ..> DisponibilitaVeicolo : <<use>>
+
+AmministratoreSedeAMA "0..1" -- "1" SedeAMA : amministra >
+SedeAMA "1" -- "0..*" LavoratoreAMA : personale >
+SedeAMA "1" o-- "0..*" Veicolo : flotta >
+SedeAMA "0..*" -- "0..*" ZonaCAP : copertura >
+LavoratoreAMA "1" *-- "0..*" DisponibilitaLavoratore
+Veicolo "1" *-- "0..*" DisponibilitaVeicolo
+SedeAMA "1" *-- "0..*" DisponibilitaSede
+
+AmministratoreSedeAMA "1" -- "0..*" CodiceInvito : genera personale >
+AmministratoreGeneraleAMA "1" -- "0..*" CodiceInvito : genera admin >
+
+@enduml
