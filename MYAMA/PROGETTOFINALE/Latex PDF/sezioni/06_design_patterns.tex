@@ -1,62 +1,68 @@
-\section{Design Patterns}
+﻿\section{Design Pattern}
 
-Come richiesto dalle linee guida d'esame del Prof. Andrea D'Ambrogio, la presente sezione descrive l'applicazione di due \textit{Design Pattern} (GoF --- Gang of Four) al Class Diagram consolidato, al fine di risolvere criticità architetturali del modello a oggetti, favorendo basso accoppiamento, alta coesione e manutenibilità.
+Come richiesto dalle linee guida di progetto, in questa sezione vengono presentati due Design Pattern (classificati secondo la definizione della \textit{Gang of Four}) applicati all'interno del sistema \textbf{MyAma}. L'introduzione di tali pattern ha l'obiettivo di risolvere specifiche criticità architetturali, favorendo principi fondamentali dell'ingegneria del software quali il basso accoppiamento (low coupling), l'alta coesione (high cohesion) e il principio Open/Closed.
 
 % =========================================================================
-% 6.1 PATTERN 1: OBSERVER
+% 7.1 OBSERVER PATTERN
 % =========================================================================
-\subsection{Design Pattern 1: Observer Pattern}
+\subsection{Observer Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Criticità di Design}
-Nel sistema \textbf{MyAma}, quando una prenotazione subisce una transizione di stato nel proprio ciclo di vita (ad esempio da \textit{In attesa} a \textit{Confermata}, oppure quando viene marcata come \textit{Completata}, \textit{Non Eseguita} o \textit{Annullata}), diversi sottosistemi indipendenti devono reagire in modo reattivo:
+All'interno del dominio applicativo di MyAma, la classe \texttt{Prenotazione} rappresenta una delle entità centrali, la quale subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da \textit{In attesa} a \textit{Confermata}, \textit{In corso}, \textit{Completata} o \textit{Annullata}). Ad ogni transizione di stato, è fondamentale che diversi sottosistemi indipendenti vengano informati per reagire di conseguenza:
 \begin{itemize}[leftmargin=*]
-    \item Il modulo di notifica al cittadino (invio di email, SMS o push notification);
-    \item La dashboard mobile dell'autista (aggiornamento in tempo reale dell'itinerario e del carico residuo);
-    \item Il registro operativo della sede (aggiornamento dei flussi e delle statistiche).
+    \item Il sistema di notifica (per avvisare il cittadino via email o SMS);
+    \item La dashboard degli autisti (per aggiornare in tempo reale l'itinerario giornaliero);
+    \item Il registro operativo della sede (per tracciare i flussi e compilare statistiche).
 \end{itemize}
-Se la classe \texttt{Prenotazione} dovesse invocare direttamente e rigidamente le classi concrete di ciascun ricevitore, si creerebbe un accoppiamento forte, violando il principio \textit{Open/Closed}.
 
-\subsubsection{Soluzione Progettuale e Struttura UML}
-L'applicazione del pattern comportamentale \textbf{Observer} consente di disaccoppiare completamente il soggetto osservato dagli osservatori:
+Qualora la classe \texttt{Prenotazione} dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un accoppiamento rigido e unidirezionale. Questo violerebbe pesantemente il principio \textit{Open/Closed}: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione, si renderebbe necessaria una modifica al codice sorgente della classe \texttt{Prenotazione} stessa.
+
+\subsubsection{Soluzione Progettuale}
+Per risolvere tale criticità è stato applicato il Design Pattern comportamentale \textbf{Observer}. Tale pattern consente di definire una dipendenza uno-a-molti tra gli oggetti, facendo in modo che quando l'oggetto osservato (Subject) cambia stato, tutti gli oggetti dipendenti (Observers) vengano notificati e si aggiornino automaticamente.
+In questo modo, la classe \texttt{Prenotazione} si limita a mantenere una lista di riferimenti a un'interfaccia astratta e si occupa esclusivamente di lanciare una notifica generica di aggiornamento, senza conoscere la logica implementativa o la natura dei ricevitori.
+
+\subsubsection{Partecipanti}
 \begin{itemize}[leftmargin=*]
-    \item La classe \texttt{Prenotazione} implementa il ruolo di \textit{Subject} (o \textit{Observable}), mantenendo una lista di riferimenti polimorfici a oggetti di tipo \texttt{Observer}.
-    \item Viene definita l'interfaccia astratta \texttt{PrenotazioneObserver} con il metodo \texttt{update(prenotazione: Prenotazione)}.
-    \item Le classi concrete (\texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier}, \texttt{RegistroSedeObserver}) implementano l'interfaccia. Ad ogni transizione di stato, il metodo \texttt{notifyObservers()} propaga l'evento a tutti gli ascoltatori registrati.
+    \item \textbf{Subject (Observable):} La classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{attach}), rimuovere (\texttt{detach}) e notificare (\texttt{notifyObservers}) gli ascoltatori, oltre al proprio stato interno.
+    \item \textbf{Observer:} L'interfaccia \texttt{PrenotazioneObserver} che espone il metodo \texttt{update(prenotazione: Prenotazione)}.
+    \item \textbf{ConcreteObserver:} Le classi concrete che implementano l'interfaccia, ovvero \texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier} e \texttt{RegistroSedeObserver}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
 \end{itemize}
 
 \begin{figure}[!htb]
     \centering
-    % \includegraphics[width=0.85\textwidth]{figure/pattern_observer.png}
     \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dell'Observer Pattern esportato da Visual Paradigm ]}}}
     \caption{Struttura UML del Design Pattern Observer applicato a MyAma}
     \label{fig:pattern_observer}
 \end{figure}
 
 % =========================================================================
-% 6.2 PATTERN 2: STRATEGY
+% 7.2 STRATEGY PATTERN
 % =========================================================================
-\subsection{Design Pattern 2: Strategy Pattern}
+\subsection{Strategy Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Criticità di Design}
-L'algoritmo di allocazione dei ritiri a domicilio e di composizione dell'itinerario giornaliero dei veicoli AMA può richiedere diverse politiche aziendali a seconda delle condizioni operative:
+La gestione operativa dei ritiri a domicilio e la composizione dell'itinerario dei veicoli AMA sono processi complessi che variano a seconda delle condizioni quotidiane, delle politiche aziendali e delle disponibilità di mezzi e personale. In particolare, il sistema deve poter supportare differenti algoritmi di assegnazione:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Politica di Massimizzazione Carico Mezzo:} Ottimizza il riempimento volumetrico e in peso del mezzo per minimizzare il numero complessivo di corse;
-    \item \textbf{Politica di Prossimità Territoriale / Raggio Minimo:} Ordina i ritiri minimizzando la distanza chilometrica percorsa all'interno della medesima area CAP;
-    \item \textbf{Politica di Ripartizione Bilanciata:} Distribuisce equamente le prenotazioni tra tutti gli autisti in servizio nel turno per omogeneizzare i carichi di lavoro.
+    \item \textbf{Politica di Massimizzazione del Carico:} algoritmo mirato a ottimizzare il riempimento (in volume e peso) dei mezzi prima del loro rientro in sede.
+    \item \textbf{Politica di Prossimità Territoriale:} algoritmo mirato a minimizzare i tempi e i chilometri percorsi, raggruppando i ritiri per aree limitrofe (stesso CAP).
+    \item \textbf{Politica di Bilanciamento del Carico di Lavoro:} algoritmo mirato a distribuire equamente il numero di richieste tra gli autisti in turno.
 \end{itemize}
-Codificare tali varianti all'interno della classe \texttt{GestoreAssegnazione} tramite complesse catene condizionali (\texttt{if-else} o \texttt{switch}) renderebbe il codice rigido, fragile e difficilmente manutenibile.
 
-\subsubsection{Soluzione Progettuale e Struttura UML}
-L'applicazione dello \textbf{Strategy Pattern} permette di incapsulare ciascuna logica di scheduling all'interno di classi separate e intercambiabili:
+Inserire la logica di tutti questi algoritmi direttamente all'interno della classe \texttt{GestoreAssegnazione}, impiegando complesse e lunghe catene condizionali (\texttt{if-else} o \texttt{switch-case}), porterebbe alla creazione di una "God Class" difficilmente manutenibile (violazione del \textit{Single Responsibility Principle}). Inoltre, l'aggiunta di una futura nuova politica di smistamento richiederebbe la modifica di codice già testato e consolidato.
+
+\subsubsection{Soluzione Progettuale}
+Al fine di garantire flessibilità e manutenibilità, si è optato per l'applicazione dello \textbf{Strategy Pattern}. Questo pattern permette di incapsulare una famiglia di algoritmi all'interno di classi separate e intercambiabili a tempo di esecuzione, rendendo l'algoritmo indipendente dal client che ne fa uso.
+Il controller dedicato alla pianificazione interagirà unicamente con un'interfaccia comune, delegando a runtime il calcolo dell'itinerario all'algoritmo (strategia) attualmente selezionato dall'amministratore di sede o dal sistema.
+
+\subsubsection{Partecipanti}
 \begin{itemize}[leftmargin=*]
-    \item Viene definita l'interfaccia comune \texttt{AssegnazioneStrategy} con il metodo polimorfico \texttt{calcolaAssegnazione(richieste: List, mezzi: List): PianoViaggio}.
-    \item Vengono create le classi concrete \texttt{MaxCaricoStrategy}, \texttt{ProssimitaCAPStrategy} e \texttt{BilanciamentoCaricoStrategy}.
-    \item La classe di contesto \texttt{GestoreAssegnazione} mantiene un riferimento all'interfaccia \texttt{AssegnazioneStrategy}, potendo cambiare algoritmo dinamicamente a tempo di esecuzione (\textit{Dependency Injection} / configurazione).
+    \item \textbf{Context:} La classe \texttt{GestoreAssegnazione}. Essa mantiene un riferimento all'interfaccia \texttt{AssegnazioneStrategy} ed espone un metodo (es. \texttt{pianificaRitiri()}) che al suo interno richiama l'algoritmo della strategia.
+    \item \textbf{Strategy:} L'interfaccia \texttt{AssegnazioneStrategy} che dichiara il metodo astratto polimorfico \texttt{calcolaAssegnazione(richieste: List, mezzi: List)}.
+    \item \textbf{ConcreteStrategy:} Le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{MaxCaricoStrategy}, \texttt{ProssimitaCAPStrategy} e \texttt{BilanciamentoCaricoStrategy}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 \end{itemize}
 
 \begin{figure}[!htb]
     \centering
-    % \includegraphics[width=0.85\textwidth]{figure/pattern_strategy.png}
     \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering \textsf{[ Inserire qui il Diagramma UML dello Strategy Pattern esportato da Visual Paradigm ]}}}
     \caption{Struttura UML del Design Pattern Strategy per l'allocazione delle risorse}
     \label{fig:pattern_strategy}
