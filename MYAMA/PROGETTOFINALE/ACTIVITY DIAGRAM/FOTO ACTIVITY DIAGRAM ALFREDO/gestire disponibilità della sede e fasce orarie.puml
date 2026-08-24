@@ -1,0 +1,40 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede alla
+configurazione della sede;
+
+:Il sistema mostra giorni e fasce orarie
+attualmente disponibili;
+
+:L'amministratore seleziona le
+disponibilità da modificare;
+
+repeat
+  :L'amministratore inserisce, modifica o rimuove
+  giorni e fasce orarie;
+
+  :Il sistema verifica la validità
+  delle informazioni inserite;
+backward:Il sistema segnala l'errore e richiede correzione;
+repeat while () is (y/N) not (Fasce orarie valide?\nY/n)
+
+:L'amministratore
+conferma le modifiche;
+
+:Il sistema aggiorna le
+disponibilità della sede;
+stop
+
+@enduml

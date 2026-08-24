@@ -1,0 +1,50 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede alla
+gestione dei lavoratori della propria sede;
+
+:Il sistema mostra l'elenco dei lavoratori
+associati e le relative disponibilità;
+
+:L'amministratore seleziona
+il lavoratore da gestire;
+
+if () then (Lavoratore associato?\nY/n)
+  :Il sistema mostra le informazioni
+  attualmente registrate;
+  
+  repeat
+    :L'amministratore inserisce o modifica
+    le disponibilità del lavoratore;
+    
+    :Il sistema verifica la
+    validità delle informazioni;
+  backward:Il sistema segnala gli errori;
+  repeat while () is (y/N) not (Dati validi?\nY/n)
+
+  :L'amministratore
+  conferma le modifiche;
+  
+  :Il sistema aggiorna le
+  disponibilità del lavoratore;
+  stop
+
+else (y/N)
+  :Il sistema impedisce
+  la modifica;
+  stop
+endif
+
+@enduml
