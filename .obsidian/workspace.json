@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8d709c023edc17dd",
+        "id": "ca958986449301da",
         "type": "tabs",
         "children": [
           {
-            "id": "635826c9fb49f781",
+            "id": "566fecc25ac63c05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
+                "file": "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RELAZIONI_COMPLETE_REFINED_MyAma"
-            }
-          },
-          {
-            "id": "9d9c717b7c2dd64d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "NOMI"
+              "title": "User requirements definition"
             }
           }
         ]
@@ -97,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.9453125,
-    "collapsed": true
+    "width": 370.9453125
   },
   "right": {
     "id": "659f62a9ab9cdec4",
@@ -203,40 +188,46 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "635826c9fb49f781",
+  "active": "566fecc25ac63c05",
   "lastOpenFiles": [
-    "fix_tex.py",
-    "diag2.py",
-    "diag.py",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM DAVIDE/davidelUseCase.vpp.bak_006d-journal",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM DAVIDE/davidelUseCase.vpp.bak_006d",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM DAVIDE/ActivityDiagramVIsualizzareDataOraDisponibili.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM DAVIDE/ActivityDiagramVIsualizzareDataOraDisponibili.old.jpg",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM DAVIDE/ActivityDiagramVisualizzareDateFasceOrarieDisponibili.jpg",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/LISTA USE CASE.md",
+    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/PROGETTOFINALE/Latex PDF/main.pdf",
+    "MYAMA/PROGETTOFINALE/TODO.md",
+    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM ALFREDO/sequenceDiagramsAlfredo.vpp.bak_002d",
+    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM ALFREDO/sequenceDiagramsAlfredo.vpp.bak_001d",
+    "MYAMA/PROGETTOFINALE/ModificheValerio/registrazione_Tramite_codice_invito.jpg",
+    "MYAMA/PROGETTOFINALE/ModificheValerio/Valerio_sequence_diagram.vpp",
+    "MYAMA/PROGETTOFINALE/ModificheValerio/Utente_non_Registrazione_cittadino.jpg",
+    "MYAMA/PROGETTOFINALE/ModificheValerio/EseguiAccesso.jpg",
+    "MYAMA/PROGETTOFINALE/ModificheValerio",
+    "MYAMA/PROGETTOFINALE/MODIFICHE AL MAIN PDF SAMUELE/sequenceDiagramsAlfredo.vpp.bak_000f",
+    "MYAMA/PROGETTOFINALE/MODIFICHE AL MAIN PDF SAMUELE/sequenceDiagramsAlfredo.vpp",
+    "MYAMA/PROGETTOFINALE/MODIFICHE AL MAIN PDF SAMUELE/Registrare esito ritiro.jpg",
+    "MYAMA/PROGETTOFINALE/MODIFICHE AL MAIN PDF SAMUELE/Modifiche effettuate.md",
+    "MYAMA/PROGETTOFINALE/MODIFICHE AL MAIN PDF SAMUELE",
+    "MYAMA/PROGETTOFINALE/CLASS DIAGRAM/CLASS DIAGRAM REFINED/Class Refined.vpp.bak_002d",
+    "MYAMA/GRUPPO 1/TODO DAVIDE.md",
+    "MYAMA/PROGETTOFINALE/REPORT_AUDIT_LATEX_MYAMA.md",
+    "MYAMA/PROGETTOFINALE/Latex PDF/figure/class_CLASS_DIAGRAM_refined.jpg",
+    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
     "MYAMA/PROGETTOFINALE/Latex PDF/figure/pattern_strategy.jpg",
     "MYAMA/PROGETTOFINALE/Latex PDF/figure/pattern_observer.jpg",
     "MYAMA/PROGETTOFINALE/DESIGN PATTERN/design_pattern.md",
-    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern.vpp",
-    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern - Strategy.jpg",
-    "MYAMA/PROGETTOFINALE/DESIGN PATTERN/Design Pattern - Observer.jpg",
-    "MYAMA/PROGETTOFINALE/DESIGN PATTERN",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/strategy.png",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/observer.png",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/STRATEGY_MyAma.puml",
     "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/README.md",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/OBSERVER_MyAma.puml",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_005d-journal",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_005d",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/Class Refined ultimate sbebbers.vpp.bak_004d-journal",
-    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/FOTO ACTIVITY DIAGRAM ALFREDO/Genera codice di invito.png",
     "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md",
     "MYAMA/GRUPPO 1/DESIGN PATTERN/design_pattern.md",
     "MYAMA/PROGETTOFINALE/design_pattern.md",
     "MYAMA/PROGETTOFINALE/GUIDA_ASSOCIAZIONI_VELOCI.md",
     "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/DOCUMENTAZIONE_ACTIVITY_DIAGRAM.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/registrazione accesso.png",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/operatore sede.png",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/entity model.png",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/RELAZIONI_COMPLETE_REFINED_MyAma.md",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/MyAma_PlantUML_Refined_Corretti/README_CORREZIONI.md",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/MyAma-Refined-Complete/NOTE-REFINED-COMPLETE.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/GUIDA_ASSOCIAZIONI_VELOCI.md",
     "MYAMA/PROGETTOFINALE/GUIDA_COLLEGAMENTI_UML.md",
     "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/guida_class_diagram_refined.md",
@@ -244,12 +235,6 @@
     "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/NOTE_INCERTEZZE_XMI.md",
     "MYAMA/GRUPPO 1/CLASS DIAGRAM REFINED/GUIDA_COLLEGAMENTI_UML.md",
     "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI ASSOCIATI A MESSAGGI.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/METODI.md",
-    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/LISTA SEQUENCE DIAGRAM.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/NOTE-REFINED.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/KNOWLEDGE.MD",
-    "MYAMA/PROGETTOFINALE/NOTE_INCERTEZZE_XMI.md",
-    "MYAMA/PROGETTOFINALE/REFINE CLASS DIAGRAM.md"
+    "MYAMA/GRUPPO 1/SEQUENCE DIAGRAM/MESSAGGI.md"
   ]
 }
