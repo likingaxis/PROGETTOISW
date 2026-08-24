@@ -1,0 +1,50 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede
+alla sezione dedicata ai veicoli;
+
+:Il sistema mostra i veicoli associati
+e le relative disponibilità;
+
+:L'amministratore seleziona
+un veicolo;
+
+if () then (Veicolo associato?\nY/n)
+  :Il sistema mostra la disponibilità
+  attualmente registrata;
+  
+  repeat
+    :L'amministratore modifica le
+    informazioni di disponibilità;
+    
+    :Il sistema verifica la
+    validità dei dati inseriti;
+  backward:Il sistema segnala gli errori;
+  repeat while () is (y/N) not (Dati validi?\nY/n)
+
+  :L'amministratore
+  conferma le modifiche;
+  
+  :Il sistema aggiorna la
+  disponibilità del veicolo;
+  stop
+
+else (y/N)
+  :Il sistema impedisce l'aggiornamento
+  delle relative informazioni;
+  stop
+endif
+
+@enduml

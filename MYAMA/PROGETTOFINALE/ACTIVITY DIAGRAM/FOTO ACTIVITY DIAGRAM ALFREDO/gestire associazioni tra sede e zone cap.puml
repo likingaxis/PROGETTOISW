@@ -1,0 +1,37 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede alla
+sezione copertura territoriale;
+
+:Il sistema mostra le zone e i CAP
+attualmente associati alla sede;
+
+repeat
+  :L'amministratore aggiunge, modifica o
+  rimuove un'associazione zona/CAP;
+
+  :Il sistema verifica la
+  validità dell'associazione;
+backward:Il sistema segnala l'errore (non valido o duplicato);
+repeat while () is (y/N) not (Associazione valida?\nY/n)
+
+:L'amministratore
+conferma le modifiche;
+
+:Il sistema aggiorna le associazioni
+territoriali della sede;
+stop
+
+@enduml
