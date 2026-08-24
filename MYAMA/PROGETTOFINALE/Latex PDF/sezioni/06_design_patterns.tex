@@ -1,24 +1,69 @@
-﻿\section{Design Pattern}
-
-Come richiesto dalle linee guida di progetto, in questa sezione vengono presentati due Design Pattern (classificati secondo la definizione della \textit{Gang of Four}) applicati all'interno del sistema \textbf{MyAma}. L'introduzione di tali pattern ha l'obiettivo di risolvere specifiche criticità architetturali, favorendo principi fondamentali dell'ingegneria del software quali il basso accoppiamento (low coupling), l'alta coesione (high cohesion) e il principio Open/Closed.
+\section{Design Pattern}
 
 % =========================================================================
-% 7.1 OBSERVER PATTERN
+% 6.1 INTRODUZIONE E METODOLOGIA
+% =========================================================================
+\subsection{Introduzione e Metodologia di Selezione}
+
+Nel contesto dell'Ingegneria del Software, i \textit{Design Pattern} (secondo la canonica classificazione della \textit{Gang of Four} --- GoF) rappresentano soluzioni consolidate, collaudate e riutilizzabili a problemi ricorrenti di progettazione orientata agli oggetti. L'obiettivo primario della loro introduzione non è meramente stilistico, bensì quello di garantire che il sistema software rispetti le proprietà cardine di manutenibilità, estendibilità, basso accoppiamento (\textit{Low Coupling}) e alta coesione (\textit{High Cohesion}), oltre ai principi fondamentali di progettazione \textbf{SOLID} (in particolare il principio \textit{Open/Closed} e il \textit{Single Responsibility Principle}).
+
+\subsubsection{Analisi Critica del Class Diagram Refined}
+La selezione dei Design Pattern per la piattaforma \textbf{MyAma} è scaturita da un'attenta analisi critica del \textit{Class Diagram Refined}. Anziché forzare a priori l'inserimento di strutture complesse non richieste dal dominio, il gruppo di lavoro ha esaminato le entità e i controller del modello per individuare reali punti critici (\textit{hotspots}) e potenziali violazioni di design (quali catene condizionali rigide o accoppiamenti indebiti tra entità di dominio e moduli periferici).
+
+La Tabella~\ref{tab:valutazione_pattern} riassume la valutazione comparativa effettuata sui pattern candidati della letteratura GoF.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|p{0.6cm}|p{4.2cm}|p{3.2cm}|p{2.4cm}|p{4.2cm}|}
+\caption{Valutazione e selezione dei Design Pattern candidati per MyAma} \label{tab:valutazione_pattern} \\ \hline
+\rowcolor{tableheader} \textbf{\#} & \textbf{Problema nel Refined} & \textbf{Entità Coinvolte} & \textbf{Pattern} & \textbf{Valutazione e Idoneità} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor{tableheader} \textbf{\#} & \textbf{Problema nel Refined} & \textbf{Entità Coinvolte} & \textbf{Pattern} & \textbf{Valutazione e Idoneità} \\ \hline
+\endhead
+
+\textbf{1} & \textbf{Politiche variabili di assegnazione e routing dei ritiri} & \texttt{RitiroDomicilio}, \texttt{Assegnazione}, \texttt{AutistaAMA}, \texttt{Veicolo} & \textbf{Strategy} & \textbf{Scelta Primaria (Ottimo)}: incapsula e rende intercambiabili le politiche logistiche di scheduling senza intaccare il controller. \\ \hline
+
+\textbf{2} & \textbf{Reazione distribuita al cambio di stato della prenotazione} & \texttt{Prenotazione}, \texttt{Cittadino}, \texttt{AutistaAMA}, \texttt{SedeAMA} & \textbf{Observer} & \textbf{Scelta Primaria (Ottimo)}: disaccoppia il ciclo di vita della prenotazione da notifiche e dashboard dipendenti. \\ \hline
+
+3 & Condivisione dello scheletro del ciclo di vita tra Ritiro e Conferimento & \texttt{Prenotazione}, \texttt{RitiroDomicilio}, \texttt{ConferimentoSede} & Template Method & \textit{Candidato Valido}: buona aderenza, ma meno incisivo rispetto a Strategy e Observer. \\ \hline
+
+4 & Creazione specializzata delle differenti tipologie di utente & \texttt{UserFactory}, \texttt{UtenteSistema}, ruoli derivati & Factory Method & \textit{Possibile}: presente come concetto, ma richiederebbe un refactoring più invasivo della gerarchia. \\ \hline
+
+5 & Aggiunta dinamica di servizi opzionali & \texttt{Prenotazione}, servizi accessori & Decorator & \textit{Non Idoneo}: il dominio di MyAma non prevede opzioni a cascata componibili a runtime. \\ \hline
+
+6 & Gestione ricorsiva di strutture composte e foglie & Sedi e Zone territoriali & Composite & \textit{Non Idoneo}: le relazioni parte-tutto nel dominio sono composizioni semplici e non ricorsive. \\ \hline
+
+7 & Integrazione con interfacce legacy o incompatibili & Comunicazioni esterne & Adapter & \textit{Non Idoneo}: non sono presenti API terze o sistemi preesistenti incompatibili da adattare. \\ \hline
+
+8 & Creazione di intere famiglie di prodotti correlati & Tipologie utente / servizi & Abstract Factory & \textit{Non Idoneo}: assenza di famiglie alternative parallele di oggetti nel modello. \\ \hline
+\end{longtable}
+\end{center}
+
+In virtù dell'analisi effettuata, sono stati selezionati per l'integrazione nel sistema \textbf{MyAma} due pattern comportamentali complementari:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Observer Pattern:} per risolvere la dipendenza uno-a-molti generata dagli eventi di transizione di stato delle prenotazioni.
+    \item \textbf{Strategy Pattern:} per incapsulare e rendere dinamicamente intercambiabili gli algoritmi di ottimizzazione e assegnazione dei carichi di lavoro.
+\end{itemize}
+
+% =========================================================================
+% 6.2 OBSERVER PATTERN
 % =========================================================================
 \subsection{Observer Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Criticità di Design}
 All'interno del dominio applicativo di MyAma, la classe \texttt{Prenotazione} rappresenta una delle entità centrali, la quale subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da \textit{In attesa} a \textit{Confermata}, \textit{In corso}, \textit{Completata} o \textit{Annullata}). Ad ogni transizione di stato, è fondamentale che diversi sottosistemi indipendenti vengano informati per reagire di conseguenza:
 \begin{itemize}[leftmargin=*]
-    \item Il sistema di notifica (per avvisare il cittadino via email o SMS);
-    \item La dashboard degli autisti (per aggiornare in tempo reale l'itinerario giornaliero);
-    \item Il registro operativo della sede (per tracciare i flussi e compilare statistiche).
+    \item \textbf{Modulo Notifiche:} invio di comunicazioni telematiche (email, SMS, notifiche in-app) al cittadino per informarlo dell'accettazione o della variazione del servizio;
+    \item \textbf{Dashboard Autista:} aggiornamento dell'itinerario e del carico pianificato per il turno corrente sul dispositivo mobile dell'autista;
+    \item \textbf{Registro di Sede:} aggiornamento dei contatori di flusso, delle statistiche di transito e dei posti occupati nel centro di raccolta.
 \end{itemize}
 
-Qualora la classe \texttt{Prenotazione} dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un accoppiamento rigido e unidirezionale. Questo violerebbe pesantemente il principio \textit{Open/Closed}: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione, si renderebbe necessaria una modifica al codice sorgente della classe \texttt{Prenotazione} stessa.
+Qualora la classe \texttt{Prenotazione} dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un accoppiamento rigido e unidirezionale (\textit{tight coupling}). Questo violerebbe pesantemente il principio \textit{Open/Closed}: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione (es. un modulo di tracciamento o un sistema di telemetria), si renderebbe necessaria una modifica al codice sorgente della classe \texttt{Prenotazione} stessa.
 
-\subsubsection{Soluzione Progettuale}
-Per risolvere tale criticità è stato applicato il Design Pattern comportamentale \textbf{Observer}. Tale pattern consente di definire una dipendenza uno-a-molti tra gli oggetti, facendo in modo che quando l'oggetto osservato (Subject) cambia stato, tutti gli oggetti dipendenti (Observers) vengano notificati e si aggiornino automaticamente.
+\subsubsection{Soluzione Progettuale e Vantaggi Architetturali}
+Per risolvere tale criticità è stato applicato il Design Pattern comportamentale \textbf{Observer}. Tale pattern consente di definire una dipendenza uno-a-molti tra gli oggetti, facendo in modo che quando l'oggetto osservato (\textit{Subject}) cambia stato, tutti gli oggetti dipendenti (\textit{Observers}) vengano notificati e si aggiornino automaticamente.
 In questo modo, la classe \texttt{Prenotazione} si limita a mantenere una lista di riferimenti a un'interfaccia astratta e si occupa esclusivamente di lanciare una notifica generica di aggiornamento, senza conoscere la logica implementativa o la natura dei ricevitori.
 
 \subsubsection{Partecipanti}
@@ -36,21 +81,21 @@ In questo modo, la classe \texttt{Prenotazione} si limita a mantenere una lista 
 \end{figure}
 
 % =========================================================================
-% 7.2 STRATEGY PATTERN
+% 6.3 STRATEGY PATTERN
 % =========================================================================
 \subsection{Strategy Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Criticità di Design}
 La gestione operativa dei ritiri a domicilio e la composizione dell'itinerario dei veicoli AMA sono processi complessi che variano a seconda delle condizioni quotidiane, delle politiche aziendali e delle disponibilità di mezzi e personale. In particolare, il sistema deve poter supportare differenti algoritmi di assegnazione:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Politica di Massimizzazione del Carico:} algoritmo mirato a ottimizzare il riempimento (in volume e peso) dei mezzi prima del loro rientro in sede.
-    \item \textbf{Politica di Prossimità Territoriale:} algoritmo mirato a minimizzare i tempi e i chilometri percorsi, raggruppando i ritiri per aree limitrofe (stesso CAP).
+    \item \textbf{Politica di Massimizzazione del Carico:} algoritmo mirato a ottimizzare il riempimento (in volume e peso) dei mezzi prima del loro rientro in sede, minimizzando il numero complessivo di corse;
+    \item \textbf{Politica di Prossimità Territoriale:} algoritmo mirato a minimizzare i tempi e i chilometri percorsi, raggruppando i ritiri per aree limitrofe (stesso CAP);
     \item \textbf{Politica di Bilanciamento del Carico di Lavoro:} algoritmo mirato a distribuire equamente il numero di richieste tra gli autisti in turno.
 \end{itemize}
 
 Inserire la logica di tutti questi algoritmi direttamente all'interno della classe \texttt{GestoreAssegnazione}, impiegando complesse e lunghe catene condizionali (\texttt{if-else} o \texttt{switch-case}), porterebbe alla creazione di una "God Class" difficilmente manutenibile (violazione del \textit{Single Responsibility Principle}). Inoltre, l'aggiunta di una futura nuova politica di smistamento richiederebbe la modifica di codice già testato e consolidato.
 
-\subsubsection{Soluzione Progettuale}
+\subsubsection{Soluzione Progettuale e Vantaggi Architetturali}
 Al fine di garantire flessibilità e manutenibilità, si è optato per l'applicazione dello \textbf{Strategy Pattern}. Questo pattern permette di incapsulare una famiglia di algoritmi all'interno di classi separate e intercambiabili a tempo di esecuzione, rendendo l'algoritmo indipendente dal client che ne fa uso.
 Il controller dedicato alla pianificazione interagirà unicamente con un'interfaccia comune, delegando a runtime il calcolo dell'itinerario all'algoritmo (strategia) attualmente selezionato dall'amministratore di sede o dal sistema.
 
