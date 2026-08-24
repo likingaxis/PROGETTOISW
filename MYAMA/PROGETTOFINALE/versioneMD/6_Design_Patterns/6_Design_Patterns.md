@@ -1,4 +1,4 @@
-﻿# 6. Design Patterns (Pattern di Progettazione)
+# 6. Design Patterns (Pattern di Progettazione)
 
 
 % =========================================================================
@@ -6,8 +6,7 @@
 % =========================================================================
 ## Introduzione e Metodologia di Selezione
 
-
-Nel contesto dell'Ingegneria del Software, i *Design Pattern* (secondo la canonica classificazione della *Gang of Four* — GoF) rappresentano soluzioni consolidate, collaudate e riutilizzabili a problemi ricorrenti di progettazione orientata agli oggetti. L'obiettivo primario della loro introduzione non è meramente stilistico, bensì quello di garantire che il sistema software rispetti le proprietà cardine di manutenibilità, estendibilità, basso accoppiamento (*Low Coupling*) e alta coesione (*High Cohesion*), oltre ai principi fondamentali di progettazione **SOLID** (in particolare il principio *Open/Closed* e il *Single Responsibility Principle*).
+Si vogliono ora introdurre i Design Pattern 
 
 ### Analisi Critica del Class Diagram Refined
 

@@ -13,24 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
+                "file": "MYAMA/PROGETTOFINALE/versioneMD/6_Design_Patterns/6_Design_Patterns.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "User requirements definition"
-            }
-          },
-          {
-            "id": "c9f15bb646df9c70",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "OTHER PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Progetto_Buongiorno_Machowski_Muscillo_Politano"
+              "title": "6_Design_Patterns"
             }
           }
         ]
@@ -58,7 +46,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Esplora file"
+              "title": "Files"
             }
           },
           {
@@ -95,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.9453125
+    "width": 264.70001220703125
   },
   "right": {
     "id": "659f62a9ab9cdec4",
@@ -191,46 +179,52 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Apri selettore rapido": false,
-      "graph:Apri vista grafo": false,
-      "canvas:Crea nuova lavagna": false,
-      "daily-notes:Apri nota giornaliera": false,
-      "templates:Inserisci modello": false,
-      "command-palette:Apri riquadro comandi": false,
-      "bases:Crea nuova Base": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
   "active": "566fecc25ac63c05",
   "lastOpenFiles": [
-    "OTHER PROGETTI/Progetto_Buongiorno_Machowski/Progetto_Buongiorno_Machowski_Muscillo_Politano.pdf",
-    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_utente_non_registrato.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_operatore_sede.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_cittadino.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_autista.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_amministratore_sede.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/uc_amministratore_generale.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/tor_vergata_logo.png",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/seq_registrazione_Tramite_codice_invito.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/seq_Visualizzare_ritiri_assegnati.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/seq_Utente_non_Registrazione_cittadino.jpg",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure/cover.pdf",
-    "MYAMA/PROGETTOFINALE/versioneMD/6_Design_Patterns/6_Design_Patterns.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/Use Case Diagram2.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/ValerioUseCase.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/Use Case Diagram1.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/OperatoreSedeAMA.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/AmministratoriAMA.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/AutistaAMA.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/davidelUseCase.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case/Amministratore generale AMA.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/User requirements definition.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/LISTA USE CASE.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM/Use Case",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/USE CASE DIAGRAM",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/Valerio_sequence_diagram.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/Utente_non_Registrazione_cittadino.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/registrazione_Tramite_codice_invito.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM SAMUELE/SequenceGestireDisponibilitaVeicoli.vpp.bak_000f",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/EseguiAccesso.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM SAMUELE/SequenceGestireDisponibilitaVeicoli.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM SAMUELE/SequenceGestireDisponibilitaVeicoli.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM DAVIDE/ProgettoVPdavidel.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM DAVIDE/DiagramVisualizzaStorico.jpg",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceDiagram Luca.vpp.bak_000f",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM LUCA/SequenceDiagram Luca.vpp",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/SEQUENCE DIAGRAM/LISTA SEQUENCE DIAGRAM.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/ACTIVITY DIAGRAM/LISTA ACTIVITY DIAGRAM.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/ACTIVITY DIAGRAM/DOCUMENTAZIONE_ACTIVITY_DIAGRAM.md",
+    "MYAMA/PROGETTOFINALE/DIAGRAMMI SEPARATI/DESIGN PATTERN/design_pattern.md",
     "MYAMA/PROGETTOFINALE/versioneMD/5_Modelli_OOA/5_Modelli_OOA.md",
+    "MYAMA/PROGETTOFINALE/versioneMD/6_Design_Patterns/6_Design_Patterns.md",
+    "MYAMA/PROGETTOFINALE/versioneMD/1_Introduzione/1_Introduzione.md",
+    "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/User requirements definition.md",
     "MYAMA/PROGETTOFINALE/versioneMD/4_System_Requirements/4_System_Requirements.md",
     "MYAMA/PROGETTOFINALE/versioneMD/3_User_Requirements/3_User_Requirements.md",
     "MYAMA/PROGETTOFINALE/versioneMD/2_Glossario/2_Glossario.md",
-    "MYAMA/PROGETTOFINALE/versioneMD/1_Introduzione/1_Introduzione.md",
-    "MYAMA/PROGETTOFINALE/versioneMD/figure",
     "MYAMA/PROGETTOFINALE/versioneMD/README.md",
-    "MYAMA/PROGETTOFINALE/versioneMD/6_Design_Patterns",
-    "MYAMA/PROGETTOFINALE/versioneMD/5_Modelli_OOA",
-    "MYAMA/PROGETTOFINALE/versioneMD/4_System_Requirements",
-    "MYAMA/PROGETTOFINALE/versioneMD/3_User_Requirements",
-    "MYAMA/PROGETTOFINALE/versioneMD/2_Glossario",
-    "MYAMA/PROGETTOFINALE/versioneMD/1_Introduzione",
-    "MYAMA/PROGETTOFINALE/versioneMD",
-    "MYAMA/PROGETTOFINALE/SEQUENCE DIAGRAM/FOTO SEQUENCE DIAGRAM VALERIO/Valerio_sequence_diagram.vpp",
     "MYAMA/GRUPPO 1/MODIFICHE AL MAIN PDF SAMUELE/Modifiche effettuate.md",
     "MYAMA/PROGETTOFINALE/USE CASE DIAGRAM/LISTA USE CASE.md",
     "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/LISTA ACTIVITY DIAGRAM.md",
@@ -241,12 +235,6 @@
     "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/CLASS REFINED DEFINITIVO/RELAZIONI_COMPLETE_REFINED_MyAma.md",
     "MYAMA/PROGETTOFINALE/DESIGN PATTERN/design_pattern.md",
     "MYAMA/GRUPPO 1/DESIGN PATTERN/MyAma_DesignPattern_Strategy_Observer/README.md",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md",
-    "MYAMA/GRUPPO 1/DESIGN PATTERN/design_pattern.md",
-    "MYAMA/PROGETTOFINALE/design_pattern.md",
-    "MYAMA/PROGETTOFINALE/GUIDA_ASSOCIAZIONI_VELOCI.md",
-    "MYAMA/PROGETTOFINALE/ACTIVITY DIAGRAM/DOCUMENTAZIONE_ACTIVITY_DIAGRAM.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/diagrammi class refined/RELAZIONI_COMPLETE_REFINED_MyAma.md",
-    "MYAMA/GRUPPO 2/CLASS DIAGRAM REFINED/CHAT GPT/MyAma_PlantUML_Refined_Corretti/README_CORREZIONI.md"
+    "MYAMA/GRUPPO 1/DESIGN PATTERN/NOMI.md"
   ]
 }

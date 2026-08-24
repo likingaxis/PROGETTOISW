@@ -1,4 +1,4 @@
-﻿# 5. System Architectural Models (Modelli OOA)
+# 5. System Architectural Models (Modelli OOA)
 
 
 La presente sezione descrive i modelli dinamici e strutturali del sistema **MyAma** mediante i modelli di *Object Oriented Analysis* (OOA) sviluppati con il tool Visual Paradigm.
