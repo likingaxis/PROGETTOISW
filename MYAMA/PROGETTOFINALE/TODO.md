@@ -5,5 +5,10 @@
 - [ ] mettere prima class diagram e poi sequence (?)
 - [ ] abbreviare la parte introduttiva dei design pattern e togliere la tabella con i pattern candidati (forse)
 - [x] Modificato il sequence diagram esito ritiro
-	- [ ] modificare il class diagram
 - [ ] GUARDARE TODO DI DAVIDE
+
+### GLOSSARIO
+##### parole senza corrispondenza
+- codice prenotazione / pass di conferimento
+- Itinerario di Ritiro (non ha corrispondenze ma forse ha senso)
+- carico residuo
