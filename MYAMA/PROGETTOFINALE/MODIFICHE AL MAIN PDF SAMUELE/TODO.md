@@ -1,9 +1,0 @@
-- [ ] Togliere pagine contenenti gli elenchi delle figure e tabelle
-- [x] nel sequence diagram della registrazione manca interazione tra utente e dati di privacy
-	- [ ] modificare il pdf di conseguenza
-	- [ ] conseguentemente modificare anche il class refined
-- [ ] slide 37 togliere OOA nel titolo (e eventualmente togliere anche l'introduzione)
-- [x] slide 58 rifare figura 30
-	- [ ] INSERIRLA NEL PDF (fatta da samuele)
-- [ ] mettere prima class diagram e poi sequence (?)
-- [ ] abbreviare la parte introduttiva dei design pattern e togliere la tabella con i pattern candidati (forse)

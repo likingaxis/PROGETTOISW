@@ -1,0 +1,9 @@
+- [ ] Togliere pagine contenenti gli elenchi delle figure e tabelle
+- [x] nel sequence diagram della registrazione manca interazione tra utente e dati di privacy
+	- [x] conseguentemente modificare anche il class refined
+- [ ] slide 37 togliere OOA nel titolo (e eventualmente togliere anche l'introduzione
+- [ ] mettere prima class diagram e poi sequence (?)
+- [ ] abbreviare la parte introduttiva dei design pattern e togliere la tabella con i pattern candidati (forse)
+- [x] Modificato il sequence diagram esito ritiro
+	- [ ] modificare il class diagram
+- [ ] GUARDARE TODO DI DAVIDE
