@@ -111,6 +111,11 @@ I processi amministrativi consentono di gestire le risorse umane, i mezzi logist
 *Activity Diagram — Rimuovere lavoratori dalla sede*
 
 
+![Activity Diagram — Gestire associazioni tra sede e zone/CAP](../figure/act_admin_sede_gestire_associazioni.png)
+
+*Activity Diagram — Gestire associazioni tra sede e zone/CAP*
+
+
 ![Activity Diagram — Rimuovere amministratore di sede](../figure/act_rimuovere_admin.jpg)
 
 *Activity Diagram — Rimuovere amministratore di sede*

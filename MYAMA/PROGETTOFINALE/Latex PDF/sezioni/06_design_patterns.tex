@@ -30,12 +30,14 @@ Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in fu
 
 A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (\textit{Observers}) vengono notificati e si aggiornano in automatico.
 
+\begin{sloppypar}
 \subsubsection{Partecipanti}
 \begin{itemize}[leftmargin=*]
     \item \textbf{Subject (Observable):} la classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{registraObserver(obs)}), rimuovere (\texttt{rimuoviObserver(obs)}) e notificare (\texttt{notificaObserver()}) gli ascoltatori, oltre alla gestione del proprio stato interno (\texttt{StatoPrenotazione}).
     \item \textbf{Observer:} l'interfaccia \texttt{ObserverPrenotazione} che espone il metodo polimorfico \texttt{update(stato: StatoPrenotazione)}.
     \item \textbf{ConcreteObserver:} le classi concrete che implementano l'interfaccia, ovvero \texttt{NotificaCittadino}, \texttt{AggiornamentoAutista} e \texttt{AggiornamentoSede}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
 \end{itemize}
+\end{sloppypar}
 
 \begin{figure}[H]
     \centering
