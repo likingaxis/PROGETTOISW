@@ -6,26 +6,11 @@
 % =========================================================================
 ## Introduzione e Metodologia di Selezione
 
-Si vogliono ora introdurre i Design Pattern 
+Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei design pattern che consentono la riusabilità del design per altri progetti 
 
 ### Analisi Critica del Class Diagram Refined
 
-La selezione dei Design Pattern per la piattaforma **MyAma** è scaturita da un'attenta analisi critica del *Class Diagram Refined*. Anziché forzare a priori l'inserimento di strutture complesse non richieste dal dominio, il gruppo di lavoro ha esaminato le entità e i controller del modello per individuare reali punti critici (*hotspots*) e potenziali violazioni di design (quali catene condizionali rigide o accoppiamenti indebiti tra entità di dominio e moduli periferici).
-
-La la tabella seguente riassume la valutazione comparativa effettuata sui pattern candidati della letteratura GoF.
-
-
-
-| # | Problema nel Refined | Entità Coinvolte | Pattern | Valutazione e Idoneità |
-| :---: | :--- | :--- | :--- | :--- |
-| **1** | **Politiche variabili di assegnazione e routing dei ritiri** | RitiroDomicilio, Assegnazione, AutistaAMA, Veicolo | **Strategy** | **Scelta Primaria (Ottimo)**: incapsula e rende intercambiabili le politiche logistiche di scheduling senza intaccare il controller. |
-| **2** | **Reazione distribuita al cambio di stato della prenotazione** | Prenotazione, Cittadino, AutistaAMA, SedeAMA | **Observer** | **Scelta Primaria (Ottimo)**: disaccoppia il ciclo di vita della prenotazione da notifiche e dashboard dipendenti. |
-| **3** | Condivisione dello scheletro del ciclo di vita tra Ritiro e Conferimento | Prenotazione, RitiroDomicilio, ConferimentoSede | Template Method | *Candidato Valido*: buona aderenza, ma meno incisivo rispetto a Strategy e Observer. |
-| **4** | Creazione specializzata delle differenti tipologie di utente | UserFactory, UtenteSistema, ruoli derivati | Factory Method | *Possibile*: presente come concetto, ma richiederebbe un refactoring più invasivo della gerarchia. |
-| **5** | Aggiunta dinamica di servizi opzionali | Prenotazione, servizi accessori | Decorator | *Non Idoneo*: il dominio di MyAma non prevede opzioni a cascata componibili a runtime. |
-| **6** | Gestione ricorsiva di strutture composte e foglie | Sedi e Zone territoriali | Composite | *Non Idoneo*: le relazioni parte-tutto nel dominio sono composizioni semplici e non ricorsive. |
-| **7** | Integrazione con interfacce legacy o incompatibili | Comunicazioni esterne | Adapter | *Non Idoneo*: non sono presenti API terze o sistemi preesistenti incompatibili da adattare. |
-| **8** | Creazione di intere famiglie di prodotti correlati | Tipologie utente / servizi | Abstract Factory | *Non Idoneo*: assenza di famiglie alternative parallele di oggetti nel modello. |
+La selezione dei Design Pattern per la piattaforma **MyAma** è scaturita da un' analisi del *Class Diagram Refined*. Sono state esaminate le entità e i controller del modello per individuare reali punti critici e potenziali violazioni di design
 
 In virtù dell'analisi effettuata, sono stati selezionati per l'integrazione nel sistema **MyAma** due pattern comportamentali complementari:
 
