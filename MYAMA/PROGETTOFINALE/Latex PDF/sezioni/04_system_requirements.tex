@@ -11,7 +11,7 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{|p{3.0cm}|p{1.2cm}|p{4.0cm}|p{5.8cm}|}
-\hline
+\caption{Requisiti Funzionali}\label{tab:rf} \\ \hline
 \rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione / Criterio di Verifica} \\ \hline
 \endfirsthead
 
@@ -21,7 +21,7 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 
 Utente non registrato & \textbf{RF-01} & Registrazione cittadino & Il sistema deve consentire a un utente di registrarsi come cittadino fornendo i propri dati e accettando l'informativa privacy. \\ \hline
 
-Utente non registrato & \textbf{RF-02} & Registrazione tramite invito & Il sistema deve permettere la registrazione del personale (Amministratore o Operatore) tramite l'inserimento di un codice di invito valido. \\ \hline
+Utente non registrato & \textbf{RF-02} & Registrazione tramite invito & Il sistema deve permettere la registrazione del personale (Autista, Operatore o Amministratore) tramite l'inserimento di un codice di invito valido. \\ \hline
 
 Utente di sistema & \textbf{RF-03} & Autenticazione & Il sistema deve permettere agli utenti registrati di effettuare l'accesso inserendo credenziali valide, reindirizzandoli alle funzionalità del proprio ruolo. \\ \hline
 
@@ -43,7 +43,11 @@ Amministratore Sede & \textbf{RF-11} & Gestione risorse e disponibilità & Il si
 
 Amministratore Sede & \textbf{RF-12} & Generazione codici invito & Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale. \\ \hline
 
-Amministratore Sede & \textbf{RF-13} & Rimozione personale & Il sistema deve permettere all'amministratore di rimuovere account del personale dal sistema. \\ \hline
+Amministratore Sede & \textbf{RF-13} & Rimozione personale dalla sede & Il sistema deve permettere all'amministratore di sede di rimuovere e disassociare membri del personale operativo dalla propria struttura. \\ \hline
+
+Amministratore Generale & \textbf{RF-14} & Generazione codici invito amministratori & Il sistema deve consentire all'amministratore generale di generare codici di invito abilitanti al ruolo di amministratore di sede. \\ \hline
+
+Amministratore Generale & \textbf{RF-15} & Revoca e rimozione amministratori di sede & Il sistema deve consentire all'amministratore generale di revocare e rimuovere l'abilitazione degli amministratori di sede AMA. \\ \hline
 \end{longtable}
 \end{center}
 
@@ -55,8 +59,8 @@ Questa sezione descrive i vincoli di qualità e le caratteristiche misurabili ch
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{1.8cm}|p{3.8cm}|p{9.6cm}|}
-\hline
+\begin{longtable}{|p{1.8cm}|p{3.2cm}|p{9.0cm}|}
+\caption{Requisiti Non Funzionali}\label{tab:rnf} \\ \hline
 \rowcolor{tableheader} \textbf{ID} & \textbf{Requisito} & \textbf{Descrizione e Metriche (Criterio di Verifica)} \\ \hline
 \endfirsthead
 
@@ -64,7 +68,7 @@ Questa sezione descrive i vincoli di qualità e le caratteristiche misurabili ch
 \rowcolor{tableheader} \textbf{ID} & \textbf{Requisito} & \textbf{Descrizione e Metriche (Criterio di Verifica)} \\ \hline
 \endhead
 
-\textbf{RNF-01} & Performance & Le operazioni di registrazione e rimozione degli account, annullamento delle prenotazioni e registrazione dell'esito di ritiri e conferimenti devono completarsi entro \textbf{2 secondi} in condizioni operative normali. Le operazioni di prenotazione di un servizio e generazione dei codici di invito devono completarsi entro \textbf{3 secondi}. \\ \hline
+\textbf{RNF-01} & Performance & Le operazioni di registrazione e rimozione degli account, annullamento delle prenotazioni e registrazione dell'esito di ritiri e conferimenti devono completarsi entro \textbf{2 secondi} in condizioni operative normali. Le operazioni di prenotazione di un servizio e di generazione dei codici di invito devono completarsi entro \textbf{3 secondi}. \\ \hline
 
 \textbf{RNF-02} & Scalabilità & Il sistema deve poter gestire l'aumento del numero di cittadini, personale AMA, sedi e prenotazioni senza richiedere modifiche sostanziali all'architettura e senza compromettere i requisiti di performance definiti. L'incremento del carico deve poter essere gestito mediante l'aggiunta di risorse elaborative. \\ \hline
 
@@ -90,8 +94,8 @@ Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto `
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{1.8cm}|p{3.8cm}|p{9.6cm}|}
-\hline
+\begin{longtable}{|p{1.8cm}|p{3.2cm}|p{9.0cm}|}
+\caption{Requisiti di Dominio}\label{tab:rd} \\ \hline
 \rowcolor{tableheader} \textbf{ID} & \textbf{Regola di Dominio} & \textbf{Descrizione} \\ \hline
 \endfirsthead
 
@@ -103,9 +107,9 @@ Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto `
 
 \textbf{RD-02} & Vincolo di Capacità dei Veicoli & Durante la pianificazione dei ritiri a domicilio, il sistema non può assegnare a un singolo veicolo un numero di prenotazioni il cui peso o volume stimato superi il carico massimo consentito (capacità) del veicolo stesso per quel turno. Inoltre il rifiuto è ritirabile solo se conforme a quanto dichiarato, e se la sede o il veicolo assegnato sono abilitati a gestirlo. \\ \hline
 
-\textbf{RD-03} & Coerenza delle prenotazioni & Il sistema deve impedire transizioni illecite, come l'annullamento di una prenotazione che risulta già in uno stato di completamento. \\ \hline
+\textbf{RD-03} & Coerenza del Ciclo di Vita delle Prenotazioni & Il sistema deve garantire la coerenza del ciclo di vita della prenotazione attraverso gli stati ammessi (\textit{In attesa} $\rightarrow$ \textit{Confermata} $\rightarrow$ \textit{In corso} $\rightarrow$ \textit{Completata}, oppure \textit{Annullata} / \textit{Non eseguita}), impedendo transizioni di stato illecite quali l'annullamento o la modifica di prenotazioni già in lavorazione o concluse. \\ \hline
 
-\textbf{RD-04} & Validità del Codice di Invito & Un codice di invito generato da un amministratore di sede o generale deve essere univoco, associato a un ruolo specifico e può essere monouso, per evitare la creazione fraudolenta di profili con privilegi elevati. \\ \hline
+\textbf{RD-04} & Validità del Codice di Invito & Un codice di invito generato da un amministratore di sede o generale deve essere univoco, associato a un ruolo specifico e deve essere monouso con scadenza temporale, per evitare la creazione fraudolenta di profili con privilegi elevati. \\ \hline
 
 \textbf{RD-05} & Controllo degli Accessi basato sul Ruolo (RBAC) & Il sistema deve garantire che ogni utente possa accedere esclusivamente alle informazioni e alle funzionalità previste dal proprio ruolo. I dati personali del Cittadino, come informazioni anagrafiche, indirizzo e dati relativi alle prenotazioni, devono essere accessibili solo al personale AMA autorizzato e quando necessario allo svolgimento del servizio. Analogamente, gli Amministratori di sede devono poter operare solamente sui dati e sulle risorse delle sedi di propria competenza, mentre l'Amministratore Generale può accedere alle informazioni necessarie alla gestione complessiva del sistema. \\ \hline
 \end{longtable}

@@ -1,4 +1,4 @@
-\section{Design Pattern}
+\section{Design Patterns (Pattern di Progettazione)}
 
 % =========================================================================
 % 6.1 INTRODUZIONE E METODOLOGIA
@@ -14,7 +14,7 @@ La Tabella~\ref{tab:valutazione_pattern} riassume la valutazione comparativa eff
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{0.6cm}|p{4.2cm}|p{3.2cm}|p{2.4cm}|p{4.2cm}|}
+\begin{longtable}{|p{0.6cm}|p{3.8cm}|p{2.8cm}|p{2.2cm}|p{4.0cm}|}
 \caption{Valutazione e selezione dei Design Pattern candidati per MyAma} \label{tab:valutazione_pattern} \\ \hline
 \rowcolor{tableheader} \textbf{\#} & \textbf{Problema nel Refined} & \textbf{Entità Coinvolte} & \textbf{Pattern} & \textbf{Valutazione e Idoneità} \\ \hline
 \endfirsthead
@@ -27,17 +27,17 @@ La Tabella~\ref{tab:valutazione_pattern} riassume la valutazione comparativa eff
 
 \textbf{2} & \textbf{Reazione distribuita al cambio di stato della prenotazione} & \texttt{Prenotazione}, \texttt{Cittadino}, \texttt{AutistaAMA}, \texttt{SedeAMA} & \textbf{Observer} & \textbf{Scelta Primaria (Ottimo)}: disaccoppia il ciclo di vita della prenotazione da notifiche e dashboard dipendenti. \\ \hline
 
-3 & Condivisione dello scheletro del ciclo di vita tra Ritiro e Conferimento & \texttt{Prenotazione}, \texttt{RitiroDomicilio}, \texttt{ConferimentoSede} & Template Method & \textit{Candidato Valido}: buona aderenza, ma meno incisivo rispetto a Strategy e Observer. \\ \hline
+\textbf{3} & Condivisione dello scheletro del ciclo di vita tra Ritiro e Conferimento & \texttt{Prenotazione}, \texttt{RitiroDomicilio}, \texttt{ConferimentoSede} & Template Method & \textit{Candidato Valido}: buona aderenza, ma meno incisivo rispetto a Strategy e Observer. \\ \hline
 
-4 & Creazione specializzata delle differenti tipologie di utente & \texttt{UserFactory}, \texttt{UtenteSistema}, ruoli derivati & Factory Method & \textit{Possibile}: presente come concetto, ma richiederebbe un refactoring più invasivo della gerarchia. \\ \hline
+\textbf{4} & Creazione specializzata delle differenti tipologie di utente & \texttt{UserFactory}, \texttt{UtenteSistema}, ruoli derivati & Factory Method & \textit{Possibile}: presente come concetto, ma richiederebbe un refactoring più invasivo della gerarchia. \\ \hline
 
-5 & Aggiunta dinamica di servizi opzionali & \texttt{Prenotazione}, servizi accessori & Decorator & \textit{Non Idoneo}: il dominio di MyAma non prevede opzioni a cascata componibili a runtime. \\ \hline
+\textbf{5} & Aggiunta dinamica di servizi opzionali & \texttt{Prenotazione}, servizi accessori & Decorator & \textit{Non Idoneo}: il dominio di MyAma non prevede opzioni a cascata componibili a runtime. \\ \hline
 
-6 & Gestione ricorsiva di strutture composte e foglie & Sedi e Zone territoriali & Composite & \textit{Non Idoneo}: le relazioni parte-tutto nel dominio sono composizioni semplici e non ricorsive. \\ \hline
+\textbf{6} & Gestione ricorsiva di strutture composte e foglie & Sedi e Zone territoriali & Composite & \textit{Non Idoneo}: le relazioni parte-tutto nel dominio sono composizioni semplici e non ricorsive. \\ \hline
 
-7 & Integrazione con interfacce legacy o incompatibili & Comunicazioni esterne & Adapter & \textit{Non Idoneo}: non sono presenti API terze o sistemi preesistenti incompatibili da adattare. \\ \hline
+\textbf{7} & Integrazione con interfacce legacy o incompatibili & Comunicazioni esterne & Adapter & \textit{Non Idoneo}: non sono presenti API terze o sistemi preesistenti incompatibili da adattare. \\ \hline
 
-8 & Creazione di intere famiglie di prodotti correlati & Tipologie utente / servizi & Abstract Factory & \textit{Non Idoneo}: assenza di famiglie alternative parallele di oggetti nel modello. \\ \hline
+\textbf{8} & Creazione di intere famiglie di prodotti correlati & Tipologie utente / servizi & Abstract Factory & \textit{Non Idoneo}: assenza di famiglie alternative parallele di oggetti nel modello. \\ \hline
 \end{longtable}
 \end{center}
 
@@ -60,7 +60,7 @@ All'interno del dominio applicativo di MyAma, la classe \texttt{Prenotazione} ra
     \item \textbf{Registro di Sede:} aggiornamento dei contatori di flusso, delle statistiche di transito e dei posti occupati nel centro di raccolta.
 \end{itemize}
 
-Qualora la classe \texttt{Prenotazione} dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un accoppiamento rigido e unidirezionale (\textit{tight coupling}). Questo violerebbe pesantemente il principio \textit{Open/Closed}: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione (es. un modulo di tracciamento o un sistema di telemetria), si renderebbe necessaria una modifica al codice sorgente della classe \texttt{Prenotazione} stessa.
+Qualora la classe \texttt{Prenotazione} dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un forte accoppiamento (\textit{tight coupling}). Questo violerebbe pesantemente il principio \textit{Open/Closed}: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione (es. un modulo di tracciamento o un sistema di telemetria), si renderebbe necessaria una modifica al codice sorgente della classe \texttt{Prenotazione} stessa.
 
 \subsubsection{Soluzione Progettuale e Vantaggi Architetturali}
 Per risolvere tale criticità è stato applicato il Design Pattern comportamentale \textbf{Observer}. Tale pattern consente di definire una dipendenza uno-a-molti tra gli oggetti, facendo in modo che quando l'oggetto osservato (\textit{Subject}) cambia stato, tutti gli oggetti dipendenti (\textit{Observers}) vengano notificati e si aggiornino automaticamente.
@@ -68,9 +68,9 @@ In questo modo, la classe \texttt{Prenotazione} si limita a mantenere una lista 
 
 \subsubsection{Partecipanti}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Subject (Observable):} La classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{attach}), rimuovere (\texttt{detach}) e notificare (\texttt{notifyObservers}) gli ascoltatori, oltre al proprio stato interno.
-    \item \textbf{Observer:} L'interfaccia \texttt{PrenotazioneObserver} che espone il metodo \texttt{update(prenotazione: Prenotazione)}.
-    \item \textbf{ConcreteObserver:} Le classi concrete che implementano l'interfaccia, ovvero \texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier} e \texttt{RegistroSedeObserver}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
+    \item \textbf{Subject (Observable):} la classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{attach}), rimuovere (\texttt{detach}) e notificare (\texttt{notifyObservers}) gli ascoltatori, oltre al proprio stato interno.
+    \item \textbf{Observer:} l'interfaccia \texttt{PrenotazioneObserver} che espone il metodo \texttt{update(prenotazione: Prenotazione)}.
+    \item \textbf{ConcreteObserver:} le classi concrete che implementano l'interfaccia, ovvero \texttt{EmailNotifier}, \texttt{DashboardAutistaNotifier} e \texttt{RegistroSedeObserver}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -101,9 +101,9 @@ Il controller dedicato alla pianificazione interagirà unicamente con un'interfa
 
 \subsubsection{Partecipanti}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Context:} La classe \texttt{GestoreAssegnazione}. Essa mantiene un riferimento all'interfaccia \texttt{AssegnazioneStrategy} ed espone un metodo (es. \texttt{pianificaRitiri()}) che al suo interno richiama l'algoritmo della strategia.
-    \item \textbf{Strategy:} L'interfaccia \texttt{AssegnazioneStrategy} che dichiara il metodo astratto polimorfico \texttt{calcolaAssegnazione(richieste: List, mezzi: List)}.
-    \item \textbf{ConcreteStrategy:} Le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{MaxCaricoStrategy}, \texttt{ProssimitaCAPStrategy} e \texttt{BilanciamentoCaricoStrategy}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
+    \item \textbf{Context:} la classe \texttt{GestoreAssegnazione}. Essa mantiene un riferimento all'interfaccia \texttt{AssegnazioneStrategy} ed espone un metodo (es. \texttt{pianificaRitiri()}) che al suo interno richiama l'algoritmo della strategia.
+    \item \textbf{Strategy:} l'interfaccia \texttt{AssegnazioneStrategy} che dichiara il metodo astratto polimorfico \texttt{calcolaAssegnazione(richieste: List, mezzi: List)}.
+    \item \textbf{ConcreteStrategy:} le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{MaxCaricoStrategy}, \texttt{ProssimitaCAPStrategy} e \texttt{BilanciamentoCaricoStrategy}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 \end{itemize}
 
 \begin{figure}[H]

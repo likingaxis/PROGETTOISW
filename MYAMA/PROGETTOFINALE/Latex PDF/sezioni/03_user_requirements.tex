@@ -18,7 +18,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Registrarsi come cittadino}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L'utente non registrato accede alla pagina di registrazione come cittadino.
         \item L'utente compila il modulo di registrazione inserendo i dati richiesti.
@@ -43,14 +43,14 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Registrarsi tramite codice di invito}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L'utente non registrato accede alla procedura di registrazione tramite codice di invito.
         \item L'utente inserisce il codice di invito ricevuto.
         \item Il sistema verifica la validità del codice di invito.
         \item L'utente inserisce i dati richiesti per la registrazione.
         \item Viene eseguito il caso d'uso \textit{Accettare dati sulla privacy}.
-        \item Il sistema associa all'account il ruolo previsto dal codice di invito (operatore di sede AMA o amministratore di sede AMA).
+        \item Il sistema associa all'account il ruolo previsto dal codice di invito (autista AMA, operatore di sede AMA o amministratore di sede AMA).
         \item Il sistema crea l'account e conferma l'avvenuta registrazione.
     \end{enumerate}
 }{
@@ -70,7 +70,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Accettare dati sulla privacy}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Durante una procedura di registrazione, il sistema mostra l'informativa relativa al trattamento dei dati personali.
         \item L'utente non registrato prende visione dell'informativa sulla privacy.
@@ -90,16 +90,16 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Effettuare accesso}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item L'utente di sistema accede alla pagina di autenticazione.
+        \item L'utente registrato accede alla pagina di autenticazione.
         \item L'utente inserisce le proprie credenziali di accesso.
         \item Il sistema verifica la correttezza delle credenziali inserite.
         \item Se le credenziali sono valide, il sistema identifica il ruolo dell'utente.
         \item Il sistema consente l'accesso alle funzionalità previste per il ruolo dell'utente.
     \end{enumerate}
 }{
-    Utente di sistema
+    Utente registrato
 }{
     L'utente possiede un account registrato nel sistema.
 }{
@@ -129,7 +129,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Richiedere ritiro a domicilio}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede alla funzionalità per richiedere un ritiro a domicilio.
         \item Il cittadino inserisce la tipologia e i dettagli del rifiuto ingombrante da smaltire.
@@ -149,7 +149,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
     Il cittadino inserisce correttamente le informazioni sul rifiuto e sull’indirizzo, il sistema verifica la copertura territoriale, individua una disponibilità e il cittadino conferma la richiesta. La prenotazione viene registrata.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item La zona o il CAP indicato non è servito: il sistema informa il cittadino che il ritiro non è disponibile.
+        \item La zona o il CAP indicati non risultano coperti dal servizio: il sistema informa il cittadino che il ritiro non è disponibile.
         \item Non sono disponibili risorse per il ritiro: il sistema informa il cittadino dell’assenza di disponibilità al momento.
         \item Le informazioni inserite sono incomplete o non valide: il sistema richiede al cittadino di correggerle.
     \end{itemize}
@@ -158,10 +158,10 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Prenotare conferimento presso sede AMA}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino seleziona la funzionalità per prenotare il conferimento di un rifiuto presso una sede AMA.
-        \item Il cittadino inserisce la tipologia e i dettagli del rifiuto da smaltire e carica una foto dello stesso.
+        \item Il cittadino inserisce la tipologia e i dettagli del rifiuto da smaltire e carica una foto del rifiuto.
         \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e selezionare la sede AMA.
         \item Viene eseguito il caso d'uso \textit{Visualizzare date e fasce orarie disponibili} per selezionare il momento del conferimento.
         \item Il sistema mostra il riepilogo della richiesta.
@@ -181,7 +181,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Visualizzare sedi compatibili}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Durante la procedura di prenotazione per il conferimento, il sistema acquisisce la zona o il CAP del cittadino.
         \item Il sistema verifica quali sedi AMA possono accettare il conferimento richiesto.
@@ -201,7 +201,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Visualizzare date e fasce orarie disponibili}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Durante la procedura di prenotazione per il conferimento, il sistema verifica le disponibilità associate alla sede scelta.
         \item Il sistema mostra al cittadino le date e fasce orarie disponibili.
@@ -220,7 +220,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Annullare prenotazione}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Viene eseguito il caso d'uso \textit{Visualizzare prenotazioni attive} per accedere all'elenco e selezionare una prenotazione.
         \item Il cittadino richiede l’annullamento della prenotazione selezionata.
@@ -244,7 +244,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Visualizzare prenotazioni attive}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede alla sezione dedicata alle proprie prenotazioni.
         \item Il sistema recupera le prenotazioni attive associate al cittadino.
@@ -265,7 +265,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Visualizzare storico prenotazioni}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede alla sezione dedicata allo storico delle prenotazioni.
         \item Il sistema recupera le prenotazioni concluse o annullate associate al cittadino.
@@ -285,7 +285,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Valutare il servizio}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede ai dettagli di una prenotazione conclusa tramite lo storico.
         \item Il sistema mostra la possibilità di lasciare una valutazione relativa al servizio ricevuto.
@@ -306,7 +306,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Chiamare Autista AMA}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede ai dettagli di un ritiro a domicilio in corso o assegnato.
         \item Il sistema mostra il recapito telefonico dell'autista AMA assegnato al ritiro.
@@ -341,7 +341,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Visualizzare ritiri assegnati}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’autista AMA accede alla sezione dedicata ai ritiri assegnati.
         \item Il sistema recupera i ritiri associati all’autista.
@@ -360,7 +360,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Consultare dettagli del ritiro}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’autista AMA seleziona uno dei ritiri che gli sono stati assegnati.
         \item Il sistema recupera le informazioni associate al ritiro selezionato.
@@ -380,7 +380,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Registrare esito del ritiro}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’autista AMA seleziona il ritiro che ha effettuato.
         \item Il sistema mostra le informazioni relative al ritiro selezionato.
@@ -405,7 +405,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Chiamare cittadino}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’autista AMA seleziona il ritiro per il quale necessita di contattare il cittadino.
         \item Il sistema mostra il recapito telefonico del cittadino associato alla prenotazione.
@@ -440,7 +440,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Visualizzare prenotazioni della sede}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’operatore di sede AMA accede alla sezione dedicata alle prenotazioni della propria sede.
         \item Il sistema recupera le prenotazioni associate alla sede in cui opera l’utente.
@@ -459,7 +459,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Consultare dettagli del conferimento}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’operatore di sede AMA seleziona una prenotazione relativa a un conferimento presso la propria sede.
         \item Il sistema recupera le informazioni associate alla prenotazione selezionata.
@@ -479,7 +479,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Verificare prenotazione del cittadino}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino si presenta presso la sede AMA per effettuare il conferimento.
         \item L’operatore di sede AMA individua la prenotazione associata al cittadino.
@@ -504,7 +504,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Registrare esito del conferimento}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’operatore di sede AMA seleziona la prenotazione relativa al conferimento appena gestito.
         \item Viene eseguito il caso d'uso \textit{Consultare dettagli del conferimento} e il sistema mostra le informazioni della prenotazione selezionata.
@@ -544,7 +544,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Generare codice invito}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla funzionalità di generazione dei codici invito.
         \item Il sistema mostra i ruoli per i quali l’amministratore è autorizzato a generare un codice.
@@ -569,7 +569,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Gestire disponibilità dei lavoratori}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla sezione dedicata alla gestione dei lavoratori della propria sede.
         \item Il sistema mostra l’elenco dei lavoratori associati alla sede e le relative disponibilità.
@@ -596,7 +596,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Rimuovere personale}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla sezione dedicata al personale della sede.
         \item Il sistema mostra i membri del personale associati alla sede.
@@ -623,7 +623,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Gestire disponibilità dei veicoli}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla sezione dedicata ai veicoli.
         \item Il sistema mostra i veicoli associati alla sede e le relative informazioni di disponibilità.
@@ -650,7 +650,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Gestire disponibilità della sede e fasce orarie}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla sezione dedicata alla configurazione della sede.
         \item Il sistema mostra le informazioni relative ai giorni e alle fasce orarie attualmente disponibili per i conferimenti.
@@ -673,7 +673,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Gestire associazioni tra sede e zone/CAP}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore di sede AMA accede alla sezione dedicata alla copertura territoriale della sede.
         \item Il sistema mostra le zone e i CAP attualmente associati alla sede.
@@ -690,7 +690,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
     L’amministratore modifica correttamente le zone o i CAP associati alla propria sede e conferma l’operazione.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-        \item La zona o il CAP indicato non è valido: il sistema segnala l’errore e non registra l’associazione.
+        \item La zona o il CAP indicati non sono validi: il sistema segnala l’errore e non registra l’associazione.
         \item L’associazione indicata risulta già presente: il sistema informa l’amministratore e non crea un duplicato.
     \end{itemize}
 }{
@@ -713,7 +713,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \subsubsection{Documentazione}
 
 \usecasetable{Generare codice amministratore di sede}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore generale AMA accede alla funzionalità per la generazione dei codici invito.
         \item Il sistema verifica che l’amministratore generale disponga dei permessi necessari.
@@ -738,7 +738,7 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 }
 
 \usecasetable{Rimuovere amministratori di sede AMA}{
-    \textbf{Passo azione}
+    \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item L’amministratore generale AMA accede alla sezione dedicata alla gestione degli amministratori di sede.
         \item Il sistema mostra l’elenco degli amministratori di sede AMA registrati nel sistema.
