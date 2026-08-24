@@ -1,0 +1,39 @@
+@startuml
+title MyAma - Strategy Pattern
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+class GestoreAssegnazione <<Context>> {
+  - strategia : StrategiaAssegnazione
+  + setStrategia(s : StrategiaAssegnazione) : void
+  + assegnaRitiro(ritiro : RitiroDomicilio) : Assegnazione
+}
+
+interface StrategiaAssegnazione <<Strategy>> {
+  + assegna(ritiro : RitiroDomicilio) : Assegnazione
+}
+
+class AssegnazionePerCapacita <<ConcreteStrategy>> {
+  + assegna(ritiro : RitiroDomicilio) : Assegnazione
+}
+
+class AssegnazionePerZona <<ConcreteStrategy>> {
+  + assegna(ritiro : RitiroDomicilio) : Assegnazione
+}
+
+class RitiroDomicilio <<entity>>
+class Assegnazione <<entity>>
+
+GestoreAssegnazione --> StrategiaAssegnazione
+StrategiaAssegnazione <|.. AssegnazionePerCapacita
+StrategiaAssegnazione <|.. AssegnazionePerZona
+
+GestoreAssegnazione ..> RitiroDomicilio
+GestoreAssegnazione ..> Assegnazione
+
+note bottom of GestoreAssegnazione
+Il criterio di assegnazione può cambiare
+senza modificare il Context.
+end note
+
+@enduml

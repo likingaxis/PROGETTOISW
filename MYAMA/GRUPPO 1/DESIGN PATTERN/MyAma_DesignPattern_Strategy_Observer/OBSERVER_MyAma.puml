@@ -1,0 +1,50 @@
+@startuml
+title MyAma - Observer Pattern
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+interface ObserverPrenotazione <<Observer>> {
+  + update(stato : StatoPrenotazione) : void
+}
+
+class Prenotazione <<Subject>> {
+  - stato : StatoPrenotazione
+  - observers : List<ObserverPrenotazione>
+  + attach(o : ObserverPrenotazione) : void
+  + detach(o : ObserverPrenotazione) : void
+  + notify() : void
+  + modificaStato(stato : StatoPrenotazione) : void
+}
+
+class NotificaCittadino <<ConcreteObserver>> {
+  + update(stato : StatoPrenotazione) : void
+}
+
+class AggiornamentoAutista <<ConcreteObserver>> {
+  + update(stato : StatoPrenotazione) : void
+}
+
+class AggiornamentoSede <<ConcreteObserver>> {
+  + update(stato : StatoPrenotazione) : void
+}
+
+enum StatoPrenotazione {
+  IN_ATTESA
+  CONFERMATA
+  IN_CORSO
+  COMPLETATA
+  ANNULLATA
+  NON_ESEGUITA
+}
+
+Prenotazione "1" o-- "0..*" ObserverPrenotazione
+ObserverPrenotazione <|.. NotificaCittadino
+ObserverPrenotazione <|.. AggiornamentoAutista
+ObserverPrenotazione <|.. AggiornamentoSede
+
+note bottom of Prenotazione
+Quando cambia lo stato,
+Prenotazione notifica gli observer registrati.
+end note
+
+@enduml
