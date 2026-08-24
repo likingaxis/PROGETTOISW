@@ -6,13 +6,13 @@
 % =========================================================================
 ## Introduzione e Metodologia di Selezione
 
-Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei design pattern che consentono la riusabilità del design per altri progetti 
+Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti
 
 ### Analisi Critica del Class Diagram Refined
 
-La selezione dei Design Pattern per la piattaforma **MyAma** è scaturita da un' analisi del *Class Diagram Refined*. Sono state esaminate le entità e i controller del modello per individuare reali punti critici e potenziali violazioni di design
+La selezione dei Design Pattern nasce da un' analisi del *Class Diagram Refined*.
 
-In virtù dell'analisi effettuata, sono stati selezionati per l'integrazione nel sistema **MyAma** due pattern comportamentali complementari:
+Sono stati selezionati due pattern comportamentali complementari:
 
     * **Observer Pattern:** per risolvere la dipendenza uno-a-molti generata dagli eventi di transizione di stato delle prenotazioni.
     * **Strategy Pattern:** per incapsulare e rendere dinamicamente intercambiabili gli algoritmi di ottimizzazione e assegnazione dei carichi di lavoro.
@@ -24,21 +24,12 @@ In virtù dell'analisi effettuata, sono stati selezionati per l'integrazione nel
 ## Observer Pattern (Pattern Comportamentale)
 
 
-### Descrizione del Problema e Criticità di Design
+### Descrizione del Problema e Soluzione Progettuale
 
-All'interno del dominio applicativo di MyAma, la classe `Prenotazione` rappresenta una delle entità centrali, la quale subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da *In attesa* a *Confermata*, *In corso*, *Completata* o *Annullata*). Ad ogni transizione di stato, è fondamentale che diversi sottosistemi indipendenti vengano informati per reagire di conseguenza:
+Il problema principale della classe `Prenotazione` è che subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da _In attesa_ a _Confermata_, _In corso_, _Completata_ o _Annullata_) e i vari sottosistemi devono essere aggiornati di conseguenza. Se fosse proprio la classe `Prenotazione` a dover invocare direttamente i metodi delle altre classi dei sottosistemi (come `NotificaCittadino`, `AggiornamentoAutista` o `AggiornamentoSede`), essa accumulerebbe troppe responsabilità.
+Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe `Prenotazione`, compromettendo la manutenibilità del sistema.
 
-    * **Modulo Notifiche (`NotificaCittadino**):` invio di comunicazioni telematiche (email, SMS, notifiche in-app) al cittadino per informarlo dell'accettazione o della variazione del servizio;
-    * **Dashboard Autista (`AggiornamentoAutista**):` aggiornamento dell'itinerario e del carico pianificato per il turno corrente sul dispositivo mobile dell'autista;
-    * **Registro di Sede (`AggiornamentoSede**):` aggiornamento dei contatori di flusso, delle statistiche di transito e dei posti occupati nel centro di raccolta.
-
-
-Qualora la classe `Prenotazione` dovesse istanziare e invocare direttamente i metodi delle classi concrete di questi sottosistemi, si creerebbe un forte accoppiamento (*tight coupling*). Questo violerebbe pesantemente il principio *Open/Closed*: ogni volta che si volesse aggiungere un nuovo modulo interessato ai cambiamenti della prenotazione (es. un modulo di tracciamento o un sistema di telemetria), si renderebbe necessaria una modifica al codice sorgente della classe `Prenotazione` stessa.
-
-### Soluzione Progettuale e Vantaggi Architetturali
-
-Per risolvere tale criticità è stato applicato il Design Pattern comportamentale **Observer**. Tale pattern consente di definire una dipendenza uno-a-molti tra gli oggetti, facendo in modo che quando l'oggetto osservato (*Subject*) cambia stato, tutti gli oggetti dipendenti (*Observers*) vengano notificati e si aggiornino automaticamente.
-In questo modo, la classe `Prenotazione` si limita a mantenere una lista di riferimenti all'interfaccia astratta `ObserverPrenotazione` e si occupa esclusivamente di lanciare una notifica generica di aggiornamento, senza conoscere la logica implementativa o la natura dei ricevitori.
+A tal proposito viene identificato il Design Pattern **Observer** (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (_Observers_) vengono notificati e si aggiornano in automatico.
 
 ### Partecipanti
 
@@ -61,20 +52,18 @@ In questo modo, la classe `Prenotazione` si limita a mantenere una lista di rife
 ## Strategy Pattern (Pattern Comportamentale)
 
 
-### Descrizione del Problema e Criticità di Design
+### Descrizione del Problema e Soluzione Progettuale
 
-La gestione operativa dei ritiri a domicilio e la composizione dell'itinerario dei veicoli AMA sono processi complessi che variano a seconda delle condizioni quotidiane, delle politiche aziendali e delle disponibilità di mezzi e personale. In particolare, il sistema supporta differenti algoritmi di assegnazione:
+Il problema principale nella gestione operativa dei ritiri a domicilio è che la composizione dell'itinerario dei veicoli varia spesso a seconda delle politiche aziendali del momento. In particolare, il sistema deve poter supportare differenti algoritmi di assegnazione:
 
-    * **Politica di Massimizzazione del Carico (`AssegnazionePerCapacita**):` algoritmo mirato a ottimizzare il riempimento (in volume e peso) dei mezzi prima del loro rientro in sede, minimizzando il numero complessivo di corse;
-    * **Politica di Prossimità Territoriale (`AssegnazionePerZona**):` algoritmo mirato a minimizzare i tempi e i chilometri percorsi, raggruppando i ritiri per aree limitrofe (stesso CAP).
+- **Politica di Massimizzazione del Carico (`AssegnazionePerCapacita`)**: per ottimizzare il riempimento (in volume e peso) dei mezzi minimizzando il numero di corse
+- **Politica di Prossimità Territoriale (`AssegnazionePerZona`)**: per minimizzare i tempi e i chilometri percorsi raggruppando i ritiri per CAP limitrofi
 
+Se la logica di calcolo di tutti questi algoritmi venisse inserita direttamente all'interno della singola classe del controllore di assegnazione (impiegando complesse e lunghe catene di `if-else` o `switch-case`), la classe accumulerebbe troppe responsabilità, diventando inutilmente grande e difficilmente manutenibile.
 
-Inserire la logica di tutti questi algoritmi direttamente all'interno del controllore di assegnazione, impiegando complesse e lunghe catene condizionali (`if-else` o `switch-case`), porterebbe alla creazione di una "God Class" difficilmente manutenibile (violazione del *Single Responsibility Principle*). Inoltre, l'aggiunta di una futura nuova politica di smistamento richiederebbe la modifica di codice già testato e consolidato.
+Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per "Urgenza"), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
 
-### Soluzione Progettuale e Vantaggi Architetturali
-
-Al fine di garantire flessibilità e manutenibilità, si è optato per l'applicazione dello **Strategy Pattern**. Questo pattern permette di incapsulare una famiglia di algoritmi all'interno di classi separate e intercambiabili a tempo di esecuzione, rendendo l'algoritmo indipendente dal client che ne fa uso.
-Il controller dedicato alla pianificazione interagirà unicamente con un'interfaccia comune, delegando a runtime il calcolo dell'itinerario all'algoritmo (strategia) attualmente selezionato dall'amministratore di sede o dal sistema.
+A tal proposito viene identificato il Design Pattern **Strategy** (di tipo Comportamentale): in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
 
 ### Partecipanti
 
