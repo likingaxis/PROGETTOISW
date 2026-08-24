@@ -133,20 +133,20 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino accede alla funzionalità per richiedere un ritiro a domicilio.
         \item Il cittadino inserisce la tipologia e i dettagli del rifiuto ingombrante da smaltire.
-        \item Il cittadino inserisce l’indirizzo, la zona o il CAP presso cui deve essere effettuato il ritiro.
-        \item Il sistema verifica che la zona indicata sia servita da AMA.
-        \item Il sistema verifica la disponibilità delle risorse necessarie (lavoratori, veicoli e capacità di carico).
-        \item Il sistema assegna automaticamente una data e una fascia oraria per il ritiro.
-        \item Il sistema mostra il riepilogo della richiesta.
-        \item Il cittadino conferma la richiesta di ritiro.
-        \item Il sistema crea la prenotazione e ne conferma l’avvenuta registrazione.
+        \item Il cittadino invia la richiesta di ritiro da smaltire.
+        \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e fornire all'utente le sedi AMA compatibili.
+        \item Il sistema verifica la disponibilità delle risorse necessarie (lavoratori, veicoli e capacità di carico) per ogni sede compatibile.
+        \item Il sistema fornisce per ogni sede effettivamente disponibile le fasce orarie possibili per il ritiro attraverso il caso d'uso \textit{Visualizzare date e fasce orarie disponibili}.
+        \item Il sistema mostra il riepilogo della richiesta con le scelte possibili.
+        \item Il cittadino seleziona la sede, la data e la fascia oraria per confermare la richiesta di ritiro.
+        \item Il sistema crea la prenotazione e ne conferma l'avvenuta registrazione.
     \end{enumerate}
 }{
     Cittadino registrato
 }{
     Il cittadino ha effettuato l’accesso al sistema ed è abilitato all’utilizzo delle funzionalità di prenotazione.
 }{
-    Il cittadino inserisce correttamente le informazioni sul rifiuto e sull’indirizzo, il sistema verifica la copertura territoriale, individua una disponibilità e il cittadino conferma la richiesta. La prenotazione viene registrata.
+    Il cittadino inserisce correttamente le informazioni sul rifiuto e sull’indirizzo, il sistema verifica la copertura territoriale, individua una o più disponibilità e il cittadino conferma la richiesta specificando la sede compatibile e la fascia oraria. La prenotazione viene registrata.
 }{
     \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
         \item La zona o il CAP indicati non risultano coperti dal servizio: il sistema informa il cittadino che il ritiro non è disponibile.
@@ -162,11 +162,13 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
         \item Il cittadino seleziona la funzionalità per prenotare il conferimento di un rifiuto presso una sede AMA.
         \item Il cittadino inserisce la tipologia e i dettagli del rifiuto da smaltire e carica una foto del rifiuto.
-        \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e selezionare la sede AMA.
-        \item Viene eseguito il caso d'uso \textit{Visualizzare date e fasce orarie disponibili} per selezionare il momento del conferimento.
-        \item Il sistema mostra il riepilogo della richiesta.
-        \item Il cittadino conferma la richiesta di conferimento.
-        \item Il sistema crea la prenotazione e conferma l’avvenuta registrazione.
+        \item Il cittadino invia la richiesta di conferimento.
+        \item Viene eseguito il caso d'uso \textit{Visualizzare sedi compatibili} per individuare e fornire all'utente le sedi AMA compatibili.
+        \item Il sistema verifica la disponibilità delle risorse necessarie (capacità di ricezione e disponibilità oraria) per ogni sede compatibile.
+        \item Il sistema fornisce per ogni sede effettivamente disponibile le fasce orarie possibili per il conferimento attraverso il caso d'uso \textit{Visualizzare date e fasce orarie disponibili}.
+        \item Il sistema mostra il riepilogo della richiesta con le scelte possibili.
+        \item Il cittadino seleziona la sede, la data e la fascia oraria per confermare la richiesta di conferimento.
+        \item Il sistema crea la prenotazione e ne conferma l'avvenuta registrazione.
     \end{enumerate}
 }{
     Cittadino registrato
@@ -183,19 +185,19 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \usecasetable{Visualizzare sedi compatibili}{
     \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Durante la procedura di prenotazione per il conferimento, il sistema acquisisce la zona o il CAP del cittadino.
-        \item Il sistema verifica quali sedi AMA possono accettare il conferimento richiesto.
+        \item Il cittadino specifica il tipo di servizio richiesto tra conferimento o ritiro e con quale tipologia di rifiuto.
+        \item Durante la procedura di prenotazione per il servizio richiesto, il sistema acquisisce la zona o il CAP del cittadino.
+        \item Il sistema verifica quali sedi AMA possono accettare il servizio richiesto.
         \item Il sistema mostra al cittadino l’elenco delle sedi compatibili disponibili.
-        \item Il cittadino seleziona una sede tra quelle proposte per proseguire.
     \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha avviato la procedura di prenotazione per il conferimento e ha inserito le informazioni sul rifiuto.
+    Il cittadino ha avviato la procedura di prenotazione per il conferimento o per il ritiro, ed ha inserito le informazioni sul rifiuto.
 }{
-    Il sistema individua una o più sedi compatibili con la zona del cittadino e le mostra all’utente, che ne seleziona una per proseguire con la prenotazione.
+    Il sistema individua una o più sedi compatibili con la zona del cittadino e le mostra all’utente.
 }{
-    Non sono presenti sedi compatibili con la zona indicata: il sistema informa il cittadino che non è possibile effettuare il conferimento.
+    Non sono presenti sedi compatibili con la zona indicata: il sistema informa il cittadino che non è possibile effettuare il servizio.
 }{
     Il cittadino ha selezionato una sede AMA compatibile da utilizzare per la prenotazione.
 }
@@ -203,16 +205,16 @@ La presente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 \usecasetable{Visualizzare date e fasce orarie disponibili}{
     \textbf{Flusso delle azioni}
     \begin{enumerate}[leftmargin=*, nosep, topsep=2pt]
-        \item Durante la procedura di prenotazione per il conferimento, il sistema verifica le disponibilità associate alla sede scelta.
-        \item Il sistema mostra al cittadino le date e fasce orarie disponibili.
-        \item Il cittadino seleziona una data e una fascia oraria per proseguire con la prenotazione.
+        \item Il cittadino specifica il tipo di servizio richiesto tra conferimento o ritiro e con quale tipologia di rifiuto.
+        \item Il cittadino specifica un insieme di sedi da interrogare.
+        \item Il sistema mostra al cittadino le fasce orarie disponibili.
     \end{enumerate}
 }{
     Cittadino registrato
 }{
-    Il cittadino ha avviato la procedura di prenotazione per il conferimento e ha selezionato una sede compatibile.
+    Il cittadino ha avviato la procedura di prenotazione per il conferimento o per il ritiro e ha selezionato una sede compatibile.
 }{
-    Il sistema individua le disponibilità compatibili con la sede scelta e le mostra al cittadino, che ne seleziona una per proseguire.
+    Il sistema individua le disponibilità compatibili con la sede scelta per il servizio richiesto (tra conferimento o ritiro) e le mostra al cittadino.
 }{
     Non sono presenti date o fasce orarie disponibili per la sede selezionata: il sistema richiede di scegliere un'altra sede o di riprovare in un altro momento.
 }{
