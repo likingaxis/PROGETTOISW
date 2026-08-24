@@ -38,4 +38,20 @@
 2. Il Cittadino specifica un insieme di sedi da interrogare.
 3. Il sistema mostra al cittadino le fasce orarie disponibili.
 
-## Rimuovere Chiamare Autista AMA
+# 2 glossario dei termini di dominio
+La sezione descrive i vari termini specialistici, gli attori e i concetti fondamentali usati per descriviere il sistema **MyAma**.
+
+# 3 user requirements definition
+La sezione descrive in dettaglio i requisiti utente e i casi d’uso del sistema MyAma. Ciascuna sottosezione comprende il relativo diagramma che descrive per ogni attore i relativi Use Case e la relativa documentazione sotto forma di tabella.
+
+# 4
+nun ce scrive un cazzo
+
+# 5 System Architectural Models (Modelli OOA)
+La sezione descrive i modelli dinamici e strutturali del sistema MyAma mediante i modelli di OOA
+
+## 5.1
+In questa sezione vengono presentati i diagrammi fondamentali, raggruppati per attore.
+
+## 5.3.2
+Il modello Refined integra e consolida l’architettura completa a oggetti del sistema MyAma, strutturando le classi secondo il pattern architetturale BCE (Boundary, Control, Entity). 
