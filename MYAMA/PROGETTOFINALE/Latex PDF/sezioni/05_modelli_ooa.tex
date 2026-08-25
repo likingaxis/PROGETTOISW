@@ -291,21 +291,23 @@ I Sequence Diagram (Diagrammi di Sequenza) illustrano la dinamica temporale dell
 % 5.3 CLASS DIAGRAMS
 % =========================================================================
 \subsection{Class Diagrams}
-\subsubsection{Class Diagram Unrefined (Modello Concettuale di Dominio)}
+Vengono di seguito presentati i Class Diagram, i quali descrivono ad alto livello come sono modellati i dati, le associazioni tra essi e le operazioni esposte dal sistema.
+
+\subsubsection{Class Diagram Unrefined}
+Il Class Diagram Unrefined modella la struttura statica iniziale del sistema. Viene elaborato a partire dall'analisi dei requisiti utente, dei casi d'uso e dei Sequence Diagram.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.80\textheight,keepaspectratio]{../assets/class_CLASS_DIAGRAM_unrefined.jpg}
-    \caption{Class Diagram --- Versione Unrefined (Modello di Dominio)}
+    \caption{Class Diagram --- Versione Unrefined}
     \label{fig:class_unrefined}
 \end{figure}
 
-\subsubsection{Class Diagram Refined (Modello di Progettazione Dettagliato)}
-Il modello \textit{Refined} integra e consolida l'architettura completa a oggetti del sistema \textbf{MyAma}, strutturando le classi secondo il pattern architetturale BCE (\textit{Boundary, Control, Entity}). In esso vengono specificati esaustivamente tutti gli attributi con la relativa visibilità e tipo, i metodi operativi derivati dai Sequence Diagram, nonché le relazioni complete con navigabilità e molteplicità.
+\subsubsection{Class Diagram Refined}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../assets/class_CLASS_DIAGRAM_refined.jpg}
-    \caption{Class Diagram --- Versione Refined (BCE e Struttura Consolidata)}
+    \caption{Class Diagram --- Versione Refined}
     \label{fig:class_refined}
 \end{figure}

@@ -261,9 +261,10 @@ I Sequence Diagram (Diagrammi di Sequenza) illustrano la dinamica temporale dell
 % 5.3 CLASS DIAGRAMS
 % =========================================================================
 ## Class Diagrams
-
+Vengono di seguito presentati i Class Diagram, i quali descrivono ad alto livello come sono modellati i dati, le associazioni tra essi e le operazioni esposte dal sistema.
 
 ### Class Diagram Unrefined 
+Il Class Diagram Unrefined modella la struttura statica iniziale del sistema. Viene elaborato a partire dall'analisi dei requisiti utente, dei casi d'uso e dei Sequence Diagram.
 
 ![Class Diagram — Versione Unrefined ](../../assets/class_CLASS_DIAGRAM_unrefined.jpg)
 *Class Diagram — Versione Unrefined*
