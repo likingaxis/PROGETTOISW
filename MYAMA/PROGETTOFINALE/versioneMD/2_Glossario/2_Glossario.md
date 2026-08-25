@@ -60,13 +60,12 @@ un Autista e di un Veicolo compatibile con il carico. |
 
 | **Storico prenotazioni** | Archivio consultabile dal Cittadino che raccoglie l'elenco delle prenotazioni concluse (completate, annullate o non eseguite), con i relativi dettagli ed esiti, a fini di tracciabilità e trasparenza. |
 
-| **Rifiuto ingombrante** | Bene durevole, oggetto voluminoso o materiale speciale (es.mobili, grandi elettrodomestici, RAEE) che non può essere
+| **Rifiuto ingombrante** | Bene durevole, oggetto voluminoso o materiale speciale che non può essere
 
 smaltito nei normali cassonetti stradali. |
 
-| **Tipologia di rifiuto** | Classificazione basata sulle normative comunali del rifiuto (es. legno, metallo, RAEE, ingombranti misti), necessaria per verificare la conformità di scarico e il mezzo idoneo. |
+| **Tipologia di rifiuto** | Classificazione basata sulle normative comunali del rifiuto , necessaria per verificare la conformità di scarico e il mezzo idoneo. |
 
-| **RAEE (Rifiuti di Apparecchiature Elettriche ed Elettroniche)** | Categoria normativa di rifiuti comprendente apparecchiature elettriche ed elettroniche dismesse (es.\ frigoriferi, lavatrici, monitor), soggetta a procedure specifiche di raccolta e smaltimento e conferibile solo presso sedi autorizzate. |
 
 | **Conformità del rifiuto** | Verifica effettuata dal personale AMA (Autista al domicilio o Operatore al varco della sede) per accertare che il materiale presentato corrisponda per tipologia, quantità e caratteristiche a quanto dichiarato dal Cittadino nella prenotazione. In caso di non conformità il servizio può essere rifiutato. |
 
