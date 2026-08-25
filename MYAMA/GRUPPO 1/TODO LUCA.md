@@ -11,3 +11,5 @@
 - aggiornate le foto
 - tolto RBAC su glossario e tolto RBAC sul markdown rimettilo in versione latex
 - aggiornato capitolo 3.md
+
+- capitolo 3 aggiornato file md di user requirements allnearlo con il latex
