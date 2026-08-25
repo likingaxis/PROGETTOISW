@@ -1,6 +1,6 @@
 \section{System Requirements (Requisiti di Sistema)}
 
-I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e regole derivanti dal dominio, che la piattaforma software \textbf{MyAma} deve soddisfare.
+I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e le regole derivanti dal dominio, che la piattaforma software \textbf{MyAma} deve soddisfare.
 
 % =========================================================================
 % 4.1 REQUISITI FUNZIONALI
@@ -10,13 +10,13 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|p{3.0cm}|p{1.2cm}|p{4.0cm}|p{5.8cm}|}
+\begin{longtable}{|p{2.8cm}|p{1.2cm}|p{3.8cm}|p{6.2cm}|}
 \caption{Requisiti Funzionali}\label{tab:rf} \\ \hline
-\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione / Criterio di Verifica} \\ \hline
+\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione} \\ \hline
 \endfirsthead
 
 \hline
-\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione / Criterio di Verifica} \\ \hline
+\rowcolor{tableheader} \textbf{Attore} & \textbf{ID} & \textbf{Requisito Funzionale} & \textbf{Descrizione} \\ \hline
 \endhead
 
 Utente non registrato & \textbf{RF-01} & Registrazione cittadino & Il sistema deve consentire a un utente di registrarsi come cittadino fornendo i propri dati e accettando l'informativa privacy. \\ \hline
@@ -27,27 +27,43 @@ Utente di sistema & \textbf{RF-03} & Autenticazione & Il sistema deve permettere
 
 Cittadino & \textbf{RF-04} & Richiesta ritiro a domicilio & Il sistema deve permettere al cittadino di prenotare un ritiro a domicilio fornendo indirizzo, CAP e i dettagli del rifiuto ingombrante. \\ \hline
 
-Cittadino & \textbf{RF-05} & Fornire sedi coperte & Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o la zona specificata dal Cittadino nella configurazione del suo profilo. \\ \hline
+Cittadino & \textbf{RF-05} & Fornire sedi coperte & Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o alla zona specificata dal cittadino. \\ \hline
 
 Cittadino & \textbf{RF-06} & Prenotazione conferimento & Il sistema deve permettere al cittadino di prenotare il conferimento del rifiuto presso una sede AMA compatibile con la propria zona. \\ \hline
 
 Cittadino & \textbf{RF-07} & Annullamento prenotazione & Il sistema deve consentire al cittadino di annullare una propria prenotazione precedentemente creata. \\ \hline
 
-Autista AMA & \textbf{RF-08} & Visualizzazione ritiri assegnati & Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto. \\ \hline
+Cittadino & \textbf{RF-08} & Visualizzazione prenotazioni attive & Il sistema deve consentire al cittadino di visualizzare l'elenco delle proprie prenotazioni attive e consultarne le informazioni principali. \\ \hline
 
-Autista AMA & \textbf{RF-09} & Registrazione esito ritiro & Il sistema deve permettere all'autista di registrare l'esito (es. positivo o negativo) del ritiro a domicilio effettuato. \\ \hline
+Cittadino & \textbf{RF-09} & Visualizzazione storico prenotazioni & Il sistema deve consentire al cittadino di consultare lo storico delle proprie prenotazioni concluse, annullate o non eseguite e visualizzarne i relativi dettagli. \\ \hline
 
-Operatore di Sede & \textbf{RF-10} & Verifica e registrazione conferimento & Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito. \\ \hline
+Cittadino & \textbf{RF-10} & Valutazione del servizio & Il sistema deve consentire al cittadino di inserire e confermare una valutazione relativa a una prenotazione conclusa, associando il feedback al servizio effettuato. \\ \hline
 
-Amministratore Sede & \textbf{RF-11} & Gestione risorse e disponibilità & Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. \\ \hline
+Autista AMA & \textbf{RF-11} & Visualizzazione ritiri assegnati & Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto. \\ \hline
 
-Amministratore Sede & \textbf{RF-12} & Generazione codici invito & Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale. \\ \hline
+Autista AMA & \textbf{RF-12} & Consultazione dettagli del ritiro & Il sistema deve consentire all'autista di consultare i dettagli del ritiro assegnato, comprese le informazioni necessarie allo svolgimento del servizio. \\ \hline
 
-Amministratore Sede & \textbf{RF-13} & Rimozione personale dalla sede & Il sistema deve permettere all'amministratore di sede di rimuovere e disassociare membri del personale operativo dalla propria struttura. \\ \hline
+Autista AMA & \textbf{RF-13} & Registrazione esito ritiro & Il sistema deve permettere all'autista di registrare l'esito del ritiro a domicilio effettuato. \\ \hline
 
-Amministratore Generale & \textbf{RF-14} & Generazione codici invito amministratori & Il sistema deve consentire all'amministratore generale di generare codici di invito abilitanti al ruolo di amministratore di sede. \\ \hline
+Autista AMA & \textbf{RF-14} & Consultazione contatto cittadino & Il sistema deve consentire all'autista di visualizzare il recapito telefonico del cittadino associato al ritiro per poter avviare una chiamata tramite il proprio dispositivo. \\ \hline
 
-Amministratore Generale & \textbf{RF-15} & Revoca e rimozione amministratori di sede & Il sistema deve consentire all'amministratore generale di revocare e rimuovere l'abilitazione degli amministratori di sede AMA. \\ \hline
+Operatore di Sede & \textbf{RF-15} & Visualizzazione prenotazioni della sede & Il sistema deve consentire all'operatore di visualizzare l'elenco delle prenotazioni associate alla propria sede AMA. \\ \hline
+
+Operatore di Sede & \textbf{RF-16} & Consultazione dettagli del conferimento & Il sistema deve consentire all'operatore di consultare i dettagli delle prenotazioni di conferimento associate alla propria sede. \\ \hline
+
+Operatore di Sede & \textbf{RF-17} & Verifica e registrazione conferimento & Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito. \\ \hline
+
+Amministratore Sede & \textbf{RF-18} & Gestione risorse e disponibilità & Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori. \\ \hline
+
+Amministratore Sede & \textbf{RF-19} & Gestione associazioni sede--zone/CAP & Il sistema deve consentire all'amministratore di sede di aggiungere, modificare e rimuovere le associazioni tra la propria sede AMA e le zone o i CAP di competenza. \\ \hline
+
+Amministratore Sede & \textbf{RF-20} & Generazione codici invito & Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale. \\ \hline
+
+Amministratore Sede & \textbf{RF-21} & Rimozione personale dalla sede & Il sistema deve permettere all'amministratore di sede di rimuovere e disassociare membri del personale operativo dalla propria struttura. \\ \hline
+
+Amministratore Generale & \textbf{RF-22} & Generazione codici invito amministratori & Il sistema deve consentire all'amministratore generale di generare codici di invito abilitanti al ruolo di amministratore di sede. \\ \hline
+
+Amministratore Generale & \textbf{RF-23} & Revoca e rimozione amministratori di sede & Il sistema deve consentire all'amministratore generale di revocare e rimuovere l'abilitazione degli amministratori di sede AMA. \\ \hline
 \end{longtable}
 \end{center}
 
@@ -112,5 +128,7 @@ Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto `
 \textbf{RD-04} & Validità del Codice di Invito & Un codice di invito generato da un amministratore di sede o generale deve essere univoco, associato a un ruolo specifico e deve essere monouso con scadenza temporale, per evitare la creazione fraudolenta di profili con privilegi elevati. \\ \hline
 
 \textbf{RD-05} & Controllo degli Accessi basato sul Ruolo & Il sistema deve garantire che ogni utente possa accedere esclusivamente alle informazioni e alle funzionalità previste dal proprio ruolo. I dati personali del Cittadino, come informazioni anagrafiche, indirizzo e dati relativi alle prenotazioni, devono essere accessibili solo al personale AMA autorizzato e quando necessario allo svolgimento del servizio. Analogamente, gli Amministratori di sede devono poter operare solamente sui dati e sulle risorse delle sedi di propria competenza, mentre l'Amministratore Generale può accedere alle informazioni necessarie alla gestione complessiva del sistema. \\ \hline
+
+\textbf{RD-06} & Privilegi amministratore generale AMA & L'amministratore generale AMA, oltre a poter creare codici di invito per invitare amministratori di sede nella piattaforma, può assumere anche tutti gli incarichi che riguardano quest'ultimi. \\ \hline
 \end{longtable}
 \end{center}

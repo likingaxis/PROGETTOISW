@@ -6,9 +6,8 @@ I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vinc
 
 Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in base agli attori che interagiscono con la piattaforma **MyAma**, derivate dall'analisi dei casi d'uso.
 
-<<<<<<< HEAD
 | Attore                  | ID        | Requisito Funzionale                      | Descrizione                                                                                                                                               |
-| ----------------------- | --------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :---------------------- | :-------- | :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Utente non registrato   | **RF-01** | Registrazione cittadino                   | Il sistema deve consentire a un utente di registrarsi come cittadino fornendo i propri dati e accettando l'informativa privacy.                                                |
 | Utente non registrato   | **RF-02** | Registrazione tramite invito              | Il sistema deve permettere la registrazione del personale (Autista, Operatore o Amministratore) tramite l'inserimento di un codice di invito valido.                           |
 | Utente di sistema       | **RF-03** | Autenticazione                            | Il sistema deve permettere agli utenti registrati di effettuare l'accesso inserendo credenziali valide, reindirizzandoli alle funzionalità del proprio ruolo.                  |
@@ -32,25 +31,6 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 | Amministratore Sede     | **RF-21** | Rimozione personale dalla sede            | Il sistema deve permettere all'amministratore di sede di rimuovere e disassociare membri del personale operativo dalla propria struttura.                                      |
 | Amministratore Generale | **RF-22** | Generazione codici invito amministratori  | Il sistema deve consentire all'amministratore generale di generare codici di invito abilitanti al ruolo di amministratore di sede.                                             |
 | Amministratore Generale | **RF-23** | Revoca e rimozione amministratori di sede | Il sistema deve consentire all'amministratore generale di revocare e rimuovere l'abilitazione degli amministratori di sede AMA.                                                |
-=======
-| Attore                  | ID        | Requisito Funzionale                      | Descrizione / Criterio di Verifica                                                                                                                                         |
-| :---------------------- | :-------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Utente non registrato   | **RF-01** | Registrazione cittadino                   | Il sistema deve consentire a un utente di registrarsi come cittadino fornendo i propri dati e accettando l'informativa privacy.                                            |
-| Utente non registrato   | **RF-02** | Registrazione tramite invito              | Il sistema deve permettere la registrazione del personale (Autista, Operatore o Amministratore) tramite l'inserimento di un codice di invito valido.                       |
-| Utente di sistema       | **RF-03** | Autenticazione                            | Il sistema deve permettere agli utenti registrati di effettuare l'accesso inserendo credenziali valide, reindirizzandoli alle funzionalità del proprio ruolo.              |
-| Cittadino               | **RF-04** | Richiesta ritiro a domicilio              | Il sistema deve permettere al cittadino di prenotare un ritiro a domicilio fornendo indirizzo, CAP e i dettagli del rifiuto ingombrante.                                   |
-| Cittadino               | **RF-05** | Fornire sedi coperte                      | Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o alla zona specificata dal Cittadino nella configurazione del suo profilo. |
-| Cittadino               | **RF-06** | Prenotazione conferimento                 | Il sistema deve permettere al cittadino di prenotare il conferimento del rifiuto presso una sede AMA compatibile con la propria zona.                                      |
-| Cittadino               | **RF-07** | Annullamento prenotazione                 | Il sistema deve consentire al cittadino di annullare una propria prenotazione precedentemente creata.                                                                      |
-| Autista AMA             | **RF-08** | Visualizzazione ritiri assegnati          | Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto.                           |
-| Autista AMA             | **RF-09** | Registrazione esito ritiro                | Il sistema deve permettere all'autista di registrare l'esito (es. positivo o negativo) del ritiro a domicilio effettuato.                                                  |
-| Operatore di Sede       | **RF-10** | Verifica e registrazione conferimento     | Il sistema deve permettere all'operatore di verificare una prenotazione in sede e registrarne l'esito.                                                                     |
-| Amministratore Sede     | **RF-11** | Gestione risorse e disponibilità          | Il sistema deve permettere all'amministratore di configurare le fasce orarie e la disponibilità di veicoli e lavoratori.                                                   |
-| Amministratore Sede     | **RF-12** | Generazione codici invito                 | Il sistema deve consentire all'amministratore di generare codici di invito per registrare e abilitare nuovo personale.                                                     |
-| Amministratore Sede     | **RF-13** | Rimozione personale dalla sede            | Il sistema deve permettere all'amministratore di sede di rimuovere e disassociare membri del personale operativo dalla propria struttura.                                  |
-| Amministratore Generale | **RF-14** | Generazione codici invito amministratori  | Il sistema deve consentire all'amministratore generale di generare codici di invito abilitanti al ruolo di amministratore di sede.                                         |
-| Amministratore Generale | **RF-15** | Revoca e rimozione amministratori di sede | Il sistema deve consentire all'amministratore generale di revocare e rimuovere l'abilitazione degli amministratori di sede AMA.                                            |
->>>>>>> db524f867b72e4d28c1336131895dae3015ad6b2
 
 ## 4.2 Requisiti Non Funzionali
 

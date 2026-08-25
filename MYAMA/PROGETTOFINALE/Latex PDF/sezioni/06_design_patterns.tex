@@ -5,11 +5,11 @@
 % =========================================================================
 \subsection{Introduzione}
 
-Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti.
+Nella successiva fase della progettazione object-oriented vengono individuati i problemi strutturali risolvibili mediante design pattern consolidati.
 
 \subsubsection{Analisi Critica del Class Diagram Refined}
 
-Dopo una attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia, senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
+Dopo un'attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia, senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
 
 Sono stati selezionati due pattern comportamentali complementari:
 \begin{itemize}[leftmargin=*]
@@ -68,7 +68,7 @@ A tal proposito viene identificato il Design Pattern \textbf{Strategy}: in quest
 \subsubsection{Partecipanti}
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Context:} la classe di controllo (\texttt{GestoreAssegnazione} / \texttt{PrenotazioneControl}). Essa mantiene un riferimento all'interfaccia \texttt{StrategiaAssegnazione} ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
+    \item \textbf{Context:} la classe di controllo (\texttt{GestoreAssegnazione}). Essa mantiene un riferimento all'interfaccia \texttt{StrategiaAssegnazione} ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
     \item \textbf{Strategy:} l'interfaccia \texttt{StrategiaAssegnazione} che dichiara il metodo astratto polimorfico \texttt{assegna(ritiro: RitiroDomicilio): Assegnazione}.
     \item \textbf{ConcreteStrategy:} le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{AssegnazionePerCapacita} e \texttt{AssegnazionePerZona}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 \end{itemize}

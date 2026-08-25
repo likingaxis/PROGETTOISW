@@ -1,1 +1,5 @@
-- aggiorna la foto seq registra esito ritiro seq dentro assets dentro progetto finale, in teoria le altre dovrebbero essere allineate 
+- allineare capitolo 3
+- allineare capitolo 2
+- allineare capitolo 4
+- allineare capitolo 6
+- allineare le foto
