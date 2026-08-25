@@ -96,7 +96,11 @@ Post-condizioni & #7 \\ \hline
 % ==========================================
 % COPERTINA A PAGINA INTERA
 % ==========================================
-\includepdf[pages=1]{figure/cover.pdf}
+\begin{titlepage}
+\centering
+\vspace*{-\headsep}\vspace*{-\topmargin}\vspace*{-\topskip}
+\makebox[\textwidth]{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{../assets/cover.png}}
+\end{titlepage}
 
 % ==========================================
 % INDICI

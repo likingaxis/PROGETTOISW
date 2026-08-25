@@ -39,7 +39,7 @@ A tal proposito viene identificato il Design Pattern **Observer** (di tipo Com
     * **ConcreteObserver:** le classi concrete che implementano l'interfaccia, ovvero `NotificaCittadino`, `AggiornamentoAutista` e `AggiornamentoSede`. Ciascuna di esse implementa la propria logica specifica all'interno del metodo `update`.
 
 
-![Struttura UML del Design Pattern Observer applicato a MyAma](../figure/pattern_observer.jpg)
+![Struttura UML del Design Pattern Observer applicato a MyAma](../../assets/pattern_observer.jpg)
 
 % =========================================================================
 % 6.3 STRATEGY PATTERN
@@ -68,6 +68,6 @@ A tal proposito viene identificato il Design Pattern **Strategy** (di tipo Com
     * **ConcreteStrategy:** le classi concrete che incapsulano le singole logiche aziendali, ovvero `AssegnazionePerCapacita` e `AssegnazionePerZona`. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 
 
-![Struttura UML del Design Pattern Strategy per l'allocazione delle risorse](../figure/pattern_strategy.jpg)
+![Struttura UML del Design Pattern Strategy per l'allocazione delle risorse](../../assets/pattern_strategy.jpg)
 
 

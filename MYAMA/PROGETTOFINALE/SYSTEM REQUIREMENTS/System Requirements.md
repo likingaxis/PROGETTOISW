@@ -44,7 +44,7 @@ Questa sezione descrive i vincoli di qualità e le caratteristiche misurabili ch
 
 ## 4.3 Requisiti di Dominio
 
-Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto "AMA" (smaltimento rifiuti) che vincolano il funzionamento del software.
+Questa sezione raccoglie le regole aziendali o logiche specifiche del contesto "AMè (smaltimento rifiuti) che vincolano il funzionamento del software.
 
 | ID | Regola di Dominio | Descrizione |
 |---|---|---|

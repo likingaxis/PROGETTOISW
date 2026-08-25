@@ -1,11 +1,11 @@
-﻿# 📄 Specifica dei Requisiti Software — Progetto MyAma
+# ?? Specifica dei Requisiti Software � Progetto MyAma
 ### Standard di riferimento: IEEE 830-1998 / OOA
-**Università degli Studi di Roma "Tor Vergata"**  
+**Universit� degli Studi di Roma "Tor Vergata"**  
 **Corso di Ingegneria del Software (A.A. 2025/2026)**  
 **Docente:** Prof. Andrea D'Ambrogio  
 
 ---
-## 📑 Indice dei Contenuti
+## ?? Indice dei Contenuti
 1. [1. Introduzione](./1_Introduzione/1_Introduzione.md)
    - [1.1 Problem Statement e Obiettivi del Progetto](#11-problem-statement-e-obiettivi-del-progetto)
    - [1.2 Classi di Utenza del Sistema](#12-classi-di-utenza-del-sistema)

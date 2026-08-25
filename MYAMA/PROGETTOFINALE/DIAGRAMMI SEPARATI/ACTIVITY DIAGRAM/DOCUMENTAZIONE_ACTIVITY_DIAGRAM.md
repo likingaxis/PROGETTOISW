@@ -214,7 +214,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start((●)) --> A1["Il cittadino seleziona la funzionalità per prenotare il conferimento di un rifiuto presso una sede AMA"]
+    Start((●)) --> A1["Il cittadino seleziona la funzionalità per prenotare il conferimento di un rifiuto presso una sede AMè]
     A1 --> A2["Il cittadino inserisce la tipologia e i dettagli del rifiuto da smaltire e carica una foto dello stesso"]
     A2 --> A3["Il sistema visualizza sedi compatibili"]
     A3 --> D1{"Ci sono sedi compatibili?"}
