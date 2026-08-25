@@ -40,7 +40,7 @@ Il servizio è accessibile alle seguenti classi di utenza (attori):
 
 Al fine di delimitare con precisione i requisiti e i modelli OOA sviluppati nel presente documento:
 
-    * **Funzionalità In-Scope:** autenticazione e registrazione basata su ruoli (RBAC); gestione completa delle prenotazioni di ritiro a domicilio e conferimento in sede; verifica territoriale vincolata a sede e CAP; gestione delle disponibilità e della capacità dei mezzi; tracciamento e registrazione degli esiti di servizio; consultazione dello storico e rilascio feedback; gestione amministrativa di sedi, personale, veicoli e codici di invito.
+    * **Funzionalità In-Scope:** autenticazione e registrazione basata su ruoli; gestione completa delle prenotazioni di ritiro a domicilio e conferimento in sede; verifica territoriale vincolata a sede e CAP; gestione delle disponibilità e della capacità dei mezzi; tracciamento e registrazione degli esiti di servizio; consultazione dello storico e rilascio feedback; gestione amministrativa di sedi, personale, veicoli e codici di invito.
     * **Funzionalità Out-of-Scope (future estensioni):** integrazione diretta con gateway di pagamento elettronico per tariffe extra-franchigia (gestite in questa fase a livello di preventivo informativo); autenticazione federata SPID/CIE; tracciamento GPS in tempo reale dei veicoli; gestione di reportistica analitica avanzata di Business Intelligence.
 
 

@@ -106,7 +106,6 @@ prenotazioni. |
 
 | **Informativa Privacy** | Documentazione legale che esplicita le modalità di trattamento e conservazione dei dati personali, accettata obbligatoriamente da tutti gli utenti durante la procedura di registrazione. |
 
-| **RBAC (Role-Based Access Control)** | Modello di controllo degli accessi adottato dalla piattaforma che regola i permessi di visualizzazione e interazione degli utenti in base al ruolo aziendale o utente ricoperto. |
 
 | **BCE (Boundary, Control, Entity)** | Pattern architetturale utilizzato nella modellazione dei Sequence Diagram per separare le responsabilità degli oggetti in tre stereotipi: *Boundary* (interfaccia con l'attore), *Control* (logica applicativa e coordinamento) ed *Entity* (dati persistenti del dominio). |
 
