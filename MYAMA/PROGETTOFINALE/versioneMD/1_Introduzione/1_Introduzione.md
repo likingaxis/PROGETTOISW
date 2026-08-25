@@ -15,7 +15,7 @@ La piattaforma **MyAma** si propone come soluzione software integrata volta a di
 
 Il servizio è accessibile alle seguenti classi di utenza (attori):
      
-     * **Utente di sistema:** è qualsiasi entità esterna che interagisce con il software per scambiare dati, richiedere un servizio o innescare uno specifico comportamento.
+     * **Utente di sistema:**  è qualsiasi utente registrato che ha effettuato con successo l'accesso alla piattaforma. In base al ruolo ricoperto, può accedere esclusivamente alle funzionalità previste dal proprio profilo.
 
 
      * **Utente non registrato:** è un generico individuo che ancora non possiede un account nella piattaforma MYAma. Esso può registrarsi e conseguentemente accedere al profilo personale provvisto di funzionalità specifiche in base al ruolo rivestito nella piattaforma.
