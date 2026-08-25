@@ -1,14 +1,9 @@
-# 5. System Architectural Models (Modelli OOA)
-
-
-La presente sezione descrive i modelli dinamici e strutturali del sistema **MyAma** mediante i modelli di *Object Oriented Analysis* (OOA) sviluppati con il tool Visual Paradigm.
+# 5. System Architectural Models 
 
 % =========================================================================
 % 5.1 ACTIVITY DIAGRAMS
 % =========================================================================
 ## Activity Diagrams
-
-Gli Activity Diagram descrivono i flussi operativi, le diramazioni decisionali e i punti di sincronizzazione nei processi cardine della piattaforma. Si evidenzia che i modelli presentati si concentrano sui flussi architetturalmente più rilevanti e complessi dell'ecosistema MyAma; le consultazioni puntuali o le interazioni accessorie secondarie risultano organicamente ricomprese all'interno dei processi principali documentati. Di seguito vengono presentati i diagrammi fondamentali, raggruppati per attore.
 
 ### Utente non registrato e Utente di sistema
 
@@ -124,9 +119,8 @@ I processi amministrativi consentono di gestire le risorse umane, i mezzi logist
 % =========================================================================
 % 5.2 SEQUENCE DIAGRAMS
 % =========================================================================
-## Sequence Diagrams
 
-I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistema durante l'esecuzione dei casi d'uso, applicando il pattern architetturale **BCE** (*Boundary*, *Control*, *Entity*). Di seguito sono riportati i diagrammi principali, raggruppati per attore.
+## Sequence Diagrams
 
 ### Utente non registrato e Utente di sistema
 
@@ -266,25 +260,18 @@ I Sequence Diagram descrivono l'interazione temporale tra gli oggetti del sistem
 % =========================================================================
 ## Class Diagrams
 
-I diagrammi delle classi rappresentano la struttura statica delle entità, le classi di controllo e interfaccia, gli attributi, i metodi e le relazioni (associazioni, aggregazioni, composizioni ed ereditarietà).
 
-### Class Diagram Unrefined (Modello Concettuale di Dominio)
+### Class Diagram Unrefined 
 
-Il modello *Unrefined* illustra le entità concettuali e le loro relazioni primarie derivanti direttamente dall'analisi del dominio applicativo e dal glossario.
-
-![Class Diagram — Versione Unrefined (Modello di Dominio)](../figure/class_CLASS_DIAGRAM_unrefined.jpg)
-*Class Diagram — Versione Unrefined (Modello di Dominio)*
+![Class Diagram — Versione Unrefined ](../figure/class_CLASS_DIAGRAM_unrefined.jpg)
+*Class Diagram — Versione Unrefined*
 
 
 
-
-
-### Class Diagram Refined (Modello di Progettazione Dettagliato)
-
-Il modello *Refined* integra e consolida l'architettura completa a oggetti del sistema **MyAma**, strutturando le classi secondo il pattern architetturale BCE (*Boundary, Control, Entity*). In esso vengono specificati esaustivamente tutti gli attributi con la relativa visibilità e tipo, i metodi operativi derivati dai Sequence Diagram, nonché le relazioni complete con navigabilità e molteplicità.
+### Class Diagram Refined 
 
 ![Class Diagram — Versione Refined (BCE e Struttura Consolidata)](../figure/class_CLASS_DIAGRAM_refined.jpg)
-*Class Diagram — Versione Refined (BCE e Struttura Consolidata)*
+*Class Diagram — Versione Refined*
 
 
 
