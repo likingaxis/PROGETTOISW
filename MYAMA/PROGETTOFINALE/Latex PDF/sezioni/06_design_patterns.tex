@@ -1,13 +1,15 @@
-\section{Design Patterns (Pattern di Progettazione)}
+\section{Design Patterns}
 
 % =========================================================================
 % 6.1 INTRODUZIONE E METODOLOGIA
 % =========================================================================
-\subsection{Introduzione e Metodologia di Selezione}
-Nella successiva fase della progettazione object-oriented vengono individuati i problemi architetturali e strutturali del modello di dominio, risolvendoli mediante l'applicazione mirata di Design Pattern consolidati (GoF).
+\subsection{Introduzione}
+
+Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti.
 
 \subsubsection{Analisi Critica del Class Diagram Refined}
-Dopo un'attenta analisi del \textit{Class Diagram Refined} emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia, senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
+
+Dopo una attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia, senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
 
 Sono stati selezionati due pattern comportamentali complementari:
 \begin{itemize}[leftmargin=*]
@@ -18,9 +20,10 @@ Sono stati selezionati due pattern comportamentali complementari:
 % =========================================================================
 % 6.2 OBSERVER PATTERN
 % =========================================================================
-\subsection{Observer Pattern (Pattern Comportamentale)}
+\subsection{Observer Pattern}
 
 \subsubsection{Descrizione del Problema e Soluzione Progettuale}
+
 Il problema principale della classe \texttt{Prenotazione} è che subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da \textit{In attesa} a \textit{Confermata}, \textit{In corso}, \textit{Completata} o \textit{Annullata}) e i vari sottosistemi devono essere aggiornati di conseguenza. Se fosse proprio la classe \texttt{Prenotazione} a dover invocare direttamente i metodi delle altre classi dei sottosistemi (come \texttt{NotificaCittadino}, \texttt{AggiornamentoAutista} o \texttt{AggiornamentoSede}), essa accumulerebbe troppe responsabilità.
 
 Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe \texttt{Prenotazione}, compromettendo la manutenibilità del sistema.
@@ -28,10 +31,11 @@ Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in fu
 A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (\textit{Observers}) vengono notificati e si aggiornano in automatico.
 
 \subsubsection{Partecipanti}
+
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Subject (Observable):} la classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{registraObserver}), rimuovere (\texttt{rimuoviObserver}) e notificare (\texttt{notificaObserver}) gli ascoltatori, oltre alla gestione del proprio stato interno (\texttt{StatoPrenotazione}).
+    \item \textbf{Subject (Observable):} la classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{registraObserver(obs)}),\\rimuovere (\texttt{rimuoviObserver(obs)}) e notificare (\texttt{notificaObserver()}) gli ascoltatori, oltre alla gestione del proprio stato interno (\texttt{StatoPrenotazione}).
     \item \textbf{Observer:} l'interfaccia \texttt{ObserverPrenotazione} che espone il metodo polimorfico \texttt{update(stato: StatoPrenotazione)}.
-    \item \textbf{ConcreteObserver:} classi concrete (\texttt{NotificaCittadino}, \texttt{AggiornamentoAutista}, \texttt{AggiornamentoSede}) che implementano la propria logica specifica all'interno del metodo \texttt{update}.
+    \item \textbf{ConcreteObserver:} le classi concrete che implementano l'interfaccia, ovvero\\ \texttt{NotificaCittadino}, \texttt{AggiornamentoAutista} e \texttt{AggiornamentoSede}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
 \end{itemize}
 
 \subsubsection{Diagramma Strutturale del Pattern}
@@ -45,22 +49,24 @@ A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo 
 % =========================================================================
 % 6.3 STRATEGY PATTERN
 % =========================================================================
-\subsection{Strategy Pattern (Pattern Comportamentale)}
+\subsection{Strategy Pattern}
 
 \subsubsection{Descrizione del Problema e Soluzione Progettuale}
+
 Il problema principale nella gestione operativa dei ritiri a domicilio è che la composizione dell'itinerario dei veicoli varia spesso a seconda delle politiche aziendali del momento. In particolare, il sistema deve poter supportare differenti algoritmi di assegnazione:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Politica di Massimizzazione del Carico (\texttt{AssegnazionePerCapacita}):} per ottimizzare il riempimento (in volume e peso) dei mezzi minimizzando il numero di corse.
-    \item \textbf{Politica di Prossimità Territoriale (\texttt{AssegnazionePerZona}):} per minimizzare i tempi e i chilometri percorsi raggruppando i ritiri per CAP limitrofi.
+    \item \textbf{Politica di Massimizzazione del Carico (\texttt{AssegnazionePerCapacita}):} per ottimizzare il riempimento (in volume e peso) dei mezzi minimizzando il numero di corse
+    \item \textbf{Politica di Prossimità Territoriale (\texttt{AssegnazionePerZona}):} per minimizzare i tempi e i chilometri percorsi raggruppando i ritiri per CAP limitrofi
 \end{itemize}
 
 Se la logica di calcolo di tutti questi algoritmi venisse inserita direttamente all'interno della singola classe del controllore di assegnazione (impiegando complesse e lunghe catene di \texttt{if-else} o \texttt{switch-case}), la classe accumulerebbe troppe responsabilità, diventando inutilmente grande e difficilmente manutenibile.
 
-Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per "Urgenza"), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
+Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per ``Urgenza''), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
 
 A tal proposito viene identificato il Design Pattern \textbf{Strategy} (di tipo Comportamentale): in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
 
 \subsubsection{Partecipanti}
+
 \begin{itemize}[leftmargin=*]
     \item \textbf{Context:} la classe di controllo (\texttt{GestoreAssegnazione} / \texttt{PrenotazioneControl}). Essa mantiene un riferimento all'interfaccia \texttt{StrategiaAssegnazione} ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
     \item \textbf{Strategy:} l'interfaccia \texttt{StrategiaAssegnazione} che dichiara il metodo astratto polimorfico \texttt{assegna(ritiro: RitiroDomicilio): Assegnazione}.

@@ -6,21 +6,11 @@
 
 | :--- | :--- |
 
-| **MyAma** | Piattaforma digitale dedicata alla gestione, pia-
-
-nificazione e prenotazione dei servizi di smaltimento dei
-
-rifiuti ingombranti e speciali per la città di Roma. |
+| **MyAma** | Piattaforma digitale dedicata alla gestione, pianificazione e prenotazione dei servizi di smaltimento dei rifiuti ingombranti e speciali per la città di Roma. |
 
 | **AMA (Azienda Municipale Ambiente)** | Azienda municipalizzata di Roma Capitale responsabile dei servizi di igiene urbana e gestione dei rifiuti. Nel contesto del progetto, rappresenta l'ente operativo che eroga i servizi di ritiro a domicilio e conferimento in sede tramite la piattaforma MyAma. |
 
-| **Cittadino (Non Registrato / Visitatore)** | Utente esterno non autenticato che accede al sistema per
-
-consultare informazioni sui servizi, quali: tariffe, rego-
-
-lamenti e sedi AMA attive, e che può effettuare la registra-
-
-zione.|
+| **Cittadino (Non Registrato / Visitatore)** | Utente esterno non autenticato che accede al sistema per consultare informazioni sui servizi, quali: tariffe, regolamenti e sedi AMA attive, e che può effettuare la registrazione. |
 
 | **Cittadino (Registrato)** | Utente esterno autenticato che usufruisce dei servizi di MyAma per richiedere ritiri a domicilio o prenotare conferimenti in sede, monitorare lo stato delle proprie richieste, rilasciare valutazioni e ricevere notifiche. |
 
@@ -64,36 +54,18 @@ un Autista e di un Veicolo compatibile con il carico. |
 
 smaltito nei normali cassonetti stradali. |
 
-| **Tipologia di rifiuto** | Classificazione basata sulle normative comunali del rifiuto , necessaria per verificare la conformità di scarico e il mezzo idoneo. |
-
-
+| **Tipologia di rifiuto** | Classificazione basata sulle normative comunali del rifiuto, necessaria per verificare la conformità di scarico e il mezzo idoneo. |
 | **Conformità del rifiuto** | Verifica effettuata dal personale AMA (Autista al domicilio o Operatore al varco della sede) per accertare che il materiale presentato corrisponda per tipologia, quantità e caratteristiche a quanto dichiarato dal Cittadino nella prenotazione. In caso di non conformità il servizio può essere rifiutato. |
-
 | **Sede AMA / Centro di Raccolta** | Struttura fisica territoriale (isola ecologica) abilitata alla ricezione e allo stoccaggio temporaneo di determinate tipologie di rifiuti conferiti dai cittadini. |
-
 | **CAP / Zona servita** | Suddivisione territoriale che delimita la competenza operativa di una sede AMA e determina se un indirizzo è coperto dal servizio di ritiro a domicilio. |
-
 | **Veicolo / Mezzo AMA** | Automezzo aziendale impiegato per i ritiri a domicilio, caratterizzato da limiti di portata utile (peso massimo) e volume di carico. |
-
 | **Capacità del Veicolo** | Parametro indicante il carico logistico massimo (in peso o volume) supportato da un automezzo, utilizzato dal sistema per limitare e calcolare quanti ritiri assegnare in un singolo turno. |
-
 | **Carico residuo** | Capacità di trasporto ancora disponibile su un Veicolo AMA durante un turno operativo, calcolata sottraendo il peso/volume dei ritiri già assegnati dalla capacità massima del mezzo. Determina l'accettabilità di ulteriori assegnazioni. |
-
 | **Disponibilità / Slot Orario** | Fascia temporale definita (data e intervallo orario) in cui un servizio può essere prenotato ed erogato, calcolata in base alla capienza residua dei mezzi e ai turni del personale. |
-
 | **Turno di servizio** | Intervallo temporale (tipicamente giornaliero) durante il quale un Lavoratore AMA è in servizio attivo e un Veicolo è operativo. Vincola la pianificazione degli itinerari di ritiro e le disponibilità della sede. |
-
 | **Assegnazione** | Associazione formale e logistica tra una prenotazione di ritiro a domicilio e le risorse operative aziendali (Autista, Veicolo, data e percorso). |
-
 | **Esito del servizio** | Registrazione conclusiva dell'intervento da parte del personale AMA (*Completato con successo, Cittadino assente, Rifiuto non conforme/respinto*). |
-
-| **Notifica** | Comunicazione automatica generata dal sistema (email,
-
-SMS o notifica in-app) per informare il Cittadino o il per-
-
-sonale su conferme, promemoria o variazioni di stato delle
-
-prenotazioni. |
+| **Notifica** | Comunicazione automatica generata dal sistema (email, SMS o notifica in-app) per informare il Cittadino o il personale su conferme, promemoria o variazioni di stato delle prenotazioni. |
 
 | **Report / Statistiche** | Informazioni aggregate e indicatori di performance (volumi gestiti, ritiri completati, trend per zona) consultabili dalla direzione aziendale per finalità analitiche e decisionali. |
 
@@ -108,9 +80,9 @@ prenotazioni. |
 
 | **BCE (Boundary, Control, Entity)** | Pattern architetturale utilizzato nella modellazione dei Sequence Diagram per separare le responsabilità degli oggetti in tre stereotipi: *Boundary* (interfaccia con l'attore), *Control* (logica applicativa e coordinamento) ed *Entity* (dati persistenti del dominio). |
 
-| **Observer Pattern** | Design Pattern comportamentale (GoF) applicato nel progetto per disaccoppiare la classe `Prenotazione` dai sottosistemi che devono reagire alle sue transizioni di stato (`NotificaCittadino`, `AggiornamentoAutista`, `AggiornamentoSede`), mediante l'interfaccia astratta `ObserverPrenotazione`. |
+| **Observer Pattern** | Design Pattern comportamentale applicato nel progetto per disaccoppiare la classe `Prenotazione` dai sottosistemi che devono reagire alle sue transizioni di stato (`NotificaCittadino`, `AggiornamentoAutista`, `AggiornamentoSede`), mediante l'interfaccia astratta `ObserverPrenotazione`. |
 
-| **Strategy Pattern** | Design Pattern comportamentale (GoF) applicato nel progetto per incapsulare in classi concrete intercambiabili (`AssegnazionePerCapacita`, `AssegnazionePerZona`) le politiche di allocazione dei ritiri ai veicoli, consentendo al controllore di variare l'algoritmo mediante l'interfaccia `StrategiaAssegnazione`. |
+| **Strategy Pattern** | Design Pattern comportamentale applicato nel progetto per incapsulare in classi concrete intercambiabili (`AssegnazionePerCapacita`, `AssegnazionePerZona`) le politiche di allocazione dei ritiri ai veicoli, consentendo al controllore di variare l'algoritmo mediante l'interfaccia `StrategiaAssegnazione`. |
 
 | **Responsive Design** | Paradigma di sviluppo dell'interfaccia utente che garantisce l'adattabilità automatica di layout e contenuti alle dimensioni dello schermo del dispositivo utilizzato (smartphone, tablet, PC). |
 
