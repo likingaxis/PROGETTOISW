@@ -28,7 +28,7 @@ Autisti e Operatori di sede. Ognuno di questi è caratterizzato da mansioni, tur
 
 | **Amministratore di sede AMA** | Figura responsabile della gestione logistica e operativa di una specifica sede AMA. Gestisce l'anagrafica del personale della sede, le disponibilità di lavoratori e mezzi, le fasce orarie e l'associazione tra sede e CAP/zone servite. |
 
-| **Amministratore Generale AMA** | Figura direttiva a livello aziendale. Gestisce gli account degli Amministratori di sede (creazione, abilitazione e revoca) e accede a report e statistiche aggregate sui servizi erogati. |
+| **Amministratore Generale AMA** | Figura direttiva a livello aziendale, gestisce gli account degli Amministratori di sede (creazione, abilitazione e revoca). |
 
 | **Ritiro a domicilio** | Servizio offerto da AMA in cui viene prelevato il rifiuto ingombrante direttamente presso l’indirizzo indicato dal Cittadino. Richiede la verifica di copertura del CAP, l’assegnazione di
 
