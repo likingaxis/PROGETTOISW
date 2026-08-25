@@ -1,6 +1,6 @@
 # 4. System Requirements (Requisiti di Sistema)
 
-I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e regole derivanti dal dominio, che la piattaforma software **MyAma** deve soddisfare.
+I requisiti di sistema formalizzano in dettaglio le capacità funzionali, i vincoli qualitativi e le regole derivanti dal dominio, che la piattaforma software **MyAma** deve soddisfare.
 
 ## 4.1 Requisiti Funzionali
 
@@ -12,7 +12,7 @@ Questa sezione descrive le funzioni che il sistema deve fornire, strutturate in 
 | Utente non registrato   | **RF-02** | Registrazione tramite invito              | Il sistema deve permettere la registrazione del personale (Autista, Operatore o Amministratore) tramite l'inserimento di un codice di invito valido.                       |
 | Utente di sistema       | **RF-03** | Autenticazione                            | Il sistema deve permettere agli utenti registrati di effettuare l'accesso inserendo credenziali valide, reindirizzandoli alle funzionalità del proprio ruolo.              |
 | Cittadino               | **RF-04** | Richiesta ritiro a domicilio              | Il sistema deve permettere al cittadino di prenotare un ritiro a domicilio fornendo indirizzo, CAP e i dettagli del rifiuto ingombrante.                                   |
-| Cittadino               | **RF-05** | Fornire sedi coperte                      | Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o la zona specificata dal Cittadino nella configurazione del suo profilo. |
+| Cittadino               | **RF-05** | Fornire sedi coperte                      | Il sistema deve fornire all'utente le sedi AMA coperte dal servizio richiesto in base al CAP o alla zona specificata dal Cittadino nella configurazione del suo profilo. |
 | Cittadino               | **RF-06** | Prenotazione conferimento                 | Il sistema deve permettere al cittadino di prenotare il conferimento del rifiuto presso una sede AMA compatibile con la propria zona.                                      |
 | Cittadino               | **RF-07** | Annullamento prenotazione                 | Il sistema deve consentire al cittadino di annullare una propria prenotazione precedentemente creata.                                                                      |
 | Autista AMA             | **RF-08** | Visualizzazione ritiri assegnati          | Il sistema deve fornire all'autista l'elenco dei ritiri a domicilio assegnati per il proprio turno, con i dettagli dell'indirizzo e del rifiuto.                           |
