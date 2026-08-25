@@ -122,6 +122,8 @@ I processi amministrativi consentono di gestire le risorse umane, i mezzi logist
 
 ## Sequence Diagrams
 
+I Sequence Diagram (Diagrammi di Sequenza) illustrano la dinamica temporale delle interazioni tra gli attori e gli oggetti del sistema durante l'esecuzione dei casi d'uso. La modellazione segue l'approccio architetturale BCE (*Boundary, Control, Entity*), disaccoppiando le componenti di presentazione (*Boundary*), i controllori della logica applicativa (*Control*) e gli oggetti del dominio (*Entity*).
+
 ### Utente non registrato e Utente di sistema
 
 

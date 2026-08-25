@@ -4,14 +4,10 @@
 % 6.1 INTRODUZIONE E METODOLOGIA
 % =========================================================================
 \subsection{Introduzione e Metodologia di Selezione}
-
 Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti.
 
 \subsubsection{Analisi Critica del Class Diagram Refined}
-
-La selezione dei Design Pattern nasce da un'analisi del \textit{Class Diagram Refined}.
-
-Sono stati selezionati due pattern comportamentali complementari:
+La selezione dei Design Pattern nasce da un'analisi del \textit{Class Diagram Refined}. Sono stati selezionati due pattern comportamentali complementari:
 \begin{itemize}[leftmargin=*]
     \item \textbf{Observer Pattern:} per risolvere la dipendenza uno-a-molti generata dagli eventi di transizione di stato delle prenotazioni.
     \item \textbf{Strategy Pattern:} per incapsulare e rendere dinamicamente intercambiabili gli algoritmi di ottimizzazione e assegnazione dei carichi di lavoro.
@@ -23,25 +19,21 @@ Sono stati selezionati due pattern comportamentali complementari:
 \subsection{Observer Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Soluzione Progettuale}
-
 Il problema principale della classe \texttt{Prenotazione} è che subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da \textit{In attesa} a \textit{Confermata}, \textit{In corso}, \textit{Completata} o \textit{Annullata}) e i vari sottosistemi devono essere aggiornati di conseguenza. Se fosse proprio la classe \texttt{Prenotazione} a dover invocare direttamente i metodi delle altre classi dei sottosistemi (come \texttt{NotificaCittadino}, \texttt{AggiornamentoAutista} o \texttt{AggiornamentoSede}), essa accumulerebbe troppe responsabilità.
 
-Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe \texttt{Prenotazione}, compromettendo la manutenibilità del sistema.
+Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe \texttt{Prenotazione}, compromettendo il principio Open/Closed.
 
-A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (\textit{Observers}) vengono notificati e si aggiornano in automatico.
-
-\begin{sloppypar}
-\subsubsection{Partecipanti}
+Per risolvere questo problema, viene introdotto il pattern comportamentale \textbf{Observer}:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Subject (Observable):} la classe \texttt{Prenotazione}. Contiene i metodi per registrare (\texttt{registraObserver(obs)}), rimuovere (\texttt{rimuoviObserver(obs)}) e notificare (\texttt{notificaObserver()}) gli ascoltatori, oltre alla gestione del proprio stato interno (\texttt{StatoPrenotazione}).
-    \item \textbf{Observer:} l'interfaccia \texttt{ObserverPrenotazione} che espone il metodo polimorfico \texttt{update(stato: StatoPrenotazione)}.
-    \item \textbf{ConcreteObserver:} le classi concrete che implementano l'interfaccia, ovvero \texttt{NotificaCittadino}, \texttt{AggiornamentoAutista} e \texttt{AggiornamentoSede}. Ciascuna di esse implementa la propria logica specifica all'interno del metodo \texttt{update}.
+    \item La classe \texttt{Prenotazione} assume il ruolo di \textit{Subject} (o \textit{Observable}), mantenendo una lista di osservatori e notificandoli tramite il metodo \texttt{notificaOsservatori()}.
+    \item Viene introdotta l'interfaccia \texttt{ObserverPrenotazione} che dichiara il metodo \texttt{aggiornaStato(stato: StatoPrenotazione)}.
+    \item Le classi concrete (\texttt{NotificaCittadino}, \texttt{AggiornamentoAutista}, \texttt{AggiornamentoSede}) implementano l'interfaccia reagendo autonomamente al cambio di stato.
 \end{itemize}
-\end{sloppypar}
 
+\subsubsection{Diagramma Strutturale del Pattern}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{../assets/pattern_observer.jpg}
+    \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{../assets/pattern_observer.jpg}
     \caption{Struttura UML del Design Pattern Observer applicato a MyAma}
     \label{fig:pattern_observer}
 \end{figure}
@@ -52,29 +44,25 @@ A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo 
 \subsection{Strategy Pattern (Pattern Comportamentale)}
 
 \subsubsection{Descrizione del Problema e Soluzione Progettuale}
-
 Il problema principale nella gestione operativa dei ritiri a domicilio è che la composizione dell'itinerario dei veicoli varia spesso a seconda delle politiche aziendali del momento. In particolare, il sistema deve poter supportare differenti algoritmi di assegnazione:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Politica di Massimizzazione del Carico (\texttt{AssegnazionePerCapacita}):} per ottimizzare il riempimento (in volume e peso) dei mezzi minimizzando il numero di corse.
-    \item \textbf{Politica di Prossimità Territoriale (\texttt{AssegnazionePerZona}):} per minimizzare i tempi e i chilometri percorsi raggruppando i ritiri per CAP limitrofi.
+    \item \textbf{Assegnazione per capacità:} privilegia la saturazione del volume di carico del singolo mezzo.
+    \item \textbf{Assegnazione per zona/CAP:} ottimizza il percorso raggruppando i ritiri per vicinanza geografica.
 \end{itemize}
 
-Se la logica di calcolo di tutti questi algoritmi venisse inserita direttamente all'interno della singola classe del controllore di assegnazione (impiegando complesse e lunghe catene di \texttt{if-else} o \texttt{switch-case}), la classe accumulerebbe troppe responsabilità, diventando inutilmente grande e difficilmente manutenibile.
+Se tali algoritmi fossero codificati tramite blocchi condizionali all'interno del controller di gestione, il codice risulterebbe rigido e difficilmente estendibile con nuove strategie di assegnazione.
 
-Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per ``Urgenza''), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
-
-A tal proposito viene identificato il Design Pattern \textbf{Strategy} (di tipo Comportamentale): in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
-
-\subsubsection{Partecipanti}
+Attraverso il pattern \textbf{Strategy}:
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Context:} la classe di controllo (\texttt{GestoreAssegnazione} / \texttt{PrenotazioneControl}). Essa mantiene un riferimento all'interfaccia \texttt{StrategiaAssegnazione} ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
-    \item \textbf{Strategy:} l'interfaccia \texttt{StrategiaAssegnazione} che dichiara il metodo astratto polimorfico \texttt{assegna(ritiro: RitiroDomicilio): Assegnazione}.
-    \item \textbf{ConcreteStrategy:} le classi concrete che incapsulano le singole logiche aziendali, ovvero \texttt{AssegnazionePerCapacita} e \texttt{AssegnazionePerZona}. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
+    \item Viene definita l'interfaccia comune \texttt{StrategiaAssegnazione} con il metodo \texttt{calcolaItinerario(ritiri, veicoli)}.
+    \item Vengono create le strategie concrete \texttt{AssegnazionePerCapacita} e \texttt{AssegnazionePerZona}.
+    \item Il controller \texttt{GestioneRitiriController} funge da \textit{Context}, mantenendo un riferimento all'interfaccia e consentendo l'intercambiabilità dinamica a runtime della strategia desiderata.
 \end{itemize}
 
+\subsubsection{Diagramma Strutturale del Pattern}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{../assets/pattern_strategy.jpg}
-    \caption{Struttura UML del Design Pattern Strategy per l'allocazione delle risorse}
+    \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{../assets/pattern_strategy.jpg}
+    \caption{Struttura UML del Design Pattern Strategy applicato a MyAma}
     \label{fig:pattern_strategy}
 \end{figure}
