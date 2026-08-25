@@ -64,7 +64,7 @@ A tal proposito viene identificato il Design Pattern **Strategy**: in questo mo
 ### Partecipanti
 
 
-    * **Context:** la classe di controllo (`GestoreAssegnazione` / `PrenotazioneControl`). Essa mantiene un riferimento all'interfaccia `StrategiaAssegnazione` ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
+    * **Context:** la classe di controllo (`GestoreAssegnazione`). Essa mantiene un riferimento all'interfaccia `StrategiaAssegnazione` ed espone le operazioni per coordinare l'allocazione delle risorse delegando alla strategia attiva.
     * **Strategy:** l'interfaccia `StrategiaAssegnazione` che dichiara il metodo astratto polimorfico `assegna(ritiro: RitiroDomicilio): Assegnazione`.
     * **ConcreteStrategy:** le classi concrete che incapsulano le singole logiche aziendali, ovvero `AssegnazionePerCapacita` e `AssegnazionePerZona`. Ciascuna di esse implementa in modo differente il metodo dell'interfaccia.
 
