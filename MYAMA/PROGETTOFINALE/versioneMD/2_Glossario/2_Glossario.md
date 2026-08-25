@@ -56,7 +56,7 @@ un Autista e di un Veicolo compatibile con il carico. |
 
 | **Itinerario di Ritiro** | Sequenza ordinata degli appuntamenti di ritiro a domicilio assegnati a uno specifico Autista e Mezzo per un dato turno lavorativo all'interno della zona di competenza. |
 
-| **Valutazione / Feedback** | Giudizio qualitativo (espresso tramite scala di punteggio ed eventuali note descrittive) che il Cittadino può rilasciare al termine di un servizio completato per valutrne l'efficenza. |
+| **Valutazione / Feedback** | Giudizio qualitativo (espresso tramite scala di punteggio ed eventuali note descrittive) che il Cittadino può rilasciare al termine di un servizio completato per valutarne l'efficienza. |
 
 | **Storico prenotazioni** | Archivio consultabile dal Cittadino che raccoglie l'elenco delle prenotazioni concluse (completate, annullate o non eseguite), con i relativi dettagli ed esiti, a fini di tracciabilità e trasparenza. |
 
