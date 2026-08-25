@@ -272,7 +272,7 @@ I Sequence Diagram (Diagrammi di Sequenza) illustrano la dinamica temporale dell
 
 ### Class Diagram Refined 
 
-![Class Diagram — Versione Refined (BCE e Struttura Consolidata)](../../assets/class_CLASS_DIAGRAM_refined.jpg)
+![Class Diagram — Versione Refined ](../../assets/class_CLASS_DIAGRAM_refined.jpg)
 *Class Diagram — Versione Refined*
 
 
