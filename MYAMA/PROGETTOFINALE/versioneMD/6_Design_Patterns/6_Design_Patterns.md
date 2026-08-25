@@ -1,16 +1,17 @@
-# 6. Design Patterns (Pattern di Progettazione)
+# 6. Design Patterns
 
 
 % =========================================================================
 % 6.1 INTRODUZIONE E METODOLOGIA
 % =========================================================================
-## Introduzione e Metodologia di Selezione
+## Introduzione 
 
-Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti
+Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti.
+
 
 ### Analisi Critica del Class Diagram Refined
 
-La selezione dei Design Pattern nasce da un' analisi del *Class Diagram Refined*.
+Dopo una attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia ,senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
 
 Sono stati selezionati due pattern comportamentali complementari:
 
@@ -21,7 +22,7 @@ Sono stati selezionati due pattern comportamentali complementari:
 % =========================================================================
 % 6.2 OBSERVER PATTERN
 % =========================================================================
-## Observer Pattern (Pattern Comportamentale)
+## Observer Pattern 
 
 
 ### Descrizione del Problema e Soluzione Progettuale
@@ -44,7 +45,7 @@ A tal proposito viene identificato il Design Pattern **Observer** (di tipo Com
 % =========================================================================
 % 6.3 STRATEGY PATTERN
 % =========================================================================
-## Strategy Pattern (Pattern Comportamentale)
+## Strategy Pattern 
 
 
 ### Descrizione del Problema e Soluzione Progettuale
