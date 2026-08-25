@@ -6,12 +6,12 @@
 % =========================================================================
 ## Introduzione 
 
-Come successiva fase per fare una progettazione Object Oriented si vogliono identificare dei problemi strutturali per essere risolti da Design Patterns prestabiliti.
+Nella successiva fase della progettazione object-oriented vengono individuati i problemi strutturali risolvibili mediante design pattern consolidati.
 
 
 ### Analisi Critica del Class Diagram Refined
 
-Dopo una attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia ,senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
+Dopo un' attenta analisi del class diagram refined emergono dei problemi progettuali che possono essere risolti mediante dei Design Pattern. Le soluzioni evidenziate vanno integrate nel class diagram refined, tuttavia ,senza modificarlo direttamente, nei successivi paragrafi sono descritti i principali pattern da applicare al diagramma.
 
 Sono stati selezionati due pattern comportamentali complementari:
 
