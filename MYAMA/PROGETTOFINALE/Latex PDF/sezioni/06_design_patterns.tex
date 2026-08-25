@@ -28,7 +28,7 @@ Il problema principale della classe \texttt{Prenotazione} è che subisce continu
 
 Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe \texttt{Prenotazione}, compromettendo la manutenibilità del sistema.
 
-A tal proposito viene identificato il Design Pattern \textbf{Observer} (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (\textit{Observers}) vengono notificati e si aggiornano in automatico.
+A tal proposito viene identificato il Design Pattern \textbf{Observer}: in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (\textit{Observers}) vengono notificati e si aggiornano in automatico.
 
 \subsubsection{Partecipanti}
 
@@ -63,7 +63,7 @@ Se la logica di calcolo di tutti questi algoritmi venisse inserita direttamente 
 
 Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per ``Urgenza''), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
 
-A tal proposito viene identificato il Design Pattern \textbf{Strategy} (di tipo Comportamentale): in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
+A tal proposito viene identificato il Design Pattern \textbf{Strategy}: in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
 
 \subsubsection{Partecipanti}
 

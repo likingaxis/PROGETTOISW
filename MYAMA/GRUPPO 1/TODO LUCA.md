@@ -1,1 +1,1 @@
-- Class diagrams refined non c'è scritto nulla
+s

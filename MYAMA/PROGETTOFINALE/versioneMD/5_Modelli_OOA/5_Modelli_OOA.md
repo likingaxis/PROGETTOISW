@@ -74,7 +74,7 @@ Questi diagrammi modellano il flusso di lavoro logistico del personale sul campo
 
 ### Amministratori (di Sede e Generale)
 
-I processi amministrativi consentono di gestire le risorse umane, i mezzi logistici e la configurazione strutturale delle sedi.
+Questi diagrammi modellano le attività amministrative relative alla gestione delle risorse e della configurazione del sistema, come la gestione delle disponibilità di lavoratori, veicoli e sedi, le associazioni tra sedi e zone/CAP, la generazione dei codici di invito e la gestione del personale.
 
 ![Activity Diagram — Generare codice di invito (Amministratore Sede)](../../assets/act_admin_sede_genera_codice.png)
 
@@ -122,7 +122,7 @@ I processi amministrativi consentono di gestire le risorse umane, i mezzi logist
 
 ## Sequence Diagrams
 
-I Sequence Diagram (Diagrammi di Sequenza) illustrano la dinamica temporale delle interazioni tra gli attori e gli oggetti del sistema durante l'esecuzione dei casi d'uso. La modellazione segue l'approccio architetturale BCE (*Boundary, Control, Entity*), disaccoppiando le componenti di presentazione (*Boundary*), i controllori della logica applicativa (*Control*) e gli oggetti del dominio (*Entity*).
+I Sequence Diagram illustrano la dinamica temporale delle interazioni tra gli attori e gli oggetti del sistema durante l'esecuzione dei casi d'uso. La modellazione segue l'approccio architetturale BCE (*Boundary, Control, Entity*), disaccoppiando le componenti di presentazione (*Boundary*), i controllori della logica applicativa (*Control*) e gli oggetti del dominio (*Entity*).
 
 ### Utente non registrato e Utente di sistema
 
@@ -272,6 +272,8 @@ Il Class Diagram Unrefined modella la struttura statica iniziale del sistema. Vi
 
 
 ### Class Diagram Refined 
+
+Il modello Refined integra e consolida l’architettura completa a oggetti del sistema *MyAma*, strutturando le classi secondo il pattern architetturale BCE (Boundary, Control, Entity). In esso vengono specificati esaustivamente tutti gli attributi con la relativa visibilità e tipo, i metodi operativi derivati dai Sequence Diagram, nonché le relazioni complete con navigabilità e molteplicità.
 
 ![Class Diagram — Versione Refined ](../../assets/class_CLASS_DIAGRAM_refined.jpg)
 *Class Diagram — Versione Refined*

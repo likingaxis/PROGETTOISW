@@ -30,7 +30,7 @@ Sono stati selezionati due pattern comportamentali complementari:
 Il problema principale della classe `Prenotazione` è che subisce continui cambiamenti di stato nel corso del suo ciclo di vita (es. passaggio da _In attesa_ a _Confermata_, _In corso_, _Completata_ o _Annullata_) e i vari sottosistemi devono essere aggiornati di conseguenza. Se fosse proprio la classe `Prenotazione` a dover invocare direttamente i metodi delle altre classi dei sottosistemi (come `NotificaCittadino`, `AggiornamentoAutista` o `AggiornamentoSede`), essa accumulerebbe troppe responsabilità.
 Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro si volesse aggiungere un nuovo modulo interessato a questi cambiamenti (come un nuovo sistema di tracking), bisognerebbe per forza lavorare all'interno del codice della classe `Prenotazione`, compromettendo la manutenibilità del sistema.
 
-A tal proposito viene identificato il Design Pattern **Observer** (di tipo Comportamentale): in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (_Observers_) vengono notificati e si aggiornano in automatico.
+A tal proposito viene identificato il Design Pattern **Observer**: in questo modo la classe viene deresponsabilizzata e, quando l'oggetto cambia stato, tutti gli oggetti interessati (_Observers_) vengono notificati e si aggiornano in automatico.
 
 ### Partecipanti
 
@@ -59,7 +59,7 @@ Se la logica di calcolo di tutti questi algoritmi venisse inserita direttamente 
 
 Inoltre, questo approccio non garantirebbe la flessibilità del codice: se in futuro l'azienda volesse aggiungere una nuova politica di smistamento (ad esempio un'assegnazione per "Urgenza"), bisognerebbe per forza rimettere mano al codice sorgente del controllore, rischiando di compromettere una classe già testata e funzionante.
 
-A tal proposito viene identificato il Design Pattern **Strategy** (di tipo Comportamentale): in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
+A tal proposito viene identificato il Design Pattern **Strategy**: in questo modo ogni algoritmo viene separato in una classe a sé stante. Il controllore viene così deresponsabilizzato dalla logica matematica e si limita a interagire con un'interfaccia comune, permettendo al sistema di cambiare strategia di calcolo in modo dinamico e garantendo un'alta manutenibilità per le aggiunte future.
 
 ### Partecipanti
 
