@@ -1,3 +1,1 @@
-- Class diagrams refined non c'è scritto nulla 
-- figura 35 a pagina 63 da risolvere
-- allineare capitolo 3 rispetto al file md
+- Class diagrams refined non c'è scritto nulla
