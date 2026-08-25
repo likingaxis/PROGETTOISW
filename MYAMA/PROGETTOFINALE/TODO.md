@@ -12,3 +12,11 @@
 - codice prenotazione / pass di conferimento
 - Itinerario di Ritiro (non ha corrispondenze ma forse ha senso)
 - carico residuo
+
+
+### USE CASE
+#### DIAGRAM
+- autista e operatore in sede METTERE GENERALIZZAZIONE
+
+#### DOCUMENTAZIONE
+- [x] inserire azioni
