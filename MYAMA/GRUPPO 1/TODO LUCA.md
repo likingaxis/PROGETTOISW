@@ -1,1 +1,1 @@
-s
+- aggiorna la foto seq registra esito ritiro seq dentro assets dentro progetto finale, in teoria le altre dovrebbero essere allineate 
