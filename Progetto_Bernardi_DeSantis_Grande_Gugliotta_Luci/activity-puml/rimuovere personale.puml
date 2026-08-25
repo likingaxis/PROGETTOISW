@@ -1,0 +1,50 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede
+alla sezione dedicata al personale;
+
+:Il sistema mostra i membri
+associati alla sede;
+
+:L'amministratore seleziona il
+membro del personale da rimuovere;
+
+if () then (Membro associato?\nY/n)
+  :Il sistema mostra le informazioni
+  del profilo selezionato;
+  
+  :L'amministratore richiede la
+  rimozione del membro dalla sede;
+  
+  :Il sistema richiede
+  conferma dell'operazione;
+  
+  if () then (Conferma operazione?\nY/n)
+    :Il sistema rimuove l'associazione
+    e conferma l'operazione;
+    stop
+  else (y/N)
+    :Nessuna modifica
+    effettuata;
+    stop
+  endif
+
+else (y/N)
+  :Il sistema informa l'amministratore
+  che il membro non è associato;
+  stop
+endif
+
+@enduml

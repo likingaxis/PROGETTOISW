@@ -1,0 +1,47 @@
+@startuml
+skinparam activity {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 15
+}
+skinparam activityDiamond {
+  BackgroundColor #5dade2
+  BorderColor Black
+  FontSize 14
+}
+
+start
+
+:L'amministratore di sede AMA accede alla
+funzionalità di generazione dei codici invito;
+
+:Il sistema mostra i ruoli per i quali
+l'amministratore è autorizzato a generare un codice;
+
+:L'amministratore seleziona il ruolo
+del personale da invitare;
+
+:Il sistema verifica i
+permessi dell'amministratore;
+
+if () then (Permessi validi?\nY/n)
+  :Il sistema genera un codice invito
+  associato al ruolo selezionato;
+  
+  if () then (y/N\nCodice generato con successo)
+    :Il sistema mostra il codice
+    generato all'amministratore;
+    stop
+  else (Errore di generazione?\nY/n)
+    :Il sistema informa l'amministratore
+    (nessun codice creato);
+    stop
+  endif
+
+else (y/N)
+  :Il sistema impedisce la
+  generazione del codice;
+  stop
+endif
+
+@enduml
