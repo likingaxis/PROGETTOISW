@@ -1,15 +1,3 @@
-- spazio bianco sotto la cover di poco
-- cambiata uc_cittadino.png in assets cambiala
-- su glossario è stata tolta una voce sulla versione md quindi va aggiornata nella controparte latex, codice prenotazione/passo conferimento
-- pagina 32 appare <br>
-- pagina 36 le frecce in una unica linea
-- pagina 35 in sicurezza ci stanno 2 <br>
-- manca `act_admin_sede_gestire_associazioni.png`
-- è stato modificato il capitolo 5.md rimettilo in versione latex
-- è stato modificato il capitolo 6.md rimettilo in versione latex
-- pagina 1 scrivere in seguito e non inseguito
-- aggiornate le foto
-- tolto RBAC su glossario e tolto RBAC sul markdown rimettilo in versione latex
-- aggiornato capitolo 3.md
-
-- capitolo 3 aggiornato file md di user requirements allnearlo con il latex
+- Class diagrams refined non c'è scritto nulla 
+- figura 35 a pagina 63 da risolvere
+- allineare capitolo 3 rispetto al file md
