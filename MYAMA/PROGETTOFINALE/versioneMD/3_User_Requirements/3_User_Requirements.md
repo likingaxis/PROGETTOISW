@@ -2,6 +2,7 @@
 
 
 La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del sistema **MyAma**, organizzati e strutturati in base alle differenti classi di attori che interagiscono con la piattaforma. 
+Ciascuna sottosezione comprende il relativo diagramma Use Case e le relative schede descrittive tabellari.
 
 % =========================================================================
 % 3.1 UTENTE NON REGISTRATO E UTENTE DI SISTEMA
