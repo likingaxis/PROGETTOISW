@@ -1,4 +1,4 @@
-﻿# 2. Glossario dei Termini di Dominio
+# 2. Glossario dei Termini di Dominio
 
 | Termine | Descrizione |
 | :--- | :--- |
@@ -24,7 +24,6 @@ un Autista e di un Veicolo compatibile con il carico. |
 | **Conferimento in sede** | Servizio in cui il Cittadino si reca personalmente presso una sede AMA (centro di raccolta) per consegnare il rifiuto ingombrante, previa prenotazione di una fascia oraria. |
 | **Prenotazione** | Entità informativa che formalizza la richiesta di smaltimento (a domicilio o in sede). Include dettagli sul rifiuto, indirizzo/sede, data e fascia oraria, dati del Cittadino e stato di avanzamento. |
 | **Stato della prenotazione** | Condizione in cui si trova una prenotazione nel suo ciclo di vita: *In attesa, Confermata, In corso, Completata, Annullata, Non eseguita*. |
-| **Codice Prenotazione / Pass di Conferimento** | Identificativo univoco (codice alfanumerico o QR code) generato dal sistema alla conferma della prenotazione, utilizzato per il riconoscimento e la validazione del servizio alla sede AMA o al domicilio. |
 | **Tariffa / Preventivo** | Quota economica calcolata dal sistema per l'erogazione del servizio di smaltimento, determinata in base alla tipologia, al volume del rifiuto o alla presenza di servizi speciali oltre la franchigia comunale gratuita. |
 | **Franchigia comunale** | Soglia quantitativa o economica stabilita dal Comune entro la quale il servizio di smaltimento è erogato gratuitamente al Cittadino. Oltre tale soglia il sistema calcola una tariffa proporzionale. |
 | **Itinerario di Ritiro** | Sequenza ordinata degli appuntamenti di ritiro a domicilio assegnati a uno specifico Autista e Mezzo per un dato turno lavorativo all'interno della zona di competenza. |
