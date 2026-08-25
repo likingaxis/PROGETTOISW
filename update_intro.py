@@ -1,15 +1,13 @@
-\section{Introduzione}
+﻿# -*- coding: utf-8 -*-
 
-\subsection{Problem Statement e Obiettivi del Progetto}
-La gestione dello smaltimento dei rifiuti urbani ingombranti e speciali nella città di Roma presenta storicamente complessità logistiche, sia legate al coordinamento tra cittadini che tra centri di raccolta territoriali (isole ecologiche) e squadre operative di raccolta su strada. I canali tradizionali non integrati comportano spesso tempi di attesa elevati per l'utenza, difficoltà nella stima preventiva dei carichi e rischi di sovraccarico/saturazione non controllata dei mezzi e delle sedi.
+import re
 
-La piattaforma \textbf{MyAma} si propone come soluzione software integrata volta a digitalizzare e ottimizzare l'intero ciclo di vita delle richieste di smaltimento dei rifiuti ingombranti. L'obiettivo primario del sistema è duplice:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Per la cittadinanza:} fornire un canale digitale trasparente, accessibile e guidato per prenotare in autonomia sia il \textit{ritiro a domicilio} sia il \textit{conferimento programmato in sede}, consentendo il tracciamento in tempo reale dello stato del servizio ed evitando code e disservizi.
-    \item \textbf{Per l'azienda (AMA):} fornire strumenti di pianificazione logistica per l'allocazione ottimizzata dei turni, il rispetto della capacità massima di carico dei veicoli, il contingentamento degli accessi ai centri di raccolta e il monitoraggio puntuale degli esiti operativi.
-\end{itemize}
+tex_path = r'MYAMA/PROGETTOFINALE/Latex PDF/sezioni/01_introduzione.tex'
 
-\subsection{Classi di Utenza del Sistema}
+with open(tex_path, 'r', encoding='utf-8', errors='ignore') as f:
+    content = f.read()
+
+new_section = r'''\subsection{Classi di Utenza del Sistema}
 Il servizio è accessibile alle seguenti classi di utenza (attori):
 \begin{itemize}[leftmargin=*]
     \item \textbf{Utente di sistema:} è qualsiasi entità esterna che interagisce con il software per scambiare dati, richiedere un servizio o innescare uno specifico comportamento.
@@ -25,11 +23,15 @@ Il servizio è accessibile alle seguenti classi di utenza (attori):
     \item \textbf{Amministratore di sede AMA:} gestisce l'organizzazione logistica della propria struttura: genera i codici di invito per il personale operativo (autisti e operatori) della sede, definisce le disponibilità di lavoratori e veicoli, imposta le fasce orarie e associa le sedi alle rispettive zone o CAP serviti.
     
     \item \textbf{Amministratore generale AMA:} opera a livello direttivo aziendale; è responsabile della gestione degli account degli Amministratori di sede (generazione codici di invito dedicati, abilitazione e revoca).
-\end{itemize}
+\end{itemize}'''
 
-\subsection{Perimetro del Sistema (In-Scope e Out-of-Scope)}
-Al fine di delimitare con precisione i requisiti e i modelli OOA sviluppati nel presente documento:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Funzionalità In-Scope:} autenticazione e registrazione basata su ruoli (RBAC); gestione completa delle prenotazioni di ritiro a domicilio e conferimento in sede; verifica territoriale vincolata a sede e CAP; gestione delle disponibilità e della capacità dei mezzi; tracciamento e registrazione degli esiti di servizio; consultazione dello storico e rilascio feedback; gestione amministrativa di sedi, personale, veicoli e codici di invito.
-    \item \textbf{Funzionalità Out-of-Scope (future estensioni):} integrazione diretta con gateway di pagamento elettronico per tariffe extra-franchigia (gestite in questa fase a livello di preventivo informativo); autenticazione federata SPID/CIE; tracciamento GPS in tempo reale dei veicoli; gestione di reportistica analitica avanzata di Business Intelligence.
-\end{itemize}
+content = re.sub(
+    r'\\subsection\{Classi di Utenza del Sistema\}.*?(?=\\subsection\{Perimetro del Sistema \(In-Scope e Out-of-Scope\)\})',
+    lambda m: new_section + '\n\n',
+    content,
+    flags=re.DOTALL
+)
+
+with open(tex_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Updated 01_introduzione.tex")

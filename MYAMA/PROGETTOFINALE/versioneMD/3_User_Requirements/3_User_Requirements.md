@@ -12,7 +12,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_utente_non_registrato.jpg}
+    \includegraphics[width=0.75\textwidth]{../assets/uc_utente_non_registrato.jpg}
     \caption{Use Case Diagram — Utente non registrato e Utente di sistema}
     \label{fig:uc_utente_non_registrato}
 \end{figure}
@@ -76,7 +76,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{figure/uc_cittadino.jpg}
+    \includegraphics[width=0.85\textwidth]{../assets/uc_cittadino.jpg}
     \caption{Use Case Diagram — Cittadino registrato}
     \label{fig:uc_cittadino}
 \end{figure}
@@ -188,7 +188,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_autista.jpg}
+    \includegraphics[width=0.75\textwidth]{../assets/uc_autista.jpg}
     \caption{Use Case Diagram — Autista AMA}
     \label{fig:uc_autista}
 \end{figure}
@@ -250,7 +250,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_operatore_sede.jpg}
+    \includegraphics[width=0.75\textwidth]{../assets/uc_operatore_sede.jpg}
     \caption{Use Case Diagram — Operatore di sede AMA}
     \label{fig:uc_operatore_sede}
 \end{figure}
@@ -314,7 +314,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_amministratore_sede.jpg}
+    \includegraphics[width=0.75\textwidth]{../assets/uc_amministratore_sede.jpg}
     \caption{Use Case Diagram — Amministratore di sede AMA}
     \label{fig:uc_amministratore_sede}
 \end{figure}
@@ -402,7 +402,7 @@ La seguente sezione descrive in dettaglio i requisiti utente e i casi d'uso del 
 ### Diagramma
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figure/uc_amministratore_generale.jpg}
+    \includegraphics[width=0.75\textwidth]{../assets/uc_amministratore_generale.jpg}
     \caption{Use Case Diagram — Amministratore generale AMA}
     \label{fig:uc_amministratore_generale}
 \end{figure}
